@@ -8,8 +8,8 @@
 # hlsearch on (H) or off (h):
 ~H
 # Command Line History (newest to oldest):
-:q
 :wq
+:q
 
 # Search String History (newest to oldest):
 
@@ -22,14 +22,15 @@
 # Registers:
 
 # File marks:
-'0  7  12  ~/.git/config
-'1  1  0  ~/.gitconfig
-'2  9  8  ~/.gitignore
+'0  1  0  ~/.git/config
+'1  7  12  ~/.git/config
+'2  1  0  ~/.gitconfig
+'3  9  8  ~/.gitignore
 
 # Jumplist (newest first):
+-'  1  0  ~/.git/config
 -'  7  12  ~/.git/config
 -'  1  0  ~/.gitconfig
--'  1  0  ~/.git/config
 -'  9  8  ~/.gitignore
 -'  1  0  ~/.gitignore
 -'  9  8  ~/.gitignore
@@ -65,14 +66,72 @@
 -'  1  0  ~/.gitignore
 -'  9  8  ~/.gitignore
 -'  1  0  ~/.gitignore
+-'  1  0  ~/.gitconfig
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  1  0  ~/.gitconfig
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  1  0  ~/.gitconfig
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  1  0  ~/.gitconfig
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  1  0  ~/.gitconfig
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  1  0  ~/.gitconfig
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  1  0  ~/.gitconfig
+-'  9  8  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  9  8  ~/.gitignore
 
 # History of marks within files (newest to oldest):
 
 > ~/.git/config
-	"	7	12
-	^	7	31
-	.	7	31
-	+	7	31
+	"	1	0
+	^	7	13
+	.	7	12
+	+	7	12
 
 > ~/.gitconfig
 	"	1	0
