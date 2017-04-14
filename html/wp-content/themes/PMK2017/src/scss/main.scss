@@ -1,0 +1,36 @@
+/*---------------------------------------------------------------------------
+
+
+Manifest
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+
+
+
+/*--  Define Theme Variables --*/
+@import "config";
+
+/*--  Build Tools: mixins and helper functions --*/
+@import "00_tools/tools";
+
+/*--  Build Generic: ground zero styles, reset styles such as normalize.css --*/
+@import "01_generic/generic";
+
+/* Build Elements: headings, lists, tables, etc */
+@import "02_elements/elements";
+
+/* Build Objects: e.g. .button, .list-item, grid systems */
+@import "03_objects/objects";
+
+/* Build Components */
+@import "04_components/components";
+
+/* Build Pages */
+@import "05_pages/pages";
+
+/* Build Shame */
+@import "shame";

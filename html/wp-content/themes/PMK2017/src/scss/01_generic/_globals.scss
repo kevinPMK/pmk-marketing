@@ -1,0 +1,164 @@
+/*---------------------------------------------------------------------------
+
+
+Globals
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+/*
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
+}
+
+*/
+
+
+/*------------------------------------------------------------------------
+  Globals
+------------------------------------------------------------------------*/
+
+body,
+html{
+  padding: 0px;
+  margin: 0px;
+  min-width: 320px;
+}
+
+html{
+  font-family: $primary-font;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+@include media('<sm') {
+  html{
+    font-size: 13px;
+  }
+}
+
+button{
+  border: none;
+  outline: none;
+}
+
+body{
+  background: $app-bg-color;
+  overflow-x: hidden;
+}
+
+a{
+  color: $brand-primary;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+p{
+  line-height: 1.68em;
+}
+    .content-intro-p{
+        font-size: 1.143rem;
+        color: $content-copy-color;
+    }
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  margin: 0;
+  padding: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner {
+    padding:0;
+    border:0;
+}
+
+select,
+input,
+textarea{
+    -webkit-appearance: none;
+}
+
+button{
+  text-shadow: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  cursor: pointer;
+  background: none;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
+}
+
+svg{
+  vertical-align: top;
+}
+
+
+::-webkit-input-placeholder {
+   //color: $gray-dodge;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   //color: $gray-dodge;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   //color: $gray-dodge;
+}
+
+:-ms-input-placeholder {
+   //color: $gray-dodge;
+}
+
+/*-- PAGE STATE CHANGE --*/
+
+.scroll-locked{
+  overflow: hidden;
+}
+
+.light-copy{
+    //color: $gray-light;
+}
+
+
+.text-primary{
+    //color: $brand-primary;
+}
+
+.text-secondary{
+
+}
+
+.text-tertiary{
+    //color: $brand-tertiary;
+}
+
+.text-darken{
+    color: #697277;
+}

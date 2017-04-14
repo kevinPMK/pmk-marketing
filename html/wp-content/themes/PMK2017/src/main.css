@@ -1,0 +1,260 @@
+/*---------------------------------------------------------------------------
+
+
+Manifest
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+/*--  Define Theme Variables --*/
+/*---------------------------------------------------------------------------
+
+
+Config
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------
+  NOTES
+---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------
+  Layout
+---------------------------------------------------------------------*/
+/* Queries, Built by http://include-media.com/#features */
+/*---------------------------------------------------------------------
+  Colors Palette
+---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------
+  Type
+---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------
+  Transitions
+---------------------------------------------------------------------*/
+/*--  Build Tools: mixins and helper functions --*/
+/*---------------------------------------------------------------------------
+
+
+Elements
+Constructor File
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------
+  Responsive Videos
+------------------------------------------------------------------------*/
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0; }
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute; }
+
+/*--  Build Generic: ground zero styles, reset styles such as normalize.css --*/
+/*---------------------------------------------------------------------------
+
+
+Elements
+Constructor File
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------
+
+
+Globals
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+/*
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
+}
+
+*/
+/*------------------------------------------------------------------------
+  Globals
+------------------------------------------------------------------------*/
+body,
+html {
+  padding: 0px;
+  margin: 0px;
+  min-width: 320px; }
+
+html {
+  font-family: "Quasimoda W01", sans-serif;
+  font-size: 14px;
+  font-weight: 300; }
+
+@media (max-width: 799px) {
+  html {
+    font-size: 13px; } }
+
+button {
+  border: none;
+  outline: none; }
+
+body {
+  background: #f3f4f7;
+  overflow-x: hidden; }
+
+a {
+  color: #3FA9F5;
+  cursor: pointer;
+  text-decoration: none; }
+
+p {
+  line-height: 1.68em; }
+
+.content-intro-p {
+  font-size: 1.143rem;
+  color: #696c72; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  margin: 0;
+  padding: 0; }
+
+img {
+  max-width: 100%; }
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+select,
+input,
+textarea {
+  -webkit-appearance: none; }
+
+button {
+  text-shadow: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  cursor: pointer;
+  background: none; }
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  /* 1 */ }
+
+svg {
+  vertical-align: top; }
+
+:-moz-placeholder {
+  /* Firefox 18- */ }
+
+::-moz-placeholder {
+  /* Firefox 19+ */ }
+
+/*-- PAGE STATE CHANGE --*/
+.scroll-locked {
+  overflow: hidden; }
+
+.text-darken {
+  color: #697277; }
+
+/* Build Elements: headings, lists, tables, etc */
+/*---------------------------------------------------------------------------
+
+
+Elements
+Constructor File
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+/* Build Objects: e.g. .button, .list-item, grid systems */
+/*---------------------------------------------------------------------------
+
+
+Objects
+Constructor File
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+/* Build Components */
+/*---------------------------------------------------------------------------
+
+
+Components
+Constructor File
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------
+
+
+Dashboard
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------
+  Page
+------------------------------------------------------------------------*/
+/* Build Pages */
+/*---------------------------------------------------------------------------
+
+
+Pages
+Constructor File
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+/* Build Shame */
+/*---------------------------------------------------------------------------
+
+
+Shame - Stuff We Need to Clean Up
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+body {
+  font-family: "Quasimoda W01", sans-serif; }
+
+h1 {
+  font-family: "Makozin W01", sans-serif;
+  font-size: 60px;
+  font-weight: 700; }

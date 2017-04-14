@@ -1,0 +1,95 @@
+/*---------------------------------------------------------------------------
+
+
+Config
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+
+/*---------------------------------------------------------------------
+  NOTES
+---------------------------------------------------------------------*/
+
+
+
+
+/*---------------------------------------------------------------------
+  Layout
+---------------------------------------------------------------------*/
+
+/* Queries, Built by http://include-media.com/#features */
+$breakpoints: (
+  xs: 500px,
+  sm: 800px,
+  md: 1024px,
+  lg: 1400px,
+  xl: 1960px
+);
+
+$page-max-width: 1320px;
+$grid: 8px;
+
+$header-height: $grid*8;
+$menu-width: $grid*28;
+$sidebar-width: $grid*34;
+
+
+/*---------------------------------------------------------------------
+  Colors Palette
+---------------------------------------------------------------------*/
+
+
+$brand-primary-dodge:    #4DB5FF;
+$brand-primary:          #3FA9F5;
+$brand-primary-burn:     #3998db;
+$brand-secondary-dodge:  #8AE34B;
+$brand-secondary:        #7AC943;
+$brand-secondary-burn:   #6BB03A;
+$brand-tertiary-dodge:   #FFC130;
+$brand-tertiary:         #EFAF1E;
+$brand-tertiary-burn:    #D69E1C;
+
+
+$app-bg-color: #f3f4f7;
+$app-divider-color: #e0e2ed; //#f1f2f6;
+$content-copy-color: #696c72;
+$content-copy-color--light: #879cc6;
+$title-color: #1e1e1e;
+$soft-bg-color: #fbfbfb;
+
+
+/*---------------------------------------------------------------------
+  Type
+---------------------------------------------------------------------*/
+
+$header-font: "Makozin W01", sans-serif;
+//Light: 300
+//Medium: 500
+//Semi Bold: 600
+//Bold: 700
+
+$primary-font: "Quasimoda W01", sans-serif;
+//Light: 300
+//Medium: 500
+
+
+//font-family:'Quasimoda W01 Light'; 200
+// font-family:'Quasimoda W01 Regular'; 400
+// font-family:'Quasimoda W01 Medium'; 500
+// font-family:'Quasimoda W01 SemiBold'; 600
+// font-family:'Quasimoda W01 Bold'; 700
+// font-family:'Makozin W01 Heavy'; 800
+// font-family:'Makozin W01 Bold'; 700
+// font-family:'Makozin W01 Medium'; 500
+// font-family:'Makozin W01 Regular'; 400
+// font-family:'Makozin W01 Light'; 200
+
+
+/*---------------------------------------------------------------------
+  Transitions
+---------------------------------------------------------------------*/
+
+$curved-transition: cubic-bezier(.34,.61,.59,1.11);
