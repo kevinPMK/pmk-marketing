@@ -1,0 +1,9 @@
+wp-admin/
+wp-content/mu-plugins/
+wp-includes/
+wp-*.php
+wp-config.php
+index.php
+gdconfig.php
+node_modules/
+.DS_Store
