@@ -3,7 +3,6 @@ wp-content/mu-plugins/
 wp-includes/
 wp-*.php
 html/index.php
-index.php
 gdconfig.php
 node_modules/
 .DS_Store
