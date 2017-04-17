@@ -7,6 +7,7 @@ var inject = require('gulp-inject');
 
 var rename = require('gulp-rename');
 var svgstore = require('gulp-svgstore');
+var svgmin = require('gulp-svgmin');
 var path = require('path');
 
 gulp.task('images', () =>
@@ -23,31 +24,27 @@ gulp.task('styles',function() {
     .pipe(gulp.dest('./src/'))
 });
 
-gulp.task('svgstore', function(){
-
-  var svgs = gulp.src('src/svg/**/*.svg', { base: 'src/svg' })
-    .pipe(rename({prefix: 'svg-icon-'}))
-    .pipe(svgstore({ inlineSvg: true }));
-
-    function fileContents (filePath, file) {
-        return file.contents.toString();
-    }
-
-    //console.log(svgs);
-
-  gulp.src('./header.php')
-    .pipe(inject(svgs, {
-      starttag: '<!-- inject:svg -->',
-      transform: function (filePath, file) {
-        return file.contents.toString('utf8')
-      }
-    }))
-    .pipe(gulp.dest('./'));
+gulp.task('svgstore', function () {
+    return gulp
+        .src('src/app-icons/*.svg')
+        .pipe(rename({prefix: 'svg-icon-'}))
+        .pipe(svgmin(function (file) {
+            return {
+                plugins: [{
+                    cleanupIDs: {
+                        prefix: 'svg-icon-',
+                        minify: true
+                    }
+                }]
+            }
+        }))
+        .pipe(svgstore({ inlineSvg: true }))
+        .pipe(gulp.dest('src'));
 });
 
 
 gulp.task('default', ['styles', 'images', 'svgstore'], function() {
   gulp.watch('src/scss/**/*', ['styles']);
   gulp.watch('src/images/**/*', ['images']);
-  gulp.watch('src/svg/**/*', ['svgstore']);
+  gulp.watch('src/app-icons/*', ['svgstore']);
 });
