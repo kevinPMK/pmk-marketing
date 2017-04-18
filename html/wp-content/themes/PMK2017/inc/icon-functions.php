@@ -152,7 +152,7 @@ function twentyseventeen_dropdown_icon_to_menu_link( $title, $item, $args, $dept
 	if ( 'top' === $args->theme_location ) {
 		foreach ( $item->classes as $value ) {
 			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
-				$title = $title . twentyseventeen_get_svg( array( 'icon' => 'angle-down' ) );
+				$title = $title . pmk_get_svg( array( 'icon' => 'angle-down' ) );
 			}
 		}
 	}
