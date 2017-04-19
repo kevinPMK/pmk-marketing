@@ -69,7 +69,7 @@ function twentyseventeen_content_width() {
 
 	// Check if layout is one column.
 	if ( 'one-column' === $page_layout ) {
-		if ( twentyseventeen_is_frontpage() ) {
+		if ( pmk_is_frontpage() ) {
 			$content_width = 644;
 		} elseif ( is_page() ) {
 			$content_width = 740;

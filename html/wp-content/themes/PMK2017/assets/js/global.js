@@ -1,20 +1,74 @@
-/* global twentyseventeenScreenReaderText */
+
+
 (function( $ ) {
+
+	//KDM STUFF
+
+
+
+    function draw() {
+        requestAnimationFrame(draw);
+        // Drawing code goes here
+        scrollEvent();
+    }
+    draw();
+
+
+	function scrollEvent(){
+
+	    if(!is_touch_device()){
+	        viewportTop = $(window).scrollTop();
+	        windowHeight = $(window).height();
+	        viewportBottom = windowHeight+viewportTop;
+
+	        if($(window).width())
+
+	        $('[data-parallax="true"]').each(function(){
+	            distance = viewportTop * $(this).attr('data-speed');
+	            if($(this).attr('data-direction') === 'up'){ sym = '-'; } else { sym = ''; }
+	            $(this).css('transform','translate3d(0, ' + sym + distance +'px,0)');
+	        });
+
+	    }
+	}
+
+	function is_touch_device() {
+	  return 'ontouchstart' in window // works on most browsers
+	      || 'onmsgesturechange' in window; // works on ie10
+	}
+
+
+
+
+
+
+
+
+
 
 	// Variables and DOM Caching.
 	var $body = $( 'body' ),
+
+		//USED
+		$navigation = $body.find( '.main-menu' ),
+		navigationFixedClass = 'main-menu--fixed',
+		navigationCtaClass = 'main-menu--cta-focus',
+		currentWindowHeight,
+		navigationOffset,
+
+		$menuScrollDown = $body.find( '.scroll-more' ),
+
+
+		//UNSURE
 		$customHeader = $body.find( '.custom-header' ),
 		$branding = $customHeader.find( '.site-branding' ),
-		$navigation = $body.find( '.navigation-top' ),
 		$navWrap = $navigation.find( '.wrap' ),
 		$navMenuItem = $navigation.find( '.menu-item' ),
 		$menuToggle = $navigation.find( '.menu-toggle' ),
-		$menuScrollDown = $body.find( '.menu-scroll-down' ),
 		$sidebar = $body.find( '#secondary' ),
 		$entryContent = $body.find( '.entry-content' ),
 		$formatQuote = $body.find( '.format-quote blockquote' ),
 		isFrontPage = $body.hasClass( 'twentyseventeen-front-page' ) || $body.hasClass( 'home blog' ),
-		navigationFixedClass = 'site-navigation-fixed',
 		navigationHeight,
 		navigationOuterHeight,
 		navPadding,
@@ -46,43 +100,32 @@
 
 	// Set properties of navigation.
 	function setNavProps() {
-		navigationHeight      = $navigation.height();
-		navigationOuterHeight = $navigation.outerHeight();
-		navPadding            = parseFloat( $navWrap.css( 'padding-top' ) ) * 2;
-		navMenuItemHeight     = $navMenuItem.outerHeight() * 2;
-		idealNavHeight        = navPadding + navMenuItemHeight;
-		navIsNotTooTall       = navigationHeight <= idealNavHeight;
+		navigationOffset = $navigation.offset().top;
+		currentWindowHeight = $( window ).height();
 	}
 
 	// Make navigation 'stick'.
+
 	function adjustScrollClass() {
 
 		// Make sure we're not on a mobile screen.
-		if ( 'none' === $menuToggle.css( 'display' ) ) {
+		//if ( 'none' === $menuToggle.css( 'display' ) ) {
 
-			// Make sure the nav isn't taller than two rows.
-			if ( navIsNotTooTall ) {
 
-				// When there's a custom header image or video, the header offset includes the height of the navigation.
-				if ( isFrontPage && ( $body.hasClass( 'has-header-image' ) || $body.hasClass( 'has-header-video' ) ) ) {
-					headerOffset = $customHeader.innerHeight() - navigationOuterHeight;
-				} else {
-					headerOffset = $customHeader.innerHeight();
-				}
-
-				// If the scroll is more than the custom header, set the fixed class.
-				if ( $( window ).scrollTop() >= headerOffset ) {
-					$navigation.addClass( navigationFixedClass );
-				} else {
-					$navigation.removeClass( navigationFixedClass );
-				}
-
+			if ( $( window ).scrollTop() >= navigationOffset ) {
+				$navigation.addClass( navigationFixedClass );
 			} else {
-
-				// Remove 'fixed' class if nav is taller than two rows.
 				$navigation.removeClass( navigationFixedClass );
 			}
-		}
+
+			if ( $( window ).scrollTop() >= currentWindowHeight ) {
+				$navigation.addClass( navigationCtaClass );
+			} else {
+				$navigation.removeClass( navigationCtaClass );
+			}
+
+		//}
+
 	}
 
 	// Set margins of branding in header.
@@ -104,7 +147,7 @@
 
 	// Set icon for quotes.
 	function setQuotesIcon() {
-		$( twentyseventeenScreenReaderText.quote ).prependTo( $formatQuote );
+		//$( twentyseventeenScreenReaderText.quote ).prependTo( $formatQuote );
 	}
 
 	// Add 'below-entry-meta' class to elements.

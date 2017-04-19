@@ -34,14 +34,40 @@
 				</header>
 
 
-				<?php
-				// If a regular post or page, and not the front page, show the featured image.
-				if ( has_post_thumbnail() && ( is_single() || ( is_page() && ! twentyseventeen_is_frontpage() ) ) ) :
-					echo '<div class="single-featured-image-header">';
-					the_post_thumbnail( 'twentyseventeen-featured-image' );
-					echo '</div><!-- .single-featured-image-header -->';
-				endif;
-				?>
 
-				<div class="site-content-contain">
+				<?php if ( has_post_thumbnail() && ( is_single() || ( is_page() && ! pmk_is_frontpage() ) ) ) : ?>
+
+					<div class="single-featured-image-header">
+						<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
+					</div>
+
+				<?php elseif(has_post_thumbnail() && pmk_is_frontpage()) : ?>
+
+					<section class="home-hero" data-parallax="true" data-speed="0.1" data-direction="up">
+						<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
+						<div class="home-hero__haze"></div>
+						<div class="home-hero__gradient"></div>
+						<div class="home-hero__lightstreak"></div>
+						<div class="home-hero__content" data-parallax="true" data-speed="0.2" data-direction="up">
+							<h1><span>Safe and Efficient</span> Student Dismissal</h1>
+							<div class="button-wrap">
+								<a class="button button--video" type="button" href="#">
+									Watch Video
+									<?php echo pmk_get_svg( array( 'icon' => '32-play', 'size' => '32' ) );?>
+								</a>
+								<a class="button button--cta" type="button" href="#">
+									Request Demo
+									<?php echo pmk_get_svg( array( 'icon' => '32-rarrow', 'size' => '32' ) );?>
+								</a>
+							</div>
+						</div>
+						<button type="button" class="scroll-more">
+							<div class="scroll-more__text">Scroll</div>
+							<div class="scroll-more__line"></div>
+						</button>
+					</section>
+
+				<?php endif; ?>
+
+				<div class="page-wrap">
 					<div id="content" class="site-content">

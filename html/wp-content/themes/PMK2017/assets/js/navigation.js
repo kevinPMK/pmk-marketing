@@ -3,7 +3,7 @@
  * Theme functions file.
  *
  * Contains handlers for navigation and widget area.
- */
+
 
 (function( $ ) {
 	var masthead, menuToggle, siteNavContain, siteNavigation;
@@ -107,3 +107,6 @@
 		});
 	})();
 })( jQuery );
+
+
+ */

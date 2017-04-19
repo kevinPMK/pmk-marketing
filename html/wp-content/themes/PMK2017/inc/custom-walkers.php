@@ -25,6 +25,9 @@ class Main_Menu_Walker extends Walker {
         $class_names = $value = '';
         $classes = empty( $item->classes ) ? array() : (array) $item->classes;
         $classes = in_array( 'current-menu-item', $classes ) ? array( 'current-menu-item' ) : array();
+        if($item->classes[0] != ''){
+            array_push($classes, $item->classes[0]);
+        };
         $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
         $class_names = strlen( trim( $class_names ) ) > 0 ? ' class="' . esc_attr( $class_names ) . '"' : '';
         $id = apply_filters( 'nav_menu_item_id', '', $item, $args );

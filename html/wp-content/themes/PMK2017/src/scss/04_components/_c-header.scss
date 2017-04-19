@@ -13,6 +13,8 @@ Version: 1.0.0
     height: $grid;
     width: 100%;
     background: linear-gradient( 90deg, $brand-secondary, $brand-primary, $brand-tertiary );
+    position: relative;
+    z-index: 1000;
 }
 
 
@@ -20,29 +22,215 @@ body{
 
 }
 
-.sub-menu{
-    height: $grid*5;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
+
+.icon-logo{
+    width: 70px;
+    height: 42.11px;
 }
 
-    .sub-menu__item{
-        display: block;
-        padding: $grid $grid*2;
-        text-transform: uppercase;
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 0.04rem;
-        color: #fff;
-        opacity: 0.6;
-        &:hover{
-            color: #fff;
-            opacity: 1;
+
+
+
+/*------------------------------------------------------------------------
+  Home Hero
+------------------------------------------------------------------------*/
+
+body,
+html{
+    height: 100%;
+}
+
+.site{
+    width: 100%;
+    height: 100%;
+}
+
+.home-hero{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        vertical-align: top;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    &__haze{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: $brand-primary;
+        opacity: 0.45;
+    }
+    &__gradient{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(40,48,79,0) 0%, rgba(40,48,79,0.9) 100%);
+    }
+    &__lightstreak{
+        width: 800px;
+        height: 200%;
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        background: rgba(255,255,255,0.03);
+        transform: translate(-50%, -50%) rotate(30deg);
+    }
+    &__content{
+        z-index: 1000;
+        text-align: center;
+        width: 100%;
+        max-width: $grid*128;
+        margin-top: $grid*8;
+        h1{
+            font-family: $header-font;
+            font-size: 96px;
+            letter-spacing: -0.02em;
+            margin: 0;
+            span{
+                font-family: $primary-font;
+                display: block;
+                margin-bottom: -16px;
+                text-transform: uppercase;
+                letter-spacing: 0.5em;
+                font-size: 20px;
+                display: block;
+                font-weight: 300;
+                opacity: 0.7;
+            }
+        }
+        h2{
+            font-weight: 300;
+            font-size: 18px;
+            margin: 0;
         }
     }
+    .button-wrap{
+        margin-top: $grid*4;
+    }
+        .button{
+            box-sizing: border-box;
+            margin: 0px $grid;
+            width: $grid*28;
+            height: $grid*7;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: $grid/2;
+            font-weight: 300;
+            transition: padding 0.15s $curved-transition;
+            .icon{
+                position: relative;
+                margin-left: 5px;
+                margin-right: -12px;
+                margin-top: -1px;
+                transition: margin 0.15s $curved-transition, opacity 0.15s $curved-transition;
+            }
+            &:hover{
+                padding-left: 5px;
+                .icon{
+                    margin-left: 10px;
+                }
+            }
+            &--cta{
+                background: $brand-secondary;
+                border: 1px solid $brand-secondary;
+                &:hover{
+                    background: $brand-primary;
+                    border-color: $brand-primary;
+                }
+            }
+            &--video{
+                border: 1px solid $brand-secondary;
+                .icon{
+                    opacity: 0.6;
+                }
+                &:hover{
+                    border-color: $brand-primary;
+                    background: rgba(63,169,245,0.1);
+                    .icon{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+}
+
+.page-wrap{
+    top: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+}
+
+
+/*------------------------------------------------------------------------
+  Scroll More
+------------------------------------------------------------------------*/
+
+
+
+.scroll-more{
+    width: $grid*8;
+    height: $grid*14;
+    padding-right: 1px;
+    position: absolute;
+    left: 50%;
+    margin-left: -$grid*4;
+    bottom: 0;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 0;
+    &__text{
+        opacity: 0.6;
+        letter-spacing: 0.1em;
+        font-weight: 300;
+        margin-bottom: $grid*3;
+        font-family: $brand-primary;
+    }
+    &__line{
+        opacity: 0.8;
+        height: 48px;
+        width: 1px;
+        position: absolute;
+        bottom: 0;
+        left: $grid*4;
+        background: linear-gradient(180deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.4) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 80%);
+        background-size: 200% auto;
+        background-position: 0 100%;
+        animation: scrollGradientAnimation 1.4s linear infinite;
+    }
+}
+
+@keyframes scrollGradientAnimation {
+    0% { background-position: 0 0; }
+	100% { background-position: 0 -200%; }
+}
 
 
 /*------------------------------------------------------------------------
@@ -50,58 +238,120 @@ body{
 ------------------------------------------------------------------------*/
 
 .main-header{
-    margin-left: $grid*4;
-    margin-right: $grid*4;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-top: $grid;
     padding-bottom: $grid*4;
+    z-index: 2000;
 }
 
-
-
-.main-navigation{
-    padding-right: $grid*3;
-    height: $grid*9;
-    background: #ffffff;
-    box-shadow: 0px 16px 0px -8px rgba(255,255,255,0.2);
-    display: flex;
-    ul{
-        margin-left: auto;
-        > li{
-            position: relative;
-            padding: 0 $grid;
-            a{
-                display: inline-flex;
-                align-items: center;
-                height: $grid*9;
-                box-sizing: border-box;
-                color: $nav-text-color;
-                font-size: $font-size-14;
-                padding: $grid*3 $grid*2;
-                font-weight: 400;
-                &:hover{
-                    color: $nav-text-color--active;
-                }
-            }
-            &.current-menu-item{
-                a{
-                    color: $nav-text-color--active;
-                    border-top: $grid/2 solid $brand-primary;
-                    padding-top: $grid*2.5;
-                }
-            }
-        }
-    }
-}
-
-    .main-navigation__logo{
-        height: $grid*9;
-        padding: 0 $grid*2;
-        width: 102px;
+    .sub-menu{
+        padding-left: $grid*4;
+        padding-right: $grid*4;
+        height: $grid*5;
         display: flex;
+        justify-content: flex-end;
         align-items: center;
+        width: 100%;
         box-sizing: border-box;
+        &__item{
+            display: block;
+            padding: $grid $grid*2;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.04rem;
+            color: #fff;
+            opacity: 0.6;
+            &:hover{
+                color: #fff;
+                opacity: 1;
+            }
+        }
     }
 
-        .icon-logo{
-            width: 70px;
-            height: 42.11px;
+
+    .main-menu{
+        padding-right: $grid*3;
+        margin-left: $grid*4;
+        margin-right: $grid*4;
+        height: $grid*9;
+        background: #ffffff;
+        box-shadow: 0px 16px 0px -8px rgba(200,200,200,0.2);
+        display: flex;
+        transition: margin 0.15s $curved-transition, box-shadow 0.15s $curved-transition 0.02s;
+        border-bottom: 1px solid #eee;
+        ul{
+            margin-left: auto;
+            > li{
+                position: relative;
+                padding: 0 $grid;
+                list-style: none;
+                display: inline;
+                a{
+                    display: inline-flex;
+                    align-items: center;
+                    height: $grid*9;
+                    box-sizing: border-box;
+                    color: $nav-text-color;
+                    font-size: $font-size-14;
+                    padding: $grid*2 $grid*2;
+                    font-weight: 400;
+                    &:hover{
+                        color: $nav-text-color--active;
+                    }
+                }
+                &.current-menu-item{
+                    a{
+                        color: $nav-text-color--active;
+                        border-top: $grid/2 solid $brand-primary;
+                        padding-top: $grid*1.5;
+                    }
+                }
+                &.main-menu--cta{
+                    a{
+                        border-top: none;
+                        padding-top: $grid*2;
+                        transition: background 0.15s $curved-transition,
+                                    color 0.15s $curved-transition,
+                                    height 0.15s $curved-transition,
+                                    border-radius 0.15s $curved-transition;
+                    }
+                }
+            }
         }
+        &__logo{
+            height: $grid*9;
+            padding: 0 $grid*2;
+            width: 102px;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+        }
+    }
+
+
+    .main-menu--fixed{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        box-shadow: 0px 8px 0px 0px rgba(200,200,200,0.2);
+    }
+
+    .main-menu--cta-focus{
+        ul{
+            > li.main-menu--cta{
+                a{
+                    height: $grid*5;
+                    color: #fff;
+                    background: $brand-secondary;
+                    border-radius: $grid/2;
+                }
+            }
+        }
+    }
