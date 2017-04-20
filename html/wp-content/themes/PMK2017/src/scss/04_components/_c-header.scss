@@ -8,6 +8,9 @@ Version: 1.0.0
 
 ---------------------------------------------------------------------------*/
 
+body, html{
+    height: 100%;
+}
 
 .intro-gradient{
     height: $grid;
@@ -28,6 +31,97 @@ body{
     height: 42.11px;
 }
 
+.site{
+    width: 100%;
+    height: 100%;
+}
+
+.site__content{
+    top: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+}
+
+
+
+/*------------------------------------------------------------------------
+  Slides
+------------------------------------------------------------------------*/
+
+/*-- Slide Global --*/
+
+.slide{
+    display: flex;
+    padding: $grid*20 0;
+    &__content{
+        width: 100%;
+        max-width: $page-max-width;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: $grid*4;
+    }
+
+        &__hero{
+
+        }
+
+        &__copy{
+            width: 50%;
+            margin-right: 50%;
+            box-sizing: border-box;
+            padding-right: $grid*5;
+            h2{
+
+            }
+
+            p{
+
+            }
+
+        }
+
+    //__content
+
+}
+
+/*-- Slide Type --*/
+
+
+
+/*-- Slide Aesthetic Modifyers --*/
+
+%slide--full{
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+%slide--soft-grad{
+
+}
+
+%slide--white{
+
+}
+
+%slide--gray{
+
+}
+
+%slide--quote-primary{
+
+}
+
+%slide--quote-secondary{
+
+}
+
+%slide--quote-tertiary{
+
+}
+
 
 
 
@@ -35,15 +129,6 @@ body{
   Home Hero
 ------------------------------------------------------------------------*/
 
-body,
-html{
-    height: 100%;
-}
-
-.site{
-    width: 100%;
-    height: 100%;
-}
 
 .home-hero{
     position: fixed;
@@ -179,19 +264,11 @@ html{
         }
 }
 
-.page-wrap{
-    top: 100%;
-    position: absolute;
-    width: 100%;
-    z-index: 1000;
-    background: #fff;
-}
 
 
 /*------------------------------------------------------------------------
   Scroll More
 ------------------------------------------------------------------------*/
-
 
 
 .scroll-more{
@@ -220,7 +297,7 @@ html{
         position: absolute;
         bottom: 0;
         left: $grid*4;
-        background: linear-gradient(180deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.4) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 80%);
+        background: linear-gradient(180deg, rgba(255,255,255,2) 20%, rgba(255,255,255,0.4) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,2) 80%);
         background-size: 200% auto;
         background-position: 0 100%;
         animation: scrollGradientAnimation 1.4s linear infinite;
@@ -237,6 +314,8 @@ html{
   Header
 ------------------------------------------------------------------------*/
 
+
+
 .main-header{
     position: absolute;
     top: 0;
@@ -248,8 +327,8 @@ html{
 }
 
     .sub-menu{
-        padding-left: $grid*4;
-        padding-right: $grid*4;
+        padding-left: $grid*5;
+        padding-right: $grid*5;
         height: $grid*5;
         display: flex;
         justify-content: flex-end;
@@ -275,8 +354,8 @@ html{
 
     .main-menu{
         padding-right: $grid*3;
-        margin-left: $grid*4;
-        margin-right: $grid*4;
+        margin-left: $grid*5;
+        margin-right: $grid*5;
         height: $grid*9;
         background: #ffffff;
         box-shadow: 0px 16px 0px -8px rgba(200,200,200,0.2);
@@ -338,8 +417,8 @@ html{
         top: 0;
         left: 0;
         right: 0;
-        margin-left: 0;
-        margin-right: 0;
+        //margin-left: 0;
+        //margin-right: 0;
         box-shadow: 0px 8px 0px 0px rgba(200,200,200,0.2);
     }
 
@@ -355,3 +434,5 @@ html{
             }
         }
     }
+
+//.main-header

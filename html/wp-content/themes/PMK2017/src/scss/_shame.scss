@@ -10,5 +10,13 @@ Version: 1.0.0
 
 
 body{
-    background: lightblue;
+    background: #fff
+}
+
+
+
+.admin-bar{
+    .main-menu--fixed{
+        top: 32px;
+    }
 }

@@ -2946,6 +2946,9 @@ Version: 1.0.0
 
 
 ---------------------------------------------------------------------------*/
+body, html {
+  height: 100%; }
+
 .intro-gradient {
   height: 8px;
   width: 100%;
@@ -2957,17 +2960,43 @@ Version: 1.0.0
   width: 70px;
   height: 42.11px; }
 
-/*------------------------------------------------------------------------
-  Home Hero
-------------------------------------------------------------------------*/
-body,
-html {
-  height: 100%; }
-
 .site {
   width: 100%;
   height: 100%; }
 
+.site__content {
+  top: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  background: #fff; }
+
+/*------------------------------------------------------------------------
+  Slides
+------------------------------------------------------------------------*/
+/*-- Slide Global --*/
+.slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 160px 0; }
+  .slide__content {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 32px; }
+  .slide__copy {
+    width: 50%;
+    margin-right: 50%;
+    box-sizing: border-box;
+    padding-right: 40px; }
+
+/*-- Slide Type --*/
+/*-- Slide Aesthetic Modifyers --*/
+/*------------------------------------------------------------------------
+  Home Hero
+------------------------------------------------------------------------*/
 .home-hero {
   position: fixed;
   top: 0;
@@ -3097,13 +3126,6 @@ html {
         .home-hero .button--video:hover .icon {
           opacity: 1; }
 
-.page-wrap {
-  top: 100%;
-  position: absolute;
-  width: 100%;
-  z-index: 1000;
-  background: #fff; }
-
 /*------------------------------------------------------------------------
   Scroll More
 ------------------------------------------------------------------------*/
@@ -3132,7 +3154,7 @@ html {
     position: absolute;
     bottom: 0;
     left: 32px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 0.4) 60%, rgba(255, 255, 255, 0) 80%);
+    background: linear-gradient(180deg, white 20%, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 0.4) 60%, white 80%);
     background-size: 200% auto;
     background-position: 0 100%;
     -webkit-animation: scrollGradientAnimation 1.4s linear infinite;
@@ -3163,8 +3185,8 @@ html {
   z-index: 2000; }
 
 .sub-menu {
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 40px;
+  padding-right: 40px;
   height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3192,8 +3214,8 @@ html {
 
 .main-menu {
   padding-right: 24px;
-  margin-left: 32px;
-  margin-right: 32px;
+  margin-left: 40px;
+  margin-right: 40px;
   height: 72px;
   background: #ffffff;
   box-shadow: 0px 16px 0px -8px rgba(200, 200, 200, 0.2);
@@ -3249,8 +3271,6 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  margin-left: 0;
-  margin-right: 0;
   box-shadow: 0px 8px 0px 0px rgba(200, 200, 200, 0.2); }
 
 .main-menu--cta-focus ul > li.main-menu--cta a {
@@ -3281,4 +3301,7 @@ Version: 1.0.0
 
 ---------------------------------------------------------------------------*/
 body {
-  background: lightblue; }
+  background: #fff; }
+
+.admin-bar .main-menu--fixed {
+  top: 32px; }

@@ -69,5 +69,4 @@
 
 				<?php endif; ?>
 
-				<div class="page-wrap">
-					<div id="content" class="site-content">
+				<div class="site__content">

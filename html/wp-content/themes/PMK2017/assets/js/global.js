@@ -55,6 +55,9 @@
 		navigationCtaClass = 'main-menu--cta-focus',
 		currentWindowHeight,
 		navigationOffset,
+        navigationMarginWidth = 40,
+        navigationScrollCap,
+        navigationcurrentMargin,
 
 		$menuScrollDown = $body.find( '.scroll-more' ),
 
@@ -79,7 +82,7 @@
 		menuTop = 0,
 		resizeTimer;
 
-	// Ensure the sticky navigation doesn't cover current focused links.
+	/*
 	$( 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex], [contenteditable]', '.site-content-contain' ).filter( ':visible' ).focus( function() {
 		if ( $navigation.hasClass( 'site-navigation-fixed' ) ) {
 			var windowScrollTop = $( window ).scrollTop(),
@@ -97,11 +100,13 @@
 			}
 		}
 	});
+    */
 
 	// Set properties of navigation.
 	function setNavProps() {
 		navigationOffset = $navigation.offset().top;
 		currentWindowHeight = $( window ).height();
+        navigationScrollCap = navigationOffset + navigationMarginWidth;
 	}
 
 	// Make navigation 'stick'.
@@ -110,6 +115,24 @@
 
 		// Make sure we're not on a mobile screen.
 		//if ( 'none' === $menuToggle.css( 'display' ) ) {
+
+            if( $( window ).scrollTop() < navigationOffset ){
+                $navigation.css({
+                    marginLeft : navigationMarginWidth,
+                    marginRight : navigationMarginWidth
+                });
+            }else if( $( window ).scrollTop() >= navigationOffset && $( window ).scrollTop() < navigationScrollCap ){
+                navigationCurrentMargin = navigationMarginWidth - ($(window).scrollTop() - navigationOffset);
+                $navigation.css({
+                    marginLeft : navigationCurrentMargin,
+                    marginRight : navigationCurrentMargin
+                });
+            }else if( $( window ).scrollTop() > navigationScrollCap ){
+                $navigation.css({
+                    marginLeft : 0,
+                    marginRight : 0
+                });
+            }
 
 
 			if ( $( window ).scrollTop() >= navigationOffset ) {
