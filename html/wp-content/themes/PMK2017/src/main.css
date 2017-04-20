@@ -2971,6 +2971,13 @@ body, html {
   z-index: 1000;
   background: #fff; }
 
+.hr-gradient {
+  width: 128px;
+  height: 8px;
+  background: linear-gradient(90deg, #3A65C7, #3FA9F5);
+  margin: 0;
+  padding: 0; }
+
 /*------------------------------------------------------------------------
   Slides
 ------------------------------------------------------------------------*/
@@ -2979,21 +2986,136 @@ body, html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 160px 0; }
+  padding: 240px 0;
+  background: linear-gradient(120deg, #FFFFFF, #F4F7FA); }
   .slide__content {
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
     box-sizing: border-box;
-    padding: 32px; }
-  .slide__copy {
-    width: 50%;
-    margin-right: 50%;
+    padding: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .slide__hero {
     box-sizing: border-box;
-    padding-right: 40px; }
+    background: #eee;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    height: 300px;
+    margin-left: 32px; }
+  .slide__copy {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 40px;
+    margin-right: 32px; }
 
 /*-- Slide Type --*/
+.slide {
+  font-size: 1.214rem;
+  color: #7A868C; }
+  .slide h2 {
+    font-size: 2.286rem;
+    font-family: "Slate W01", sans-serif;
+    letter-spacing: -0.01em;
+    color: #333E48;
+    margin-top: 0;
+    margin-bottom: 2rem; }
+  .slide p {
+    line-height: 2em;
+    letter-spacing: 0.01em;
+    margin-top: 2.2rem;
+    margin-bottom: 0;
+    font-weight: 200; }
+
 /*-- Slide Aesthetic Modifyers --*/
+.slide--blocks {
+  padding: 240px 0;
+  background: linear-gradient(120deg, #ECF0F4, #F2F6F8); }
+
+.slide--center {
+  background: #fff;
+  text-align: center; }
+  .slide--center .slide__content {
+    display: block; }
+  .slide--center hr {
+    margin: 0 auto; }
+  .slide--center .slide__copy {
+    max-width: 660px;
+    margin: 0 auto; }
+
+.slide--quote {
+  background: linear-gradient(120deg, #68BDFA, #3A65C7);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center; }
+  .slide--quote figure {
+    text-align: center;
+    color: #fff;
+    margin: 48px 0; }
+  .slide--quote hr {
+    background: #fff;
+    opacity: 0.25;
+    padding: 0;
+    height: 4px;
+    width: 120px; }
+  .slide--quote blockquote {
+    font-size: 1.714rem;
+    line-height: 1.6em;
+    margin-bottom: 40px; }
+  .slide--quote footer {
+    margin-top: 36px;
+    font-size: 1.214rem;
+    font-weight: 200;
+    opacity: 0.8; }
+    .slide--quote footer cite {
+      font-size: 1.214rem;
+      font-weight: 200;
+      font-family: "Quasimoda W01", sans-serif; }
+
+.slide--full {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh; }
+
+/*------------------------------------------------------------------------
+  Slide Image Grid
+------------------------------------------------------------------------*/
+.slide__grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1120px;
+  margin: 128px auto 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.slide__grid-cell {
+  padding: 8px;
+  box-sizing: border-box; }
+  .slide__grid-cell > .inner {
+    background: #F4F7FA;
+    width: 100%;
+    height: 100%; }
+  .slide__grid-cell--half {
+    width: 50%;
+    height: 288px; }
+  .slide__grid-cell--full {
+    width: 100%;
+    height: 472px; }
+
 /*------------------------------------------------------------------------
   Home Hero
 ------------------------------------------------------------------------*/

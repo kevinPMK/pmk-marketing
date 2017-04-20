@@ -21,7 +21,7 @@
 	        windowHeight = $(window).height();
 	        viewportBottom = windowHeight+viewportTop;
 
-	        if($(window).width())
+
 
 	        $('[data-parallax="true"]').each(function(){
 	            distance = viewportTop * $(this).attr('data-speed');

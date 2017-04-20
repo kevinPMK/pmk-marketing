@@ -10,15 +10,55 @@ get_header();
 
 	<main id="main" class="site-main" role="main">
 
-		<section class="slide slide--full">
+
+
+		<section class="slide">
 			<div class="slide__content">
-				<div class="slide__hero">
-				</div>
 				<div class="slide__copy">
 					<h2>Stress Free Dismissal</h2>
-					<hr />
+					<hr class="hr-gradient" />
 					<p>Phasellus vestibulum porttitor commodo. Praesent ante magna, mattis placerat augue faucibus, bibendum pellentesque eros. Sed feugiat, elit porta congue eleifend, nunc arcu congue felis, a finibus metus magna.</p>
 				</div>
+				<div class="slide__hero">
+				</div>
+			</div>
+		</section>
+
+		<section class="slide slide--center">
+			<div class="slide__content">
+				<div class="slide__copy">
+					<h2>A Sophisticated and Secure Software Suite</h2>
+					<hr class="hr-gradient" />
+					<p>Etiam condimentum leo urna, a laoreet odio sodales ut. Morbi vel tellus at velit mattis ultricies et at dui. Morbi ex ligula, aliquam eu velit id, dictum gravida ipsum. Duis diam dolor, pellentesque vel fermentum sed, posuere eget lectus.</p>
+				</div>
+				<div class="slide__grid">
+					<div class="slide__grid-cell slide__grid-cell--half">
+						<div class="inner"></div>
+					</div>
+					<div class="slide__grid-cell slide__grid-cell--half">
+						<div class="inner"></div>
+					</div>
+					<div class="slide__grid-cell slide__grid-cell--full">
+						<div class="inner"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide slide--blocks">
+		</section>
+
+		<section class="slide slide--quote">
+			<div class="slide__content">
+				<figure>
+					<blockquote>
+						PikMyKid is the greatest thing I’ve ever used. Whomever designed it deserves a giant briefcase of money.
+					</blockquote>
+					<hr />
+					<footer>
+						— <cite class="author">Kevin Mercier</cite>, <cite class="company">Superintendent of Hillsborough County</cite>
+					</footer>
+				</figure>
 			</div>
 		</section>
 
