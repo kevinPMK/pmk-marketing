@@ -5,6 +5,35 @@
 	//KDM STUFF
 
 
+    //Animate from top
+
+
+
+    $('.slide').waypoint (function(){
+        $(this.element).addClass('animated');
+    }, {
+        triggerOnce: true,
+        offset: '80%'
+    });
+
+    /*
+    var inview = new Waypoint.Inview({
+      element: $('.slide'),
+      enter: function(direction) {
+        console.log('Enter triggered with direction ' + direction)
+      },
+      entered: function(direction) {
+        console.log('Entered triggered with direction ' + direction)
+      },
+      exit: function(direction) {
+        console.log('Exit triggered with direction ' + direction)
+      },
+      exited: function(direction) {
+        console.log('Exited triggered with direction ' + direction)
+      }
+    })
+    */
+
 
     function draw() {
         requestAnimationFrame(draw);
@@ -265,7 +294,7 @@
 
 			$menuScrollDown.click( function( e ) {
 				e.preventDefault();
-				$( window ).scrollTo( '#primary', {
+				$( window ).scrollTo( '.site__content', {
 					duration: 600,
 					offset: { top: menuTop - navigationOuterHeight }
 				});
