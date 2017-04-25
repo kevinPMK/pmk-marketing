@@ -50,8 +50,8 @@
 						<div class="home-hero__lightstreak"></div>
 						<div class="home-hero__content" data-parallax="true" data-speed="0.2" data-direction="up">
 							<h1><span>Safe and Efficient</span> Student Dismissal</h1>
-							<div class="button-wrap">
-								<a class="button button--video" type="button" href="#">
+							<div class="cta-buttons">
+								<a class="button button--secondary" type="button" href="#">
 									Watch Video
 									<?php echo pmk_get_svg( array( 'icon' => '32-play', 'size' => '32' ) );?>
 								</a>
