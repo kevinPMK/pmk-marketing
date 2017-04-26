@@ -38,6 +38,7 @@ function pmk_setup() {
 	register_nav_menus( array(
 		'top'    => __( 'Main Menu', 'pmk' ),
 		'sub'    => __( 'Sub Menu', 'pmk' ),
+		'footer'    => __( 'Footer Menu', 'pmk' ),
 		'social' => __( 'Social Links Menu', 'pmk' ),
 	) );
 
@@ -211,6 +212,9 @@ function pmk_scripts() {
 
 	//Load Waypoints.
 	wp_enqueue_script( 'pmk-waypoints', get_theme_file_uri( '/src/js/jquery.waypoints.min.js' ), array( 'jquery' ), '1.0', true );
+
+	//Introduce Google Parallax
+	wp_enqueue_script( 'pmk-parallax', get_theme_file_uri( '/src/js/parallax.js' ), array(), '1.0', true );
 
 	//Load default twentyseventeen scripts.
 	wp_enqueue_script( 'pmk-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );

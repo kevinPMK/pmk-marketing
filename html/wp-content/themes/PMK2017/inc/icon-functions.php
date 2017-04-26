@@ -105,7 +105,7 @@ function pmk_get_svg( $args = array() ) {
 		$svg .= '<span class="svg-fallback icon-' . esc_attr( $args['icon'] ) . '"></span>';
 	}
 
-	$svg .= '</svg>';
+	$svg .= "</svg>\n";
 
 	return $svg;
 

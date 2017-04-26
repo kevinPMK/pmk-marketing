@@ -33,8 +33,6 @@
 					<?php get_template_part( 'template-parts/navigation/navigation', 'main' ); ?>
 				</header>
 
-
-
 				<?php if ( has_post_thumbnail() && ( is_single() || ( is_page() && ! pmk_is_frontpage() ) ) ) : ?>
 
 					<div class="single-featured-image-header">

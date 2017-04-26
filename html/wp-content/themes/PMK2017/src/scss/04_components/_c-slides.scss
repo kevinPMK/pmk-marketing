@@ -170,6 +170,13 @@ Version: 1.0.0
 }
 
 
+
+/*------------------------------------------------------------------------
+  Image Grid Component
+------------------------------------------------------------------------*/
+
+
+
 .slide__image-grid{
     display: flex;
     max-width: $grid*140;
@@ -190,12 +197,16 @@ Version: 1.0.0
         &--half{
             width: 50%;
             //temp
-            height: 288px;
+            height: 400px;
         }
         &--full{
             width: 100%;
             //temp
-            height: 472px;
+            height: 600px;
+        }
+        &--quarter{
+            width: 25%;
+            height: 264px;
         }
     }
 
@@ -257,25 +268,15 @@ Version: 1.0.0
 //.slide--mini
 
 
+
+
 /*------------------------------------------------------------------------
-  Mini Grid Section
+  Quote Section
 ------------------------------------------------------------------------*/
 
 
-/*-- Slide Aesthetic Modifyers --*/
-
-.slide--blocks{
-    padding: $grid*30 0;
-    background: linear-gradient(120deg, #ECF0F4, #F2F6F8);
-}
-
-@keyframes movingBg{
-    0%{ background-position: 0px 0px, center, center }
-    100%{ background-position: 300px 300px, center, center }
-}
-
-
 .slide-quote{
+    border: $grid*4 solid rgba(255,255,255,0.2);
     background-image: url('images/food.png'), url('images/noise.png'), linear-gradient(120deg, #68BDFA, #3A65C7 );
     background-size:  300px 250px 250px, cover;
 	background-attachment: fixed;
@@ -336,55 +337,34 @@ Version: 1.0.0
     }
 }
 
-.slide--quote-primary{
 
+
+@keyframes movingBg{
+    0%{ background-position: 0px 0px, center, center }
+    100%{ background-position: 300px 300px, center, center }
 }
 
-.slide--quote-secondary{
 
-}
 
-.slide--quote-tertiary{
-
-}
-
-.slide--full{
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-
-%slide--soft-grad{
-
-}
-
-%slide--white{
-
-}
-
-%slide--gray{
-
-}
-
-.slide{
-
-}
 
 
 /*------------------------------------------------------------------------
   CTA Section
 ------------------------------------------------------------------------*/
 
-
 .slide-cta{
-    background: #28304F;
+    background: url('images/test-cta-photo.jpg') center center no-repeat #28304F;
+    background-size: cover;
     text-align: center;
+    display: flex;
+    align-items: center;
+    height: 90vh;
     h2{
         color: #fff;
         font-size: $font-size-64;
     }
     p{
-        color: #8697D8;
+        color: #b6c0e4;
         font-size: $font-size-20;
     }
 }
@@ -393,6 +373,8 @@ Version: 1.0.0
         margin: 0 auto;
         padding: 0 $grid*4;
     }
+
+//.slide-cta
 
 
 
@@ -468,7 +450,7 @@ Version: 1.0.0
         transition: all 0.7s $curved-transition 0.5s;
         transform: translateY(20px);
         opacity: 0;
-        @for $i from 1 through 3 {
+        @for $i from 1 through 15 {
             &:nth-child(#{$i}) {
                 transition-delay: (0.5s + (0.2s * $i));
             }
@@ -572,23 +554,23 @@ Version: 1.0.0
 .slide-cta{
     h2{
         opacity: 0;
-        transition: all 0.7s $curved-transition 0.3s;
+        transition: opacity 0.7s $curved-transition 0.3s;
     }
     p{
         opacity: 0;
-        transition: all 0.7s $curved-transition 0.4s;
+        transition: opacity 0.7s $curved-transition 0.4s;
     }
     .cta-buttons{
         opacity: 0;
-        transition: all 0.7s $curved-transition 0.5s;
+        transition: opacity 0.7s $curved-transition 0.5s;
     }
     .button--secondary{
         transform: translate(-20px, 0px);
-        transition: all 0.7s $curved-transition 0.5s;
+        transition: transform 0.7s $curved-transition 0.5s, padding 0.15s $curved-transition;
     }
     .button--cta{
         transform: translate(20px, 0px);
-        transition: all 0.7s $curved-transition 0.5s;
+        transition: transform 0.7s $curved-transition 0.5s, padding 0.15s $curved-transition;
     }
     &.animated{
         h2{

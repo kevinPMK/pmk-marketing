@@ -297,44 +297,75 @@ hr{
         border-bottom: 1px solid #eee;
         ul{
             margin-left: auto;
+            height: $grid*9;
+            display: flex;
+            align-items: center;
             > li{
                 position: relative;
-                padding: 0 $grid;
                 list-style: none;
+                margin: 0 $grid;
+                vertical-align: top;
                 display: inline;
+                align-items: center;
+                vertical-align: top;
                 a{
                     display: inline-flex;
+                    height: $grid*5;
                     align-items: center;
-                    height: $grid*9;
                     box-sizing: border-box;
                     color: $nav-text-color;
                     font-size: $font-size-14;
-                    padding: $grid*2 $grid*2;
+                    padding: $grid/2 $grid*2;
                     font-weight: 400;
+                    position: relative;
+                    &:before{
+                        content: '';
+                        height: 6px;
+                        width: 100%;
+                        background: linear-gradient(90deg, #3A65C7, #3FA9F5);
+                        position: absolute;
+                        transform: scaleX(0.5);
+                        bottom: 0;
+                        left: 0;
+                        opacity: 0;
+                        transition: transform 0.15s $curved-transition, opacity 0.15s $curved-transition;
+                    }
                     &:hover{
                         color: $nav-text-color--active;
+                        &:before{
+                            transform: scaleX(1);
+                            opacity: 1;
+                        }
                     }
                 }
                 &.current-menu-item{
                     a{
-                        color: $nav-text-color--active;
-                        border-top: $grid/2 solid $brand-primary;
-                        padding-top: $grid*1.5;
+                        color: $brand-primary;
                     }
                 }
                 &.main-menu--cta{
                     a{
-                        border-top: none;
-                        padding-top: $grid*2;
-                        transition: background 0.15s $curved-transition,
-                                    color 0.15s $curved-transition,
-                                    height 0.15s $curved-transition,
-                                    border-radius 0.15s $curved-transition;
+                        &:after{
+                            transform: scaleX(0.5);
+                            opacity: 0;
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            border: 2px solid $brand-secondary;
+                            transition: opacity 0.15s $curved-transition,
+                                        transform 0.15s $curved-transition,
+                                        color 0.15s $curved-transition;
+                        }
                     }
                 }
             }
         }
         &__logo{
+            margin-left: $grid;
+            margin-right: $grid;
             height: $grid*9;
             padding: 0 $grid*2;
             width: 102px;
@@ -350,21 +381,34 @@ hr{
         top: 0;
         left: 0;
         right: 0;
-        //margin-left: 0;
-        //margin-right: 0;
         box-shadow: 0px 8px 0px 0px rgba(200,200,200,0.2);
     }
 
+
     .main-menu--cta-focus{
         ul{
-            > li.main-menu--cta{
+            li.main-menu--cta{
                 a{
-                    height: $grid*5;
-                    color: #fff;
-                    background: $brand-secondary;
+                    color: $brand-secondary;
+                    &:after{
+                        z-index: -1;
+                        opacity: 1;
+                        transform: scaleX(1);
+                    }
+                    &:before{
+                        display: none;
+                    }
+                    &:hover{
+                        color: $brand-primary;
+                        &:after{
+                            border-color: $brand-primary;
+                        }
+                    }
                 }
             }
         }
     }
+
+
 
 //.main-header

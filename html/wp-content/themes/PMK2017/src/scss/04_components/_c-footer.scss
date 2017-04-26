@@ -1,0 +1,107 @@
+/*---------------------------------------------------------------------------
+
+
+Footer
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+.footer{
+    background: #fff;
+    font-size: $font-size-14;
+    font-weight: 200;
+    color: #95989A;
+}
+
+
+/*------------------------------------------------------------------------
+  Primary Footer
+------------------------------------------------------------------------*/
+
+.footer__primary{
+    max-width: $page-max-width;
+    box-sizing: border-box;
+    padding: $grid*14 $grid*4 0 $grid*4;
+    margin: 0 auto;
+    >.inner{
+        border-bottom: 1px solid #EDEDED;
+        display: flex;
+        padding-bottom: $grid*8;
+    }
+    a{
+        color: #95989A;
+        &:hover{
+            color: $brand-primary;
+        }
+    }
+}
+
+    .footer__logo{
+        margin-right: $grid*30;
+        .icon{
+            width: 144px;
+            height: 86.63px;
+        }
+    }
+
+    .footer-menu{
+        display: flex;
+        flex: 1;
+    }
+
+        .footer-menu__block{
+            flex: 1;
+            padding: 0 $grid*5;
+            box-sizing: border-box;
+        }
+
+            .footer-menu__heading{
+                font-size: $font-size-14;
+                margin: 0px 0px $grid*2 0px;
+                font-weight: 600;
+                font-family: $primary-font;
+                letter-spacing: 0.05rem;
+                color: #787c7f;
+                text-transform: uppercase;
+            }
+
+            .footer-menu__list{
+                li{
+                    margin-top: $grid;
+                    list-style: none;
+                }
+            }
+
+/*------------------------------------------------------------------------
+  Secondary Footer
+------------------------------------------------------------------------*/
+
+
+.footer__copyright{
+    max-width: $page-max-width;
+    box-sizing: border-box;
+    padding: $grid*8 $grid*4 $grid*14 $grid*4;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    a{
+        color: #787c7f;
+        &:hover{
+            color: $brand-primary;
+        }
+    }
+}
+
+    .footer__copyright-text{
+        line-height: 1.75rem;
+    }
+
+    .footer-social-menu{
+        margin-left: auto;
+    }
+
+        .footer-social-menu__link{
+            margin-left: $grid;
+        }
