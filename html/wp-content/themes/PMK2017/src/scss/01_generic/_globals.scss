@@ -38,6 +38,10 @@ html{
   font-weight: 300;
 }
 
+img{
+    vertical-align: top;
+}
+
 @include media('<sm') {
   html{
     font-size: 13px;

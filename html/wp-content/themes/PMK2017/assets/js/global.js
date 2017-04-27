@@ -9,7 +9,7 @@
 
 
 
-    $('.slide').waypoint (function(){
+    $('.slide, .feature-grid').waypoint (function(){
         $(this.element).addClass('animated');
     }, {
         triggerOnce: true,

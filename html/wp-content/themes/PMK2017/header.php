@@ -24,8 +24,6 @@
 				<div class="intro-gradient">
 				</div>
 
-
-
 				<header class="main-header" role="banner">
 					<?php if ( has_nav_menu( 'sub' ) ) : ?>
 						<?php get_template_part( 'template-parts/navigation/navigation', 'sub' ); ?>
@@ -35,14 +33,25 @@
 
 				<?php if ( has_post_thumbnail() && ( is_single() || ( is_page() && ! pmk_is_frontpage() ) ) ) : ?>
 
-					<div class="single-featured-image-header">
-						<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
+					<div class="sub-page-hero">
+						<?php the_post_thumbnail( 'pmk-featured-image' ); ?>
+						<div class="sub-page-hero__haze"></div>
+						<div class="sub-page-hero__gradient"></div>
+						<div class="sub-page-hero__content" data-parallax="true" data-speed="0.2" data-direction="up">
+							<?php if ( $post->post_parent ) : ?>
+								<a class="sub-page-hero__parent-page-link" href="<?php echo get_permalink( $post->post_parent ); ?>">
+									<?php echo get_the_title( $post->post_parent ); ?>
+								</a>
+							<?php endif; ?>
+							<h1><?php the_title(); ?></h1>
+							<p>Est risus tristique quam, eu hendrerit urna erat commodo risus. Vestibulum sed interdum lacus, at vestibulum dolor. Suspendisse potenti.</p>
+						</div>
 					</div>
 
 				<?php elseif(has_post_thumbnail() && pmk_is_frontpage()) : ?>
 
 					<section class="home-hero" data-parallax="true" data-speed="0.1" data-direction="up">
-						<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
+						<?php the_post_thumbnail( 'pmk-featured-image' ); ?>
 						<div class="home-hero__haze"></div>
 						<div class="home-hero__gradient"></div>
 						<div class="home-hero__lightstreak"></div>
@@ -67,4 +76,6 @@
 
 				<?php endif; ?>
 
-				<div class="site__content">
+
+
+				<div class="site__content<?php if( !pmk_is_frontpage() ){  echo ' site__content--sub'; } ?>">

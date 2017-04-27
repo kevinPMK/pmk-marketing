@@ -86,7 +86,7 @@ get_header();
 					<h6>For the Parents</h6>
 					<h2>Peace of Mind</h2>
 					<p>Phasellus vestibulum porttitor commodo. Praesent ante magna, mattis placerat augue faucibus, bibendum pellentesque eros. Sed feugiat, elit porta congue eleifend, nunc arcu congue felis, a finibus metus magna.</p>
-					<a class="slide__learn-more">Learn More</a>
+					<a class="slide__learn-more button--learn-more">Learn More</a>
 				</div>
 				<div class="slide__hero">
 				</div>
@@ -115,7 +115,7 @@ get_header();
 					<h6>For the Teachers</h6>
 					<h2>Less Chaos</h2>
 					<p>Phasellus vestibulum porttitor commodo. Praesent ante magna, mattis placerat augue faucibus, bibendum pellentesque eros. Sed feugiat, elit porta congue eleifend, nunc arcu congue felis, a finibus metus magna.</p>
-					<a class="slide__learn-more">Learn More</a>
+					<a class="slide__learn-more button--learn-more">Learn More</a>
 				</div>
 				<div class="slide__hero">
 				</div>
@@ -144,7 +144,7 @@ get_header();
 					<h6>For the Administrators</h6>
 					<h2>Flawless Orginazation</h2>
 					<p>Phasellus vestibulum porttitor commodo. Praesent ante magna, mattis placerat augue faucibus, bibendum pellentesque eros. Sed feugiat, elit porta congue eleifend, nunc arcu congue felis, a finibus metus magna.</p>
-					<a class="slide__learn-more">Learn More</a>
+					<a class="slide__learn-more button--learn-more">Learn More</a>
 				</div>
 				<div class="slide__hero">
 				</div>
@@ -204,57 +204,8 @@ get_header();
 		</section>
 
 
-		<section class="slide slide-cta">
-			<div class="slide-cta__content">
-				<h2>Join us Today!</h2>
-				<p>PikMyKid gives you the Dismissal tools to ensure your kids are safe and your parents are happy.</p>
-				<div class="cta-buttons">
-					<a class="button button--secondary" type="button" href="#">
-						Contact Us
-						<?php echo pmk_get_svg( array( 'icon' => '32-contact', 'size' => '32' ) );?>
-					</a>
-					<a class="button button--cta" type="button" href="#">
-						Request Demo
-						<?php echo pmk_get_svg( array( 'icon' => '32-rarrow', 'size' => '32' ) );?>
-					</a>
-				</div>
-			</div>
-		</section>
 
-		<footer class="footer">
-			<div class="footer__primary">
-				<div class="inner">
-					<a class="footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<?php echo pmk_get_svg( array( 'icon' => 'logo' ) );?>
-					</a>
-					<?php wp_nav_menu( array(
-						'menu_id' => 'footer-menu',
-				 		'container'      => false,
-						'theme_location' => 'footer',
-						'items_wrap' => '<nav id="%1$s" class="%1$s">%3$s</nav>',
-						'walker' => new Footer_Menu_Walker
-					) ); ?>
-				</div>
-			</div>
-			<div class="footer__copyright">
-				<div class="footer__copyright-text">
-					Copyright &copy; PikMyKid. 2015-2017. 5115 West Memorial Highway, Tampa Florida 33232. <br>
-					Message us at <a>hello@pikmykid.com</a> or give us a call at <a>+1 (813) 123-1234.</a><br>
-					View our Terms of Service or Privacy Policy.
-				</div>
-				<div class="footer-social-menu">
-					<a alt="Facebook" class="footer-social-menu__link">
-						<?php echo pmk_get_svg( array( 'icon' => '32-facebook', 'size' => '32' ) );?>
-					</a>
-					<a alt="Twitter" class="footer-social-menu__link">
-						<?php echo pmk_get_svg( array( 'icon' => '32-twitter', 'size' => '32' ) );?>
-					</a>
-					<a alt="Instagram" class="footer-social-menu__link">
-						<?php echo pmk_get_svg( array( 'icon' => '32-instagram', 'size' => '32' ) );?>
-					</a>
-				</div>
-			</div>
-		</footer>
+
 
 		<?php
 

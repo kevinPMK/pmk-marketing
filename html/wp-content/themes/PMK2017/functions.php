@@ -28,7 +28,7 @@ function pmk_setup() {
 	//Post Thumbnail Support
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'twentyseventeen-featured-image', 2000, 1200, true );
+	add_image_size( 'pmk-featured-image', 2000, 1200, true );
 	add_image_size( 'twentyseventeen-thumbnail-avatar', 100, 100, true );
 
 	//Set the default content width.
@@ -124,27 +124,8 @@ function twentyseventeen_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'twentyseventeen' ),
-		'id'            => 'sidebar-2',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 2', 'twentyseventeen' ),
-		'id'            => 'sidebar-3',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
 }
+
 add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
 
 /*-- EXCERPT UPDATE - Replace [...] with a read more link --*/
