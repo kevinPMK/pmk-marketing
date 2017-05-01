@@ -22,7 +22,8 @@ Version: 1.0.0
 
 /* Queries, Built by http://include-media.com/#features */
 $breakpoints: (
-  xs: 500px,
+  xxs: 480px,
+  xs: 600px,
   sm: 800px,
   md: 1024px,
   lg: 1400px,
@@ -35,6 +36,8 @@ $base-font-size: 16px;
 
 $font-size-12: 0.75rem;
 $font-size-14: 0.875rem;
+$font-size-15: 0.9375rem;
+$font-size-default: 1rem;
 $font-size-17: 1.0625rem;
 $font-size-18: 1.125rem;
 $font-size-20: 1.25rem;
@@ -43,6 +46,7 @@ $font-size-32: 2rem;
 $font-size-40: 2.5rem;
 $font-size-48: 3rem;
 $font-size-64: 4rem;
+$font-size-96: 6rem;
 
 $header-height: $grid*8;
 $menu-width: $grid*28;
@@ -66,7 +70,7 @@ $brand-tertiary-burn:    #D69E1C;
 
 
 $nav-text-color: #999999;
-$nav-text-color--active: #666666;
+$nav-text-color--hover: #666666;
 
 $copy-title-color: #333E48;
 $copy-content-color: #7A868C;

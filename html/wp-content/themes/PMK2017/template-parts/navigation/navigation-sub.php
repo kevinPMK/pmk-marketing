@@ -6,7 +6,7 @@
 
 ?>
 
-<nav class="sub-menu" role="navigation" aria-label="<?php _e( 'Sub Menu', 'pmk' ); ?>">
+<nav class="sub-menu" role="navigation" aria-label="Sub Menu">
 
 	<?php wp_nav_menu( array(
  		'container'      => false,

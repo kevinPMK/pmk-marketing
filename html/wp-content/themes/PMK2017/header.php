@@ -25,10 +25,20 @@
 				</div>
 
 				<header class="main-header" role="banner">
-					<?php if ( has_nav_menu( 'sub' ) ) : ?>
-						<?php get_template_part( 'template-parts/navigation/navigation', 'sub' ); ?>
-					<?php endif; ?>
-					<?php get_template_part( 'template-parts/navigation/navigation', 'main' ); ?>
+					<?php
+						if ( has_nav_menu( 'sub' ) ){
+							get_template_part( 'template-parts/navigation/navigation', 'sub' );
+						}
+						if( has_nav_menu( 'top' ) ){
+							get_template_part( 'template-parts/navigation/navigation', 'main' );
+							get_template_part( 'template-parts/navigation/navigation', 'mobile' );
+						}
+					?>
+					<button type="button" class="mobile-menu-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Navigation">
+						<div class="bar bar-1"></div>
+						<div class="bar bar-2"></div>
+						<div class="bar bar-3"></div>
+					</button>
 				</header>
 
 				<?php if ( has_post_thumbnail() && ( is_single() || ( is_page() && ! pmk_is_frontpage() ) ) ) : ?>

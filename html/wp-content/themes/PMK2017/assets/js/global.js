@@ -16,23 +16,18 @@
         offset: '80%'
     });
 
-    /*
-    var inview = new Waypoint.Inview({
-      element: $('.slide'),
-      enter: function(direction) {
-        console.log('Enter triggered with direction ' + direction)
-      },
-      entered: function(direction) {
-        console.log('Entered triggered with direction ' + direction)
-      },
-      exit: function(direction) {
-        console.log('Exit triggered with direction ' + direction)
-      },
-      exited: function(direction) {
-        console.log('Exited triggered with direction ' + direction)
-      }
-    })
-    */
+    /*-- Toggle Mobile Menu --*/
+
+    var $button = $('.mobile-menu-toggle');
+    var $menu = $('.mobile-menu');
+    var isMenuOpen = false;
+
+    $button.on('click', function () {
+        isMenuOpen = !isMenuOpen;
+        $menu.toggleClass('active');
+        $('body').toggleClass('scroll-locked');
+        $button.attr('aria-expanded', isMenuOpen).toggleClass('active');
+    });
 
 
     function draw() {
@@ -80,7 +75,9 @@
 
 		//USED
 		$navigation = $body.find( '.main-menu' ),
+		$mobileToggle = $body.find( '.mobile-menu-toggle' ),
 		navigationFixedClass = 'main-menu--fixed',
+        mobileToggleFixedClass = 'mobile-menu-toggle--fixed',
 		navigationCtaClass = 'main-menu--cta-focus',
 		currentWindowHeight,
 		navigationOffset,
@@ -166,8 +163,10 @@
 
 			if ( $( window ).scrollTop() >= navigationOffset ) {
 				$navigation.addClass( navigationFixedClass );
+                $mobileToggle.addClass( mobileToggleFixedClass );
 			} else {
 				$navigation.removeClass( navigationFixedClass );
+                $mobileToggle.removeClass( mobileToggleFixedClass );
 			}
 
 			if ( $( window ).scrollTop() >= currentWindowHeight ) {

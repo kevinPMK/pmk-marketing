@@ -1,0 +1,253 @@
+/*---------------------------------------------------------------------------
+
+
+Home Hero
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------
+  Home Hero
+------------------------------------------------------------------------*/
+
+
+.home-hero{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        vertical-align: top;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    &__haze{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: #034afd;
+        opacity: 0.45;
+    }
+    &__gradient{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(40,48,79,0) 0%, rgba(40,48,79,0.9) 100%);
+    }
+    &__lightstreak{
+        width: 800px;
+        height: 200%;
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        background: rgba(255,255,255,0.03);
+        transform: translate(-50%, -50%) rotate(30deg);
+    }
+    &__content{
+        z-index: 1000;
+        text-align: center;
+        width: 100%;
+        max-width: $grid*128;
+        h1{
+            padding: 0 $grid*6;
+            font-family: $header-font;
+            font-size: $font-size-96;
+            letter-spacing: -0.02em;
+            margin: 0;
+            span{
+                font-family: $primary-font;
+                display: block;
+                text-transform: uppercase;
+                letter-spacing: 0.5em;
+                font-size: $font-size-20;
+                display: block;
+                font-weight: 300;
+                opacity: 0.7;
+            }
+        }
+        h2{
+            font-weight: 300;
+            font-size: 18px;
+            margin: 0;
+        }
+    }
+}
+
+
+.cta-buttons{
+    margin-top: $grid*4;
+    .button{
+        box-sizing: border-box;
+        margin: 0px $grid;
+        width: $grid*28;
+        height: $grid*7;
+        font-size: $font-size-14;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 300;
+        transition: padding 0.15s $curved-transition;
+        .icon{
+            position: relative;
+            margin-left: 5px;
+            margin-right: -12px;
+            margin-top: -1px;
+            transition: margin 0.15s $curved-transition, opacity 0.15s $curved-transition;
+        }
+        &:hover{
+            padding-left: 5px;
+            .icon{
+                margin-left: 10px;
+            }
+        }
+        &--cta{
+            background: $brand-secondary;
+            border: 2px solid $brand-secondary;
+            &:hover{
+                background: $brand-primary;
+                border-color: $brand-primary;
+            }
+        }
+        &--secondary{
+            border: 2px solid $brand-secondary;
+            .icon{
+                opacity: 0.6;
+            }
+            &:hover{
+                border-color: $brand-primary;
+                background: rgba(63,169,245,0.1);
+                .icon{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+@include media('<md') {
+    .home-hero__content{
+        h1{
+            font-size: 9.1vw;
+            span{
+                font-size: 1.8vw;
+            }
+        }
+    }
+    .cta-buttons{
+        margin-top: 2.4vw;
+        .button{
+            height: $grid*6;
+            width: $grid*26;
+        }
+    }
+}
+
+@include media('<sm') {
+    .home-hero__content{
+        h1{
+            font-size: 54px;
+            padding: 0 $grid*2;
+            span{
+                font-size: 10px;
+            }
+        }
+    }
+    .cta-buttons{
+        margin-top: $grid*3;
+        .button{
+            display: flex;
+            align-items: center;
+            margin: $grid auto;
+            &--secondary{
+                border-color: transparent;
+            }
+        }
+    }
+}
+
+@include media('<xxs') {
+    .home-hero__content{
+        h1{
+            font-size: 42px;
+        }
+    }
+}
+
+
+
+
+
+
+/*------------------------------------------------------------------------
+  Scroll More
+------------------------------------------------------------------------*/
+
+
+.scroll-more{
+    width: $grid*8;
+    height: $grid*12;
+    padding-right: 1px;
+    position: absolute;
+    left: 50%;
+    margin-left: -$grid*4;
+    bottom: $grid*3;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 0;
+    &__text{
+        opacity: 0.6;
+        letter-spacing: 0.1em;
+        font-weight: 300;
+        margin-bottom: $grid*3;
+        font-family: $brand-primary;
+    }
+    &__line{
+        opacity: 0.8;
+        height: 32px;
+        width: 1px;
+        position: absolute;
+        bottom: 0;
+        left: $grid*4;
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0px, rgba(255,255,255,0) 32px, rgba(255,255,255,1) 33px, rgba(255,255,255,1) 64px);
+        background-size: 200% auto;
+        background-position: 0 100%;
+        animation: scrollGradientAnimation 1.4s ease-in-out infinite;
+    }
+}
+
+@keyframes scrollGradientAnimation {
+    0% { background-position: 0 0; }
+	100% { background-position: 0 -200%; }
+}
+
+@include media('<md') {
+    .scroll-more{
+        display: none;
+    }
+}

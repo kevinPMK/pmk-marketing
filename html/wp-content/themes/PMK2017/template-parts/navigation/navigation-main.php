@@ -6,7 +6,7 @@
 
 ?>
 
-<nav class="main-menu" role="navigation" aria-label="<?php _e( 'Top Menu', 'twentyseventeen' ); ?>">
+<nav class="main-menu" role="navigation" aria-label="Main Menu">
 	<a class="main-menu__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<?php echo pmk_get_svg( array( 'icon' => 'logo' ) );?>
 	</a>

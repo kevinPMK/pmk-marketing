@@ -30,6 +30,11 @@ html{
   padding: 0px;
   margin: 0px;
   min-width: 320px;
+  height: 100%;
+}
+
+body.scroll-locked{
+    overflow: hidden;
 }
 
 html{
@@ -42,9 +47,9 @@ img{
     vertical-align: top;
 }
 
-@include media('<sm') {
+@include media('<md') {
   html{
-    font-size: 13px;
+    font-size: 15px;
   }
 }
 
@@ -165,4 +170,26 @@ svg{
 
 .text-darken{
     color: #697277;
+}
+
+
+/*------------------------------------------------------------------------
+  Site Modifyer
+------------------------------------------------------------------------*/
+
+.site{
+    width: 100%;
+    height: 100%;
+}
+
+.site__content{
+    box-shadow: 0px -24px 128px rgba(27,79,132,0.3);
+    top: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+    &--sub{
+        top: 672px;
+    }
 }

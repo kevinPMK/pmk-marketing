@@ -8,9 +8,8 @@ Version: 1.0.0
 
 ---------------------------------------------------------------------------*/
 
-body, html{
-    height: 100%;
-}
+
+
 
 .intro-gradient{
     height: $grid;
@@ -18,351 +17,6 @@ body, html{
     background: linear-gradient( 90deg, $brand-secondary, $brand-primary, $brand-tertiary );
     position: relative;
     z-index: 1000;
-}
-
-.icon-logo{
-    width: 70px;
-    height: 42.11px;
-}
-
-.site{
-    width: 100%;
-    height: 100%;
-}
-
-.site__content{
-    box-shadow: 0px -24px 128px rgba(27,79,132,0.3);
-    top: 100%;
-    position: absolute;
-    width: 100%;
-    z-index: 1000;
-    background: #fff;
-    &--sub{
-        top: 672px;
-    }
-}
-
-hr{
-
-}
-
-
-.hr-gradient{
-    width: $grid*16;
-    height: $grid;
-    background: linear-gradient(90deg, #3A65C7, #3FA9F5);
-    margin: 0;
-    padding: 0;
-    margin-bottom: 2rem;
-    margin-top: 1.9rem;
-}
-
-
-
-/*------------------------------------------------------------------------
-  Home Hero
-------------------------------------------------------------------------*/
-
-
-.home-hero{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    color: #fff;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img{
-        vertical-align: top;
-        object-fit: cover;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: auto;
-        height: auto;
-        min-width: 100%;
-        min-height: 100%;
-    }
-    &__haze{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: #034afd;
-        opacity: 0.45;
-    }
-    &__gradient{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: linear-gradient(rgba(40,48,79,0) 0%, rgba(40,48,79,0.9) 100%);
-    }
-    &__lightstreak{
-        width: 800px;
-        height: 200%;
-        position: absolute;
-        top: 50%;
-        left: 60%;
-        background: rgba(255,255,255,0.03);
-        transform: translate(-50%, -50%) rotate(30deg);
-    }
-    &__content{
-        z-index: 1000;
-        text-align: center;
-        width: 100%;
-        max-width: $grid*128;
-        margin-top: $grid*8;
-        h1{
-            font-family: $header-font;
-            font-size: 96px;
-            letter-spacing: -0.02em;
-            margin: 0;
-            span{
-                font-family: $primary-font;
-                display: block;
-                margin-bottom: -16px;
-                text-transform: uppercase;
-                letter-spacing: 0.5em;
-                font-size: 20px;
-                display: block;
-                font-weight: 300;
-                opacity: 0.7;
-            }
-        }
-        h2{
-            font-weight: 300;
-            font-size: 18px;
-            margin: 0;
-        }
-    }
-}
-
-
-.cta-buttons{
-    margin-top: $grid*4;
-    .button{
-        box-sizing: border-box;
-        margin: 0px $grid;
-        width: $grid*28;
-        height: $grid*7;
-        font-size: $font-size-14;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: #fff;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 300;
-        transition: padding 0.15s $curved-transition;
-        .icon{
-            position: relative;
-            margin-left: 5px;
-            margin-right: -12px;
-            margin-top: -1px;
-            transition: margin 0.15s $curved-transition, opacity 0.15s $curved-transition;
-        }
-        &:hover{
-            padding-left: 5px;
-            .icon{
-                margin-left: 10px;
-            }
-        }
-        &--cta{
-            background: $brand-secondary;
-            border: 2px solid $brand-secondary;
-            &:hover{
-                background: $brand-primary;
-                border-color: $brand-primary;
-            }
-        }
-        &--secondary{
-            border: 2px solid $brand-secondary;
-            .icon{
-                opacity: 0.6;
-            }
-            &:hover{
-                border-color: $brand-primary;
-                background: rgba(63,169,245,0.1);
-                .icon{
-                    opacity: 1;
-                }
-            }
-        }
-    }
-}
-
-
-
-
-/*------------------------------------------------------------------------
-  Sub Page Hero
-------------------------------------------------------------------------*/
-
-
-.sub-page-hero{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 672px;
-    background: #000;
-    color: #fff;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img{
-        vertical-align: top;
-        object-fit: cover;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: auto;
-        height: auto;
-        min-width: 100%;
-        min-height: 100%;
-    }
-    &__haze{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: #034afd;
-        opacity: 0.45;
-    }
-    &__gradient{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: linear-gradient(rgba(40,48,79,0) 0%, rgba(40,48,79,0.9) 100%);
-    }
-    &__lightstreak{
-        width: 800px;
-        height: 200%;
-        position: absolute;
-        top: 50%;
-        left: 60%;
-        background: rgba(255,255,255,0.03);
-        transform: translate(-50%, -50%) rotate(30deg);
-    }
-    &__content{
-        z-index: 1000;
-        text-align: center;
-        width: 100%;
-        max-width: $grid*80;
-        margin-top: $grid*8;
-        h1{
-            font-family: $header-font;
-            font-size: $font-size-64;
-            margin: 0;
-            display: inline-block;
-            position: relative;
-            padding-bottom: $grid*2;
-            margin-bottom: $grid*1.5;
-            &:before{
-                content: '';
-                bottom: 0px;
-                z-index: -1;
-                right: -16px;
-                left: -16px;
-                height: 6px;
-                background: linear-gradient(90deg, #3A65C7, #3FA9F5);
-                position: absolute;
-            }
-            span{
-                font-family: $primary-font;
-                display: block;
-                margin-bottom: -16px;
-                text-transform: uppercase;
-                letter-spacing: 0.5em;
-                font-size: 20px;
-                display: block;
-                font-weight: 300;
-                opacity: 0.7;
-            }
-        }
-        p{
-            font-size: $font-size-18;
-            opacity: 0.8;
-        }
-    }
-        &__parent-page-link{
-            display: block;
-            color: rgba(255,255,255,0.7);
-            border: 1px solid rgba(255,255,255,0.4);
-            text-transform: uppercase;
-            font-size: 200;
-            padding: $grid;
-            width: $grid*12;
-            margin: 0 auto;
-            text-transform: uppercase;
-            font-size: $font-size-14;
-            letter-spacing: 0.04rem;
-            margin-bottom: $grid*2;
-            margin-top: $grid*2;
-            &:hover{
-                color: #fff;
-                border: 1px solid rgba(255,255,255,0.7);
-            }
-        }
-}
-
-
-
-
-/*------------------------------------------------------------------------
-  Scroll More
-------------------------------------------------------------------------*/
-
-
-.scroll-more{
-    width: $grid*8;
-    height: $grid*12;
-    padding-right: 1px;
-    position: absolute;
-    left: 50%;
-    margin-left: -$grid*4;
-    bottom: $grid*3;
-    color: #fff;
-    font-size: 12px;
-    text-transform: uppercase;
-    padding: 0;
-    &__text{
-        opacity: 0.6;
-        letter-spacing: 0.1em;
-        font-weight: 300;
-        margin-bottom: $grid*3;
-        font-family: $brand-primary;
-    }
-    &__line{
-        opacity: 0.8;
-        height: 32px;
-        width: 1px;
-        position: absolute;
-        bottom: 0;
-        left: $grid*4;
-        background: linear-gradient(180deg, rgba(255,255,255,0) 0px, rgba(255,255,255,0) 32px, rgba(255,255,255,1) 33px, rgba(255,255,255,1) 64px);
-        background-size: 200% auto;
-        background-position: 0 100%;
-        animation: scrollGradientAnimation 1.4s ease-in-out infinite;
-    }
-}
-
-@keyframes scrollGradientAnimation {
-    0% { background-position: 0 0; }
-	100% { background-position: 0 -200%; }
 }
 
 
@@ -383,20 +37,21 @@ hr{
 }
 
     .sub-menu{
-        padding-left: $grid*5;
-        padding-right: $grid*5;
+        padding-left: $grid*9;
+        padding-right: $grid*9;
         height: $grid*5;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         width: 100%;
         box-sizing: border-box;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        margin-bottom: $grid;
         &__item{
             display: block;
             padding: $grid $grid*2;
-            text-transform: uppercase;
-            font-size: 12px;
-            font-weight: 500;
+            font-size: $font-size-12;
+            font-weight: 200;
             letter-spacing: 0.04rem;
             color: #fff;
             opacity: 0.6;
@@ -413,11 +68,10 @@ hr{
         margin-left: $grid*5;
         margin-right: $grid*5;
         height: $grid*9;
-        background: #ffffff;
-        box-shadow: 0px 16px 0px -8px rgba(200,200,200,0.2);
         display: flex;
-        transition: margin 0.15s $curved-transition, box-shadow 0.15s $curved-transition 0.02s;
-        border-bottom: 1px solid #eee;
+        align-items: center;
+        background: rgba(255,255,255,0);
+        transition: margin 0.15s $curved-transition, box-shadow 0.15s $curved-transition 0.02s, background 0.15s $curved-transition;
         ul{
             margin-left: auto;
             height: $grid*9;
@@ -436,10 +90,11 @@ hr{
                     height: $grid*5;
                     align-items: center;
                     box-sizing: border-box;
-                    color: $nav-text-color;
-                    font-size: $font-size-14;
+                    color: #ddd;
+                    font-size: $font-size-15;
                     padding: $grid/2 $grid*2;
-                    font-weight: 400;
+                    font-weight: 200;
+                    letter-spacing: 0.01rem;
                     position: relative;
                     &:before{
                         content: '';
@@ -454,7 +109,7 @@ hr{
                         transition: transform 0.15s $curved-transition, opacity 0.15s $curved-transition;
                     }
                     &:hover{
-                        color: $nav-text-color--active;
+                        color: #fff;
                         &:before{
                             transform: scaleX(1);
                             opacity: 1;
@@ -463,7 +118,7 @@ hr{
                 }
                 &.current-menu-item{
                     a{
-                        color: $brand-primary;
+                        color: #fff;
                     }
                 }
                 &.main-menu--cta{
@@ -487,14 +142,17 @@ hr{
             }
         }
         &__logo{
-            margin-left: $grid;
-            margin-right: $grid;
-            height: $grid*9;
-            padding: 0 $grid*2;
-            width: 102px;
+            padding: 0 $grid*4;
+            box-sizing: border-box;
+            width: 160px;
+            height: 72px;
             display: flex;
             align-items: center;
             box-sizing: border-box;
+            .icon{
+                width: 160px;
+                height: 72px;
+            }
         }
     }
 
@@ -505,6 +163,22 @@ hr{
         left: 0;
         right: 0;
         box-shadow: 0px 8px 0px 0px rgba(200,200,200,0.2);
+        background: rgba(255,255,255,1);
+        ul{
+            > li{
+                a{
+                    color: $nav-text-color;
+                    &:hover{
+                        color: $nav-text-color--hover;
+                    }
+                }
+                &.current-menu-item{
+                    a{
+                        color: $brand-primary;
+                    }
+                }
+            }
+        }
     }
 
 
@@ -532,6 +206,289 @@ hr{
         }
     }
 
-
-
 //.main-header
+
+
+/*------------------------------------------------------------------------
+  Mobile Menu Toggle
+------------------------------------------------------------------------*/
+
+.mobile-menu-toggle{
+    z-index: 2100;
+    display: none;
+    width: $grid*8;
+    height: $grid*8;
+    position: absolute;
+    margin: 0 0 0 auto;
+    top: 0;
+    right: 0;
+    padding: 0;
+    overflow: hidden;
+    &:after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+        transform: translate(-50%, -50%);
+        transition: all 0.4s $curved-transition;
+        opacity: 0;
+        width: 90px;
+        height: 90px;
+    }
+    &:active{
+        &:after{
+            width: 0px;
+            height: 0px;
+            transition: 0s;
+            width: 0px;
+            height: 0px;
+            opacity: 1;
+        }
+    }
+    .bar{
+        width: $grid*3;
+        height: 3px;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        margin-top: -1.5px;
+        transition: all 0.35s $curved-transition;
+        &-1{
+            margin-top: -8px;
+            margin-left: -$grid*1.5;
+            left: 50%;
+        }
+        &-2{
+            margin-left: -$grid*1.5;
+            left: 50%;
+        }
+        &-3{
+            margin-top: 6px;
+            margin-right: -$grid*1.5;
+            right: 50%;
+        }
+    }
+    &.active{
+        .bar{
+            &-1{
+                transform: rotate(135deg);
+                margin-top: -1.5px;
+            }
+            &-2{
+                margin-left: -$grid*3;
+                opacity: 0;
+            }
+            &-3{
+                transform: rotate(-135deg);
+                margin-top: -1.5px;
+            }
+        }
+    }
+    &--fixed{
+        position: fixed;
+        .bar{
+            background: $nav-text-color;
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-radius: 50%;
+            background: rgba(140,140,140,0.1);
+        }
+    }
+    &.active{
+        .bar{
+            background: #fff;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  Mobile Menu
+------------------------------------------------------------------------*/
+
+.mobile-menu{
+    z-index: 2000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(58,101,199,0.98), rgba(63,169,245,0.98));
+    transition: all 0.25s $curved-transition;
+    display: flex;
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0;
+    >.inner{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: $grid*7;
+        padding-bottom: $grid*7;
+    }
+    &__main{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+        >li{
+            list-style: none;
+            a{
+                box-sizing: border-box;
+                font-size: $font-size-32;
+                font-family: $header-font;
+                font-weight: 700;
+                display: block;
+                color: #fff;
+                width: 100%;
+                opacity: 0;
+                transition: all 0.35s $curved-transition;
+                position: relative;
+                overflow: hidden;
+                padding: 3vh 0;
+                transform: translateY(40px);
+                &:before{
+                    content: '';
+                    width: 100%;
+                    z-index: -1;
+                    background: rgba(0,0,0,0.1);
+                    position: absolute;
+                    transform: scaleX(0.5);
+                    bottom: 0;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    transition: transform 0.15s $curved-transition, opacity 0.15s $curved-transition;
+                }
+                &:after{
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    border-radius: 50%;
+                    background: rgba(255,255,255,0.1);
+                    transform: translate(-50%, -50%);
+                    transition: all 0.4s $curved-transition;
+                    opacity: 0;
+                    width: 200px;
+                    height: 200px;
+                }
+                &:hover{
+                    color: #fff;
+                    &:before{
+                        transform: scaleX(1);
+                        opacity: 1;
+                    }
+                }
+                &:active{
+                    &:after{
+                        width: 0px;
+                        height: 0px;
+                        transition: 0s;
+                        width: 0px;
+                        height: 0px;
+                        opacity: 1;
+                    }
+                }
+            }
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i}) {
+                    a{
+                        transition-delay: (0.1s + (0.05s * (5 - ($i - 1))));
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.mobile-menu.active{
+    max-height: 100vh;
+    opacity: 1;
+    .mobile-menu__main{
+        >li{
+            a{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    }
+}
+
+
+
+    .mobile-menu__sub{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: $grid*7;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        display: flex;
+    }
+        .mobile-menu__sub-item{
+            width: 50%;
+            box-sizing: border-box;
+            text-align: center;
+            height: $grid*7;
+            line-height: $grid*7;
+            color: rgba(255,255,255,0.6);
+            &:first-child{
+                border-right: 1px solid rgba(255,255,255,0.1);
+            }
+        }
+
+
+/*------------------------------------------------------------------------
+  Queries
+------------------------------------------------------------------------*/
+
+@include media('<md') {
+    .sub-menu{
+        padding-left: $grid*4;
+        padding-right: $grid*4;
+    }
+    .main-menu{
+        margin-left: 0px !important; //overwrite js
+        margin-right: 0px !important; //overwrite js
+    }
+}
+
+@include media('<sm') {
+    .sub-menu{
+        display: none;
+    }
+    .main-menu{
+        height: $grid*8;
+        padding-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        ul{
+            display: none;
+        }
+        &__logo{
+            padding: 0 $grid*2;
+            box-sizing: border-box;
+            width: 112px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            .icon{
+                width: 112px;
+                height: 64px;
+            }
+        }
+    }
+    .mobile-menu-toggle{
+        display: block;
+    }
+}
