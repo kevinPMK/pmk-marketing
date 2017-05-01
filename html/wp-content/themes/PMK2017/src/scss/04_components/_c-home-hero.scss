@@ -170,11 +170,7 @@ Version: 1.0.0
 @include media('<sm') {
     .home-hero__content{
         h1{
-            font-size: 54px;
             padding: 0 $grid*2;
-            span{
-                font-size: 10px;
-            }
         }
     }
     .cta-buttons{
@@ -185,6 +181,17 @@ Version: 1.0.0
             margin: $grid auto;
             &--secondary{
                 border-color: transparent;
+            }
+        }
+    }
+}
+
+@include media('<xs') {
+    .home-hero__content{
+        h1{
+            font-size: 54px;
+            span{
+                font-size: 10px;
             }
         }
     }

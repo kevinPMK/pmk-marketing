@@ -18,6 +18,7 @@ get_header();
 					<p>Phasellus vestibulum porttitor commodo. Praesent ante magna, mattis placerat augue faucibus, bibendum pellentesque eros. Sed feugiat, elit porta congue eleifend, nunc arcu congue felis, a finibus metus magna.</p>
 				</div>
 				<div class="slide__hero">
+					<div class="test-div"></div>
 				</div>
 			</div>
 		</section>
@@ -89,6 +90,7 @@ get_header();
 					<a class="slide__learn-more button--learn-more">Learn More</a>
 				</div>
 				<div class="slide__hero">
+					<div class="test-div"></div>
 				</div>
 			</div>
 		</section>
@@ -118,6 +120,7 @@ get_header();
 					<a class="slide__learn-more button--learn-more">Learn More</a>
 				</div>
 				<div class="slide__hero">
+					<div class="test-div"></div>
 				</div>
 			</div>
 		</section>
@@ -147,6 +150,7 @@ get_header();
 					<a class="slide__learn-more button--learn-more">Learn More</a>
 				</div>
 				<div class="slide__hero">
+					<div class="test-div"></div>
 				</div>
 			</div>
 		</section>

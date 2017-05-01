@@ -1,0 +1,161 @@
+/*---------------------------------------------------------------------------
+
+
+Slide Quote Section
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------
+  Slide Half Content Section
+------------------------------------------------------------------------*/
+
+/*-- Half --*/
+
+.slide-half{
+    position: relative;
+    min-height: 90vh;
+    box-sizing: border-box;
+    &:before{
+        content: '';
+        background-color: rgba(10,10,10,0.05);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 50%;
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  Slide Center Content Section
+------------------------------------------------------------------------*/
+
+.slide-center{
+    background: #fff;
+    text-align: center;
+    .slide__content{
+        display: block;
+    }
+    hr{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .slide__copy{
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  In View Transitions
+------------------------------------------------------------------------*/
+
+.slide-center,
+.slide-half{
+    h6{
+        opacity: 0;
+        transition: all 0.7s $curved-transition 0.2s;
+        transform: translateY(40px);
+    }
+    h2{
+        opacity: 0;
+        transition: all 0.7s $curved-transition 0.3s;
+        transform: translateY(40px);
+    }
+    .hr-gradient{
+        opacity: 0;
+        transition: all 0.7s $curved-transition 0.4s;
+        width: 0px;
+        transform: translate(-20px, 30px);
+    }
+    p{
+        opacity: 0;
+        transition: all 0.7s $curved-transition 0.5s;
+        transform: translateY(40px);
+    }
+    .slide__learn-more{
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.7s $curved-transition 0.7s, transform 0.7s $curved-transition 0.7s,;
+    }
+    .slide__hero{
+        opacity: 0;
+        transition: all 0.7s $curved-transition 0.6s;
+        transform: translateY(40px);
+    }
+    &.animated{
+        h6{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        h2{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        .hr-gradient{
+            opacity: 1;
+            width: 128px;
+            transform: translate(0px, 0px);
+        }
+        p{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        .slide__learn-more{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        .slide__hero{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  Queries
+------------------------------------------------------------------------*/
+
+@include media('<lg') {
+    .slide-half{
+        min-height: 0;
+    }
+}
+
+@include media('<sm') {
+    .slide-half{
+        .slide__content{
+            flex-wrap: wrap;
+        }
+            .slide__copy{
+                flex: auto;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .slide__hero{
+                margin-top: 8vw;
+                flex: auto;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        //slide__content
+        &:before{
+            display: none;
+        }
+    }
+}
+
+@include media('<xs') {
+    .slide-half{
+        .slide__hero{
+            margin-top: 48px;
+        }
+    }
+}

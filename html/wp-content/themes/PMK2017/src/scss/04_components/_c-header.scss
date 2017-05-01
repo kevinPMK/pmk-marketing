@@ -11,6 +11,10 @@ Version: 1.0.0
 
 
 
+/*------------------------------------------------------------------------
+  SFX
+------------------------------------------------------------------------*/
+
 .intro-gradient{
     height: $grid;
     width: 100%;
@@ -23,8 +27,6 @@ Version: 1.0.0
 /*------------------------------------------------------------------------
   Header
 ------------------------------------------------------------------------*/
-
-
 
 .main-header{
     position: absolute;
@@ -319,11 +321,11 @@ Version: 1.0.0
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(0deg, rgba(58,101,199,0.98), rgba(63,169,245,0.98));
-    transition: all 0.25s $curved-transition;
+    background: linear-gradient(0deg, rgba(22,35,66,0.98), rgba(13,24,49,0.98));
+    transition: opacity 0.15s $curved-transition;
     display: flex;
-    max-height: 0px;
     overflow: hidden;
+    pointer-events: none;
     opacity: 0;
     >.inner{
         width: 100%;
@@ -350,7 +352,7 @@ Version: 1.0.0
                 color: #fff;
                 width: 100%;
                 opacity: 0;
-                transition: all 0.35s $curved-transition;
+                transition: all 0.30s $curved-transition 0.30s;
                 position: relative;
                 overflow: hidden;
                 padding: 3vh 0;
@@ -359,7 +361,7 @@ Version: 1.0.0
                     content: '';
                     width: 100%;
                     z-index: -1;
-                    background: rgba(0,0,0,0.1);
+                    background: linear-gradient(90deg, #3A65C7, #3FA9F5);
                     position: absolute;
                     transform: scaleX(0.5);
                     bottom: 0;
@@ -385,7 +387,7 @@ Version: 1.0.0
                     color: #fff;
                     &:before{
                         transform: scaleX(1);
-                        opacity: 1;
+                        opacity: 0.2;
                     }
                 }
                 &:active{
@@ -402,7 +404,7 @@ Version: 1.0.0
             @for $i from 1 through 5 {
                 &:nth-child(#{$i}) {
                     a{
-                        transition-delay: (0.1s + (0.05s * (5 - ($i - 1))));
+                        transition-delay: (0.1s + (0.05s * $i));
                     }
                 }
             }
@@ -410,10 +412,63 @@ Version: 1.0.0
     }
 }
 
+.mobile-menu__sub{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: $grid*7;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+}
+    .mobile-menu__sub-item{
+        width: 50%;
+        box-sizing: border-box;
+        text-align: center;
+        height: $grid*7;
+        line-height: $grid*7;
+        color: rgba(255,255,255,0.6);
+        position: relative;
+        overflow: hidden;
+        &:first-child{
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transform: translate(-50%, -50%);
+            transition: all 0.4s $curved-transition;
+            opacity: 0;
+            width: 140px;
+            height: 140px;
+        }
+        &:hover{
+            background: rgba(0,0,0,0.1);
+        }
+        &:active{
+            &:after{
+                width: 0px;
+                height: 0px;
+                transition: 0s;
+                width: 0px;
+                height: 0px;
+                opacity: 1;
+            }
+        }
+    }
+
+//.mobile-menu
+
+
+/*-- States --*/
 
 .mobile-menu.active{
-    max-height: 100vh;
     opacity: 1;
+    pointer-events: all;
     .mobile-menu__main{
         >li{
             a{
@@ -426,26 +481,6 @@ Version: 1.0.0
 
 
 
-    .mobile-menu__sub{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        height: $grid*7;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        display: flex;
-    }
-        .mobile-menu__sub-item{
-            width: 50%;
-            box-sizing: border-box;
-            text-align: center;
-            height: $grid*7;
-            line-height: $grid*7;
-            color: rgba(255,255,255,0.6);
-            &:first-child{
-                border-right: 1px solid rgba(255,255,255,0.1);
-            }
-        }
 
 
 /*------------------------------------------------------------------------

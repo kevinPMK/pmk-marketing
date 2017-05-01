@@ -8,6 +8,11 @@ Version: 1.0.0
 
 ---------------------------------------------------------------------------*/
 
+
+/*------------------------------------------------------------------------
+  Globals
+------------------------------------------------------------------------*/
+
 .footer{
     background: #fff;
     font-size: $font-size-14;
@@ -37,26 +42,22 @@ Version: 1.0.0
         }
     }
 }
-
     .footer__logo{
-        margin-right: $grid*30;
+        flex: 1;
         .icon{
             width: 144px;
             height: 86.63px;
         }
     }
-
     .footer-menu{
         display: flex;
-        flex: 1;
+        width: 760px;
     }
-
         .footer-menu__block{
             flex: 1;
             padding: 0 $grid*5;
             box-sizing: border-box;
         }
-
             .footer-menu__heading{
                 font-size: $font-size-14;
                 margin: 0px 0px $grid*2 0px;
@@ -66,18 +67,20 @@ Version: 1.0.0
                 color: #787c7f;
                 text-transform: uppercase;
             }
-
             .footer-menu__list{
                 li{
                     margin-top: $grid;
                     list-style: none;
                 }
             }
+        //.footer-menu__block
+    //.footer-menu
+//.footer__primary
+
 
 /*------------------------------------------------------------------------
   Secondary Footer
 ------------------------------------------------------------------------*/
-
 
 .footer__copyright{
     max-width: $page-max-width;
@@ -93,15 +96,95 @@ Version: 1.0.0
         }
     }
 }
-
     .footer__copyright-text{
         line-height: 1.75rem;
+        padding-right: $grid*2;
     }
-
     .footer-social-menu{
         margin-left: auto;
+        white-space: nowrap;
     }
-
         .footer-social-menu__link{
             margin-left: $grid;
         }
+    //.footer-social-menu
+
+//.footer__copyright
+
+
+/*------------------------------------------------------------------------
+  Queries
+------------------------------------------------------------------------*/
+
+@include media('<md') {
+    .footer__primary{
+        padding-top: $grid*10;
+        >.inner{
+            flex-wrap: wrap;
+            padding-bottom: $grid*6;
+        }
+    }
+        .footer-menu{
+            width: 100%;
+        }
+            .footer-menu__block{
+                padding: $grid*4 $grid*4 0 0;
+            }
+        //.footer-menu
+        .footer__logo{
+            margin-bottom: $grid*2;
+        }
+    //.footer__primary
+    .footer__copyright{
+        padding-top: $grid*6;
+        padding-bottom: $grid*10;
+    }
+}
+
+@include media('<sm') {
+    .footer__primary{
+        padding-top: $grid*6;
+    }
+        .footer__logo{
+            .icon{
+                width: 120px;
+                height: 73px;
+            }
+        }
+        .footer-menu{
+            flex-wrap: wrap;
+        }
+            .footer-menu__block{
+                box-sizing: border-box;
+                width: 50%;
+                flex: auto;
+            }
+        //.footer-menu
+    //.footer__primary
+    .footer__copyright{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-bottom: $grid*6;
+        br {
+            content: " ";
+            display: none;
+        }
+    }
+        .footer-social-menu{
+            margin-left: 0;
+            margin-bottom: $grid*4;
+        }
+            .footer-social-menu__link{
+                margin-left: 0;
+                margin-right: $grid;
+            }
+        //.footer-social-menu
+        .footer__copyright-text{
+            padding-bottom: $grid*2;
+            padding-right: 0;
+            width: 100%;
+        }
+    //.footer__copyright
+}

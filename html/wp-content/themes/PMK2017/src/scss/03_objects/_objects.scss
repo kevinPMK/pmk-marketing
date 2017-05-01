@@ -46,4 +46,20 @@ Version: 1.0.0
     padding: 0;
     margin-bottom: 2rem;
     margin-top: 1.9rem;
+    border: none;
+}
+
+@include media('<sm') {
+    .hr-gradient{
+        height: $grid/2;
+        margin-bottom: 4vw;
+        margin-top: 4vw;
+    }
+}
+
+@include media('<xs') {
+    .hr-gradient{
+        margin-bottom: 22px;
+        margin-top: 22px;
+    }
 }

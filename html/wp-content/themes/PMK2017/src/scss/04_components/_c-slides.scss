@@ -10,11 +10,8 @@ Version: 1.0.0
 
 
 /*------------------------------------------------------------------------
-  Slides
+  Global -- Layout and Style
 ------------------------------------------------------------------------*/
-
-
-/*-- Slide Global --*/
 
 .slide{
     display: flex;
@@ -25,36 +22,31 @@ Version: 1.0.0
         max-width: $page-max-width;
         margin: 0 auto;
         box-sizing: border-box;
-        padding: $grid*4;
         display: flex;
         align-items: center;
     }
         &__hero{
             box-sizing: border-box;
-            background: #fff;
             flex: 1;
+            padding: 0 $grid*12;
             //temp
-            height: 400px;
-            margin-left: $grid*12;
-            box-shadow: 0px 0px 64px rgba(13,53,94,0.3);
+            .test-div{
+                background: #fff;
+                height: 400px;
+                box-shadow: 0px 0px 64px rgba(13,53,94,0.3);
+            }
         }
         &__copy{
             flex: 1;
             box-sizing: border-box;
             box-sizing: border-box;
-            margin-right: $grid*12;
+            padding: 0 $grid*12;
         }
-
-
-
-
     //__content
-
     &__grid{
         display: flex;
         width: 100%;
     }
-
         &__grid-cell{
             width: 100%;
             box-sizing: border-box;
@@ -67,13 +59,11 @@ Version: 1.0.0
     &__learn-more{
         margin-top: 3rem;
     }
-
-
 }
 
 
 /*------------------------------------------------------------------------
-  Slide Typography
+  Global -- Typography
 ------------------------------------------------------------------------*/
 
 .slide{
@@ -119,465 +109,52 @@ Version: 1.0.0
     }
 }
 
-
-/*------------------------------------------------------------------------
-  Half Content Section
-------------------------------------------------------------------------*/
-
-.slide-half{
-    position: relative;
-    min-height: 90vh;
-    box-sizing: border-box;
-    &:before{
-        content: '';
-        background-color: rgba(10,10,10,0.05);
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 50%;
-    }
-}
-
-
-/*------------------------------------------------------------------------
-  Centered Content Section
-------------------------------------------------------------------------*/
-
-.slide-center{
-    background: #fff;
-    text-align: center;
-    .slide__content{
-        display: block;
-    }
-    hr{
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .slide__copy{
-        max-width: 660px;
-        margin: 0 auto;
-    }
-}
-
-
-
-/*------------------------------------------------------------------------
-  Image Grid Component
-------------------------------------------------------------------------*/
-
-
-
-.slide__image-grid{
-    display: flex;
-    max-width: $grid*140;
-    margin: $grid*16 auto 0;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-    .slide__image-grid-cell{
-        padding: $grid;
-        box-sizing: border-box;
-        > .inner{
-            background: #F4F7FA;
-            //temp
-            width: 100%;
-            height: 100%;
-        }
-        &--half{
-            width: 50%;
-            //temp
-            height: 400px;
-        }
-        &--full{
-            width: 100%;
-            //temp
-            height: 600px;
-        }
-        &--quarter{
-            width: 25%;
-            height: 264px;
-        }
-    }
-
-//slide-grid
-
-
-
-
-
-/*------------------------------------------------------------------------
-  Mini Grid Section
-------------------------------------------------------------------------*/
-
-.slide-mini{
-    padding: $grid*4 0;
-    p{
-        font-size: $font-size-14;
-        margin-top: 0.44em;
-    }
-    h3{
-        margin-bottom: 0;
-    }
-}
-
-    .slide-mini__grid{
-        max-width: $page-max-width;
-        margin: 0 auto;
-        display: flex;
-        padding: $grid*2;
-    }
-
-        .slide-mini__card{
-            flex: 1;
-            margin: $grid*2;
-            display: flex;
-            align-items: flex-start;
-            padding: $grid*3;
-        }
-
-            .slide-mini__content{
-                flex: 1;
-                padding-right: $grid*2;
-            }
-
-            .slide-mini__thumb{
-                margin-top: $grid;
-                margin-right: $grid*4;
-                width: $grid*10;
-                height: $grid*10;
-                border-radius: $grid*10;
-                box-sizing: border-box;
-                border: 2px solid $brand-primary;
-            }
-
-        //.slide-mini__card
-
-    //.slide-mini__grid
-
-//.slide--mini
-
-
-
-
-/*------------------------------------------------------------------------
-  Quote Section
-------------------------------------------------------------------------*/
-
-
-.slide-quote{
-    border: $grid*4 solid rgba(255,255,255,0.2);
-    background-image: url('images/food.png'), url('images/noise.png'), linear-gradient(120deg, #68BDFA, #3A65C7 );
-    background-size:  300px 250px 250px, cover;
-	background-attachment: fixed;
-	background-repeat: repeat, repeat, no-repeat;
-	background-position: 0px, center, center;
-    animation: movingBg 40s linear 2s infinite;
-    figure{
-        margin: 0 auto;
-        text-align: center;
-        color: #fff;
-        position: relative;
-    }
-        hr{
-            background: #fff;
-            opacity: 0.25;
-            padding: 0;
-            height: 4px;
-            width: $grid*15;
-        }
-        blockquote{
-            font-size: $font-size-24;
-            line-height: 1.6em;
-            margin-bottom: $grid*5;
-            position: relative;
-            padding-left: $grid*10;
-            padding-right: $grid*10;
-            display: flex;
-            letter-spacing: 0.05rem;
-            font-weight: 200;
-            align-items: center;
-            span{
-                flex: 1;
-            }
-            .icon{
-                width: 120px;
-                height: 120px;
-                opacity: 0.5;
-                margin-top: -40px;
-            }
-        }
-        footer{
-            margin-top: $grid*4.5;
-            font-size: $font-size-17;
-            font-weight: 200;
-            opacity: 0.8;
-            cite{
-                font-size: $font-size-17;
-                font-weight: 200;
-                font-family: $primary-font;
-            }
-        }
-    //figure
-    &--secondary{
-        background-image: url('images/food.png'), url('images/noise.png'), linear-gradient(120deg, #3A65C7, #2a509e );
-    }
-    &--tertiary{
-        background-image: url('images/food.png'), url('images/noise.png'), linear-gradient(120deg, #2a509e, #1a3c81 );
-    }
-}
-
-
-
-@keyframes movingBg{
-    0%{ background-position: 0px 0px, center, center }
-    100%{ background-position: 300px 300px, center, center }
-}
-
-
-
-
-
-/*------------------------------------------------------------------------
-  CTA Section
-------------------------------------------------------------------------*/
-
-.slide-cta{
-    background: url('images/test-cta-photo.jpg') center center no-repeat #28304F;
-    background-size: cover;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    height: 90vh;
-    h2{
-        color: #fff;
-        font-size: $font-size-64;
-    }
-    p{
-        color: #b6c0e4;
-        font-size: $font-size-20;
-    }
-}
-
-    .slide-cta__content{
-        margin: 0 auto;
-        padding: 0 $grid*4;
-    }
-
-//.slide-cta
-
-
-
-/*------------------------------------------------------------------------
-  In View Transitions
-------------------------------------------------------------------------*/
-
-.slide-center,
-.slide-half{
-    h6{
-        opacity: 0;
-        transition: all 0.7s $curved-transition 0.2s;
-        transform: translateY(40px);
-    }
-    h2{
-        opacity: 0;
-        transition: all 0.7s $curved-transition 0.3s;
-        transform: translateY(40px);
-    }
-    .hr-gradient{
-        opacity: 0;
-        transition: all 0.7s $curved-transition 0.4s;
-        width: 0px;
-        transform: translate(-20px, 30px);
-    }
-    p{
-        opacity: 0;
-        transition: all 0.7s $curved-transition 0.5s;
-        transform: translateY(40px);
-    }
-    .slide__learn-more{
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 0.7s $curved-transition 0.7s, transform 0.7s $curved-transition 0.7s,;
-    }
-    .slide__hero{
-        opacity: 0;
-        transition: all 0.7s $curved-transition 0.6s;
-        transform: translateY(40px);
-    }
-    &.animated{
-        h6{
-            opacity: 1;
-            transform: translateY(0px);
-        }
+@include media('<sm') {
+    .slide{
         h2{
-            opacity: 1;
-            transform: translateY(0px);
-        }
-        .hr-gradient{
-            opacity: 1;
-            width: 128px;
-            transform: translate(0px, 0px);
-        }
-        p{
-            opacity: 1;
-            transform: translateY(0px);
-        }
-        .slide__learn-more{
-            opacity: 1;
-            transform: translateY(0px);
-        }
-        .slide__hero{
-            opacity: 1;
-            transform: translateY(0px);
+            font-size: 5.5vw;
         }
     }
 }
 
-
-.slide-center{
-    .slide__image-grid-cell{
-        transition: all 0.7s $curved-transition 0.5s;
-        transform: translateY(20px);
-        opacity: 0;
-        @for $i from 1 through 15 {
-            &:nth-child(#{$i}) {
-                transition-delay: (0.5s + (0.2s * $i));
-            }
-        }
-    }
-    &.animated{
-        .slide__image-grid-cell{
-            opacity: 1;
-            transform: translateY(0px);
-        }
-    }
-}
-
-
-.slide-mini{
-    .slide-mini__card{
-        transition: all 0.7s $curved-transition 0.3s;
-        opacity: 0;
-        &:first-child{
-            transform: translate(-40px, 0px);
-        }
-        &:last-child{
-            transform: translate(40px, 0px);
-        }
-    }
-    &.animated{
-        .slide-mini__card{
-            opacity: 1;
-            &:first-child{
-                transform: translate(0px, 0px);
-            }
-            &:last-child{
-                transform: translate(0px, 0px);
-            }
-        }
-    }
-}
-
-
-
-
-
-
-.slide-quote{
-    blockquote{
-        span{
-            opacity: 0;
-            transition: all 0.7s $curved-transition 0.3s;
-            transform: translateY(20px);
-        }
-        .icon{
-            opacity: 0;
-            transition: all 0.7s $curved-transition 0.6s;
-            &:first-child{
-                transform: translate(-20px, 0px);
-            }
-            &:last-child{
-                transform: translate(20px, 0px);
-            }
-        }
-    }
-    hr{
-        transition: all 0.7s $curved-transition 0.4s;
-        opacity: 0;
-        width: 0;
-    }
-    footer{
-        transition: all 0.7s $curved-transition 0.5s;
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    &.animated{
-        blockquote{
-            span{
-                transform: translateY(0px);
-                opacity: 1;
-            }
-            .icon{
-                opacity: 0.5;
-                &:first-child{
-                    transform: translate(0px, 0px);
-                }
-                &:last-child{
-                    transform: translate(0px, 0px);
-                }
-            }
-
-        }
-        hr{
-            width: $grid*15;
-            opacity: 0.25;
-        }
-        footer{
-            transform: translateY(0px);
-            opacity: 0.75;
-        }
-    }
-}
-
-
-.slide-cta{
-    h2{
-        opacity: 0;
-        transition: opacity 0.7s $curved-transition 0.3s;
-    }
-    p{
-        opacity: 0;
-        transition: opacity 0.7s $curved-transition 0.4s;
-    }
-    .cta-buttons{
-        opacity: 0;
-        transition: opacity 0.7s $curved-transition 0.5s;
-    }
-    .button--secondary{
-        transform: translate(-20px, 0px);
-        transition: transform 0.7s $curved-transition 0.5s, padding 0.15s $curved-transition;
-    }
-    .button--cta{
-        transform: translate(20px, 0px);
-        transition: transform 0.7s $curved-transition 0.5s, padding 0.15s $curved-transition;
-    }
-    &.animated{
+@include media('<xs') {
+    .slide{
         h2{
-            opacity: 1;
+            font-size: 34px;
         }
-        p{
-            opacity: 1;
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  Queries
+------------------------------------------------------------------------*/
+
+@include media('<lg') {
+    .slide{
+        padding-top: 20vw;
+        padding-bottom: 20vw;
+        &__hero{
+            padding-left: 6vw;
+            padding-right: 6vw;
         }
-        .cta-buttons{
-            opacity: 1;
+        &__copy{
+            padding-left: 6vw;
+            padding-right: 6vw;
         }
-        .button--secondary{
-            transform: translate(0px, 0px);
+
+    }
+}
+
+@include media('<xxs') {
+    .slide{
+        &__hero{
+            padding-left: 32px;
+            padding-right: 32px;
         }
-        .button--cta{
-            transform: translate(0px, 0px);
+        &__copy{
+            padding-left: 32px;
+            padding-right: 32px;
         }
     }
 }
