@@ -69,9 +69,11 @@ get_header();
 			<div class="slide__content">
 				<figure>
 					<blockquote>
-						<?php echo pmk_get_svg( array( 'icon' => '40-lquote', 'size' => '40' ) );?>
-						<span>PikMyKid is the greatest thing I’ve ever used. Whomever designed it deserves a giant briefcase of money.</span>
-						<?php echo pmk_get_svg( array( 'icon' => '40-rquote', 'size' => '40' ) );?>
+						<p>
+							<?php echo pmk_get_svg( array( 'icon' => '40-lquote', 'size' => '40' ) );?>
+							<span>PikMyKid is the greatest thing I’ve ever used. Whomever designed it deserves a giant briefcase of money.</span>
+							<?php echo pmk_get_svg( array( 'icon' => '40-rquote', 'size' => '40' ) );?>
+						</p>
 					</blockquote>
 					<hr />
 					<footer>
@@ -99,9 +101,11 @@ get_header();
 			<div class="slide__content">
 				<figure>
 					<blockquote>
-						<?php echo pmk_get_svg( array( 'icon' => '40-lquote', 'size' => '40' ) );?>
-						<span>PikMyKid is the greatest thing I’ve ever used. Whomever designed it deserves a giant briefcase of money.</span>
-						<?php echo pmk_get_svg( array( 'icon' => '40-rquote', 'size' => '40' ) );?>
+						<p>
+							<?php echo pmk_get_svg( array( 'icon' => '40-lquote', 'size' => '40' ) );?>
+							<span>PikMyKid is the greatest thing I’ve ever used. Whomever designed it deserves a giant briefcase of money.</span>
+							<?php echo pmk_get_svg( array( 'icon' => '40-rquote', 'size' => '40' ) );?>
+						</p>
 					</blockquote>
 					<hr />
 					<footer>
@@ -129,9 +133,11 @@ get_header();
 			<div class="slide__content">
 				<figure>
 					<blockquote>
-						<?php echo pmk_get_svg( array( 'icon' => '40-lquote', 'size' => '40' ) );?>
-						<span>PikMyKid is the greatest thing I’ve ever used. Whomever designed it deserves a giant briefcase of money.</span>
-						<?php echo pmk_get_svg( array( 'icon' => '40-rquote', 'size' => '40' ) );?>
+						<p>
+							<?php echo pmk_get_svg( array( 'icon' => '40-lquote', 'size' => '40' ) );?>
+							<span>PikMyKid is the greatest thing I’ve ever used. Whomever designed it deserves a giant briefcase of money.</span>
+							<?php echo pmk_get_svg( array( 'icon' => '40-rquote', 'size' => '40' ) );?>
+						</p>
 					</blockquote>
 					<hr />
 					<footer>
@@ -159,9 +165,11 @@ get_header();
 			<div class="slide__content">
 				<figure>
 					<blockquote>
-						<?php echo pmk_get_svg( array( 'icon' => '40-lquote', 'size' => '40' ) );?>
-						<span>PikMyKid is the greatest thing I’ve ever used. Whomever designed it deserves a giant briefcase of money.</span>
-						<?php echo pmk_get_svg( array( 'icon' => '40-rquote', 'size' => '40' ) );?>
+						<p>
+							<?php echo pmk_get_svg( array( 'icon' => '40-lquote', 'size' => '40' ) );?>
+							<span>PikMyKid is the greatest thing I’ve ever used. Whomever designed it deserves a giant briefcase of money.</span>
+							<?php echo pmk_get_svg( array( 'icon' => '40-rquote', 'size' => '40' ) );?>
+						</p>
 					</blockquote>
 					<hr />
 					<footer>

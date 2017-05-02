@@ -18,7 +18,7 @@
 			<section class="slide slide-cta">
 				<div class="slide-cta__content">
 					<h2>Join us Today!</h2>
-					<p>PikMyKid gives you the Dismissal tools to ensure your kids are safe and your parents are happy.</p>
+					<p>PikMyKid gives you the Dismissal tools to ensure your kids are safe and your parents are happy. Let us show you how we can make your school more safe and efficient.</p>
 					<div class="cta-buttons">
 						<a class="button button--secondary" type="button" href="#">
 							Contact Us

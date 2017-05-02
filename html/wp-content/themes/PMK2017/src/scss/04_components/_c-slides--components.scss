@@ -21,6 +21,7 @@ Version: 1.0.0
     margin: $grid*16 auto 0;
     flex-wrap: wrap;
     width: 100%;
+    justify-content: center;
 }
     .slide__image-grid-cell{
         padding: $grid;
@@ -82,15 +83,26 @@ Version: 1.0.0
     }
 }
 
+@include media('<sm') {
+    .slide__image-grid-cell{
+        &--quarter{
+            width: 33.33%;
+        }
+    }
+}
+
 @include media('<xs') {
     .slide__image-grid{
         padding-left: 25px;
         padding-right: 25px;
     }
+        .slide__image-grid-cell{
+            &--quarter{
+                width: 50%;
+            }
+        }
+    //.slide__image-grid
 }
-
-
-
 
 
 /*------------------------------------------------------------------------

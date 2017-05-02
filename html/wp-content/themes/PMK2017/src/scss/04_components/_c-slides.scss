@@ -148,6 +148,8 @@ Version: 1.0.0
 
 @include media('<xxs') {
     .slide{
+        padding-top: 96px;
+        padding-bottom: 96px;
         &__hero{
             padding-left: 32px;
             padding-right: 32px;

@@ -38,17 +38,20 @@ Version: 1.0.0
             width: $grid*15;
         }
         blockquote{
-            font-size: $font-size-24;
-            line-height: 1.6em;
             margin: 0 0 $grid*5 0;
-            position: relative;
-            display: flex;
-            letter-spacing: 0.05rem;
-            font-weight: 200;
-            align-items: center;
-            max-width: 1024px;
-            padding: 0;
-            position: relative;
+            p{
+                margin: 0;
+                font-size: $font-size-24;
+                line-height: 1.6em;
+                position: relative;
+                display: flex;
+                letter-spacing: 0.05rem;
+                font-weight: 200;
+                align-items: center;
+                max-width: 1024px;
+                padding: 0;
+                position: relative;
+            }
             span{
                 flex: 1;
             }
@@ -56,7 +59,7 @@ Version: 1.0.0
                 width: 120px;
                 height: 120px;
                 opacity: 0.5;
-                margin-top: -40px;
+                margin-top: -45px;
             }
         }
         footer{
@@ -161,11 +164,10 @@ Version: 1.0.0
 @include media ('<sm') {
     .slide-quote{
         border: none;
-        figure{
-
-        }
         blockquote{
-            font-size: 3vw;
+            p{
+                font-size: 3vw;
+            }
             .icon{
                 width: 12vw;
                 height: 12vw;
@@ -177,7 +179,9 @@ Version: 1.0.0
 @include media('<xs') {
     .slide-quote{
         blockquote{
-            font-size: 17px;
+            p{
+                font-size: 17px;
+            }
             .icon{
                 width: 72px;
                 height: 72px;
@@ -193,10 +197,10 @@ Version: 1.0.0
             padding-right: 32px;
         }
         blockquote{
-            margin-top: $grid*3;
+            padding-top: $grid*5;
             .icon{
                 position: absolute;
-                top: -24px;
+                top: -48px;
                 &:first-child{
                     left: 0;
                 }

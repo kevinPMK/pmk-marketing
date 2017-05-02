@@ -95,6 +95,14 @@ add_action( 'template_redirect', 'twentyseventeen_content_width', 0 );
 
 
 
+/*-- ADD EXCERPTS TO PAGES --*/
+
+add_action( 'init', 'my_add_excerpts_to_pages' );
+function my_add_excerpts_to_pages() {
+     add_post_type_support( 'page', 'excerpt' );
+}
+
+
 
 /*-- PRE CONNECT TO FONTS.COM --*/
 
@@ -212,6 +220,16 @@ function pmk_scripts() {
 add_action( 'wp_enqueue_scripts', 'pmk_scripts' );
 
 
+/*-- RUN WPAUTOP AFTER SHORTCODES RENDER --*/
+
+/*
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop' , 12);
+*/
+
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop' , 99 );
+add_filter( 'the_content', 'shortcode_unautop', 100 );
 
 /*-- ADD CUSTOM IMAGE SIZES FOR CONTENT IMAGES
 
@@ -286,3 +304,9 @@ require get_parent_theme_file_path( '/inc/icon-functions.php' );
  * Custom Walkers
  */
 require get_parent_theme_file_path( '/inc/custom-walkers.php' );
+
+
+/**
+ * Custom Shortcodes
+ */
+require get_parent_theme_file_path( '/inc/shortcodes.php' );

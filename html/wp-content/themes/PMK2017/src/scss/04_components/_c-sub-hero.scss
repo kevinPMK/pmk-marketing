@@ -20,7 +20,7 @@ Version: 1.0.0
     top: 0;
     left: 0;
     width: 100%;
-    height: 672px;
+    height: $grid*84;
     background: #000;
     color: #fff;
     overflow: hidden;
@@ -69,23 +69,24 @@ Version: 1.0.0
         z-index: 1000;
         text-align: center;
         width: 100%;
-        max-width: $grid*80;
+        max-width: $grid*88;
         margin-top: $grid*8;
+        padding: $grid*4;
         h1{
             font-family: $header-font;
             font-size: $font-size-64;
             margin: 0;
             display: inline-block;
             position: relative;
-            padding-bottom: $grid*2;
-            margin-bottom: $grid*1.5;
+            padding-bottom: $grid*4;
             &:before{
                 content: '';
                 bottom: 0px;
                 z-index: -1;
-                right: -16px;
-                left: -16px;
-                height: 6px;
+                width: $grid*16;
+                margin-left: -$grid*8;
+                left: 50%;
+                height: 8px;
                 background: linear-gradient(90deg, #3A65C7, #3FA9F5);
                 position: absolute;
             }
@@ -102,6 +103,7 @@ Version: 1.0.0
             }
         }
         p{
+            margin-top: $grid*3;
             font-size: $font-size-18;
             opacity: 0.8;
         }
@@ -109,20 +111,96 @@ Version: 1.0.0
         &__parent-page-link{
             display: block;
             color: rgba(255,255,255,0.7);
-            border: 1px solid rgba(255,255,255,0.4);
+            //border: 1px solid rgba(255,255,255,0.4);
             text-transform: uppercase;
             font-size: 200;
-            padding: $grid;
-            width: $grid*12;
+            padding: $grid $grid $grid $grid*2;
+            width: $grid*14;
             margin: 0 auto;
             text-transform: uppercase;
             font-size: $font-size-14;
             letter-spacing: 0.04rem;
             margin-bottom: $grid*2;
             margin-top: $grid*2;
+            position: relative;
+            .icon{
+                position: absolute;
+                margin-top: 1px;
+                left: $grid;
+                top: 50%;
+                transform: translate(0, -50%);
+                transition: all 0.15s $curved-transition;
+            }
             &:hover{
                 color: #fff;
-                border: 1px solid rgba(255,255,255,0.7);
+                //border: 1px solid rgba(255,255,255,0.7);
+                .icon{
+                    transform: translate(-4px, -50%);
+                }
             }
         }
+}
+
+
+/*------------------------------------------------------------------------
+  Queries
+------------------------------------------------------------------------*/
+
+
+@include media('<md') {
+    .sub-page-hero__content{
+        h1{
+            font-size: 6.1vw;
+            padding-bottom: 3.5vw;
+        }
+        p{
+            margin-top: 2.3vw;
+        }
+    }
+}
+
+@include media('<sm') {
+    .sub-page-hero{
+        height: $grid*64;
+    }
+    .sub-page-hero__content{
+        h1{
+            font-size: 48px;
+            padding-bottom: 32px;
+            &:before{
+                height: 4px;
+            }
+        }
+        p{
+            margin-top: 24px;
+        }
+    }
+}
+
+@include media('<xs') {
+    .sub-page-hero__content{
+        h1{
+            font-size: 42px;
+            padding-bottom: 24px;
+        }
+        p{
+            margin-top: 18px;
+        }
+    }
+    .sub-page-hero__parent-page-link{
+        padding-left: $grid;
+        padding-right: $grid;
+        .icon{
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+
+@include media('<xxs') {
+    .sub-page-hero__content{
+        h1{
+            font-size: 42px;
+        }
+    }
 }

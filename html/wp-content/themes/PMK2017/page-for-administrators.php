@@ -28,6 +28,7 @@ $child_query = new WP_Query( $args );
 				</div>
 			</div>
 		</section>
+
 	</main><!-- #main -->
 
 <?php

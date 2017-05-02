@@ -13,7 +13,7 @@
         $(this.element).addClass('animated');
     }, {
         triggerOnce: true,
-        offset: '80%'
+        offset: '90%'
     });
 
     /*-- Toggle Mobile Menu --*/
