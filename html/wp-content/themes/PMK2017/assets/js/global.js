@@ -9,7 +9,7 @@
 
 
 
-    $('.slide, .feature-grid').waypoint (function(){
+    $('.slide, .feature-grid, .faq-group, slide-faq__conclusion').waypoint (function(){
         $(this.element).addClass('animated');
     }, {
         triggerOnce: true,
@@ -62,20 +62,13 @@
 	}
 
 
-
-
-
-
-
-
-
-
 	// Variables and DOM Caching.
 	var $body = $( 'body' ),
 
 		//USED
 		$navigation = $body.find( '.main-menu' ),
 		$mobileToggle = $body.find( '.mobile-menu-toggle' ),
+		$menuScrollDown = $body.find( '.scroll-more' ),
 		navigationFixedClass = 'main-menu--fixed',
         mobileToggleFixedClass = 'mobile-menu-toggle--fixed',
 		navigationCtaClass = 'main-menu--cta-focus',
@@ -84,8 +77,8 @@
         navigationMarginWidth = 40,
         navigationScrollCap,
         navigationcurrentMargin,
+        navigationOuterHeight,
 
-		$menuScrollDown = $body.find( '.scroll-more' ),
 
 
 		//UNSURE
@@ -105,7 +98,6 @@
 		idealNavHeight,
 		navIsNotTooTall,
 		headerOffset,
-		menuTop = 0,
 		resizeTimer;
 
 	/*
@@ -130,9 +122,12 @@
 
 	// Set properties of navigation.
 	function setNavProps() {
+
 		navigationOffset = $navigation.offset().top;
 		currentWindowHeight = $( window ).height();
         navigationScrollCap = navigationOffset + navigationMarginWidth;
+        navigationOuterHeight = $navigation.outerHeight();
+
 	}
 
 	// Make navigation 'stick'.
@@ -271,6 +266,17 @@
 
 	// Fire on document ready.
 	$( document ).ready( function() {
+
+        /*-- Global Scroll To Link --*/
+
+        $('.scroll-to-link').click( function( e ) {
+            e.preventDefault();
+            console.log(navigationOuterHeight);
+            $( window ).scrollTo( $(this).attr('href'), {
+                duration: 600,
+                offset: { top: -navigationOuterHeight - 100 }
+            });
+        });
 
 		// If navigation menu is present on page, setNavProps and adjustScrollClass.
 		if ( $navigation.length ) {

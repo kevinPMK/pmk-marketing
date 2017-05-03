@@ -57,7 +57,7 @@ Version: 1.0.0
         }
 
     &__learn-more{
-        margin-top: 3rem;
+        margin-top: 0;
     }
 }
 
@@ -101,7 +101,6 @@ Version: 1.0.0
         letter-spacing: 0.01em;
         margin-top: 0;
         margin-bottom: 2.2rem;
-        margin-bottom: 0;
         font-weight: 200;
         &:last-child{
             margin-bottom: 0px;

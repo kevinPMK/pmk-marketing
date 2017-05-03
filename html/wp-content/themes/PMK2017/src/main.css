@@ -1222,7 +1222,7 @@ Version: 1.0.0
     .slide__grid-cell--half {
       width: 50%; }
   .slide__learn-more {
-    margin-top: 3rem; }
+    margin-top: 0; }
 
 /*------------------------------------------------------------------------
   Global -- Typography
@@ -1259,7 +1259,6 @@ Version: 1.0.0
     letter-spacing: 0.01em;
     margin-top: 0;
     margin-bottom: 2.2rem;
-    margin-bottom: 0;
     font-weight: 200; }
     .slide p:last-child {
       margin-bottom: 0px; }
@@ -1942,6 +1941,129 @@ Version: 1.0.0
 @media (max-width: 479px) {
   .slide-cta h2 {
     font-size: 42px; } }
+
+/*---------------------------------------------------------------------------
+
+
+FAQ Slides (Sections)
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------
+  FAQ NAV SLIDE
+------------------------------------------------------------------------*/
+.slide-faq-nav {
+  background: linear-gradient(120deg, #FFFFFF, #F4F7FA); }
+
+/*------------------------------------------------------------------------
+  FAQ NAV
+------------------------------------------------------------------------*/
+.faq-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 64px auto 0;
+  padding: 0 96px; }
+
+.faq-nav__link {
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 16px;
+  text-align: center;
+  padding: 16px;
+  position: relative;
+  background: #fff;
+  padding: 48px 32px;
+  color: #7A868C;
+  box-shadow: 0px 0px 32px rgba(13, 53, 94, 0.1);
+  font-weight: 200; }
+
+.faq-nav__icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border: 2px solid #3FA9F5;
+  border-radius: 160px;
+  display: block;
+  margin-bottom: 32px; }
+
+.faq-nav__text {
+  margin-bottom: 8px;
+  display: block;
+  width: 100%;
+  letter-spacing: 0.01em;
+  font-size: 1.25rem;
+  color: #434e54; }
+
+.faq-nav__description {
+  font-size: 0.875rem;
+  margin-top: 0.44em;
+  line-height: 2em;
+  letter-spacing: 0.01em; }
+
+/*------------------------------------------------------------------------
+  FAQ SLIDE
+------------------------------------------------------------------------*/
+.slide-faq {
+  background: url("images/grid-texture.png") center center repeat;
+  background-attachment: fixed; }
+  .slide-faq .hr-gradient {
+    margin-left: 112px; }
+  .slide-faq__content {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 960px; }
+  .slide-faq__group {
+    padding: 0 96px;
+    margin-top: 192px; }
+    .slide-faq__group:first-child {
+      margin-top: 0; }
+  .slide-faq__header {
+    margin-bottom: 64px; }
+  .slide-faq .slide-faq__name {
+    margin-left: 112px; }
+  .slide-faq__list {
+    list-style: none;
+    position: relative;
+    padding-bottom: 1px; }
+    .slide-faq__list:before {
+      content: '';
+      background: #dedede;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 1px;
+      left: 112px; }
+  .slide-faq__list-item {
+    position: relative;
+    padding-left: 112px;
+    margin-bottom: 96px; }
+    .slide-faq__list-item:before {
+      content: 'Q';
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: -3px;
+      font-size: 80px;
+      line-height: 1;
+      font-weight: 200;
+      opacity: 0.2; }
+  .slide-faq .slide-faq__question {
+    font-size: 2rem;
+    font-family: "Quasimoda W01", sans-serif; }
+  .slide-faq__conclusion {
+    padding: 0 96px; }
+    .slide-faq__conclusion > .inner {
+      margin-top: 48px;
+      margin-left: 112px; }
+    .slide-faq__conclusion .button--learn-more {
+      margin-left: 32px; }
 
 /*---------------------------------------------------------------------------
 

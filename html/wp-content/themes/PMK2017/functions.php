@@ -276,6 +276,28 @@ add_filter( 'frontpage_template',  'twentyseventeen_front_page_template' );
 
 
 /**
+ * Sort Taxonomies by creation order.
+ */
+
+function set_the_terms_in_order ( $terms, $id, $taxonomy ) {
+    $terms = wp_cache_get( $id, "{$taxonomy}_relationships_sorted" );
+    if ( false === $terms ) {
+        $terms = wp_get_object_terms( $id, $taxonomy, array( 'orderby' => 'term_order' ) );
+        wp_cache_add($id, $terms, $taxonomy . '_relationships_sorted');
+    }
+    return $terms;
+}
+add_filter( 'get_the_terms', 'set_the_terms_in_order' , 10, 4 );
+
+function do_the_terms_in_order () {
+    global $wp_taxonomies;  //fixed missing semicolon
+    // the following relates to tags, but you can add more lines like this for any taxonomy
+    $wp_taxonomies['post_tag']->sort = true;
+    $wp_taxonomies['post_tag']->args = array( 'orderby' => 'term_order' );
+}
+add_action( 'init', 'do_the_terms_in_order');
+
+/**
  * Implement the Custom Header feature.
  */
 require get_parent_theme_file_path( '/inc/custom-header.php' );
@@ -305,8 +327,12 @@ require get_parent_theme_file_path( '/inc/icon-functions.php' );
  */
 require get_parent_theme_file_path( '/inc/custom-walkers.php' );
 
-
 /**
  * Custom Shortcodes
  */
-require get_parent_theme_file_path( '/inc/shortcodes.php' );
+require get_parent_theme_file_path( '/inc/custom-shortcodes.php' );
+
+/**
+ * Custom Post Types
+ */
+require get_parent_theme_file_path( '/inc/custom-posttypes.php' );
