@@ -44,13 +44,13 @@ get_header();
 			</div>
 		</section>
 
-		<section class="slide slide-mini">
+		<section class="slide slide-mini type-mini">
 			<div class="slide-mini__grid">
 				<div class="slide-mini__card">
 					<div class="slide-mini__thumb">
 					</div>
 					<div class="slide-mini__content">
-						<h3>Student Safety</h3>
+						<h4>Student Safety</h4>
 						<p>Lobortis mauris arcu sit amet tellus. Suspendisse id accumsan justo. Phasellus leo arcu, pellentesque at nulla vitae, porta sollicitudin metus.</p>
 					</div>
 				</div>
@@ -58,7 +58,7 @@ get_header();
 					<div class="slide-mini__thumb">
 					</div>
 					<div class="slide-mini__content">
-						<h3>Teacher Efficiency</h3>
+						<h4>Teacher Efficiency</h4>
 						<p>Mauris nec dapibus nulla. Mauris a metus porttitor, euismod nulla in, vehicula dui. Phasellus leo arcu, pellentesque at nulla vitae.</p>
 					</div>
 				</div>

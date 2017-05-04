@@ -37,26 +37,8 @@ body.scroll-locked{
     overflow: hidden;
 }
 
-html{
-  font-family: $primary-font;
-  font-size: $base-font-size;
-  font-weight: 300;
-}
-
 img{
     vertical-align: top;
-}
-
-@include media('<md') {
-  html{
-    font-size: 15px;
-  }
-}
-
-@include media('<xs') {
-  html{
-    font-size: 14px;
-  }
 }
 
 button{

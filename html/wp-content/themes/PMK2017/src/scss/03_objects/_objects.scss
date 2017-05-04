@@ -32,34 +32,3 @@ Version: 1.0.0
         border-color: $brand-primary;
     }
 }
-
-
-/*------------------------------------------------------------------------
-  Dividers
-------------------------------------------------------------------------*/
-
-.hr-gradient{
-    width: $grid*16;
-    height: $grid;
-    background: linear-gradient(90deg, #3A65C7, #3FA9F5);
-    margin: 0;
-    padding: 0;
-    margin-bottom: 2rem;
-    margin-top: 1.9rem;
-    border: none;
-}
-
-@include media('<sm') {
-    .hr-gradient{
-        height: $grid/2;
-        margin-bottom: 4vw;
-        margin-top: 4vw;
-    }
-}
-
-@include media('<xs') {
-    .hr-gradient{
-        margin-bottom: 22px;
-        margin-top: 22px;
-    }
-}

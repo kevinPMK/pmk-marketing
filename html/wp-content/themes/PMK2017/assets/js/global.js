@@ -9,7 +9,7 @@
 
 
 
-    $('.slide, .feature-grid, .faq-group, slide-faq__conclusion').waypoint (function(){
+    $('.slide, .feature-grid, .slide-faq__group, .slide-faq__conclusion').waypoint (function(){
         $(this.element).addClass('animated');
     }, {
         triggerOnce: true,

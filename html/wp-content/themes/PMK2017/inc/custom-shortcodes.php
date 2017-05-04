@@ -173,10 +173,12 @@ function FaqSection( $atts, $content = null ) {
 
             $faq_nav .= '<a class="faq-nav__link scroll-to-link" href="#' . $custom_term->slug . '">';
             $faq_nav .= '<span class="faq-nav__icon"></span>';
+            $faq_nav .= '<span class="faq-nav__content">';
             $faq_nav .= '<span class="faq-nav__text">' . $custom_term->name . '</span>';
             if($custom_term->description){
                 $faq_nav .= '<span class="faq-nav__description">' . $custom_term->description . '</span>';
             }
+            $faq_nav .= '</span>';
             $faq_nav .= '</a>';
 
             /*-- Render FAQ LIST --*/

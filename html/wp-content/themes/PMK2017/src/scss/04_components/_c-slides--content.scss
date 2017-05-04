@@ -129,7 +129,7 @@ Version: 1.0.0
     }
 }
 
-@include media('<sm') {
+@include media('<md') {
     .slide-half{
         .slide__content{
             flex-wrap: wrap;
@@ -140,7 +140,7 @@ Version: 1.0.0
                 box-sizing: border-box;
             }
             .slide__hero{
-                margin-top: 8vw;
+                margin-top: $grid*8;
                 flex: auto;
                 width: 100%;
                 box-sizing: border-box;
@@ -148,6 +148,14 @@ Version: 1.0.0
         //slide__content
         &:before{
             display: none;
+        }
+    }
+}
+
+@include media('<sm') {
+    .slide-half{
+        .slide__hero{
+            margin-top: $grid*6;
         }
     }
 }

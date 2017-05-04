@@ -73,8 +73,6 @@ Version: 1.0.0
         margin-top: $grid*8;
         padding: $grid*4;
         h1{
-            font-family: $header-font;
-            font-size: $font-size-64;
             margin: 0;
             display: inline-block;
             position: relative;
@@ -150,7 +148,6 @@ Version: 1.0.0
 @include media('<md') {
     .sub-page-hero__content{
         h1{
-            font-size: 6.1vw;
             padding-bottom: 3.5vw;
         }
         p{
@@ -165,7 +162,6 @@ Version: 1.0.0
     }
     .sub-page-hero__content{
         h1{
-            font-size: 48px;
             padding-bottom: 32px;
             &:before{
                 height: 4px;
@@ -180,7 +176,6 @@ Version: 1.0.0
 @include media('<xs') {
     .sub-page-hero__content{
         h1{
-            font-size: 42px;
             padding-bottom: 24px;
         }
         p{
@@ -193,14 +188,6 @@ Version: 1.0.0
         .icon{
             width: 18px;
             height: 18px;
-        }
-    }
-}
-
-@include media('<xxs') {
-    .sub-page-hero__content{
-        h1{
-            font-size: 42px;
         }
     }
 }

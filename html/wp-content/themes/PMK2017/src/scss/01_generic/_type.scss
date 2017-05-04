@@ -1,0 +1,210 @@
+/*---------------------------------------------------------------------------
+
+
+Typography
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------
+  Globals
+------------------------------------------------------------------------*/
+
+
+html{
+  font-family: $primary-font;
+  font-size: $base-font-size;
+  font-weight: 300;
+}
+
+
+
+
+/*------------------------------------------------------------------------
+  FULL
+------------------------------------------------------------------------*/
+
+h1{
+    font-size: $font-size-64;
+    font-family: $header-font;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 3em;
+    margin-top: 0;
+}
+
+
+h2{
+    font-size: $font-size-56;
+    font-family: $header-font;
+    font-weight: 700;
+    line-height: 1.2em;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+h3{
+    font-size: $font-size-32;
+    font-family: $header-font;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.718em;
+    margin-top: 0;
+}
+
+h4{
+    font-size: $font-size-28;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+}
+
+h5{
+
+}
+
+h6{
+    font-size: $font-size-14;
+    font-family: $primary-font;
+    text-transform: uppercase;
+    font-weight: 200;
+    letter-spacing: 0.04rem;
+    margin-bottom: 2em;
+    margin-top: 0;
+}
+
+p{
+    font-size: $font-size-20;
+    line-height: 2em;
+    letter-spacing: 0.01em;
+    margin-top: 0;
+    margin-bottom: 2.2em;
+    font-weight: 200;
+    &:last-child{
+        margin-bottom: 0px;
+    }
+}
+
+/*------------------------------------------------------------------------
+  <LARGE
+------------------------------------------------------------------------*/
+
+@include media('<lg') {
+    h2{
+        font-size: $font-size-48;
+    }
+    h4{
+        font-size: $font-size-24;
+    }
+    p{
+        font-size: $font-size-18;
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  <MEDIUM
+------------------------------------------------------------------------*/
+
+@include media('<md') {
+    h1{
+        font-size: 6.1vw;
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  <SMALL
+------------------------------------------------------------------------*/
+
+@include media('<sm') {
+    h1{
+        font-size: 48px;
+    }
+    h2{
+        font-size: $font-size-40;
+    }
+    h4{
+        font-size: $font-size-22;
+    }
+    p{
+        font-size: $font-size-16;
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  <EXTRA SMALL
+------------------------------------------------------------------------*/
+
+@include media('<xs') {
+    h1{
+        font-size: 42px;
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  <EXTRA EXTRA SMALL
+------------------------------------------------------------------------*/
+
+@include media('<xxs') {
+    h1{
+        font-size: 36px;
+    }
+    h2{
+        font-size: $font-size-32;
+    }
+    h4{
+        font-size: $font-size-20;
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  Modifyers
+------------------------------------------------------------------------*/
+
+
+.type-mini{
+
+    p{
+        font-size: $font-size-16;
+    }
+
+}
+
+/*------------------------------------------------------------------------
+  Dividers
+------------------------------------------------------------------------*/
+
+.hr-gradient{
+    width: $grid*16;
+    height: $grid;
+    background: linear-gradient(90deg, #3A65C7, #3FA9F5);
+    margin: 0;
+    padding: 0;
+    border: none;
+    margin-top: $grid*4;
+    margin-bottom: $grid*4;
+}
+
+@include media('<lg') {
+    .hr-gradient{
+        margin-top: $grid*3.5;
+        margin-bottom: $grid*3.5;
+    }
+}
+
+@include media('<sm') {
+    .hr-gradient{
+        margin-top: $grid*3;
+        margin-bottom: $grid*3;
+        height: 6px;
+    }
+}

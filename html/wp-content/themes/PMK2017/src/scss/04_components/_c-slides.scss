@@ -15,7 +15,6 @@ Version: 1.0.0
 
 .slide{
     display: flex;
-    padding: $grid*30 0;
     background: linear-gradient(120deg, #FFFFFF, #F4F7FA);
     &__content{
         width: 100%;
@@ -43,119 +42,101 @@ Version: 1.0.0
             padding: 0 $grid*12;
         }
     //__content
-    &__grid{
-        display: flex;
-        width: 100%;
-    }
-        &__grid-cell{
-            width: 100%;
-            box-sizing: border-box;
-            padding: $grid;
-            &--half{
-                width: 50%;
-            }
-        }
-
     &__learn-more{
         margin-top: 0;
     }
 }
 
 
+
+@include media('<lg') {
+    .slide{
+        padding: $grid*20 0;
+        &__hero{
+            padding-left: 6vw;
+            padding-right: 6vw;
+            .test-div{
+                box-shadow: 0px 0px 32px rgba(13,53,94,0.3);
+            }
+        }
+        &__copy{
+            padding-left: 6vw;
+            padding-right: 6vw;
+        }
+    }
+}
+
+
+@include media('<xxs') {
+    .slide{
+        &__hero{
+            padding-left: 24px;
+            padding-right: 24px;
+            .test-div{
+                box-shadow: 0px 0px 16px rgba(13,53,94,0.3);
+            }
+        }
+        &__copy{
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+}
+
 /*------------------------------------------------------------------------
-  Global -- Typography
+  Vertical Rythm
+------------------------------------------------------------------------*/
+
+.slide{
+    padding: $grid*30 0;
+}
+
+@include media('<lg') {
+    .slide{
+        padding: $grid*26 0;
+    }
+}
+
+@include media('<sm') {
+    .slide{
+        padding: $grid*20 0;
+    }
+}
+
+@include media('<xxs') {
+    .slide{
+        padding: $grid*12 0;
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  Slide Theme
 ------------------------------------------------------------------------*/
 
 .slide{
     font-size: $font-size-17;
     color: $copy-content-color;
     h2{
-        font-size: $font-size-48;
-        font-family: $header-font;
-        line-height: 1.2em;
-        letter-spacing: -0.01em;
         color: $copy-title-color;
         margin-top: 0;
-        margin-bottom: 1rem;
         margin-left: -2px;
     }
     h3{
-        font-size: $font-size-24;
-        font-family: $header-font;
-        letter-spacing: -0.01em;
         color: $copy-title-color;
-        margin-top: 0;
-        margin-bottom: 1rem;
+    }
+    h4{
+        color: $copy-title-color;
     }
     h6{
-        text-transform: uppercase;
         color: #ccc;
-        font-size: $font-size-14;
-        font-weight: 200;
-        letter-spacing: 0.04rem;
         margin-bottom: 2rem;
         margin-top: 0px;
     }
-    p{
-        line-height: 2em;
-        letter-spacing: 0.01em;
-        margin-top: 0;
-        margin-bottom: 2.2rem;
-        font-weight: 200;
-        &:last-child{
-            margin-bottom: 0px;
-        }
-    }
 }
 
-@include media('<sm') {
-    .slide{
-        h2{
-            font-size: 5.5vw;
-        }
-    }
-}
-
-@include media('<xs') {
-    .slide{
-        h2{
-            font-size: 34px;
-        }
-    }
-}
 
 
 /*------------------------------------------------------------------------
   Queries
 ------------------------------------------------------------------------*/
-
-@include media('<lg') {
-    .slide{
-        padding-top: 20vw;
-        padding-bottom: 20vw;
-        &__hero{
-            padding-left: 6vw;
-            padding-right: 6vw;
-        }
-        &__copy{
-            padding-left: 6vw;
-            padding-right: 6vw;
-        }
-
-    }
-}
-
-@include media('<xxs') {
-    .slide{
-        padding-top: 96px;
-        padding-bottom: 96px;
-        &__hero{
-            padding-left: 32px;
-            padding-right: 32px;
-        }
-        &__copy{
-            padding-left: 32px;
-            padding-right: 32px;
-        }
-    }
-}

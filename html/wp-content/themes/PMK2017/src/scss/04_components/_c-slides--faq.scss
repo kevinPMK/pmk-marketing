@@ -25,9 +25,8 @@ Version: 1.0.0
 .faq-nav{
     display: flex;
     margin: $grid*8 auto 0;
-    padding: 0 $grid*12;
-}
-    .faq-nav__link{
+    max-width: 1120px;
+    &__link{
         text-align: center;
         flex-wrap: wrap;
         flex: 1;
@@ -40,8 +39,11 @@ Version: 1.0.0
         color: $copy-content-color;
         box-shadow: 0px 0px 32px rgba(13, 53, 94, 0.1);
         font-weight: 200;
+        &:hover{
+            box-shadow: 0px 0px 32px rgba(13, 53, 94, 0.25);
+        }
     }
-        .faq-nav__icon{
+        &__icon{
             width: $grid*10;
             height: $grid*10;
             margin: 0 auto;
@@ -50,22 +52,96 @@ Version: 1.0.0
             display: block;
             margin-bottom: $grid*4;
         }
-        .faq-nav__text{
-            margin-bottom: $grid*1;
+        &__text{
             display: block;
             width: 100%;
-            letter-spacing: 0.01em;
-            font-size: $font-size-20;
             color: $content-copy-color--dark;
+            @extend h4;
         }
-        .faq-nav__description{
+        &__description{
             font-size: $font-size-14;
             margin-top: 0.44em;
             line-height: 2em;
             letter-spacing: 0.01em;
         }
-    //.faq-nav__link
-//.faq-nav
+        //__link
+}
+
+
+/*-- Transitions --*/
+
+.slide-faq-nav{
+    .faq-nav__link{
+        transform: translateY(40px);
+        opacity: 0;
+        transition: transform 0.55s $curved-transition 0.5s, opacity 0.55s $curved-transition 0.5s;
+        @for $i from 1 through 15 {
+            &:nth-child(#{$i}) {
+                transition-delay: (0.5s + (0.2s * $i));
+            }
+        }
+    }
+    &.animated{
+        .faq-nav__link{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}
+
+/*-- Queries --*/
+
+
+@include media('<lg') {
+    .faq-nav{
+        padding-left: 5.7vw;
+        padding-right: 5.7vw;
+    }
+}
+
+@include media('<md') {
+    .faq-nav{
+        &__link{
+            padding: $grid*4;
+            margin: $grid*2;
+        }
+    }
+}
+
+@include media('<sm') {
+    .faq-nav{
+        display: block;
+        &__link{
+            width: 100%;
+            margin: 0 0 $grid*3 0;
+            box-sizing: border-box;
+            display: flex;
+        }
+        &__icon{
+            margin: 0;
+        }
+        &__content{
+            flex: 1;
+            display: block;
+            text-align: left;
+            margin-left: $grid*4;
+        }
+        &__text{
+            font-size: $font-size-18;
+            white-space: nowrap;
+        }
+    }
+}
+
+@include media('<xs') {
+    .faq-nav{
+        &__icon{
+            width: $grid*8;
+            height: $grid*8;
+        }
+    }
+}
+
 
 
 /*------------------------------------------------------------------------
@@ -85,7 +161,10 @@ Version: 1.0.0
     }
         &__group{
             padding: 0 $grid*12;
-            margin-top: $grid*24;
+            margin-top: $grid*20;
+            h2{
+                margin-top: $grid*2;
+            }
             &:first-child{
                 margin-top: 0;
             }
@@ -113,7 +192,7 @@ Version: 1.0.0
                 &__list-item{
                     position: relative;
                     padding-left: $grid*14;
-                    margin-bottom: $grid*12;
+                    margin-bottom: 6rem;
                     &:before{
                         content: 'Q';
                         position: absolute;
@@ -144,4 +223,170 @@ Version: 1.0.0
             }
         }
     //&__content
+}
+
+/*-- In View Transitions --*/
+
+.slide-faq__group{
+    h2{
+        opacity: 0;
+        transition: all 0.7s $curved-transition 0.1s;
+        transform: translateY(40px);
+    }
+    h3{
+        opacity: 0;
+        transition: all 0.7s $curved-transition 0.3s;
+        transform: translateY(40px);
+    }
+    .slide-faq__list-item{
+        &:before{
+            opacity: 0;
+            transition: all 0.7s $curved-transition 0.2s;
+            transform: translateY(40px);
+        }
+    }
+    .hr-gradient{
+        opacity: 0;
+        transition: all 0.7s $curved-transition 0.4s;
+        width: 0px;
+        transform: translate(-20px, 30px);
+    }
+    p{
+        opacity: 0;
+        transition: all 0.7s $curved-transition 0.4s;
+        transform: translateY(40px);
+    }
+    &.animated{
+        h2{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        h3{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        .slide-faq__list-item{
+            &:before{
+                opacity: 0.2;
+                width: 128px;
+                transform: translate(0px, 0px);
+            }
+        }
+        .hr-gradient{
+            opacity: 1;
+            width: 128px;
+            transform: translate(0px, 0px);
+        }
+        p{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}
+
+.slide-faq__conclusion{
+    opacity: 0;
+    transition: all 0.7s $curved-transition 0.1s;
+    transform: translateY(40px);
+    &.animated{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+
+/*-- Queries --*/
+
+
+@include media('<lg') {
+    .slide-faq{
+        &__group{
+            padding-left: 5.7vw;
+            padding-right: 5.7vw;
+        }
+        .slide-faq__name{
+            margin-left: $grid*12;
+        }
+        .hr-gradient{
+            margin-left: $grid*12;
+        }
+        &__list-item{
+            padding-left: $grid*12;
+            &:before{
+                font-size: $grid*8;
+            }
+        }
+        &__list{
+            &:before{
+                left: $grid*12;
+            }
+        }
+        &__conclusion{
+            padding-left: 5.7vw;
+            padding-right: 5.7vw;
+            >.inner{
+                margin-left: $grid*12;
+            }
+        }
+    }
+}
+
+@include media('<sm') {
+    .slide-faq{
+        .slide-faq__name{
+            margin-left: $grid*10;
+        }
+        .hr-gradient{
+            margin-left: $grid*10;
+        }
+        &__list-item{
+            padding-left: $grid*10;
+            &:before{
+                font-size: $grid*7;
+            }
+        }
+        &__list{
+            &:before{
+                left: $grid*10;
+            }
+        }
+        &__conclusion{
+            >.inner{
+                margin-left: $grid*10;
+            }
+        }
+    }
+}
+
+@include media('<xs') {
+    .slide-faq{
+        .slide-faq__header{
+            margin-bottom: $grid*14;
+        }
+        .slide-faq__name{
+            margin-left: 0;
+        }
+        .hr-gradient{
+            margin-left: 0;
+        }
+        &__list-item{
+            padding-left: 0;
+            margin-bottom: 8rem;
+            &:before{
+                font-size: $grid*4;
+                top: -50px;
+            }
+        }
+        &__list{
+            &:before{
+                left: 0;
+            }
+        }
+        &__conclusion{
+            >.inner{
+                margin-left: 0;
+            }
+        }
+    }
 }
