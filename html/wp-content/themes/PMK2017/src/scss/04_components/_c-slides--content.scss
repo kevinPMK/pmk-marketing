@@ -46,7 +46,7 @@ Version: 1.0.0
         margin-right: auto;
     }
     .slide__copy{
-        max-width: 800px;
+        max-width: 920px;
         margin: 0 auto;
     }
 }
@@ -79,7 +79,7 @@ Version: 1.0.0
         transition: all 0.7s $curved-transition 0.5s;
         transform: translateY(40px);
     }
-    .slide__learn-more{
+    .button--primary{
         opacity: 0;
         transform: translateY(40px);
         transition: opacity 0.7s $curved-transition 0.7s, transform 0.7s $curved-transition 0.7s,;
@@ -107,7 +107,7 @@ Version: 1.0.0
             opacity: 1;
             transform: translateY(0px);
         }
-        .slide__learn-more{
+        .button--primary{
             opacity: 1;
             transform: translateY(0px);
         }
@@ -140,7 +140,7 @@ Version: 1.0.0
                 box-sizing: border-box;
             }
             .slide__hero{
-                margin-top: $grid*8;
+                margin-top: $grid*10;
                 flex: auto;
                 width: 100%;
                 box-sizing: border-box;
@@ -155,7 +155,12 @@ Version: 1.0.0
 @include media('<sm') {
     .slide-half{
         .slide__hero{
-            margin-top: $grid*6;
+            margin-top: $grid*8;
+        }
+    }
+    .slide-center{
+        .slide__copy{
+            max-width: 640px;
         }
     }
 }

@@ -20,11 +20,11 @@
 					<h2>Join us Today!</h2>
 					<p>PikMyKid gives you the Dismissal tools to ensure your kids are safe and your parents are happy. Let us show you how we can make your school more safe and efficient.</p>
 					<div class="cta-buttons">
-						<a class="button button--secondary" type="button" href="#">
+						<a class="cta-button cta-button--secondary" type="button" href="#">
 							Contact Us
 							<?php echo pmk_get_svg( array( 'icon' => '32-contact', 'size' => '32' ) );?>
 						</a>
-						<a class="button button--cta" type="button" href="#">
+						<a class="cta-button cta-button--primary" type="button" href="#">
 							Request Demo
 							<?php echo pmk_get_svg( array( 'icon' => '32-rarrow', 'size' => '32' ) );?>
 						</a>

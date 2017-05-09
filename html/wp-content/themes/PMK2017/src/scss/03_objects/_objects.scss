@@ -17,18 +17,129 @@ Version: 1.0.0
   Buttons
 ------------------------------------------------------------------------*/
 
-
-.button--learn-more{
+.button{
     background: #fff;
     display: inline-block;
-    margin-top: 3rem;
+    margin-top: $grid*3;
     font-weight: 400;
-    color: $brand-secondary;
     padding: $grid*1.5 $grid*3;
     font-size: $font-size-14;
+    color: $brand-secondary;
     border: 2px solid $brand-secondary;
-    &:hover{
+    &:focus{
+        outline: none;
+    }
+    &:hover,
+    &:focus{
         color: $brand-primary;
         border-color: $brand-primary;
+    }
+    &--primary{
+        color: $brand-secondary;
+        border: 2px solid $brand-secondary;
+        &:hover{
+            color: $brand-primary;
+            border-color: $brand-primary;
+        }
+    }
+}
+
+@include media('<md') {
+    .button--primary{
+        margin-top: $grid*2;
+    }
+}
+
+@include media('<sm') {
+    .button{
+        padding: 10px 20px;
+    }
+}
+
+
+
+
+
+/*------------------------------------------------------------------------
+  Buttons
+------------------------------------------------------------------------*/
+
+.cta-buttons{
+    margin-top: $grid*4;
+}
+
+    .cta-button{
+        font-size: $font-size-14;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 300;
+        box-sizing: border-box;
+        margin: 0px $grid;
+        width: $grid*28;
+        height: $grid*7;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: padding 0.15s $curved-transition;
+        .icon{
+            position: relative;
+            margin-left: 5px;
+            margin-right: -12px;
+            margin-top: -1px;
+            transition: margin 0.15s $curved-transition, opacity 0.15s $curved-transition;
+        }
+        &:focus{
+            outline: none;
+        }
+        &:focus,
+        &:hover{
+            padding-left: 5px;
+            .icon{
+                margin-left: 10px;
+            }
+        }
+        &--primary{
+            background: $brand-secondary;
+            border: 2px solid $brand-secondary;
+            &:focus,
+            &:hover{
+                background: $brand-primary;
+                border-color: $brand-primary;
+            }
+        }
+        &--secondary{
+            border: 2px solid $brand-secondary;
+            .icon{
+                opacity: 0.6;
+            }
+            &:focus,
+            &:hover{
+                border-color: $brand-primary;
+                background: rgba(63,169,245,0.1);
+                .icon{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+//.cta-buttons
+
+@include media('<sm') {
+    .cta-button{
+        width: $grid*24;
+        height: $grid*6;
+        margin: 0 $grid/2;
+    }
+}
+
+@include media('<xxs') {
+    .cta-button{
+        display: flex;
+        margin: $grid auto 0 auto;
+        &--secondary{
+            border-color: transparent;
+        }
     }
 }

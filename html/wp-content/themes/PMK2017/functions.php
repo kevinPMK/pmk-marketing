@@ -119,7 +119,6 @@ function my_add_excerpts_to_pages() {
  add_filter( 'wp_resource_hints', 'pmk_resource_hints', 10, 2 );
 
 
-
 /*-- REGISTER WIDGET AREAS --*/
 
 function twentyseventeen_widgets_init() {

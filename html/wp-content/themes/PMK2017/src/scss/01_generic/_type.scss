@@ -49,10 +49,10 @@ h2{
 
 h3{
     font-size: $font-size-32;
-    font-family: $header-font;
+    font-family: $primary-font;
     font-weight: 700;
-    letter-spacing: -0.01em;
-    margin-bottom: 0.718em;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8em;
     margin-top: 0;
 }
 
@@ -79,11 +79,11 @@ h6{
 }
 
 p{
-    font-size: $font-size-20;
+    font-size: $font-size-18;
     line-height: 2em;
     letter-spacing: 0.01em;
     margin-top: 0;
-    margin-bottom: 2.2em;
+    margin-bottom: 1.2em;
     font-weight: 200;
     &:last-child{
         margin-bottom: 0px;
@@ -97,6 +97,9 @@ p{
 @include media('<lg') {
     h2{
         font-size: $font-size-48;
+    }
+    h3{
+        font-size: $font-size-30;
     }
     h4{
         font-size: $font-size-24;
@@ -115,6 +118,9 @@ p{
     h1{
         font-size: 6.1vw;
     }
+    h6{
+        margin-bottom: 1.6em;
+    }
 }
 
 
@@ -129,8 +135,15 @@ p{
     h2{
         font-size: $font-size-40;
     }
+    h3{
+        font-size: $font-size-28;
+    }
     h4{
         font-size: $font-size-22;
+    }
+    h6{
+        font-size: $font-size-13;
+        margin-bottom: 1.4em;
     }
     p{
         font-size: $font-size-16;
@@ -159,6 +172,9 @@ p{
     }
     h2{
         font-size: $font-size-32;
+    }
+    h3{
+        font-size: $font-size-26;
     }
     h4{
         font-size: $font-size-20;

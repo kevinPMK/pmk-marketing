@@ -17,10 +17,12 @@ Version: 1.0.0
 
 .slide__image-grid{
     display: flex;
-    max-width: $grid*140;
     margin: $grid*12 auto 0;
     flex-wrap: wrap;
     width: 100%;
+    max-width: $page-max-width - $grid*2;
+    padding: 0 $grid*14;
+    box-sizing: border-box;
     justify-content: center;
 }
     .slide__image-grid-cell{
@@ -76,9 +78,10 @@ Version: 1.0.0
 
 @include media('<lg') {
     .slide__image-grid{
-        padding-left: 5.7vw;
-        padding-right: 5.7vw;
-        box-sizing: border-box;
+        padding-left: 6vw;
+        padding-right: 6vw;
+        padding-left: calc(6vw - 8px);
+        padding-right: calc(6vw - 8px);
         margin: $grid*10 auto 0;
     }
 }
@@ -118,13 +121,13 @@ Version: 1.0.0
         box-sizing: border-box;
         margin: 0 auto;
         display: flex;
-        padding: 0 $grid*12;
+        padding: 0 $grid*14;
     }
         .slide-mini__card{
             flex: 1;
             display: flex;
             align-items: flex-start;
-            padding: $grid*4;
+            padding: $grid*4 $grid*4 $grid*4 0;
         }
             .slide-mini__content{
                 flex: 1;
@@ -132,10 +135,10 @@ Version: 1.0.0
             }
             .slide-mini__thumb{
                 margin-top: $grid;
-                margin-right: $grid*4;
-                width: $grid*10;
-                height: $grid*10;
-                border-radius: $grid*10;
+                margin-right: $grid*6;
+                width: $grid*14;
+                height: $grid*14;
+                border-radius: $grid*14;
                 box-sizing: border-box;
                 border: 2px solid $brand-primary;
             }

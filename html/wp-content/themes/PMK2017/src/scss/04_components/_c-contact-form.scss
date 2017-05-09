@@ -1,0 +1,170 @@
+/*---------------------------------------------------------------------------
+
+
+Contact Form
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------
+  Contact Block Shortcode
+------------------------------------------------------------------------*/
+
+.contact-block{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: $grid*4;
+}
+
+.contact-card{
+    width: 50%;
+    padding-right: $grid*3;
+    padding-bottom: $grid*4;
+    box-sizing: border-box;
+    transition: all 0.45s $curved-transition;
+    opacity: 0;
+    transform: translateY(45px);
+    &__heading{
+        margin-bottom: 0.3em;
+    }
+    &__content{
+        line-height: 2em;
+    }
+        &__info{
+            display: block;
+        }
+    //&__content
+    @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+            transition-delay: (0.7s + (0.05s * $i));
+        }
+    }
+}
+
+.animated{
+    .contact-card{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  Global -- Layout and Style
+------------------------------------------------------------------------*/
+
+.wpcf7-form {
+    background: #fff;
+    padding: $grid*6;
+    box-shadow: 0px 0px 64px rgba(13,53,94,0.3);
+    position: relative;
+    &:after{
+        transform: translate( -16px, 16px );
+        z-index: -1;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(90deg, #3A65C7, #3FA9F5);
+        box-shadow: 0px 0px 64px rgba(13,53,94,0.3);
+    }
+}
+
+
+
+.contact-form{
+    position: relative;
+}
+
+    .contact-form__field-wrap{
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        position: relative;
+        input,
+        textarea{
+            border: none;
+            font-size: $font-size-20;
+            box-sizing: border-box;
+            padding: $grid*2;
+            width: 100%;
+            background: none;
+            color: $content-copy-color--dark;
+            vertical-align: top;
+            margin-bottom: -1px;
+            font-family: $primary-font;
+            font-weight: 200;
+            &:focus {
+                outline: 0;
+                padding: 14px;
+                border: 2px solid $brand-primary;
+            }
+        }
+        input{
+            height: $grid*6;
+        }
+        textarea{
+            resize: none;
+        }
+        .wpcf7-not-valid-tip{
+            position: absolute;
+            top: $grid/2;
+            right: 0;
+            color: red;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+    }
+
+        .contact-form__label{
+            border-right: 1px solid #ddd;
+            z-index: 10;
+            position: relative;
+            margin: 0;
+            font-size: $font-size-14;
+            text-transform: uppercase;
+            padding: 0 $grid*2 0 0;
+            width: $grid*10;
+            min-width: $grid*10;
+            display: flex;
+            align-items: center;
+        }
+
+    .contact-form__button-wrap{
+        display: flex;
+        padding-top: $grid*4;
+    }
+        .wpcf7-form-control-wrap{
+            width: 100%;
+        }
+
+        .wpcf7-submit{
+            margin: 0 0 0 auto;
+            @extend .button;
+            cursor: pointer;
+        }
+
+            .screen-reader-response{
+                opacity: 0;
+                height: 1px;
+            }
+
+            div.wpcf7-response-output{
+                margin: $grid*4 0 0 0;
+                font-size: $font-size-16;
+                padding: $grid*2;
+                border-color: $brand-tertiary;
+            }
+
+
+div.wpcf7 .ajax-loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

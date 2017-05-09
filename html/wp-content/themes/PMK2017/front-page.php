@@ -89,7 +89,7 @@ get_header();
 					<h6>For the Parents</h6>
 					<h2>Peace of Mind</h2>
 					<p>Phasellus vestibulum porttitor commodo. Praesent ante magna, mattis placerat augue faucibus, bibendum pellentesque eros. Sed feugiat, elit porta congue eleifend, nunc arcu congue felis, a finibus metus magna.</p>
-					<a class="slide__learn-more button--learn-more">Learn More</a>
+					<a class="button button--primary">Learn More</a>
 				</div>
 				<div class="slide__hero">
 					<div class="test-div"></div>
@@ -121,7 +121,7 @@ get_header();
 					<h6>For the Teachers</h6>
 					<h2>Less Chaos</h2>
 					<p>Phasellus vestibulum porttitor commodo. Praesent ante magna, mattis placerat augue faucibus, bibendum pellentesque eros. Sed feugiat, elit porta congue eleifend, nunc arcu congue felis, a finibus metus magna.</p>
-					<a class="slide__learn-more button--learn-more">Learn More</a>
+					<a class="button button--primary">Learn More</a>
 				</div>
 				<div class="slide__hero">
 					<div class="test-div"></div>
@@ -153,7 +153,7 @@ get_header();
 					<h6>For the Administrators</h6>
 					<h2>Flawless Orginazation</h2>
 					<p>Phasellus vestibulum porttitor commodo. Praesent ante magna, mattis placerat augue faucibus, bibendum pellentesque eros. Sed feugiat, elit porta congue eleifend, nunc arcu congue felis, a finibus metus magna.</p>
-					<a class="slide__learn-more button--learn-more">Learn More</a>
+					<a class="button button--primary">Learn More</a>
 				</div>
 				<div class="slide__hero">
 					<div class="test-div"></div>

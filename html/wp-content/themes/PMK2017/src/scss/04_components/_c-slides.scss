@@ -27,7 +27,7 @@ Version: 1.0.0
         &__hero{
             box-sizing: border-box;
             flex: 1;
-            padding: 0 $grid*12;
+            padding: 0 $grid*14;
             //temp
             .test-div{
                 background: #fff;
@@ -39,12 +39,9 @@ Version: 1.0.0
             flex: 1;
             box-sizing: border-box;
             box-sizing: border-box;
-            padding: 0 $grid*12;
+            padding: 0 $grid*14;
         }
     //__content
-    &__learn-more{
-        margin-top: 0;
-    }
 }
 
 
@@ -130,8 +127,6 @@ Version: 1.0.0
     }
     h6{
         color: #ccc;
-        margin-bottom: 2rem;
-        margin-top: 0px;
     }
 }
 

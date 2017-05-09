@@ -152,15 +152,15 @@ Version: 1.0.0
     background: url('images/grid-texture.png') center center repeat;
     background-attachment: fixed;
     .hr-gradient{
-        margin-left: $grid*14;
+        margin-left: $grid*16;
     }
     &__content{
         width: 100%;
         margin: 0 auto;
-        max-width: 960px;
+        max-width: 800px;
+        padding: 0 $grid*14;
     }
         &__group{
-            padding: 0 $grid*12;
             margin-top: $grid*20;
             h2{
                 margin-top: $grid*2;
@@ -173,7 +173,7 @@ Version: 1.0.0
                 margin-bottom: $grid*8;
             }
             .slide-faq__name{ //explicit
-                margin-left: $grid*14;
+                margin-left: $grid*16;
             }
             &__list{
                 list-style: none;
@@ -186,39 +186,35 @@ Version: 1.0.0
                     bottom: 0;
                     right: 0;
                     height: 1px;
-                    left: $grid*14;
+                    left: $grid*16;
                 }
             }
                 &__list-item{
                     position: relative;
-                    padding-left: $grid*14;
+                    padding-left: $grid*16;
                     margin-bottom: 6rem;
                     &:before{
                         content: 'Q';
                         position: absolute;
                         top: 0;
                         left: 0;
-                        margin-top: -3px;
-                        font-size: $grid*10;
+                        margin-top: -6px;
+                        font-size: $grid*12;
                         line-height: 1;
                         font-weight: 200;
-                        opacity: 0.2;
+                        opacity: 0.1;
                     }
                 }
-                    .slide-faq__question{ //explicit
-                        font-size: $font-size-32;
-                        font-family: $primary-font;
-                    }
                 //&__list-item
             //&__list
         //&__group
         &__conclusion{
-            padding: 0 $grid*12;
             >.inner{
                 margin-top: $grid*6;
-                margin-left: $grid*14;
+                margin-left: $grid*16;
             }
-            .button--learn-more{
+            .button--primary{
+                margin-top: $grid*4;
                 margin-left: $grid*4;
             }
         }
@@ -267,7 +263,7 @@ Version: 1.0.0
         }
         .slide-faq__list-item{
             &:before{
-                opacity: 0.2;
+                opacity: 0.1;
                 width: 128px;
                 transform: translate(0px, 0px);
             }
@@ -302,31 +298,33 @@ Version: 1.0.0
 @include media('<lg') {
     .slide-faq{
         &__group{
+            margin-top: $grid*16;
+        }
+        &__content{
             padding-left: 5.7vw;
             padding-right: 5.7vw;
         }
         .slide-faq__name{
-            margin-left: $grid*12;
+            margin-left: $grid*14;
         }
         .hr-gradient{
-            margin-left: $grid*12;
+            margin-left: $grid*14;
         }
         &__list-item{
-            padding-left: $grid*12;
+            padding-left: $grid*14;
             &:before{
-                font-size: $grid*8;
+                margin-top: -4px;
+                font-size: $grid*10;
             }
         }
         &__list{
             &:before{
-                left: $grid*12;
+                left: $grid*14;
             }
         }
         &__conclusion{
-            padding-left: 5.7vw;
-            padding-right: 5.7vw;
             >.inner{
-                margin-left: $grid*12;
+                margin-left: $grid*14;
             }
         }
     }
@@ -334,6 +332,9 @@ Version: 1.0.0
 
 @include media('<sm') {
     .slide-faq{
+        &__group{
+            margin-top: $grid*14;
+        }
         .slide-faq__name{
             margin-left: $grid*10;
         }
@@ -353,7 +354,16 @@ Version: 1.0.0
         }
         &__conclusion{
             >.inner{
+                margin-top: $grid*18;
                 margin-left: $grid*10;
+                text-align: center;
+            }
+            .button--primary{
+                display: block;
+                max-width: 160px;
+                margin-top: $grid*2;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     }
@@ -361,6 +371,9 @@ Version: 1.0.0
 
 @include media('<xs') {
     .slide-faq{
+        &__group{
+            margin-top: $grid*12;
+        }
         .slide-faq__header{
             margin-bottom: $grid*14;
         }
@@ -372,7 +385,7 @@ Version: 1.0.0
         }
         &__list-item{
             padding-left: 0;
-            margin-bottom: 8rem;
+            margin-bottom: $grid*14;
             &:before{
                 font-size: $grid*4;
                 top: -50px;

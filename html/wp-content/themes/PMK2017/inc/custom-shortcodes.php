@@ -58,7 +58,7 @@ function SectionContent( $atts, $content = null ) {
     $output .= '<div class="slide__copy">';
     $output .= '<h2>' . $title . '</h2>';
     $output .= '<hr class="hr-gradient">';
-    $output .= '<p>' . $content . '</p>';
+    $output .= '<p>' . do_shortcode($content) . '</p>';
     $output .= '</div>';
 
     return $output;
@@ -75,7 +75,7 @@ function SectionHero( $atts, $content = null ) {
     $output = '';
 
     $output .= '<div class="slide__hero">';
-    $output .= '<div class="test-div">' . $content . '</div>';
+    $output .= do_shortcode($content);
     $output .= '</div>';
 
     return $output;
@@ -253,6 +253,59 @@ function FaqSection( $atts, $content = null ) {
 }
 
 add_shortcode("FaqSection", "FaqSection");
+
+
+
+/*---------------------------------------------------------------
+	Contact Block
+---------------------------------------------------------------*/
+
+
+function ContactBlock( $atts, $content = null ) {
+
+    extract(shortcode_atts(array(
+        "heading" => 'Please Select a Heading'
+    ), $atts));
+
+    $output = '';
+
+    $output = '<div class="contact-block" itemscope itemtype="http://schema.org/ContactPoint">';
+    $output .= do_shortcode($content);
+    $output .= '</div>';
+
+    return $output;
+
+}
+
+add_shortcode("ContactBlock", "ContactBlock");
+
+
+
+function ContactCard( $atts ) {
+
+    extract(shortcode_atts(array(
+        "heading" => 'Please Select a Heading',
+        "email" => '',
+        "phone" => ''
+    ), $atts));
+
+    $output = '';
+
+    $output = '<div class="contact-card">';
+    $output .= '<h4 class="contact-card__heading" itemprop="contactType">';
+    $output .= $heading;
+    $output .= '</h4>';
+    $output .= '<div class="contact-card__content">';
+    $output .= '<span class="contact-card__info"><a itemprop="email" href="mailto:' . $email . '?Subject=I%20Have%20a%20Sales%20Question">' . $email . '</a></span>';
+    $output .= '<span class="contact-card__info" itemprop="telephone"><a href="tel+1-' . $phone . '">' . $phone . '</a></span>';
+    $output .= '</div>';
+    $output .= '</div>';
+
+    return $output;
+
+}
+
+add_shortcode("ContactCard", "ContactCard");
 
 
 
