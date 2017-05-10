@@ -50,9 +50,9 @@
 					</button>
 				</header>
 
-				<?php if ( has_post_thumbnail() && ( is_single() || ( is_page() && ! pmk_is_frontpage() ) ) ) : ?>
+				<?php if ( has_post_thumbnail() && ( is_single() || ( ! pmk_is_frontpage() ) ) ) : ?>
 
-					<div class="sub-page-hero">
+					<div class="sub-page-hero" data-parallax="true" data-speed="0.1" data-direction="up">
 						<?php the_post_thumbnail( 'pmk-featured-image' ); ?>
 						<div class="sub-page-hero__haze"></div>
 						<div class="sub-page-hero__gradient"></div>
@@ -95,6 +95,29 @@
 							<div class="scroll-more__line"></div>
 						</button>
 					</section>
+
+				<?php elseif(is_home()) : ?> <!-- Posts Page -->
+
+					<div class="sub-page-hero" data-parallax="true" data-speed="0.1" data-direction="up">
+						<div class="sub-page-hero__haze"></div>
+						<div class="sub-page-hero__gradient"></div>
+						<div class="sub-page-hero__content" data-parallax="true" data-speed="0.2" data-direction="up">
+
+							<?php
+						    	$latest = new WP_Query( array( 'posts_per_page' => 1 ) );
+						    	while( $latest->have_posts() ) : $latest->the_post();
+						    ?>
+
+								<h1><?php the_title(); ?></h1>
+
+								<?php if(has_excerpt()): ?>
+									<p><?php the_excerpt(); ?></p>
+								<?php endif; ?>
+
+							<?php endwhile; ?>
+
+						</div>
+					</div>
 
 				<?php endif; ?>
 
