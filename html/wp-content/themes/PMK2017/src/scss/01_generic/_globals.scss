@@ -160,6 +160,15 @@ svg{
     color: #697277;
 }
 
+/*------------------------------------------------------------------------
+  Screen Reader Text
+------------------------------------------------------------------------*/
+
+
+.screen-reader-text {
+    position: absolute !important;
+    left: -999em;
+}
 
 /*------------------------------------------------------------------------
   Site Modifyer
@@ -180,11 +189,20 @@ svg{
     &--sub{
         top: $grid*84;
     }
+    &--blog{
+        top: $grid*110;
+    }
+    &--blog-paged{
+        top: $grid*17;
+    }
 }
 
 @include media('<sm') {
     .site__content{
         &--sub{
+            top: $grid*64;
+        }
+        &--blog{
             top: $grid*64;
         }
     }

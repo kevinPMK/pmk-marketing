@@ -274,6 +274,19 @@ function twentyseventeen_front_page_template( $template ) {
 add_filter( 'frontpage_template',  'twentyseventeen_front_page_template' );
 
 
+
+/*-- Add classes to previous and next posts --*/
+
+add_filter('next_posts_link_attributes', 'posts_link_attributes_1');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes_2');
+
+function posts_link_attributes_1() {
+    return 'class="button paged-links__next-page"';
+}
+function posts_link_attributes_2() {
+    return 'class="button paged-links__previous-page"';
+}
+
 /**
  * Sort Taxonomies by creation order.
  */

@@ -1,0 +1,382 @@
+/*---------------------------------------------------------------------------
+
+
+Blog Overview
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------
+  Blog Overview Hero (Only on page 1)
+------------------------------------------------------------------------*/
+
+.blog-overview-hero{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $grid*110;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('images/grid-texture.png') center center repeat #222c59;
+    &__content{
+        z-index: 1000;
+        text-align: center;
+        width: 100%;
+        max-width: $grid*88;
+        max-width: 1580px;
+        margin: $grid*8 auto 0 auto;
+        padding: 0 $grid*14;
+    }
+        &__heading{
+            padding: 0 $grid*6;
+            font-size: $font-size-96;
+            letter-spacing: -0.02em;
+            margin: 0;
+            a{
+                display: block;
+                background: linear-gradient(-90deg, #eee, #fff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+                &:hover{
+                    background: linear-gradient(-90deg, #3A65C7, #3FA9F5);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    text-fill-color: transparent;
+                }
+            }
+        }
+            &__author{
+                font-weight: 200;
+                color: #516ca9;
+                text-transform: uppercase;
+                letter-spacing: 0.08rem;
+                margin-bottom: $grid*2;
+                display: inline-block;
+                font-size: $font-size-18;
+                span{
+                    color: #647fbc;
+                }
+            }
+            &__excerpt{
+                font-weight: 200;
+                margin-top: $grid*3;
+                color: #647fbc;
+                font-size: $font-size-20;
+            }
+        //__heading
+    //__content
+}
+
+/*-- In View Transitions --*/
+
+.blog-overview-hero{
+    &__author{
+        opacity: 0;
+        transform: translateY(45px);
+        transition: transform 0.45s $curved-transition 0.15s, opacity 0.45s $curved-transition 0.15s;
+    }
+    &__heading{
+        opacity: 0;
+        transform: translateY(45px);
+        transition: transform 0.45s $curved-transition 0.25s, opacity 0.45s $curved-transition 0.25s;
+    }
+    &__excerpt{
+        opacity: 0;
+        transform: translateY(45px);
+        transition: transform 0.45s $curved-transition 0.35s, opacity 0.45s $curved-transition 0.35s;
+    }
+    &.animated{
+        .blog-overview-hero__author,
+        .blog-overview-hero__heading,
+        .blog-overview-hero__excerpt{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}
+
+/*-- Queries --*/
+
+@include media('<lg') {
+    .blog-overview-hero{
+        &__content{
+            padding-left: 6vw;
+            padding-right: 6vw;
+        }
+        &__heading{
+            font-size: $font-size-80;
+            padding: 0;
+        }
+        &__author{
+            font-size: $font-size-16;
+        }
+        &__excerpt{
+            font-size: $font-size-18;
+        }
+    }
+}
+
+@include media('<md') {
+    .blog-overview-hero{
+        &__heading{
+            font-size: 7vw;
+        }
+        //&__heading
+    }
+}
+
+@include media('<sm') {
+    .blog-overview-hero{
+        height: $grid*64;
+        &__heading{
+            font-size: 48px;
+        }
+        &__author{
+            font-size: $font-size-14;
+            margin-bottom: $grid*3;
+        }
+        &__excerpt{
+            font-size: $font-size-16;
+        }
+    }
+}
+
+@include media('<xxs') {
+    .blog-overview-hero{
+        &__heading{
+            font-size: 40px;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  Blog Overview Hero Paged
+------------------------------------------------------------------------*/
+
+.blog-overview-hero--paged{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $grid*17;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('images/grid-texture.png') center center repeat #222c59;
+}
+
+
+
+
+/*------------------------------------------------------------------------
+  Blog Overview Slide
+------------------------------------------------------------------------*/
+
+.blog-overview{
+    @extend .slide-center;
+    &__page-count{
+        @extend h6;
+        margin-bottom: $grid;
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  Blog Overview Deck
+------------------------------------------------------------------------*/
+
+.blog-overview__deck{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+/*------------------------------------------------------------------------
+  Blog Overview Card
+------------------------------------------------------------------------*/
+
+
+.blog-card{
+    width: 33.3333%;
+    box-sizing: border-box;
+    padding: 0 $grid*2 $grid*4 $grid*2;
+    >.inner{
+        box-shadow: 0px 0px 32px rgba(13, 53, 94, 0.15);
+        background: #fff;
+        height: 100%;
+        box-sizing: border-box;
+        display: block;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    &__thumb{
+        position: relative;
+        padding-bottom: $grid;
+        >.inner{
+            padding-bottom:60%;
+            background:#fff;
+            height:0;
+            position:relative;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -5%;
+            width: 110%;
+            height: $grid;
+            background: linear-gradient(90deg, #3A65C7, #3FA9F5);
+        }
+    }
+    &__content{
+        padding: $grid*6 $grid*4;
+        text-align: left;
+    }
+        &__heading{
+            margin-bottom: 0;
+        }
+        &__meta{
+            @extend h6;
+            margin-bottom: 0.5em;
+        }
+            &__author{
+                color: $content-copy-color--light;
+            }
+        &__footer{
+            text-align: left;
+            width: 100%;
+            margin-top: auto;
+            padding: $grid*2 $grid*4;
+            border-top: 1px solid #eee;
+        }
+    //__content
+}
+
+/*-- In View Transitions --*/
+
+.blog-card{
+    opacity: 0;
+    transform: translateY(45px);
+    transition: all 0.45s $curved-transition 0.2s;
+    &:nth-child(3n + 1){
+        transition-delay: 0.25s;
+    }
+    &:nth-child(3n + 2){
+        transition-delay: 0.35s;
+    }
+    &:nth-child(3n + 3){
+        transition-delay: 0.45s;
+    }
+    &__thumb{
+        &:after{
+            left: -100%;
+            transition: all 0.45s $curved-transition 0.35s;
+            &:nth-child(3n + 1){
+                transition-delay: 0.35s;
+            }
+            &:nth-child(3n + 2){
+                transition-delay: 0.45s;
+            }
+            &:nth-child(3n + 3){
+                transition-delay: 0.55s;
+            }
+        }
+    }
+    &.animated{
+        opacity: 1;
+        transform: translateY(0px);
+        .blog-card__thumb{
+            &:after{
+                left: -5%;
+            }
+        }
+    }
+}
+
+
+// This is here to force the first set of cards to slide in when its parent view is in view, and not the card itself
+
+.animated{
+    .blog-card:nth-child(n):nth-child(-n+3){
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+/*-- States --*/
+
+// Add padding if the blog overview is paged
+.site__content--blog-paged{
+    .blog-overview__deck{
+        padding-top: $grid*14;
+    }
+}
+
+
+
+
+/*------------------------------------------------------------------------
+  Paging Links
+------------------------------------------------------------------------*/
+
+.paged-links{
+    padding-top: $grid*14;
+    .button{
+        width: $grid*14;
+        position: relative;
+        margin: 0 $grid;
+    }
+    .icon{
+        position: absolute;
+        top: 50%;
+        margin-top: -14px;
+        transition: left 0.10s $curved-transition, right 0.10s $curved-transition;
+    }
+    &__next-page{
+        margin-top: 0;
+        text-align: left;
+        .icon{
+            right: 10px;
+        }
+        &:hover{
+            .icon{
+                right: 5px;
+            }
+        }
+    }
+    &__previous-page{
+        margin-top: 0;
+        text-align: right;
+        .icon{
+            left: 10px;
+        }
+        &:hover{
+            .icon{
+                left: 5px;
+            }
+        }
+    }
+}

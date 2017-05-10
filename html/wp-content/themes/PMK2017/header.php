@@ -50,27 +50,14 @@
 					</button>
 				</header>
 
-				<?php if ( has_post_thumbnail() && ( is_single() || ( ! pmk_is_frontpage() ) ) ) : ?>
+				<?php
+				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				// are we on page one?
+				?>
 
-					<div class="sub-page-hero" data-parallax="true" data-speed="0.1" data-direction="up">
-						<?php the_post_thumbnail( 'pmk-featured-image' ); ?>
-						<div class="sub-page-hero__haze"></div>
-						<div class="sub-page-hero__gradient"></div>
-						<div class="sub-page-hero__content" data-parallax="true" data-speed="0.2" data-direction="up">
-							<?php if ( $post->post_parent ) : ?>
-								<a class="sub-page-hero__parent-page-link" href="<?php echo get_permalink( $post->post_parent ); ?>">
-									<?php echo pmk_get_svg( array( 'icon' => '24-leftcaret', 'size' => '24' ) );?>
-									<?php echo get_the_title( $post->post_parent ); ?>
-								</a>
-							<?php endif; ?>
-							<h1><?php the_title(); ?></h1>
-							<?php if(has_excerpt()): ?>
-							<p><?php the_excerpt(); ?></p>
-							<?php endif; ?>
-						</div>
-					</div>
 
-				<?php elseif(has_post_thumbnail() && pmk_is_frontpage()) : ?>
+
+				<?php if( pmk_is_frontpage()) : ?>
 
 					<section class="home-hero" data-parallax="true" data-speed="0.1" data-direction="up">
 						<?php the_post_thumbnail( 'pmk-featured-image' ); ?>
@@ -96,26 +83,54 @@
 						</button>
 					</section>
 
-				<?php elseif(is_home()) : ?> <!-- Posts Page -->
+				<?php elseif( is_home() && $paged == 1 ) : ?> <!-- Posts Page -->
+
+					<div class="blog-overview-hero" data-parallax="true" data-speed="0.1" data-direction="up">
+						<div class="blog-overview-hero__content" data-parallax="true" data-speed="0.2" data-direction="up">
+
+						<?php
+							$latest = new WP_Query( array( 'posts_per_page' => 1 ) );
+							while( $latest->have_posts() ) : $latest->the_post();
+						?>
+
+
+							<span class="blog-overview-hero__author">Written by: <span><?php echo get_the_author(); ?></span></span>
+							<h1 class="blog-overview-hero__heading">
+								<a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+							</h1>
+							<?php if(has_excerpt()): ?>
+								<p class="blog-overview-hero__excerpt">
+									<?php echo get_the_excerpt(); ?>
+								</p>
+							<?php endif; ?>
+
+						<?php endwhile; ?>
+
+						</div>
+					</div>
+
+				<?php elseif( is_home() && $paged != 1 ) : ?> <!-- Posts Page Paged -->
+
+					<div class="blog-overview-hero--paged" data-parallax="true" data-speed="0.1" data-direction="up">
+					</div>
+
+				<?php else : ?>
 
 					<div class="sub-page-hero" data-parallax="true" data-speed="0.1" data-direction="up">
+						<?php the_post_thumbnail( 'pmk-featured-image' ); ?>
 						<div class="sub-page-hero__haze"></div>
 						<div class="sub-page-hero__gradient"></div>
 						<div class="sub-page-hero__content" data-parallax="true" data-speed="0.2" data-direction="up">
-
-							<?php
-						    	$latest = new WP_Query( array( 'posts_per_page' => 1 ) );
-						    	while( $latest->have_posts() ) : $latest->the_post();
-						    ?>
-
-								<h1><?php the_title(); ?></h1>
-
-								<?php if(has_excerpt()): ?>
-									<p><?php the_excerpt(); ?></p>
-								<?php endif; ?>
-
-							<?php endwhile; ?>
-
+							<?php if ( $post->post_parent ) : ?>
+								<a class="sub-page-hero__parent-page-link" href="<?php echo get_permalink( $post->post_parent ); ?>">
+									<?php echo pmk_get_svg( array( 'icon' => '24-leftcaret', 'size' => '24' ) );?>
+									<?php echo get_the_title( $post->post_parent ); ?>
+								</a>
+							<?php endif; ?>
+							<h1><?php the_title(); ?></h1>
+							<?php if(has_excerpt()): ?>
+							<p><?php the_excerpt(); ?></p>
+							<?php endif; ?>
 						</div>
 					</div>
 
@@ -123,4 +138,20 @@
 
 
 
-				<div class="site__content<?php if( !pmk_is_frontpage() ){  echo ' site__content--sub'; } ?>">
+				<?php if( pmk_is_frontpage()) : ?>
+
+					<div class="site__content site__content--home">
+
+				<?php elseif( is_home() && $paged == 1 ) : ?>
+
+					<div class="site__content site__content--blog">
+
+				<?php elseif( is_home() && $paged != 1 ) : ?>
+
+					<div class="site__content site__content--blog-paged">
+
+				<?php else : ?>
+
+					<div class="site__content site__content--sub">
+
+				<?php endif; ?>

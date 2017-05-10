@@ -9,7 +9,7 @@
 
 
 
-    $('.slide, .feature-grid, .slide-faq__group, .slide-faq__conclusion').waypoint (function(){
+    $('.slide, .feature-grid, .slide-faq__group, .slide-faq__conclusion, .blog-card, .blog-overview-hero').waypoint (function(){
         $(this.element).addClass('animated');
     }, {
         triggerOnce: true,
