@@ -14,7 +14,6 @@
 
 ?>
 
-
 			<section class="slide slide-cta">
 				<div class="slide-cta__content">
 					<h2>Join us Today!</h2>

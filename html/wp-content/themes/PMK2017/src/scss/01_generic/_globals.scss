@@ -195,6 +195,17 @@ svg{
     &--blog-paged{
         top: $grid*17;
     }
+    &--sub--large{
+        top: $grid*100;
+    }
+}
+
+@include media('<md') {
+    .site__content{
+        &--blog{
+            top: $grid*80;
+        }
+    }
 }
 
 @include media('<sm') {
@@ -204,6 +215,9 @@ svg{
         }
         &--blog{
             top: $grid*64;
+        }
+        &--blog-paged{
+            top: 73px;
         }
     }
 }

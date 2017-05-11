@@ -55,8 +55,6 @@
 				// are we on page one?
 				?>
 
-
-
 				<?php if( pmk_is_frontpage()) : ?>
 
 					<section class="home-hero" data-parallax="true" data-speed="0.1" data-direction="up">
@@ -114,9 +112,17 @@
 					<div class="blog-overview-hero--paged" data-parallax="true" data-speed="0.1" data-direction="up">
 					</div>
 
-				<?php else : ?>
+				<?php else :
 
-					<div class="sub-page-hero" data-parallax="true" data-speed="0.1" data-direction="up">
+					if(is_single()){
+						$heroClass = 'sub-page-hero sub-page-hero--large';
+					}else{
+						$heroClass = 'sub-page-hero';
+					}
+
+				?>
+
+					<div class="<?php echo $heroClass; ?>" data-parallax="true" data-speed="0.1" data-direction="up">
 						<?php the_post_thumbnail( 'pmk-featured-image' ); ?>
 						<div class="sub-page-hero__haze"></div>
 						<div class="sub-page-hero__gradient"></div>
@@ -129,14 +135,12 @@
 							<?php endif; ?>
 							<h1><?php the_title(); ?></h1>
 							<?php if(has_excerpt()): ?>
-							<p><?php the_excerpt(); ?></p>
+							<p><?php echo get_the_excerpt(); ?></p>
 							<?php endif; ?>
 						</div>
 					</div>
 
 				<?php endif; ?>
-
-
 
 				<?php if( pmk_is_frontpage()) : ?>
 
@@ -149,6 +153,10 @@
 				<?php elseif( is_home() && $paged != 1 ) : ?>
 
 					<div class="site__content site__content--blog-paged">
+
+				<?php elseif( is_single() ) : ?>
+
+					<div class="site__content site__content--sub site__content--sub--large">
 
 				<?php else : ?>
 

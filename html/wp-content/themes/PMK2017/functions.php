@@ -345,6 +345,11 @@ require get_parent_theme_file_path( '/inc/custom-walkers.php' );
 require get_parent_theme_file_path( '/inc/custom-shortcodes.php' );
 
 /**
+ * Custom Meta Boxes
+ */
+require get_parent_theme_file_path( '/inc/custom-metaboxes.php' );
+
+/**
  * Custom Post Types
  */
 require get_parent_theme_file_path( '/inc/custom-posttypes.php' );

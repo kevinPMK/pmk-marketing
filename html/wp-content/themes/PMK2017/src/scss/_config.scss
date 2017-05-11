@@ -20,6 +20,9 @@ Version: 1.0.0
   Layout
 ---------------------------------------------------------------------*/
 
+
+$page-max-width: 1680px;
+
 /* Queries, Built by http://include-media.com/#features */
 $breakpoints: (
   xxs: 480px,
@@ -27,10 +30,9 @@ $breakpoints: (
   sm: 800px,
   md: 1024px,
   lg: 1280px,
-  xl: 1960px
+  xl: $page-max-width
 );
 
-$page-max-width: 1580px;
 $content-max-width: 800px;
 
 $grid: 8px;
