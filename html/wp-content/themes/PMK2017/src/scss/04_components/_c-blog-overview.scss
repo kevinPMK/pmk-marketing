@@ -262,10 +262,19 @@ Version: 1.0.0
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        &:hover{
+            box-shadow: 0px 0px 32px rgba(13, 53, 94, 0.35);
+            .blog-card__thumb{
+                img{
+                    transform: scale(1.3);
+                }
+            }
+        }
     }
     &__thumb{
         position: relative;
         padding-bottom: $grid;
+        overflow: hidden;
         >.inner{
             padding-bottom:60%;
             background:#fff;
@@ -277,6 +286,8 @@ Version: 1.0.0
             height: 100%;
             display: block;
             position: absolute;
+            transform: scale(1);
+            transition: all 0.2s $curved-transition;
         }
         &:after{
             content: '';

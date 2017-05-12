@@ -219,5 +219,8 @@ svg{
         &--blog-paged{
             top: 73px;
         }
+        &--sub--large{
+            top: $grid*80;
+        }
     }
 }

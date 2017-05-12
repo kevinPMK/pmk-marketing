@@ -15,7 +15,6 @@ get_header(); ?>
 
 <main id="main" class="site-main" role="main">
 	<section class="slide blog-single">
-		<div class="inner">
 
 			<?php
 
@@ -39,11 +38,9 @@ get_header(); ?>
 					--*/
 
 				endwhile; // End of the loop.
-			?>
-			<div class="blog-single__sidebar">
 
-			</div>
-		</div>
+			?>
+
 	</section>
 </main>
 

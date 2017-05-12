@@ -54,7 +54,7 @@ Version: 1.0.0
         right: 0;
         top: 0;
         bottom: 0;
-        background: linear-gradient(rgba(40,48,79,0.5) 0%, rgba(40,48,79,0.9) 100%);
+        background: linear-gradient( rgba(22,26,39,0.9) 0%, rgba(10,10,10,0.5) 100%);
     }
     &__lightstreak{
         width: 800px;
@@ -71,7 +71,7 @@ Version: 1.0.0
         width: 100%;
         max-width: $grid*88;
         margin-top: $grid*8;
-        padding: $grid*4;
+        padding: 0 $grid*14;
         h1{
             margin: 0;
             display: inline-block;
@@ -105,7 +105,7 @@ Version: 1.0.0
             margin-top: $grid*3;
             font-size: $font-size-20;
             font-weight: 200;
-            color: #a5bbec;
+            color: #cedaf3;
             opacity: 0.8;
         }
     }
@@ -160,6 +160,13 @@ Version: 1.0.0
     }
 }
 
+@include media('<lg') {
+    .sub-page-hero__content{
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+}
+
 @include media('<sm') {
     .sub-page-hero{
         height: $grid*64;
@@ -172,6 +179,7 @@ Version: 1.0.0
             }
         }
         p{
+            font-size: $font-size-16;
             margin-top: 24px;
         }
     }
@@ -213,6 +221,65 @@ Version: 1.0.0
         p{
             margin-top: $grid*6;
             font-size: $font-size-20;
+        }
+    }
+}
+
+
+/*-- Queries --*/
+
+@include media('<lg') {
+    .sub-page-hero--large{
+        .sub-page-hero__content{
+            h1{
+                font-size: $font-size-72;
+            }
+            p{
+                font-size: $font-size-18;
+            }
+        }
+    }
+}
+
+
+/*-- Queries --*/
+
+@include media('<md') {
+    .sub-page-hero--large{
+        .sub-page-hero__content{
+            h1{
+                font-size: 7vw;
+                padding-bottom: 4.5vw;
+            }
+            p{
+                margin-top: 3.3vw;
+            }
+        }
+    }
+}
+
+@include media('<sm') {
+    .sub-page-hero--large{
+        height: $grid*80;
+        .sub-page-hero__content{
+            h1{
+                font-size: 48px;
+                padding-bottom: $grid*4;
+            }
+            p{
+                margin-top: $grid*3;
+                font-size: $font-size-16;
+            }
+        }
+    }
+}
+
+@include media('<xxs') {
+    .sub-page-hero--large{
+        .sub-page-hero__content{
+            h1{
+                font-size: 40px;
+            }
         }
     }
 }
