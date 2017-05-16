@@ -2380,13 +2380,12 @@ Version: 1.0.0
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 32px 32px 32px 0; }
+  padding: 32px 64px 32px 0; }
 
 .slide-mini__content {
   -webkit-box-flex: 1;
       -ms-flex: 1;
-          flex: 1;
-  padding-right: 16px; }
+          flex: 1; }
 
 .slide-mini__thumb {
   margin-top: 8px;
@@ -2917,23 +2916,23 @@ Version: 1.0.0
     width: 100%;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 112px; }
+    padding: 112px 112px 160px 112px; }
 
 /*-- Queries --*/
 @media (max-width: 1279px) {
   .blog-single__content {
-    padding: 104px 6.6vw; } }
+    padding: 104px 6.6vw 128px 6.6vw; } }
 
 @media (max-width: 799px) {
   .blog-single__content {
     padding-top: 80px;
-    padding-bottom: 80px; } }
+    padding-bottom: 112px; } }
 
 /*------------------------------------------------------------------------
   Blog Heading Bar
 ------------------------------------------------------------------------*/
 .blog-heading-bar {
-  border-bottom: 1px solid #eee; }
+  border-bottom: 1px solid #dedede; }
   .blog-heading-bar > .inner {
     width: 100%;
     max-width: 1024px;
@@ -2950,7 +2949,7 @@ Version: 1.0.0
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    border-right: 1px solid #eee;
+    border-right: 1px solid #dedede;
     width: 50%;
     height: 112px;
     -webkit-box-flex: 1;
@@ -2960,7 +2959,7 @@ Version: 1.0.0
     padding: 24px 24px;
     color: #696c72; }
     .blog-heading-bar__section:first-child {
-      border-left: 1px solid #eee; }
+      border-left: 1px solid #dedede; }
   .blog-heading-bar__thumb {
     min-width: 64px;
     width: 64px;
@@ -2989,7 +2988,7 @@ Version: 1.0.0
         -ms-flex-direction: column;
             flex-direction: column;
     width: 56px;
-    border-right: 1px solid #eee; }
+    border-right: 1px solid #dedede; }
   .blog-heading-bar__social-link {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -3005,7 +3004,7 @@ Version: 1.0.0
             justify-content: center;
     color: #879cc6; }
     .blog-heading-bar__social-link:first-child {
-      border-bottom: 1px solid #eee; }
+      border-bottom: 1px solid #dedede; }
     .blog-heading-bar__social-link:hover {
       color: #3FA9F5; }
 
@@ -3031,6 +3030,139 @@ Version: 1.0.0
     margin-left: 0; }
   .blog-heading-bar__social-tower {
     display: none; } }
+
+/*------------------------------------------------------------------------
+  Author Bio Card
+------------------------------------------------------------------------*/
+.author-bio {
+  border: 4px solid #dedede;
+  margin-top: 112px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .author-bio__content {
+    padding: 40px; }
+  .author-bio__heading {
+    font-size: 1.25rem;
+    color: #333E48; }
+  .author-bio__name {
+    font-weight: 500; }
+  .author-bio__word-divide {
+    color: #acb6bb; }
+  .author-bio__title {
+    color: #acb6bb;
+    margin-bottom: 0; }
+  .author-bio__description {
+    margin-top: 16px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    font-size: 1rem; }
+  .author-bio__thumb {
+    min-width: 96px;
+    width: 96px;
+    height: 96px;
+    border-radius: 96px;
+    padding: 4px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: linear-gradient(90deg, #3A65C7, #3FA9F5);
+    margin: 40px 0 40px 40px; }
+    .author-bio__thumb img {
+      border-radius: 100%;
+      width: 100%;
+      height: auto; }
+
+@media (max-width: 1279px) {
+  .author-bio {
+    margin-top: 104px;
+    text-align: center; } }
+
+@media (max-width: 799px) {
+  .author-bio {
+    margin-top: 80px;
+    display: block;
+    padding: 32px 24px 8px 24px; }
+    .author-bio__heading {
+      font-size: 1.125rem; }
+    .author-bio__content {
+      padding: 24px; }
+    .author-bio__name {
+      display: block; }
+    .author-bio__word-divide {
+      display: none; }
+    .author-bio__thumb {
+      margin: 0 auto; } }
+
+@media (max-width: 599px) {
+  .author-bio {
+    padding-right: 0;
+    padding-left: 0; }
+    .author-bio__heading {
+      font-size: 1.25rem;
+      color: #333E48; } }
+
+/*------------------------------------------------------------------------
+  Related Posts
+------------------------------------------------------------------------*/
+.related-posts {
+  max-width: 1024px;
+  padding: 0 112px 160px 112px;
+  margin: 0 auto;
+  text-align: center; }
+  .related-posts__grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%; }
+  .related-posts__meta {
+    font-size: 0.875rem;
+    margin-bottom: 16px; }
+  .related-posts__post {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    min-height: 320px; }
+    .related-posts__post h4, .related-posts__post .faq-nav__text {
+      color: #fff; }
+    .related-posts__post > .inner {
+      padding: 32px;
+      background: #3FA9F5;
+      color: #fff;
+      display: block;
+      height: 100%;
+      box-sizing: border-box;
+      text-align: left;
+      transition: -webkit-transform 0.15s cubic-bezier(0.34, 0.61, 0.59, 1.11);
+      transition: transform 0.15s cubic-bezier(0.34, 0.61, 0.59, 1.11);
+      transition: transform 0.15s cubic-bezier(0.34, 0.61, 0.59, 1.11), -webkit-transform 0.15s cubic-bezier(0.34, 0.61, 0.59, 1.11);
+      position: relative; }
+      .related-posts__post > .inner:hover {
+        z-index: 100;
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1); }
+    .related-posts__post:nth-child(2) > .inner {
+      background: #3998db; }
+
+/*-- Queries --*/
+@media (max-width: 1279px) {
+  .related-posts {
+    padding: 0 6.6vw 128px 6.6vw; } }
+
+@media (max-width: 799px) {
+  .related-posts {
+    padding-top: 0;
+    padding-bottom: 112px; }
+    .related-posts__grid {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      width: 100%; }
+    .related-posts__post {
+      min-height: auto;
+      width: 100%;
+      -webkit-box-flex: 1;
+          -ms-flex: auto;
+              flex: auto; } }
 
 /*---------------------------------------------------------------------------
 

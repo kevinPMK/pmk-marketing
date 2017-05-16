@@ -29,10 +29,10 @@ function section( $atts, $content = null ) {
         $output .= '</div>';
         $output .= '</section>';
 
-    }else if($type == 'quote') {
+    }else if($type == 'mini') {
 
-        $output .= '<section class="slide slide-quote">';
-        $output .= '<div class="slide__content">';
+        $output .= '<section class="slide slide-mini type-mini">';
+        $output .= '<div class="slide-mini__grid">';
         $output .= do_shortcode($content);
         $output .= '</div>';
         $output .= '</section>';
@@ -85,6 +85,31 @@ function SectionHero( $atts, $content = null ) {
 add_shortcode("SectionHero", "SectionHero");
 
 
+/*-- SECTION MINI HALF --*/
+
+function SectionMiniHalf( $atts, $content = null ) {
+
+    extract(shortcode_atts(array(
+        "title" => 'Please Select a Title'
+    ), $atts));
+
+    $output = '<div class="slide-mini__card">';
+    $output .= '<div class="slide-mini__thumb">';
+    $output .= '</div>';
+    $output .= '<div class="slide-mini__content">';
+    $output .= '<h4>' . $title . '</h4>';
+    $output .= '<p>' . do_shortcode($content) . '</p>';
+    $output .= '</div>';
+    $output .= '</div>';
+
+    return $output;
+
+}
+
+add_shortcode("SectionMiniHalf", "SectionMiniHalf");
+
+
+
 /*-- SECTION Quote --*/
 
 function SectionQuote( $atts, $content = null ) {
@@ -96,6 +121,7 @@ function SectionQuote( $atts, $content = null ) {
 
     $output = '';
 
+    $output .= '<section class="slide slide-quote">';
     $output .= '<div class="slide__content">';
     $output .= '<figure>';
     $output .= '<blockquote>';
@@ -115,6 +141,7 @@ function SectionQuote( $atts, $content = null ) {
     $output .= '</footer>';
     $output .= '</figure>';
     $output .= '</div>';
+    $output .= '</section>';
 
     return $output;
 
@@ -307,6 +334,67 @@ function ContactCard( $atts ) {
 
 add_shortcode("ContactCard", "ContactCard");
 
+
+/*---------------------------------------------------------------
+	Slide Image Grid
+---------------------------------------------------------------*/
+
+
+function SlideImageGrid( $atts ) {
+
+    extract(shortcode_atts(array(
+    ), $atts));
+
+    $output = '';
+
+    $output = '<div class="slide__image-grid">';
+    $output .= '<div class="slide__image-grid-cell slide__image-grid-cell--half">';
+    $output .= '<div class="inner"></div>';
+    $output .= '</div>';
+    $output .= '<div class="slide__image-grid-cell slide__image-grid-cell--half">';
+    $output .= '<div class="inner"></div>';
+    $output .= '</div>';
+    $output .= '<div class="slide__image-grid-cell slide__image-grid-cell--full">';
+    $output .= '<div class="inner"></div>';
+    $output .= '</div>';
+    $output .= '</div>';
+
+    return $output;
+
+}
+
+add_shortcode("SlideImageGrid", "SlideImageGrid");
+
+
+/*---------------------------------------------------------------
+	Half Mini Section
+---------------------------------------------------------------*/
+
+
+function HalfMiniSection( $atts ) {
+
+    extract(shortcode_atts(array(
+    ), $atts));
+
+    $output = '';
+
+    $output = '<div class="slide__image-grid">';
+    $output .= '<div class="slide__image-grid-cell slide__image-grid-cell--half">';
+    $output .= '<div class="inner"></div>';
+    $output .= '</div>';
+    $output .= '<div class="slide__image-grid-cell slide__image-grid-cell--half">';
+    $output .= '<div class="inner"></div>';
+    $output .= '</div>';
+    $output .= '<div class="slide__image-grid-cell slide__image-grid-cell--full">';
+    $output .= '<div class="inner"></div>';
+    $output .= '</div>';
+    $output .= '</div>';
+
+    return $output;
+
+}
+
+add_shortcode("SlideImageGrid", "SlideImageGrid");
 
 
 ?>

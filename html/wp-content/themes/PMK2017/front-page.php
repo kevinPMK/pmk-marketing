@@ -10,10 +10,23 @@ get_header();
 
 	<main id="main" class="site-main" role="main">
 
+		<?php
+		while ( have_posts() ) : the_post();
+
+			the_content();
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			// if ( comments_open() || get_comments_number() ) :
+			//	 comments_template();
+			// endif;
+
+		endwhile; // End of the loop.
+		?>
+
 		<section class="slide slide-half">
 			<div class="slide__content">
 				<div class="slide__copy">
-					<h2>Stress Free Dismissal</h2>
+					<h2>The Comprehensive School Safety Platform</h2>
 					<hr class="hr-gradient" />
 					<p>Phasellus vestibulum porttitor commodo. Praesent ante magna, mattis placerat augue faucibus, bibendum pellentesque eros. Sed feugiat, elit porta congue eleifend, nunc arcu congue felis, a finibus metus magna.</p>
 				</div>

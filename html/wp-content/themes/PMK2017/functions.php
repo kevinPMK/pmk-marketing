@@ -227,7 +227,8 @@ add_filter( 'the_content', 'wpautop' , 12);
 */
 
 remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'wpautop' , 99 );
+add_filter( 'the_content', 'wpautop' , 12);
+
 add_filter( 'the_content', 'shortcode_unautop', 100 );
 
 /*-- ADD CUSTOM IMAGE SIZES FOR CONTENT IMAGES
@@ -344,12 +345,13 @@ require get_parent_theme_file_path( '/inc/custom-walkers.php' );
  */
 require get_parent_theme_file_path( '/inc/custom-shortcodes.php' );
 
-/**
- * Custom Meta Boxes
- */
-require get_parent_theme_file_path( '/inc/custom-metaboxes.php' );
+/*-- Default Post Metaboxes --*/
+require get_parent_theme_file_path( '/inc/post-metaboxes.php' );
 
-/**
- * Custom Post Types
- */
-require get_parent_theme_file_path( '/inc/custom-posttypes.php' );
+
+/*-- Custom Post Types --*/
+
+require get_parent_theme_file_path( '/inc/press/manifest.php' );
+require get_parent_theme_file_path( '/inc/faq/manifest.php' );
+require get_parent_theme_file_path( '/inc/customers/manifest.php' );
+require get_parent_theme_file_path( '/inc/staff/manifest.php' );

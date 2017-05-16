@@ -126,11 +126,10 @@ Version: 1.0.0
             flex: 1;
             display: flex;
             align-items: flex-start;
-            padding: $grid*4 $grid*4 $grid*4 0;
+            padding: $grid*4 $grid*8 $grid*4 0;
         }
             .slide-mini__content{
                 flex: 1;
-                padding-right: $grid*2;
             }
             .slide-mini__thumb{
                 margin-top: $grid;
