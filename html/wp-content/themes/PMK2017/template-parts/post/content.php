@@ -32,6 +32,15 @@ if(!empty($post_author_id[0])){
 	}
 }
 
+//Twitter Share Link
+
+
+$ss_url = urlencode(get_permalink());
+$ss_title = str_replace( ' ', '%20', get_the_title());
+
+$twitterURL = 'https://twitter.com/intent/tweet?text='.$ss_title.'&amp;url='.$ss_url;
+
+
 ?>
 
 
@@ -74,10 +83,10 @@ if(!empty($post_author_id[0])){
 			</div>
 		</div>
 		<div class="blog-heading-bar__social-tower">
-			<a class="blog-heading-bar__social-link">
+			<a id="shareBtn" title="Share on Facebook" class="blog-heading-bar__social-link">
 				<?php echo pmk_get_svg( array( 'icon' => '32-facebook-mono', 'size' => '32' ) );?>
 			</a>
-			<a class="blog-heading-bar__social-link">
+			<a href="<?php echo $twitterURL; ?>" title="Share on Twitter" class="blog-heading-bar__social-link" target="_blank">
 				<?php echo pmk_get_svg( array( 'icon' => '32-twitter-mono', 'size' => '32' ) );?>
 			</a>
 		</div>

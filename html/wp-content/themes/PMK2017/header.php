@@ -25,6 +25,28 @@
 		</head>
 
 		<body <?php body_class(); ?>>
+
+			<script>
+				//LOAD THE FB JS SDK
+				window.fbAsyncInit = function() {
+					FB.init({
+						appId      : '442946962717392',
+						xfbml      : true,
+						version    : 'v2.9'
+					});
+					FB.AppEvents.logPageView();
+				};
+
+				(function(d, s, id){
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id)) {return;}
+					js = d.createElement(s); js.id = id;
+					js.src = "//connect.facebook.net/en_US/sdk.js";
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			</script>
+
+
 			<div id="page" class="site">
 				<a class="skip-link screen-reader-text" href="#content">
 					<?php _e( 'Skip to content', 'pmk' ); ?>

@@ -21,13 +21,14 @@ Version: 1.0.0
     box-sizing: border-box;
     &:before{
         content: '';
-        background-color: rgba(10,10,10,0.05);
+        background-color: rgba(61,62,72,0.15);
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 50%;
     }
+
 }
 
 
@@ -123,6 +124,16 @@ Version: 1.0.0
   Queries
 ------------------------------------------------------------------------*/
 
+@include media('>=lg') {
+    .slide-half{
+        .slide__copy{
+            p{
+                max-width: 800px;
+            }
+        }
+    }
+}
+
 @include media('<lg') {
     .slide-half{
         min-height: 0;
@@ -151,6 +162,8 @@ Version: 1.0.0
         }
     }
 }
+
+
 
 @include media('<sm') {
     .slide-half{

@@ -219,17 +219,27 @@ function pmk_scripts() {
 add_action( 'wp_enqueue_scripts', 'pmk_scripts' );
 
 
-/*-- RUN WPAUTOP AFTER SHORTCODES RENDER --*/
+/*-- Remove P tags from happening in and around shortcodes --*/
 
-/*
-remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'wpautop' , 12);
-*/
+function wpex_clean_shortcodes($content){
+$array = array (
+    '<p>[' => '[',
+    ']</p>' => ']',
+    ']<br />' => ']'
+);
+$content = strtr($content, $array);
+return $content;
+}
+add_filter('the_content', 'wpex_clean_shortcodes');
 
-remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'wpautop' , 12);
 
-add_filter( 'the_content', 'shortcode_unautop', 100 );
+
+// Stringify the Thumbnail Source
+function get_the_post_thumbnail_src($img)
+{
+  return (preg_match('~\bsrc="([^"]++)"~', $img, $matches)) ? $matches[1] : '';
+}
+
 
 /*-- ADD CUSTOM IMAGE SIZES FOR CONTENT IMAGES
 

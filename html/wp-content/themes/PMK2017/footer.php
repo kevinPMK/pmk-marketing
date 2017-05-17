@@ -1,16 +1,9 @@
 <?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
- */
+
+/*---------------------------------------------------------------
+	THEME FOOTER
+---------------------------------------------------------------*/
+
 
 ?>
 
@@ -19,11 +12,11 @@
 					<h2>Join us Today!</h2>
 					<p>PikMyKid gives you the Dismissal tools to ensure your kids are safe and your parents are happy. Let us show you how we can make your school more safe and efficient.</p>
 					<div class="cta-buttons">
-						<a class="cta-button cta-button--secondary" type="button" href="#">
+						<a class="cta-button cta-button--secondary" href="<?php echo get_permalink( get_page_by_path( 'contact' ) ); ?>">
 							Contact Us
 							<?php echo pmk_get_svg( array( 'icon' => '32-contact', 'size' => '32' ) );?>
 						</a>
-						<a class="cta-button cta-button--primary" type="button" href="#">
+						<a class="cta-button cta-button--primary" type="button" href="<?php echo get_permalink( get_page_by_path( 'request-a-demo' ) ); ?>">
 							Request Demo
 							<?php echo pmk_get_svg( array( 'icon' => '32-rarrow', 'size' => '32' ) );?>
 						</a>
@@ -49,18 +42,24 @@
 				<div class="footer__copyright">
 					<div class="footer__copyright-text">
 						Copyright &copy; PikMyKid. 2015-2017. 5115 West Memorial Highway, Tampa Florida 33232. <br>
-						Message us at <a>hello@pikmykid.com</a> or give us a call at <a>+1 (813) 123-1234.</a><br>
-						View our Terms of Service or Privacy Policy.
+						Message us at <a href="mailto:hello@pikmykid.com">hello@pikmykid.com</a> or give us a call at <a href="tel:+18136998028">+1 (813) 699-8028</a>.<br>
+						View our <a href="<?php echo get_permalink( get_page_by_path( 'terms-of-service' ) ); ?>">Terms of Service</a> or <a href="<?php echo get_permalink( get_page_by_path( 'privacy-policy' ) ); ?>">Privacy Policy</a>.
 					</div>
 					<div class="footer-social-menu">
-						<a alt="Facebook" class="footer-social-menu__link">
+						<a href="https://www.facebook.com/pikmykid/" title="Like us on Facebook" class="footer-social-menu__link">
 							<?php echo pmk_get_svg( array( 'icon' => '32-facebook', 'size' => '32' ) );?>
 						</a>
-						<a alt="Twitter" class="footer-social-menu__link">
+						<a href="https://twitter.com/pikmykid" title="Follow us on Twitter" class="footer-social-menu__link">
 							<?php echo pmk_get_svg( array( 'icon' => '32-twitter', 'size' => '32' ) );?>
 						</a>
-						<a alt="Instagram" class="footer-social-menu__link">
+						<a href="https://www.instagram.com/pikmykid/" title="Follow us on Instagram" class="footer-social-menu__link">
 							<?php echo pmk_get_svg( array( 'icon' => '32-instagram', 'size' => '32' ) );?>
+						</a>
+						<a href="https://plus.google.com/114342026633777180200" title="Follow us on Google Plus" class="footer-social-menu__link">
+							<?php echo pmk_get_svg( array( 'icon' => '32-gplus', 'size' => '32' ) );?>
+						</a>
+						<a href="https://www.linkedin.com/company/pikmykid" title="Connect with us on Linkedin" class="footer-social-menu__link">
+							<?php echo pmk_get_svg( array( 'icon' => '32-linkedin', 'size' => '32' ) );?>
 						</a>
 					</div>
 				</div>
@@ -72,6 +71,16 @@
 
 
 <?php wp_footer(); ?>
+
+<script>
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+    method: 'share',
+    display: 'popup',
+    href: '<?php echo the_permalink(); ?>'
+  }, function(response){});
+}
+</script>
 
 </body>
 </html>

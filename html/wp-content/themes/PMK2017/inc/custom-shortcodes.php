@@ -8,7 +8,8 @@
 
 function section( $atts, $content = null ) {
     extract(shortcode_atts(array(
-        "type" => 'default'
+        "type" => 'default',
+        "theme" => 'light'
     ), $atts));
 
     $output = '';
@@ -31,7 +32,7 @@ function section( $atts, $content = null ) {
 
     }else if($type == 'mini') {
 
-        $output .= '<section class="slide slide-mini type-mini">';
+        $output .= '<section class="slide slide--dark slide-mini type-mini">';
         $output .= '<div class="slide-mini__grid">';
         $output .= do_shortcode($content);
         $output .= '</div>';
@@ -50,15 +51,31 @@ add_shortcode("Section", "Section");
 
 function SectionContent( $atts, $content = null ) {
     extract(shortcode_atts(array(
-        "title" => 'Please Select a Title'
+        "title" => 'Please Select a Title',
+        "subtitle" => '',
+        "divider" => 'true',
+        "learnmoreurl" => ''
     ), $atts));
 
     $output = '';
-
     $output .= '<div class="slide__copy">';
+
+    if( !empty($subtitle) ){
+        $output .= '<h6>' . $subtitle . '</h6>';
+    }
+
     $output .= '<h2>' . $title . '</h2>';
-    $output .= '<hr class="hr-gradient">';
+
+    if( $divider == 'true' ){
+        $output .= '<hr class="hr-gradient">';
+    }
+
     $output .= '<p>' . do_shortcode($content) . '</p>';
+
+    if( !empty($learnmoreurl)){
+        $output .= '<a class="button button--primary" href=' . $learnmoreurl . '>Learn More</a>';
+    }
+
     $output .= '</div>';
 
     return $output;
@@ -226,7 +243,7 @@ function FaqSection( $atts, $content = null ) {
 
                 $faqs .= '<li class="slide-faq__list-item" id="' . $faq_item_slug . '">';
                 $faqs .= '<h3 class="slide-faq__question">' . $faq_item_title . '</h3>';
-                $faqs .= $faq_item_content;
+                $faqs .= wpautop($faq_item_content);
                 $faqs .= '</li>';
 
             endwhile;
@@ -268,7 +285,7 @@ function FaqSection( $atts, $content = null ) {
     $output .= '<div class="slide-faq__conclusion">';
     $output .= '<div class="inner">';
     $output .= 'Didn\'t see your question?';
-    $output .= '<a class="button--learn-more">Contact Us</a>';
+    $output .= '<a class="button">Contact Us</a>';
     $output .= '</div>';
     $output .= '</div>';
     $output .= '</div>';
@@ -395,6 +412,112 @@ function HalfMiniSection( $atts ) {
 }
 
 add_shortcode("SlideImageGrid", "SlideImageGrid");
+
+
+
+/*---------------------------------------------------------------
+	Customer Shortcode
+---------------------------------------------------------------*/
+
+
+function Customers( $atts ) {
+
+    extract(shortcode_atts(array(
+        "total" => -1,
+        "viewfullurl" => ''
+    ), $atts));
+
+
+    $args = array( 'post_type' => 'customers', 'posts_per_page' => $total );
+    $loop = new WP_Query( $args );
+
+
+    $output = '';
+
+    $output = '<div class="logo-grid">';
+
+    while ( $loop->have_posts() ) : $loop->the_post();
+
+        $customerUrl = get_post_meta(get_the_ID(), 'customer_url')[0];
+
+        $output .= '<div class="logo-grid__cell">';
+        if(!empty($customerUrl)){
+            $output .= '<a class="inner" alt="' . get_the_title() . '" href="' . $customerUrl . '" target="_blank">';
+            $output .= get_the_post_thumbnail();
+            $output .= '</a>';
+        }else{
+            $output .= '<div class="inner">';
+            $output .= get_the_post_thumbnail();
+            $output .= '</div>';
+        }
+        $output .= '</div>';
+
+    endwhile;
+
+
+    $output .= '</div>';
+    if(!empty($viewfullurl)){
+        $output .= '<a href="' . $viewfullurl . '" class="button centered-view-more">View More Press Articles</a>';
+    }
+
+    return $output;
+
+}
+
+add_shortcode("Customers", "Customers");
+
+
+
+/*---------------------------------------------------------------
+	Press Shortcode
+---------------------------------------------------------------*/
+
+
+function Press( $atts ) {
+
+    extract(shortcode_atts(array(
+        "total" => -1,
+        "viewfullurl" => ''
+    ), $atts));
+
+
+    $args = array( 'post_type' => 'press', 'posts_per_page' => $total );
+    $loop = new WP_Query( $args );
+
+    $output = '';
+
+    $output = '<div class="logo-grid">';
+
+    while ( $loop->have_posts() ) : $loop->the_post();
+
+        $pressUrl = get_post_meta(get_the_ID(), 'press_url')[0];
+        $pressSyndicate = get_post_meta(get_the_ID(), 'press_syndicate')[0];
+
+        $output .= '<div class="logo-grid__cell">';
+        if(!empty($pressUrl)){
+            $output .= '<a class="inner" title="'. $pressSyndicate . ' - ' . get_the_title() . '" href="' . $pressUrl . '" target="_blank">';
+            $output .= get_the_post_thumbnail();
+            $output .= '</a>';
+        }else{
+            $output .= '<div class="inner">';
+            $output .= get_the_post_thumbnail();
+            $output .= '</div>';
+        }
+        $output .= '</div>';
+
+    endwhile;
+
+    $output .= '</div>';
+    if(!empty($viewfullurl)){
+        $output .= '<a href="' . $viewfullurl . '" class="button centered-view-more">View More Press Articles</a>';
+    }
+
+    return $output;
+
+}
+
+add_shortcode("Press", "Press");
+
 
 
 ?>
