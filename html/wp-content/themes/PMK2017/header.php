@@ -84,7 +84,7 @@
 
 						get_template_part( 'template-parts/hero/hero', 'posts' );
 
-					}elseif( is_home() && $paged != 1 ){
+					}elseif( is_home() && $paged != 1 || is_archive() || is_404() ){
 
 						get_template_part( 'template-parts/hero/hero', 'paged-posts' );
 
@@ -104,7 +104,7 @@
 
 					<div class="site__content site__content--blog">
 
-				<?php elseif( is_home() && $paged != 1 ) : ?>
+				<?php elseif( is_home() && $paged != 1 || is_archive() || is_404() ) : ?>
 
 					<div class="site__content site__content--blog-paged">
 

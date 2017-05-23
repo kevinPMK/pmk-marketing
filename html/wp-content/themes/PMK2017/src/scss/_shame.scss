@@ -65,3 +65,13 @@ body{
         }
     }
 }
+
+
+.admin-bar{
+    .main-header{
+        top: 32px;
+        @include media('<782px') {
+            top: 46px;
+        }
+    }
+}

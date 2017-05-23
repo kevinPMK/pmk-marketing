@@ -12,23 +12,19 @@
 
 get_header(); ?>
 
-<div class="wrap">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'twentyseventeen' ); ?></h1>
-				</header><!-- .page-header -->
-				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentyseventeen' ); ?></p>
-
-					<?php get_search_form(); ?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-		</main><!-- #main -->
-	</div><!-- #primary -->
-</div><!-- .wrap -->
+<main id="main" class="site-main" role="main">
+	<div class="slide slide-center slide-center--grad">
+		<div class="slide__copy">
+			<h2>404: Ooops!</h2>
+			<hr class="hr-gradient">
+			<p>
+				Sorry, We could not find the page you were looking for. <br />We promise it was not on purpose. ):<br>
+			</p>
+			<a class="button button--primary" href="<?php echo get_home_url(); ?>">
+				Go Home
+			</a>
+		</div>
+	</div>
+</main>
 
 <?php get_footer();

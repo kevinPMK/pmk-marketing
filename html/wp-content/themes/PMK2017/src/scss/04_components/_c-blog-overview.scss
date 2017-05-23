@@ -38,6 +38,9 @@ Version: 1.0.0
             font-size: $font-size-96;
             letter-spacing: -0.02em;
             margin: 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
             a{
                 display: block;
                 background: linear-gradient(-90deg, #eee, #fff);
@@ -68,9 +71,12 @@ Version: 1.0.0
             }
             &__excerpt{
                 font-weight: 200;
-                margin-top: $grid*3;
                 color: #647fbc;
                 font-size: $font-size-20;
+                max-width: 800px;
+                margin-top: $grid*3;
+                margin-left: auto;
+                margin-right: auto;
             }
         //__heading
     //__content

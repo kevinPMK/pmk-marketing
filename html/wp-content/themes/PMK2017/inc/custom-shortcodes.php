@@ -424,16 +424,27 @@ function Customers( $atts ) {
 
     extract(shortcode_atts(array(
         "total" => -1,
+        "home" => 'false',
         "viewfullurl" => ''
     ), $atts));
 
+    if($home == 'true'){
+        $args = array(
+            'post_type' => 'customers',
+            'posts_per_page' => $total,
+            'meta_key'   => 'display_on_front_page',
+            'meta_value' => 'on'
+        );
+    }else{
+        $args = array(
+            'post_type' => 'customers',
+            'posts_per_page' => $total
+        );
+    }
 
-    $args = array( 'post_type' => 'customers', 'posts_per_page' => $total );
     $loop = new WP_Query( $args );
 
-
     $output = '';
-
     $output = '<div class="logo-grid">';
 
     while ( $loop->have_posts() ) : $loop->the_post();
@@ -477,11 +488,24 @@ function Press( $atts ) {
 
     extract(shortcode_atts(array(
         "total" => -1,
+        "home" => 'false',
         "viewfullurl" => ''
     ), $atts));
 
+    if($home == 'true'){
+        $args = array(
+            'post_type' => 'press',
+            'posts_per_page' => $total,
+            'meta_key'   => 'display_on_front_page',
+            'meta_value' => 'on'
+        );
+    }else{
+        $args = array(
+            'post_type' => 'press',
+            'posts_per_page' => $total
+        );
+    }
 
-    $args = array( 'post_type' => 'press', 'posts_per_page' => $total );
     $loop = new WP_Query( $args );
 
     $output = '';

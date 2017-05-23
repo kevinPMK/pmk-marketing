@@ -73,12 +73,7 @@ $twitterURL = 'https://twitter.com/intent/tweet?text='.$ss_title.'&amp;url='.$ss
 					<?php echo get_the_date(); ?>
 				</div>
 				<div class="blog-heading-bar__title">
-					in
-					<?php
-						echo '<a href="' . get_category_link($current_category_id) . '">';
-						echo get_cat_name($current_category_id);
-						echo '</a> ';
-					?>
+					<?php the_category(', '); ?>
 				</div>
 			</div>
 		</div>

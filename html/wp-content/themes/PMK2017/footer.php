@@ -7,22 +7,24 @@
 
 ?>
 
-			<section class="slide slide-cta">
-				<div class="slide-cta__content">
-					<h2>Join us Today!</h2>
-					<p>PikMyKid gives you the Dismissal tools to ensure your kids are safe and your parents are happy. Let us show you how we can make your school more safe and efficient.</p>
-					<div class="cta-buttons">
-						<a class="cta-button cta-button--secondary" href="<?php echo get_permalink( get_page_by_path( 'contact' ) ); ?>">
-							Contact Us
-							<?php echo pmk_get_svg( array( 'icon' => '32-contact', 'size' => '32' ) );?>
-						</a>
-						<a class="cta-button cta-button--primary" type="button" href="<?php echo get_permalink( get_page_by_path( 'request-a-demo' ) ); ?>">
-							Request Demo
-							<?php echo pmk_get_svg( array( 'icon' => '32-rarrow', 'size' => '32' ) );?>
-						</a>
+			<?php if(!is_404()) : ?>
+				<section class="slide slide-cta">
+					<div class="slide-cta__content">
+						<h2>Join us Today!</h2>
+						<p>PikMyKid gives you the Dismissal tools to ensure your kids are safe and your parents are happy. Let us show you how we can make your school more safe and efficient.</p>
+						<div class="cta-buttons">
+							<a class="cta-button cta-button--secondary" href="<?php echo get_permalink( get_page_by_path( 'contact' ) ); ?>">
+								Contact Us
+								<?php echo pmk_get_svg( array( 'icon' => '32-contact', 'size' => '32' ) );?>
+							</a>
+							<a class="cta-button cta-button--primary" type="button" href="<?php echo get_permalink( get_page_by_path( 'request-a-demo' ) ); ?>">
+								Request Demo
+								<?php echo pmk_get_svg( array( 'icon' => '32-rarrow', 'size' => '32' ) );?>
+							</a>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			<?php endif; ?>
 
 			<footer class="footer">
 				<div class="footer__primary">

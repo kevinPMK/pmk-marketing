@@ -1429,7 +1429,10 @@ Version: 1.0.0
   .blog-overview-hero__heading {
     font-size: 6rem;
     letter-spacing: -0.02em;
-    margin: 0; }
+    margin: 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto; }
     .blog-overview-hero__heading a {
       display: block;
       background: linear-gradient(-90deg, #eee, #fff);
@@ -1455,9 +1458,12 @@ Version: 1.0.0
       color: #647fbc; }
   .blog-overview-hero__excerpt {
     font-weight: 200;
-    margin-top: 24px;
     color: #647fbc;
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto; }
 
 /*-- In View Transitions --*/
 .blog-overview-hero__author {
@@ -1925,6 +1931,8 @@ Version: 1.0.0
     right: 0;
     bottom: 0;
     left: 50%; }
+  .slide-half--no-min {
+    min-height: 0; }
 
 /*------------------------------------------------------------------------
   Slide Center Content Section
@@ -1940,6 +1948,8 @@ Version: 1.0.0
   .slide-center .slide__copy, .blog-overview .slide__copy {
     max-width: 920px;
     margin: 0 auto; }
+  .slide-center--grad {
+    background: linear-gradient(120deg, #FFFFFF, #F4F7FA); }
 
 /*------------------------------------------------------------------------
   In View Transitions
@@ -3279,6 +3289,25 @@ Version: 1.0.0
     .related-posts__post:nth-child(2) > .inner {
       background: #3998db; }
 
+/*-- In View Transitions --*/
+.blog-single .blog-heading-bar {
+  opacity: 0;
+  transition: all 1.15s cubic-bezier(0.34, 0.61, 0.59, 1.11); }
+
+.blog-single .blog-single__content {
+  opacity: 0;
+  transition: all 0.7s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.2s;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px); }
+
+.blog-single.animated .blog-heading-bar {
+  opacity: 1; }
+
+.blog-single.animated .blog-single__content {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px); }
+
 /*-- Queries --*/
 @media (max-width: 1279px) {
   .related-posts {
@@ -3853,3 +3882,9 @@ body {
   opacity: 1;
   -webkit-transform: translateY(0px);
           transform: translateY(0px); }
+
+.admin-bar .main-header {
+  top: 32px; }
+  @media (max-width: 781px) {
+    .admin-bar .main-header {
+      top: 46px; } }

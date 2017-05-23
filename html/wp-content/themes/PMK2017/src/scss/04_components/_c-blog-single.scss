@@ -316,6 +316,30 @@ Version: 1.0.0
 }
 
 
+/*-- In View Transitions --*/
+
+.blog-single{
+    .blog-heading-bar{
+        opacity: 0;
+        transition: all 1.15s $curved-transition;
+    }
+    .blog-single__content{
+        opacity: 0;
+        transition: all 0.7s $curved-transition 0.2s;
+        transform: translateY(40px);
+    }
+    &.animated{
+        .blog-heading-bar{
+            opacity: 1;
+        }
+        .blog-single__content{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}
+
+
 /*-- Queries --*/
 
 @include media('<lg') {

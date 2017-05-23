@@ -15,7 +15,7 @@ class Press_Meta_Boxes {
    /*-- Register Meta Box --*/
    public function press_meta_box() {
 	   add_meta_box(
-		   'press_fields',
+		   'press_meta',
 		   'Press Information',
 		   array( $this, 'render_press_meta_box' ),
 		   'press',
@@ -30,6 +30,7 @@ class Press_Meta_Boxes {
 	   $meta = get_post_custom( $post->ID );
 	   $press_url = ! isset( $meta['press_url'][0] ) ? '' : $meta['press_url'][0];
 	   $press_syndicate = ! isset( $meta['press_syndicate'][0] ) ? '' : $meta['press_syndicate'][0];
+	   $display_on_front_page = ! isset( $meta['display_on_front_page'][0] ) ? '' : $meta['display_on_front_page'][0];
 
 	   wp_nonce_field( basename( __FILE__ ), 'press_fields' ); ?>
 
@@ -48,8 +49,15 @@ class Press_Meta_Boxes {
  					<label style="font-weight: bold; display: block; padding-bottom: 8px;" for="press_url">
  						External Url
  					</label>
-					<input style="width: 100%; box-sizing: border-box;" type="text" name="press_url" value="<?php echo $press_syndicate; ?>">
+					<input style="width: 100%; box-sizing: border-box;" type="text" name="press_url" value="<?php echo $press_url; ?>">
 					<p class="description">Please include the entire URL. Ex: (http://www.website.com)</p>
+					<div style="font-weight: bold; display: block; padding-bottom: 8px; margin-top: 24px;" for="customer_url">
+ 					   Display Settings
+ 				   </div>
+ 				   <label for="display_on_front_page">
+ 					   <input name="display_on_front_page" type="checkbox" id="display_on_front_page" <?php echo ( $display_on_front_page == true ? ' checked="checked"' : '') ?>>
+ 					   Display on Front Page
+ 				   </label>
 			    </td>
 		   </tr>
 
@@ -84,6 +92,7 @@ class Press_Meta_Boxes {
 
 	   $meta['press_url'] = ( isset( $_POST['press_url'] ) ? esc_textarea( $_POST['press_url'] ) : '' );
 	   $meta['press_syndicate'] = ( isset( $_POST['press_syndicate'] ) ? esc_textarea( $_POST['press_syndicate'] ) : '' );
+	   $meta['display_on_front_page'] = ( isset( $_POST['display_on_front_page'] ) ? $_POST['display_on_front_page'] : '' );
 
 	   foreach ( $meta as $key => $value ) {
 		   update_post_meta( $post->ID, $key, $value );
