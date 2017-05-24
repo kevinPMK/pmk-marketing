@@ -13,8 +13,6 @@ body{
     background: #fff
 }
 
-
-
 .admin-bar{
     .main-menu--fixed{
         top: 32px;
@@ -24,10 +22,6 @@ body{
 .skip-link{
     display: none;
 }
-
-
-
-
 
 .centered-view-more{
     margin-top: $grid*12;
@@ -66,12 +60,27 @@ body{
     }
 }
 
+/*------------------------------------------------------------------------
+  Admin Bar Settings
+------------------------------------------------------------------------*/
 
 .admin-bar{
     .main-header{
         top: 32px;
         @include media('<782px') {
             top: 46px;
+        }
+    }
+    .blog-overview-hero--paged{
+        height: 168px;
+        @include media('<782px') {
+            top: 182px;
+        }
+    }
+    .site__content--blog-paged{
+        top: 168px;
+        @include media('<782px') {
+            top: 182px;
         }
     }
 }

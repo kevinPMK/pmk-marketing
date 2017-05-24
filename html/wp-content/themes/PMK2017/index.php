@@ -31,7 +31,7 @@ $pages = $wp_query->max_num_pages;
 
 			<?php if($paged != 1) : ?>
 
-			<div class="slide__copy">
+			<div class="slide__copy typography">
 				<div class="blog-overview__page-count">
 					Page <?php echo $paged ?> / <?php echo $pages ?>
 				</div>

@@ -40,7 +40,7 @@
  				<td>
                     <select name="custom_post_author" id="custom_post_author" style="width: 100%;">
 
-                        <option value="PikMyKid">
+                        <option value="default">
                             PikMyKid
                         </option>
 

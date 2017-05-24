@@ -9,14 +9,18 @@
 function section( $atts, $content = null ) {
     extract(shortcode_atts(array(
         "type" => 'default',
-        "theme" => 'light'
+        "theme" => 'grad'
     ), $atts));
 
     $output = '';
 
     if($type == 'default'){
 
-        $output .= '<section class="slide slide-center">';
+        if($theme == 'grad'){
+            $output .= '<section class="slide slide-center slide-center--grad">';
+        }else{
+            $output .= '<section class="slide slide-center">';
+        }
         $output .= '<div class="slide__content">';
         $output .= do_shortcode($content);
         $output .= '</div>';
@@ -58,7 +62,7 @@ function SectionContent( $atts, $content = null ) {
     ), $atts));
 
     $output = '';
-    $output .= '<div class="slide__copy">';
+    $output .= '<div class="slide__copy typography">';
 
     if( !empty($subtitle) ){
         $output .= '<h6>' . $subtitle . '</h6>';
@@ -113,7 +117,7 @@ function SectionMiniHalf( $atts, $content = null ) {
     $output = '<div class="slide-mini__card">';
     $output .= '<div class="slide-mini__thumb">';
     $output .= '</div>';
-    $output .= '<div class="slide-mini__content">';
+    $output .= '<div class="slide-mini__content typography">';
     $output .= '<h4>' . $title . '</h4>';
     $output .= '<p>' . do_shortcode($content) . '</p>';
     $output .= '</div>';
@@ -265,7 +269,7 @@ function FaqSection( $atts, $content = null ) {
 
     $output .= '<section class="slide slide-center slide-faq-nav">';
     $output .= '<div class="slide__content">';
-    $output .= '<div class="slide__copy">';
+    $output .= '<div class="slide__copy typography">';
     $output .= '<h2>' . $title . '</h2>';
     $output .= '<hr class="hr-gradient">';
     $output .= '<p>' . do_shortcode($content) . '</p>';
@@ -542,6 +546,28 @@ function Press( $atts ) {
 
 add_shortcode("Press", "Press");
 
+
+
+/*---------------------------------------------------------------
+	Responsive Video Shortcode
+---------------------------------------------------------------*/
+
+
+function Video( $atts ) {
+
+    extract(shortcode_atts(array(
+        "url" => "Please Enter a URL"
+    ), $atts));
+
+    $output = '<div class="video video-responsive">';
+    $output .= '<iframe src="' . $url . '" frameborder="0" allowfullscreen="allowfullscreen"></iframe>';
+    $output .= '</div>';
+
+    return $output;
+
+}
+
+add_shortcode("Video", "Video");
 
 
 ?>

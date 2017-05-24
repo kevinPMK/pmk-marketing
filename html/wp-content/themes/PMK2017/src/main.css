@@ -294,10 +294,14 @@ p {
   line-height: 2em;
   letter-spacing: 0.01em;
   margin-top: 0;
-  margin-bottom: 1.2em;
+  margin-bottom: 1.4em;
   font-weight: 200; }
   p:last-child {
     margin-bottom: 0px; }
+
+em {
+  font-style: italic;
+  font-weight: 200; }
 
 /*------------------------------------------------------------------------
   <LARGE
@@ -388,6 +392,63 @@ p {
     margin-top: 24px;
     margin-bottom: 24px;
     height: 6px; } }
+
+/*---------------------------------------------------------------------------
+
+
+Content
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------
+  Content Specific Typography - Enchancements from the Globals
+------------------------------------------------------------------------*/
+/*-- Formatting --*/
+.typography img, .blog-card img, .slide__copy img, .slide-faq__content img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  width: auto;
+  height: auto; }
+
+.typography blockquote, .blog-card blockquote, .slide__copy blockquote, .slide-faq__content blockquote {
+  font-style: italic;
+  font-weight: 200;
+  color: #999;
+  margin-bottom: 1.4em; }
+
+.typography ul, .blog-card ul, .slide__copy ul, .slide-faq__content ul, .typography ol, .blog-card ol, .slide__copy ol, .slide-faq__content ol {
+  letter-spacing: 0.01em;
+  margin: 0 0 1.4em 0;
+  padding-left: 40px;
+  font-weight: 200;
+  line-height: 2em; }
+  .typography ul:last-child, .blog-card ul:last-child, .slide__copy ul:last-child, .slide-faq__content ul:last-child, .typography ol:last-child, .blog-card ol:last-child, .slide__copy ol:last-child, .slide-faq__content ol:last-child {
+    margin-bottom: 0px; }
+
+.typography .video, .blog-card .video, .slide__copy .video, .slide-faq__content .video {
+  margin-top: 48px;
+  margin-bottom: 48px; }
+
+/*-- Theme --*/
+.typography, .blog-card, .slide__copy, .slide-faq__content {
+  font-size: 1.125rem;
+  color: #7A868C;
+  color: #666; }
+  .typography h2, .blog-card h2, .slide__copy h2, .slide-faq__content h2 {
+    color: #333E48;
+    margin-top: 0;
+    margin-left: -2px; }
+  .typography h3, .blog-card h3, .slide__copy h3, .slide-faq__content h3 {
+    color: #333E48; }
+  .typography h4, .blog-card h4, .slide__copy h4, .slide-faq__content h4, .typography .faq-nav__text, .blog-card .faq-nav__text, .slide__copy .faq-nav__text, .slide-faq__content .faq-nav__text {
+    color: #333E48; }
+  .typography h6, .blog-card h6, .slide__copy h6, .slide-faq__content h6, .typography .blog-overview__page-count, .blog-card .blog-overview__page-count, .slide__copy .blog-overview__page-count, .slide-faq__content .blog-overview__page-count, .typography .blog-card__meta, .blog-card .blog-card__meta, .slide__copy .blog-card__meta, .slide-faq__content .blog-card__meta, .typography .blog-heading-bar__words-by, .blog-card .blog-heading-bar__words-by, .slide__copy .blog-heading-bar__words-by, .slide-faq__content .blog-heading-bar__words-by {
+    color: #ccc; }
 
 /* Build Elements: headings, lists, tables, etc */
 /*---------------------------------------------------------------------------
@@ -670,6 +731,8 @@ Version: 1.0.0
             opacity: 1; }
       .main-menu ul > li.current-menu-item a {
         color: #fff; }
+        .main-menu ul > li.current-menu-item a:after {
+          display: none; }
       .main-menu ul > li.main-menu--cta a:after {
         -webkit-transform: scaleX(0.5);
                 transform: scaleX(0.5);
@@ -712,7 +775,7 @@ Version: 1.0.0
     .main-menu--fixed ul > li a:hover {
       color: #666666; }
   .main-menu--fixed ul > li.current-menu-item a {
-    color: #3FA9F5; }
+    color: #3FA9F5 !important; }
 
 /*------------------------------------------------------------------------
   Main Menu CTA
@@ -1634,6 +1697,7 @@ Version: 1.0.0
       height: 0;
       position: relative; }
     .blog-card__thumb img {
+      margin-top: 0;
       width: 100%;
       height: 100%;
       display: block;
@@ -1885,23 +1949,6 @@ Version: 1.0.0
 @media (max-width: 479px) {
   .slide {
     padding: 96px 0; } }
-
-/*------------------------------------------------------------------------
-  Slide Theme
-------------------------------------------------------------------------*/
-.slide {
-  font-size: 1.0625rem;
-  color: #7A868C; }
-  .slide h2 {
-    color: #333E48;
-    margin-top: 0;
-    margin-left: -2px; }
-  .slide h3 {
-    color: #333E48; }
-  .slide h4, .slide .faq-nav__text {
-    color: #333E48; }
-  .slide h6, .slide .blog-overview__page-count, .slide .blog-card__meta, .slide .blog-heading-bar__words-by {
-    color: #ccc; }
 
 /*------------------------------------------------------------------------
   Queries
@@ -2847,10 +2894,10 @@ Version: 1.0.0
   FAQ SLIDE
 ------------------------------------------------------------------------*/
 .slide-faq {
-  background: url("images/grid-texture.png") center center repeat;
+  background: #fff;
   background-attachment: fixed; }
   .slide-faq .hr-gradient {
-    margin-left: 128px; }
+    margin-left: 168px; }
   .slide-faq__content {
     width: 100%;
     margin: 0 auto;
@@ -2865,7 +2912,7 @@ Version: 1.0.0
   .slide-faq__header {
     margin-bottom: 64px; }
   .slide-faq .slide-faq__name {
-    margin-left: 128px; }
+    margin-left: 168px; }
   .slide-faq__list {
     list-style: none;
     position: relative;
@@ -3546,7 +3593,8 @@ Version: 1.0.0
   background: #fff;
   padding: 48px;
   box-shadow: 0px 0px 64px rgba(13, 53, 94, 0.3);
-  position: relative; }
+  position: relative;
+  color: #666; }
   .wpcf7-form:after {
     -webkit-transform: translate(-16px, 16px);
             transform: translate(-16px, 16px);
@@ -3883,8 +3931,23 @@ body {
   -webkit-transform: translateY(0px);
           transform: translateY(0px); }
 
+/*------------------------------------------------------------------------
+  Admin Bar Settings
+------------------------------------------------------------------------*/
 .admin-bar .main-header {
   top: 32px; }
   @media (max-width: 781px) {
     .admin-bar .main-header {
       top: 46px; } }
+
+.admin-bar .blog-overview-hero--paged {
+  height: 168px; }
+  @media (max-width: 781px) {
+    .admin-bar .blog-overview-hero--paged {
+      top: 182px; } }
+
+.admin-bar .site__content--blog-paged {
+  top: 168px; }
+  @media (max-width: 781px) {
+    .admin-bar .site__content--blog-paged {
+      top: 182px; } }

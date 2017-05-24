@@ -234,6 +234,15 @@ add_filter('the_content', 'wpex_clean_shortcodes');
 
 
 
+/*-- Remove P tags from around images --*/
+
+function filter_ptags_on_images($content){
+    return preg_replace('/<p>(\s*)(<img .* \/>)(\s*)<\/p>/iU', '\2', $content);
+}
+
+add_filter('the_content', 'filter_ptags_on_images');
+
+
 // Stringify the Thumbnail Source
 function get_the_post_thumbnail_src($img)
 {

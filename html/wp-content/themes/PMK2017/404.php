@@ -14,7 +14,7 @@ get_header(); ?>
 
 <main id="main" class="site-main" role="main">
 	<div class="slide slide-center slide-center--grad">
-		<div class="slide__copy">
+		<div class="slide__copy typography">
 			<h2>404: Ooops!</h2>
 			<hr class="hr-gradient">
 			<p>

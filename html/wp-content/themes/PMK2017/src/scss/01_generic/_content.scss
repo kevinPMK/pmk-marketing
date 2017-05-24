@@ -1,0 +1,72 @@
+/*---------------------------------------------------------------------------
+
+
+Content
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------
+  Content Specific Typography - Enchancements from the Globals
+------------------------------------------------------------------------*/
+
+
+/*-- Formatting --*/
+
+.typography{
+    img{
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+        margin-top: $grid*6;
+        margin-bottom: $grid*6;
+        width: auto;
+        height: auto;
+    }
+    blockquote{
+        font-style: italic;
+        font-weight: 200;
+        color: #999;
+        margin-bottom: 1.4em;
+    }
+    ul, ol{
+        letter-spacing: 0.01em;
+        margin: 0 0 1.4em 0;
+        padding-left: $grid*5;
+        font-weight: 200;
+        line-height: 2em;
+        &:last-child{
+            margin-bottom: 0px;
+        }
+    }
+    .video{
+        margin-top: $grid*6;
+        margin-bottom: $grid*6;
+    }
+}
+
+
+/*-- Theme --*/
+
+.typography{
+    font-size: $font-size-18;
+    color: $copy-content-color;
+    color: #666;
+    h2{
+        color: $copy-title-color;
+        margin-top: 0;
+        margin-left: -2px;
+    }
+    h3{
+        color: $copy-title-color;
+    }
+    h4{
+        color: $copy-title-color;
+    }
+    h6{
+        color: #ccc;
+    }
+}

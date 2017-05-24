@@ -131,6 +131,9 @@ Version: 1.0.0
                 &.current-menu-item{
                     a{
                         color: #fff;
+                        &:after{
+                            display: none;
+                        }
                     }
                 }
                 &.main-menu--cta{
@@ -185,7 +188,7 @@ Version: 1.0.0
                 }
                 &.current-menu-item{
                     a{
-                        color: $brand-primary;
+                        color: $brand-primary !important;
                     }
                 }
             }

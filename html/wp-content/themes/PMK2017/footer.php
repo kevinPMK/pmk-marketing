@@ -5,9 +5,19 @@
 ---------------------------------------------------------------*/
 
 
+	$current_page = sanitize_post( $GLOBALS['wp_the_query']->get_queried_object() );
+	if(!empty($current_page->post_name)){
+		$slug = $current_page->post_name;
+	}
+	$displayCTA = true;
+
+	if( is_404() || $slug == 'request-a-demo'){
+		$displayCTA = false;
+	}
+
 ?>
 
-			<?php if(!is_404()) : ?>
+			<?php if( $displayCTA ) : ?>
 				<section class="slide slide-cta">
 					<div class="slide-cta__content">
 						<h2>Join us Today!</h2>

@@ -149,16 +149,17 @@ Version: 1.0.0
 ------------------------------------------------------------------------*/
 
 .slide-faq{
-    background: url('images/grid-texture.png') center center repeat;
+    background: #fff;
     background-attachment: fixed;
     .hr-gradient{
-        margin-left: $grid*16;
+        margin-left: $grid*21;
     }
     &__content{
         width: 100%;
         margin: 0 auto;
         max-width: 800px;
         padding: 0 $grid*14;
+        @extend .typography;
     }
         &__group{
             margin-top: $grid*20;
@@ -173,7 +174,7 @@ Version: 1.0.0
                 margin-bottom: $grid*8;
             }
             .slide-faq__name{ //explicit
-                margin-left: $grid*16;
+                margin-left: $grid*21;
             }
             &__list{
                 list-style: none;
