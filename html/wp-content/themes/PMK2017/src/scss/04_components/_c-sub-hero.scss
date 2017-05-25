@@ -9,6 +9,73 @@ Version: 1.0.0
 ---------------------------------------------------------------------------*/
 
 
+.hero-search{
+    margin: 0 $grid*4;
+    position: relative;
+    label{
+        text-transform: uppercase;
+        margin-bottom: 2em;
+        font-weight: 200;
+        color: #516ca9;
+        text-transform: uppercase;
+        letter-spacing: 0.08rem;
+        margin-bottom: 16px;
+        display: inline-block;
+        font-size: 1.125rem;
+    }
+    .hero-search__field{
+        font-size: $font-size-32;
+        font-weight: 200;
+        width: 100%;
+        background: none;
+        color: #fff;
+        border: none;
+        padding-bottom: $grid;
+        padding-top: $grid;
+        padding-right: $grid*8;
+        height: 64px;
+        box-sizing: border-box;
+        border-bottom: 4px solid $brand-primary;
+        &:focus{
+            outline: none;
+        }
+        &::-webkit-input-placeholder {
+          color: rgba(255,255,255,0.3);
+        }
+        &::-moz-placeholder {
+          color: rgba(255,255,255,0.3);
+        }
+        &:-ms-input-placeholder {
+          color: rgba(255,255,255,0.3);
+        }
+        &:-moz-placeholder {
+          color: rgba(255,255,255,0.3);
+        }
+        &::-ms-clear {  display: none; width : 0; height: 0; }
+        &::-ms-reveal {  display: none; width : 0; height: 0; }
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration { display: none; }
+    }
+    .hero-search__submit{
+        position: absolute;
+        right: 0;
+        bottom: 4px;
+        color: #fff;
+        width: 64px;
+        height: 64px;
+        margin-right: -8px;
+        &:hover{
+            color: $brand-primary;
+        }
+        .icon{
+            width: 64px;
+            height: 64px;
+        }
+    }
+}
+
 
 /*------------------------------------------------------------------------
   Sub Page Hero

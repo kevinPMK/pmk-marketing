@@ -12,51 +12,35 @@
 
 get_header(); ?>
 
-<div class="wrap">
+<main id="main" class="site-main" role="main">
+	<section class="slide slide-search-results">
+        <div class="slide__content">
+            <div class="slide__copy typography">
 
-	<header class="page-header">
-		<?php if ( have_posts() ) : ?>
-			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyseventeen' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-		<?php else : ?>
-			<h1 class="page-title"><?php _e( 'Nothing Found', 'twentyseventeen' ); ?></h1>
-		<?php endif; ?>
-	</header><!-- .page-header -->
+        <?php if(!empty(get_search_query())) :
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+                while ( have_posts() ) : the_post(); ?>
 
-		<?php
-		if ( have_posts() ) :
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+                <a class="search-result" href="<?php echo get_permalink(); ?>">
+                    <h4>
+                        <?php search_title_highlight(); ?>
+                    </h4>
+                    <?php search_excerpt_highlight(); ?>
+                </a>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/post/content', 'excerpt' );
+                <?php endwhile; ?>
 
-			endwhile; // End of the loop.
+                LOOKS LIKE THERE ARE NO <?php echo get_search_query(); ?>
 
-			the_posts_pagination( array(
-				'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
-			) );
+        <?php else : ?>
 
-		else : ?>
+            YOUR SEARCH IS EMPTY
 
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'twentyseventeen' ); ?></p>
-			<?php
-				get_search_form();
+        <?php endif; ?>
 
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+            </div>
+        </div>
+	</section>
+</main>
 
 <?php get_footer();

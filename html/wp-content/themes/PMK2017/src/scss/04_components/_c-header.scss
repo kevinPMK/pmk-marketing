@@ -54,19 +54,135 @@ Version: 1.0.0
         box-sizing: border-box;
         border-bottom: 1px solid rgba(255,255,255,0.1);
         margin-bottom: $grid;
-        &__item{
-            display: block;
-            padding: $grid $grid*2;
-            font-size: $font-size-12;
-            font-weight: 200;
-            letter-spacing: 0.04rem;
-            color: #fff;
-            opacity: 0.6;
+        font-size: $font-size-13;
+        a, button{
+            color: rgba(255, 255, 255, 0.6);
             &:hover{
                 color: #fff;
                 opacity: 1;
             }
         }
+        &__text-link{
+            padding: 0 $grid*2.5;
+            line-height: 40px;
+            height: 40px;
+        }
+        &__search-wrap{
+            height: 40px;
+            width: 40px;
+            margin-left: $grid;
+            margin-right: $grid;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.15s $curved-transition;
+        }
+            &__search-toggle{
+                width: 39px;
+                height: 39px;
+                display: flex;
+                position: absolute;
+                top: 0;
+                right: 0;
+                align-items: center;
+                justify-content: center;
+                opacity: 1;
+                transition: all 0.15s $curved-transition;
+                .icon{
+                    margin-top: 2px;
+                }
+            }
+            &__search-close{
+                position: absolute;
+                bottom: -40px;
+                width: 36px;
+                height: 36px;
+                opacity: 0;
+                right: 0px;
+                transition: all 0.15s $curved-transition;
+                .bar{
+                    height: 1px;
+                    width: 16px;
+                    background: rgba(255,255,255,0.8);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-left: -7px;
+                    &.bar1{
+                        transform: rotate(45deg);
+                    }
+                    &.bar2{
+                        transform: rotate(-45deg);
+                    }
+                }
+                &:hover{
+                    .bar{
+                        background: #fff;
+                    }
+                }
+            }
+            &__search-form{
+                border-bottom: 4px solid $brand-primary;
+                margin-left: 40px;
+                opacity: 0;
+                transition: all 0.15s $curved-transition;
+                .search-submit{
+                    display: none;
+                }
+            }
+                &__search-field{
+                    color: #fff;
+                    border: none;
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 35px;
+                    padding-top: 4px;
+                    box-sizing: border-box;
+                    padding-left: $grid*1.5;
+                    padding-right: 50px;
+                    background: none;
+                    font-size: $font-size-13;
+                    font-family: $primary-font;
+                    font-weight: 200;
+                    &:focus{
+                        outline: none;
+                        background: rgba(20,20,20,0.1);
+                    }
+                    &::-webkit-input-placeholder {
+                      color: rgba(255,255,255,0.3);
+                    }
+                    &::-moz-placeholder {
+                      color: rgba(255,255,255,0.3);
+                    }
+                    &:-ms-input-placeholder {
+                      color: rgba(255,255,255,0.3);
+                    }
+                    &:-moz-placeholder {
+                      color: rgba(255,255,255,0.3);
+                    }
+                    &::-ms-clear {  display: none; width : 0; height: 0; }
+                    &::-ms-reveal {  display: none; width : 0; height: 0; }
+                    &::-webkit-search-decoration,
+                    &::-webkit-search-cancel-button,
+                    &::-webkit-search-results-button,
+                    &::-webkit-search-results-decoration { display: none; }
+                }
+
+            &__search-wrap--open{
+                width: 220px;
+                opacity: 1;
+                .sub-menu__search-form{
+                    margin-left: 0px;
+                    opacity: 1;
+                }
+                .sub-menu__search-toggle{
+                    opacity: 0;
+                    top: -39px;
+                }
+                .sub-menu__search-close{
+                    opacity: 1;
+                    bottom: 4px;
+                }
+            }
     }
 
 
@@ -492,6 +608,42 @@ Version: 1.0.0
                 transform: translateY(0px);
             }
         }
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  Search Menu
+------------------------------------------------------------------------*/
+
+
+.search-menu{
+    z-index: 2000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(22,35,66,0.98), rgba(13,24,49,0.98));
+    transition: opacity 0.15s $curved-transition;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    >.inner{
+        width: 100%;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        padding-top: $grid*7;
+        padding-bottom: $grid*7;
+    }
+    &__main{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
     }
 }
 

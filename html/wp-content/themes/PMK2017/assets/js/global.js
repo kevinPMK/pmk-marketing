@@ -8,6 +8,15 @@
     //Animate from top
 
 
+    $('.sub-menu__search-toggle').on('click', function () {
+        $('.sub-menu__search-wrap').addClass('sub-menu__search-wrap--open');
+        $('.sub-menu__search-field').focus();
+    });
+
+    $('.sub-menu__search-close').on('click', function () {
+        $('.sub-menu__search-wrap').removeClass('sub-menu__search-wrap--open');
+        $('.sub-menu__search-field').val('');
+    });
 
     $('.slide, .feature-grid, .slide-faq__group, .slide-faq__conclusion, .blog-card, .blog-overview-hero').waypoint (function(){
         $(this.element).addClass('animated');

@@ -1,0 +1,348 @@
+/*---------------------------------------------------------------------------
+
+
+Slide Search Results
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------------------------
+  Slide Image Grid
+------------------------------------------------------------------------*/
+
+.slide__image-grid{
+    display: flex;
+    margin: $grid*12 auto 0;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 $grid*14;
+    box-sizing: border-box;
+    justify-content: center;
+    max-width: 1440px;
+}
+    .slide__image-grid-cell{
+        padding: $grid;
+        box-sizing: border-box;
+        > .inner{
+            display: block;
+            //temp
+            img{
+                width: auto;
+                height: auto;
+            }
+        }
+        &--half{
+            width: 50%;
+            //temp
+            height: 400px;
+            >.inner{
+                background: #eee;
+                height: 100%;
+            }
+        }
+        &--full{
+            width: 100%;
+            //temp
+            height: 600px;
+            >.inner{
+                background: #eee;
+                height: 100%;
+            }
+        }
+    }
+//slide__image-grid
+
+
+/*-- In View Transitions --*/
+
+.slide{
+    .slide__image-grid-cell{
+        transition: all 0.7s $curved-transition 0.5s;
+        transform: translateY(20px);
+        opacity: 0;
+        @for $i from 1 through 15 {
+            &:nth-child(#{$i}) {
+                transition-delay: (0.5s + (0.2s * $i));
+            }
+        }
+    }
+    &.animated{
+        .slide__image-grid-cell{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}
+
+
+/*-- Queries --*/
+
+@include media('<lg') {
+    .slide__image-grid{
+        padding-left: 6vw;
+        padding-right: 6vw;
+        padding-left: calc(6vw - 8px);
+        padding-right: calc(6vw - 8px);
+        margin: $grid*10 auto 0;
+    }
+        .slide__image-grid-cell{
+            &--fifth{
+                width: 25%;
+            }
+        }
+}
+
+@include media('<md') {
+}
+
+@include media('<sm') {
+    .slide__image-grid-cell{
+        &--quarter{
+            margin: $grid*8 auto 0;
+            width: 33.33%;
+        }
+        &--fifth{
+            width: 33.33%;
+            padding: $grid/4;
+        }
+    }
+}
+
+@include media('<xs') {
+    .slide__image-grid{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+        .slide__image-grid-cell{
+            &--quarter{
+                width: 50%;
+            }
+        }
+    //.slide__image-grid
+}
+
+
+/*------------------------------------------------------------------------
+  Logo Grid
+------------------------------------------------------------------------*/
+
+.logo-grid{
+    display: flex;
+    margin: $grid*12 auto 0;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 $grid*14;
+    box-sizing: border-box;
+    justify-content: center;
+    max-width: 1440px;
+    &__cell{
+        padding: $grid*2;
+        box-sizing: border-box;
+        width: 25%;
+        img{
+            width: auto;
+            height: auto;
+        }
+        >.inner{
+            display: block;
+            opacity: 0.6;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+/*-- In View Transitions --*/
+
+.slide{
+    .logo-grid__cell{
+        transition: all 0.7s $curved-transition 0.5s;
+        transform: translateY(20px);
+        opacity: 0;
+        @for $i from 1 through 15 {
+            &:nth-child(#{$i}) {
+                transition-delay: (0.5s + (0.2s * $i));
+            }
+        }
+    }
+    &.animated{
+        .logo-grid__cell{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}
+
+
+/*-- Queries --*/
+
+@include media('<lg') {
+    .logo-grid{
+        padding-left: 6vw;
+        padding-right: 6vw;
+        padding-left: calc(6vw - 12px);
+        padding-right: calc(6vw - 12px);
+        &__cell{
+            padding: $grid*1.5;
+            width: 25%;
+        }
+    }
+}
+
+
+@include media('<sm') {
+    .logo-grid{
+        padding-left: calc(6vw - 8px);
+        padding-right: calc(6vw - 8px);
+        &__cell{
+            width: 33.33%;
+            width: calc(100% / 3);
+            padding: $grid;
+        }
+    }
+}
+
+@include media('<xs') {
+    .slide__image-grid{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+        .slide__image-grid-cell{
+            &--quarter{
+                width: 50%;
+            }
+        }
+    //.slide__image-grid
+}
+
+
+/*------------------------------------------------------------------------
+  Mini Grid Section
+------------------------------------------------------------------------*/
+
+.slide-mini{
+    padding: $grid*12 0;
+    position: relative;
+    background: $brand-primary;
+}
+    .slide-mini__grid{
+        max-width: $page-max-width;
+        box-sizing: border-box;
+        margin: 0 auto;
+        display: flex;
+        padding: 0 $grid*14;
+    }
+        .slide-mini__card{
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            background: #fff;
+            padding: $grid*8 $grid*6;
+            margin: $grid*2;
+            box-shadow: 0px 0px 64px rgba(13, 53, 94, 0.3);
+        }
+            .slide-mini__content{
+                flex: 1;
+            }
+            .slide-mini__thumb{
+                margin-top: $grid;
+                margin-right: $grid*6;
+                width: $grid*16;
+                height: $grid*16;
+                border-radius: $grid*16;
+                box-sizing: border-box;
+                border: 4px solid $brand-primary;
+            }
+        //.slide-mini__card
+    //.slide-mini__grid
+//.slide--mini
+
+
+/*-- Queries --*/
+
+@include media('<lg') {
+    .slide-mini__grid{
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+        .slide-mini__card{
+            padding: $grid*5 $grid*5;
+        }
+            .slide-mini__thumb{
+                margin-right: $grid*5;
+                width: $grid*14;
+                height: $grid*14;
+                border-radius: $grid*14;
+            }
+    //.slide-mini__grid
+}
+
+@include media('<md') {
+    .slide-mini__grid{
+        flex-wrap: wrap;
+    }
+        .slide-mini__card{
+            padding: $grid*4 $grid*4;
+            width: 100%;
+            box-sizing: border-box;
+            flex: auto;
+            display: flex;
+            margin: 0;
+            &:first-child{
+                margin-bottom: 6vw;
+            }
+        }
+            .slide-mini__thumb{
+                margin-right: $grid*4;
+            }
+    //.slide-mini__grid
+}
+
+@include media('<xxs') {
+    .slide-mini__card{
+        text-align: center;
+        display: block;
+    }
+        .slide-mini__thumb{
+            margin: 0 auto;
+        }
+        .slide-mini__content{
+            margin-top: $grid*4;
+            flex: auto;
+            width: 100%;
+        }
+}
+
+
+/*-- In View Transitions --*/
+
+.slide-mini{
+    .slide-mini__card{
+        transition: all 0.7s $curved-transition 0.3s;
+        opacity: 0;
+        &:first-child{
+            transform: translate(-40px, 0px);
+        }
+        &:last-child{
+            transform: translate(40px, 0px);
+        }
+    }
+    &.animated{
+        .slide-mini__card{
+            opacity: 1;
+            &:first-child{
+                transform: translate(0px, 0px);
+            }
+            &:last-child{
+                transform: translate(0px, 0px);
+            }
+        }
+    }
+}

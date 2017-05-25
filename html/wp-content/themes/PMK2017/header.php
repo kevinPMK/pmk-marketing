@@ -59,6 +59,7 @@
 					<?php
 						if ( has_nav_menu( 'sub' ) ){
 							get_template_part( 'template-parts/navigation/navigation', 'sub' );
+							get_template_part( 'template-parts/search/search', 'menu' );
 						}
 						if( has_nav_menu( 'top' ) ){
 							get_template_part( 'template-parts/navigation/navigation', 'main' );
@@ -87,6 +88,10 @@
 					}elseif( is_home() && $paged != 1 || is_archive() || is_404() ){
 
 						get_template_part( 'template-parts/hero/hero', 'paged-posts' );
+
+					}elseif( is_search() ){
+
+						get_template_part( 'template-parts/hero/hero', 'search' );
 
 					}else{
 

@@ -11,8 +11,14 @@
 	}
 	$displayCTA = true;
 
-	if( is_404() || $slug == 'request-a-demo'){
+	if( is_404() ){
 		$displayCTA = false;
+	}
+
+	if(!empty($slug)){
+		if($slug == 'request-a-demo'){
+			$displayCTA = false;
+		}
 	}
 
 ?>
@@ -84,6 +90,7 @@
 
 <?php wp_footer(); ?>
 
+<?php if(is_single()) : ?>
 <script>
 document.getElementById('shareBtn').onclick = function() {
   FB.ui({
@@ -93,6 +100,7 @@ document.getElementById('shareBtn').onclick = function() {
   }, function(response){});
 }
 </script>
+<?php endif; ?>
 
 </body>
 </html>
