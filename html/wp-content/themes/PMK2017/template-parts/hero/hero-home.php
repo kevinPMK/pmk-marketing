@@ -15,7 +15,7 @@
 	<div class="home-hero__content" data-parallax="true" data-speed="0.2" data-direction="up">
 		<h1 class="home-hero__heading"><span class="home-hero__sub-heading">Safe and Efficient</span> Student Dismissal</h1>
 		<div class="cta-buttons">
-			<a class="cta-button cta-button--secondary" href="#">
+			<a id="watch-video-button" href="https://www.youtube.com/watch?v=0h1cmiiP6VM" class="cta-button cta-button--secondary" href="#">
 				Watch Video
 				<?php echo pmk_get_svg( array( 'icon' => '32-play', 'size' => '32' ) );?>
 			</a>
@@ -30,6 +30,8 @@
 		<div class="scroll-more__line"></div>
 	</button>
 </section>
+
+
 
 
 <?php ?>

@@ -18,7 +18,7 @@
         $('.sub-menu__search-field').val('');
     });
 
-    $('.slide, .feature-grid, .slide-faq__group, .slide-faq__conclusion, .blog-card, .blog-overview-hero').waypoint (function(){
+    $('.slide, .feature-grid, .slide-faq__group, .slide-faq__conclusion, .search-results__conclusion, .blog-card, .blog-overview-hero').waypoint (function(){
         $(this.element).addClass('animated');
     }, {
         triggerOnce: true,
@@ -354,5 +354,79 @@
 	$( document ).on( 'wp-custom-header-video-loaded', function() {
 		$body.addClass( 'has-header-video' );
 	});
+
+
+    /*-- YouTube Pop Up Player --*/
+    // Copyright (c) 2016 - Qassim Hassan
+
+    $.fn.YouTubePopUp = function(options) {
+
+        var YouTubePopUpOptions = $.extend({
+                autoplay: 1
+        }, options );
+
+        $(this).on('click', function (e) {
+
+            var youtubeLink = $(this).attr("href");
+
+            if( youtubeLink.match(/(youtube.com)/) ){
+                var split_c = "v=";
+                var split_n = 1;
+            }
+
+            if( youtubeLink.match(/(youtu.be)/) || youtubeLink.match(/(vimeo.com\/)+[0-9]/) ){
+                var split_c = "/";
+                var split_n = 3;
+            }
+
+            if( youtubeLink.match(/(vimeo.com\/)+[a-zA-Z]/) ){
+                var split_c = "/";
+                var split_n = 5;
+            }
+
+            var getYouTubeVideoID = youtubeLink.split(split_c)[split_n];
+
+            var cleanVideoID = getYouTubeVideoID.replace(/(&)+(.*)/, "");
+
+            if( youtubeLink.match(/(youtu.be)/) || youtubeLink.match(/(youtube.com)/) ){
+                var videoEmbedLink = "https://www.youtube.com/embed/"+cleanVideoID+"?autoplay="+YouTubePopUpOptions.autoplay+"";
+            }
+
+            if( youtubeLink.match(/(vimeo.com\/)+[0-9]/) || youtubeLink.match(/(vimeo.com\/)+[a-zA-Z]/) ){
+                var videoEmbedLink = "https://player.vimeo.com/video/"+cleanVideoID+"?autoplay="+YouTubePopUpOptions.autoplay+"";
+            }
+
+            $("body").append('<div class="video-popup video-popup--animation"><div class="video-popup__content"><button type="button" class="video-popup__close"><div class="bar bar1"></div><div class="bar bar2"></div></button><div class="video-responsive"><iframe src="'+videoEmbedLink+'" allowfullscreen></iframe></div></div></div>');
+            $("body").addClass('scroll-locked');
+
+
+            if( $('.video-popup').hasClass('video-popup--animation') ){
+                setTimeout(function() {
+                    $('.video-popup').removeClass("video-popup--animation");
+                }, 100);
+            }
+
+            $(".video-popup, .video-popup--close").click(function(){
+                $(".video-popup").addClass("video-popup--hide").delay(515).queue(function() { $(this).remove(); });
+                $("body").removeClass('scroll-locked');
+            });
+
+            e.preventDefault();
+
+        });
+
+        $(document).keyup(function(e) {
+
+            if ( e.keyCode == 27 ){
+                $('.video-popup, .video-popup--close').click();
+            }
+
+        });
+
+    };
+
+    if($('#watch-video-button').length > 0){
+    	$("#watch-video-button").YouTubePopUp();
+    }
 
 })( jQuery );

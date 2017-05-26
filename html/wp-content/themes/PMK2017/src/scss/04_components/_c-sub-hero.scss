@@ -23,7 +23,7 @@ Version: 1.0.0
         display: inline-block;
         font-size: 1.125rem;
     }
-    .hero-search__field{
+    &__field{
         font-size: $font-size-32;
         font-weight: 200;
         width: 100%;
@@ -58,7 +58,7 @@ Version: 1.0.0
         &::-webkit-search-results-button,
         &::-webkit-search-results-decoration { display: none; }
     }
-    .hero-search__submit{
+    &__submit{
         position: absolute;
         right: 0;
         bottom: 4px;
@@ -72,6 +72,40 @@ Version: 1.0.0
         .icon{
             width: 64px;
             height: 64px;
+        }
+    }
+}
+
+@include media('<sm') {
+    .hero-search{
+        margin: 0;
+        label{
+            font-size: $font-size-18;
+        }
+        &__field{
+            font-size: $font-size-24;
+        }
+    }
+}
+
+@include media('<xs') {
+    .hero-search{
+        margin: 0;
+        label{
+            font-size: $font-size-16;
+        }
+        &__field{
+            font-size: $font-size-20;
+            height: 48px;
+            padding-right: 60px;
+        }
+        &__submit{
+            width: 48px;
+            height: 48px;
+            .icon{
+                width: 48px;
+                height: 48px;
+            }
         }
     }
 }

@@ -24,7 +24,7 @@
 			</script>
 		</head>
 
-		<body <?php body_class(); ?>>
+		<body>
 
 			<script>
 				//LOAD THE FB JS SDK
