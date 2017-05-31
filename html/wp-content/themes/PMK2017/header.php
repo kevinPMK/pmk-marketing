@@ -24,7 +24,7 @@
 			</script>
 		</head>
 
-		<body>
+		<body <?php body_class(); ?>>
 
 			<script>
 				//LOAD THE FB JS SDK
@@ -77,7 +77,7 @@
 
 					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-					if( pmk_is_frontpage()){
+					if( is_front_page() && ! is_home() ){
 
 						get_template_part( 'template-parts/hero/hero', 'home' );
 
@@ -101,7 +101,7 @@
 
 				?>
 
-				<?php if( pmk_is_frontpage()) : ?>
+				<?php if( is_front_page() && ! is_home() ) : ?>
 
 					<div class="site__content site__content--home">
 

@@ -10,6 +10,10 @@
 		$heroClass = 'sub-page-hero';
 	}
 
+	$alternativeTitle = get_post_meta( get_the_ID(), 'alternative_title' )[0];
+
+	var_dump($pageMeta);
+
 ?>
 
 <div class="<?php echo $heroClass; ?>" data-parallax="true" data-speed="0.1" data-direction="up">
@@ -23,7 +27,17 @@
 				<?php echo get_the_title( $post->post_parent ); ?>
 			</a>
 		<?php endif; ?>
-		<h1><?php the_title(); ?></h1>
+		<h1>
+			<?php
+
+			if(!empty($alternativeTitle)){
+				echo $alternativeTitle;
+			}else{
+				the_title(); 
+			}
+
+			?>
+		</h1>
 		<?php if(has_excerpt()): ?>
 		<p><?php echo get_the_excerpt(); ?></p>
 		<?php endif; ?>

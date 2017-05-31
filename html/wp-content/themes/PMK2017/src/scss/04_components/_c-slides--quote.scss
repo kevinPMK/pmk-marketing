@@ -16,11 +16,11 @@ Version: 1.0.0
 
 .slide-quote{
     border: $grid*4 solid rgba(255,255,255,0.05);
-    background-image: url('images/food.png'), url('images/noise.png'), linear-gradient(120deg, #68BDFA, #3A65C7 );
+    background-image: url('images/food.png'), linear-gradient(120deg, #3FA9F5, #3A65C7 );
     background-size:  300px 250px 250px, cover;
 	background-attachment: fixed;
-	background-repeat: repeat, repeat, no-repeat;
-	background-position: 0px, center, center;
+	background-repeat: repeat, no-repeat;
+	background-position: 0px, center;
     animation: movingBg 40s linear 2s infinite;
     figure{
         padding-left: $grid*8;

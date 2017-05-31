@@ -16,7 +16,7 @@ class Staff_Metabox {
 	public function staff_meta_boxes() {
 		add_meta_box(
 			'staff_title',
-			'Staff Member Title',
+			'Staff Member Information',
 			array( $this, 'render_meta_boxes' ),
 			'staff',
 			'normal',
@@ -29,6 +29,7 @@ class Staff_Metabox {
 
 		$meta = get_post_custom( $post->ID );
 		$staff_title = ! isset( $meta['staff_title'][0] ) ? '' : $meta['staff_title'][0];
+	    $display_on_front_page = ! isset( $meta['display_on_front_page'][0] ) ? '' : $meta['display_on_front_page'][0];
 
 		wp_nonce_field( basename( __FILE__ ), 'staff_fields' ); ?>
 
@@ -36,8 +37,15 @@ class Staff_Metabox {
 
 			<tr>
 				<td>
+                    <label style="font-weight: bold; display: block; padding-bottom: 8px;" for="customer_url">
+ 					   Staff Title
+ 				   </label>
 					<input style="width: 100%; box-sizing: border-box;" type="text" name="staff_title" value="<?php echo $staff_title; ?>">
-					<p class="description">E.g. CEO, Sales Lead, Designer</p>
+					<p class="description" style="padding-bottom: 24px; opacity: 0.5;">E.g. CEO, Sales Lead, Designer</p>
+                    <label for="display_on_front_page">
+ 					   <input name="display_on_front_page" type="checkbox" id="display_on_front_page" <?php echo ( $display_on_front_page == true ? ' checked="checked"' : '') ?>>
+ 					   Display on Team Page
+ 				   </label>
 				</td>
 			</tr>
 
@@ -71,6 +79,7 @@ class Staff_Metabox {
 		}
 
 		$meta['staff_title'] = ( isset( $_POST['staff_title'] ) ? esc_textarea( $_POST['staff_title'] ) : '' );
+ 	    $meta['display_on_front_page'] = ( isset( $_POST['display_on_front_page'] ) ? $_POST['display_on_front_page'] : '' );
 
 		foreach ( $meta as $key => $value ) {
 			update_post_meta( $post->ID, $key, $value );

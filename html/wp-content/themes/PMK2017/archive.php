@@ -1,22 +1,17 @@
 <?php
-/**
- * The template for displaying archive pages
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
- */
 
-get_header(); ?>
+/*---------------------------------------------------------------
+	ARCHIVE TEMPLATE
+---------------------------------------------------------------*/
+
+get_header();
+
+?>
 
 
 <main id="main" class="site-main" role="main">
 	<div class="slide blog-overview">
 		<div class="slide__content">
-
 
 			<?php
 				if ( have_posts() ) :
@@ -38,7 +33,13 @@ get_header(); ?>
 				else :
 			?>
 
-				<!-- get_template_part( 'template-parts/post/blog-footer', 'none' ); -->
+			<div class="blog__content">
+				<div class="blog__copy">
+					<h2>Oops, No Posts!</h2>
+					<hr class="hr-gradient" />
+					<p>It looks like there are no posts under this category. Apologies!</p>
+				</div>
+			</div>
 
 			<?php
 				endif;

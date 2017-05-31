@@ -7,7 +7,9 @@
 
 
 
-/*-- THEME REQUIRES WORDPRESS 4.7+ --*/
+/*---------------------------------------------------------------
+	MAKE WORDPRESS REQUIRE 4.7+
+---------------------------------------------------------------*/
 
 if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -15,7 +17,9 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 }
 
 
-/*-- THEME SETUP --*/
+/*---------------------------------------------------------------
+	THEME SETUP
+---------------------------------------------------------------*/
 
 function pmk_setup() {
 
@@ -54,48 +58,10 @@ function pmk_setup() {
 
 add_action( 'after_setup_theme', 'pmk_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function twentyseventeen_content_width() {
 
-	$content_width = $GLOBALS['content_width'];
-
-	// Get layout.
-	$page_layout = get_theme_mod( 'page_layout' );
-
-	// Check if layout is one column.
-	if ( 'one-column' === $page_layout ) {
-		if ( pmk_is_frontpage() ) {
-			$content_width = 644;
-		} elseif ( is_page() ) {
-			$content_width = 740;
-		}
-	}
-
-	// Check if is single post and there is no sidebar.
-	if ( is_single() && ! is_active_sidebar( 'sidebar-1' ) ) {
-		$content_width = 740;
-	}
-
-	/**
-	 * Filter Twenty Seventeen content width of the theme.
-	 *
-	 * @since Twenty Seventeen 1.0
-	 *
-	 * @param $content_width integer
-	 */
-	$GLOBALS['content_width'] = apply_filters( 'twentyseventeen_content_width', $content_width );
-}
-add_action( 'template_redirect', 'twentyseventeen_content_width', 0 );
-
-
-
-/*-- ADD EXCERPTS TO PAGES --*/
+/*---------------------------------------------------------------
+	ADD EXCERPTS TO PAGES
+---------------------------------------------------------------*/
 
 add_action( 'init', 'my_add_excerpts_to_pages' );
 function my_add_excerpts_to_pages() {
@@ -104,7 +70,9 @@ function my_add_excerpts_to_pages() {
 
 
 
-/*-- PRE CONNECT TO FONTS.COM --*/
+/*---------------------------------------------------------------
+	PRE CONNECT TO FONTS.COM
+---------------------------------------------------------------*/
 
  function pmk_resource_hints( $urls, $relation_type ) {
  	if ( wp_style_is( 'pmk-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
@@ -119,41 +87,20 @@ function my_add_excerpts_to_pages() {
  add_filter( 'wp_resource_hints', 'pmk_resource_hints', 10, 2 );
 
 
-/*-- REGISTER WIDGET AREAS --*/
-
-function twentyseventeen_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'twentyseventeen' ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar.', 'twentyseventeen' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-
-add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
-
-/*-- EXCERPT UPDATE - Replace [...] with a read more link --*/
+ /*---------------------------------------------------------------
+ 	CHANGE RED MORE ELLIPSIS TO NOT BEING SILLY
+ ---------------------------------------------------------------*/
 
 function pmk_excerpt_more( $link ) {
-	if ( is_admin() ) {
-		return $link;
-	}
-
-	$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
-		esc_url( get_permalink( get_the_ID() ) ),
-		/* translators: %s: Name of current post */
-		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'pmk' ), get_the_title( get_the_ID() ) )
-	);
-	return ' &hellip; ' . $link;
+	return '...';
 }
 
 add_filter( 'excerpt_more', 'pmk_excerpt_more' );
 
 
-/*-- JAVASCRIPT DETECTION --*/
+/*---------------------------------------------------------------
+   DETECT JAVASCRIPT
+---------------------------------------------------------------*/
 
 function pmk_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
@@ -161,7 +108,9 @@ function pmk_javascript_detection() {
 add_action( 'wp_head', 'pmk_javascript_detection', 0 );
 
 
-/*-- SINGLE PINGBACK LINK --*/
+/*---------------------------------------------------------------
+   CREATE PINGBACK LINK
+---------------------------------------------------------------*/
 
 function pmk_pingback_header() {
 	if ( is_singular() && pings_open() ) {
@@ -171,55 +120,9 @@ function pmk_pingback_header() {
 add_action( 'wp_head', 'pmk_pingback_header' );
 
 
-/*-- ENQUEUE SCRIPTS AND STYLES --*/
-
-function pmk_scripts() {
-
-	//Add custom fonts, used in the main stylesheet.
-	wp_enqueue_script('pmk-fonts', '//fast.fonts.net/jsapi/4364cd06-c6c0-44e7-94f3-290ffa52ab9a.js', array(), '1.0', true );
-
-	//Theme stylesheet.
-	wp_enqueue_style( 'pmk-style', get_theme_file_uri( '/src/main.css' ) );
-
-
-	/*-- IE9 SUPPORT:
-
-	if ( is_customize_preview() ) {
-		wp_enqueue_style( 'twentyseventeen-ie9', get_theme_file_uri( '/assets/css/ie9.css' ), array( 'twentyseventeen-style' ), '1.0' );
-		wp_style_add_data( 'twentyseventeen-ie9', 'conditional', 'IE 9' );
-	}
-
-	// Load the html5 shiv.
-	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
-	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
-
-	--*/
-
-	//Make skip to content accessable.
-	wp_enqueue_script( 'pmk-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
-
-	//Load Waypoints.
-	wp_enqueue_script( 'pmk-waypoints', get_theme_file_uri( '/src/js/jquery.waypoints.min.js' ), array( 'jquery' ), '1.0', true );
-
-	//Introduce Google Parallax
-	wp_enqueue_script( 'pmk-parallax', get_theme_file_uri( '/src/js/parallax.js' ), array(), '1.0', true );
-
-	//Load default twentyseventeen scripts.
-	wp_enqueue_script( 'pmk-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
-
-	//Load jQuery scoll to.
-	wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
-
-	//Thread Wordpress Comments
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-}
-add_action( 'wp_enqueue_scripts', 'pmk_scripts' );
-
-
-/*-- Remove P tags from happening in and around shortcodes --*/
+/*---------------------------------------------------------------
+   REMOVE P TAGS FROM SHORTCODES
+---------------------------------------------------------------*/
 
 function wpex_clean_shortcodes($content){
 $array = array (
@@ -234,7 +137,9 @@ add_filter('the_content', 'wpex_clean_shortcodes');
 
 
 
-/*-- Remove P tags from around images --*/
+/*---------------------------------------------------------------
+   REMOVE P TAGS AROUND IMAGES
+---------------------------------------------------------------*/
 
 function filter_ptags_on_images($content){
     return preg_replace('/<p>(\s*)(<img .* \/>)(\s*)<\/p>/iU', '\2', $content);
@@ -243,51 +148,9 @@ function filter_ptags_on_images($content){
 add_filter('the_content', 'filter_ptags_on_images');
 
 
-// Stringify the Thumbnail Source
-function get_the_post_thumbnail_src($img)
-{
-  return (preg_match('~\bsrc="([^"]++)"~', $img, $matches)) ? $matches[1] : '';
-}
-
-
-/*-- ADD CUSTOM IMAGE SIZES FOR CONTENT IMAGES
-
-function twentyseventeen_content_image_sizes_attr( $sizes, $size ) {
-	$width = $size[0];
-
-	if ( 740 <= $width ) {
-		$sizes = '(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px';
-	}
-
-	if ( is_active_sidebar( 'sidebar-1' ) || is_archive() || is_search() || is_home() || is_page() ) {
-		if ( ! ( is_page() && 'one-column' === get_theme_mod( 'page_options' ) ) && 767 <= $width ) {
-			 $sizes = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
-		}
-	}
-
-	return $sizes;
-}
-add_filter( 'wp_calculate_image_sizes', 'twentyseventeen_content_image_sizes_attr', 10, 2 );
-
---*/
-
-/*-- ADD CUSTOM IMAGE SIZES FOR POST THUMBNAILS
-
-function twentyseventeen_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
-	if ( is_archive() || is_search() || is_home() ) {
-		$attr['sizes'] = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
-	} else {
-		$attr['sizes'] = '100vw';
-	}
-
-	return $attr;
-}
-add_filter( 'wp_get_attachment_image_attributes', 'twentyseventeen_post_thumbnail_sizes_attr', 10, 3 );
-
- --*/
-
-
-/*-- Highlight Search Terms --*/
+/*---------------------------------------------------------------
+   HIGHLIGHT SEARCH TERMS
+---------------------------------------------------------------*/
 
 function search_excerpt_highlight() {
     $excerpt = get_the_excerpt();
@@ -305,45 +168,11 @@ function search_title_highlight() {
     echo $title;
 }
 
-/*-- Remove Readmore Links --*/
-
-function new_excerpt_more( $more ) {
-	return '';
-}
-add_filter('excerpt_more', 'new_excerpt_more');
-
-// customize read more link
-add_filter('the_excerpt', 'pmk_custom_readmore');
-function pmk_custom_readmore($output) {
-	$markup = substr($output,0,-5);
-	$markup .= '</p>';
-	return $markup;
-}
-
-/*-- USE FRONT-PAGE.PHP WHEN FRONT PAGE DISPLAY IS SET TO A STATIC PAGE --*/
-
-function twentyseventeen_front_page_template( $template ) {
-	return is_home() ? '' : $template;
-}
-add_filter( 'frontpage_template',  'twentyseventeen_front_page_template' );
 
 
-
-/*-- Add classes to previous and next posts --*/
-
-add_filter('next_posts_link_attributes', 'posts_link_attributes_1');
-add_filter('previous_posts_link_attributes', 'posts_link_attributes_2');
-
-function posts_link_attributes_1() {
-    return 'class="button paged-links__next-page"';
-}
-function posts_link_attributes_2() {
-    return 'class="button paged-links__previous-page"';
-}
-
-/**
- * Sort Taxonomies by creation order.
- */
+/*---------------------------------------------------------------
+   SORT TAXONOMIES BY CREATION ORDER
+---------------------------------------------------------------*/
 
 function set_the_terms_in_order ( $terms, $id, $taxonomy ) {
     $terms = wp_cache_get( $id, "{$taxonomy}_relationships_sorted" );
@@ -363,47 +192,88 @@ function do_the_terms_in_order () {
 }
 add_action( 'init', 'do_the_terms_in_order');
 
-/**
- * Implement the Custom Header feature.
- */
-require get_parent_theme_file_path( '/inc/custom-header.php' );
 
-/**
- * Custom template tags for this theme.
- */
-require get_parent_theme_file_path( '/inc/template-tags.php' );
 
-/**
- * Additional features to allow styling of the templates.
- */
-require get_parent_theme_file_path( '/inc/template-functions.php' );
+/*---------------------------------------------------------------
+   ADD CLASSES TO PREVIOUS AND NEXT PAGE LINKS
+---------------------------------------------------------------*/
 
-/**
- * Customizer additions.
- */
-require get_parent_theme_file_path( '/inc/customizer.php' );
+add_filter('next_posts_link_attributes', 'posts_link_attributes_1');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes_2');
 
-/**
- * SVG icons functions and filters.
- */
+function posts_link_attributes_1() {
+    return 'class="button paged-links__next-page"';
+}
+function posts_link_attributes_2() {
+    return 'class="button paged-links__previous-page"';
+}
+
+
+/*---------------------------------------------------------------
+   ENQUEUE SCRIPTS AND STYLES
+---------------------------------------------------------------*/
+
+function pmk_scripts() {
+
+	//Add custom fonts, used in the main stylesheet.
+	wp_enqueue_script('pmk-fonts', '//fast.fonts.net/jsapi/4364cd06-c6c0-44e7-94f3-290ffa52ab9a.js', array(), '1.0', true );
+
+	//Theme stylesheet.
+	wp_enqueue_style( 'pmk-style', get_theme_file_uri( '/src/main.css' ) );
+
+	/*-- IE9 SUPPORT:
+	if ( is_customize_preview() ) {
+		wp_enqueue_style( 'twentyseventeen-ie9', get_theme_file_uri( '/assets/css/ie9.css' ), array( 'twentyseventeen-style' ), '1.0' );
+		wp_style_add_data( 'twentyseventeen-ie9', 'conditional', 'IE 9' );
+	}
+
+	// Load the html5 shiv.
+	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
+	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
+
+	--*/
+
+	//Make skip to content accessable.
+	wp_enqueue_script( 'pmk-skip-link-focus-fix', get_theme_file_uri( '/src/js/skip-link-focus-fix.js' ), array(), '1.0', true );
+
+	//Load Waypoints.
+	wp_enqueue_script( 'pmk-waypoints', get_theme_file_uri( '/src/js/jquery.waypoints.min.js' ), array( 'jquery' ), '1.0', true );
+
+	//Load jQuery scoll to.
+	wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/src/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
+
+	//Load default twentyseventeen scripts.
+	wp_enqueue_script( 'pmk-global', get_theme_file_uri( '/src/js/global.js' ), array( 'jquery' ), '1.0', true );
+
+
+	//Thread Wordpress Comments
+	/*
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+	*/
+
+}
+add_action( 'wp_enqueue_scripts', 'pmk_scripts' );
+
+/*---------------------------------------------------------------
+   ADDITIONAL FUNCTIONS
+---------------------------------------------------------------*/
+
+/*-- SVG ICONS AND FILTERS --*/
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
 
-/**
- * Custom Walkers
- */
+/*-- CUSTOM MENU WALKERS --*/
 require get_parent_theme_file_path( '/inc/custom-walkers.php' );
 
-/**
- * Custom Shortcodes
- */
+/*-- GLOBAL SHORTCODES --*/
 require get_parent_theme_file_path( '/inc/custom-shortcodes.php' );
 
-/*-- Default Post Metaboxes --*/
+/*-- GLOBAL METABOXES --*/
 require get_parent_theme_file_path( '/inc/post-metaboxes.php' );
+require get_parent_theme_file_path( '/inc/page-metaboxes.php' );
 
-
-/*-- Custom Post Types --*/
-
+/*-- BUILD CUSTOM POST TYPES --*/
 require get_parent_theme_file_path( '/inc/press/manifest.php' );
 require get_parent_theme_file_path( '/inc/faq/manifest.php' );
 require get_parent_theme_file_path( '/inc/customers/manifest.php' );

@@ -21,7 +21,7 @@ Version: 1.0.0
     box-sizing: border-box;
     &:before{
         content: '';
-        background-color: rgba(61,62,72,0.15);
+        background-color: $gray-bg-color;
         position: absolute;
         top: 0;
         right: 0;

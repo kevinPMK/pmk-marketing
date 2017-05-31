@@ -37,6 +37,8 @@ function section( $atts, $content = null ) {
     }else if($type == 'mini') {
 
         $output .= '<section class="slide slide--dark slide-mini type-mini">';
+        $output .= '<div class="slide-mini__sfx-squiggle" aria-hidden="true"></div>';
+        $output .= '<div class="slide-mini__sfx-circle-grad" aria-hidden="true"></div>';
         $output .= '<div class="slide-mini__grid">';
         $output .= do_shortcode($content);
         $output .= '</div>';
@@ -546,6 +548,68 @@ function Press( $atts ) {
 
 add_shortcode("Press", "Press");
 
+
+/*---------------------------------------------------------------
+	TEAM LIST SHORT CODE
+---------------------------------------------------------------*/
+
+function TeamList( $atts ) {
+
+    extract(shortcode_atts(array(
+        "total" => -1
+    ), $atts));
+
+    $args = array(
+        'post_type' => 'staff',
+        'posts_per_page' => $total,
+        'meta_key'   => 'display_on_front_page',
+        'meta_value' => 'on'
+    );
+
+    $loop = new WP_Query( $args );
+
+
+    $output = '<section class="slide team-list">';
+    $output .= '<div class="inner">';
+
+    while ( $loop->have_posts() ) : $loop->the_post();
+
+
+        $author_title = get_post_meta( get_the_ID(), 'staff_title' )[0];
+
+        $output .= '<div class="team-card">';
+        $output .= '<div class="inner">';
+        $output .= '<div class="team-card__thumb">';
+        $output .= get_the_post_thumbnail();
+        $output .= '</div>';
+        $output .= '<div class="team-card__content">';
+        $output .= '<div class="inner">';
+        $output .= '<div class="team-card__name">';
+        $output .= get_the_title();
+        $output .= '</div>';
+        if(!empty($author_title)){
+            $output .= '<div class="team-card__title">';
+            $output .= $author_title;
+            $output .= '</div>';
+        }
+        $output .= '</div>';
+        $output .= '</div>';
+        $output .= '<div class="team-card__description">';
+        $output .= get_the_content();
+        $output .= '</div>';
+        $output .= '</div>';
+        $output .= '</div>';
+
+    endwhile;
+
+    $output .= '</div>';
+    $output .= '</section>';
+
+    return $output;
+
+}
+
+add_shortcode("TeamList", "TeamList");
 
 
 /*---------------------------------------------------------------

@@ -94,10 +94,19 @@ $copy-content-color: #7A868C;
 $app-bg-color: #f3f4f7;
 $app-divider-color: #e0e2ed; //#f1f2f6;
 $content-copy-color--dark: #434e54;
-$content-copy-color: #696c72;
 $content-copy-color--light: #879cc6;
-$title-color: #1e1e1e;
 $soft-bg-color: #fbfbfb;
+
+
+$border-radius: $grid*2;
+$title-color: #252d3f;
+$content-copy-color: #7f7f84;
+$gray-bg-color: #e7ebed;
+$box-shadow-color: rgba(37,48,60,0.2);
+$green-grad: linear-gradient(90deg, #72c54f, #99d25c);
+$green-grad-reverse: linear-gradient(-90deg, #72c54f, #99d25c);
+$blue-grad: linear-gradient(90deg, #3A65C7, #3FA9F5);
+$blue-grad-reverse: linear-gradient(-90deg, #3A65C7, #3FA9F5);
 
 
 /*---------------------------------------------------------------------

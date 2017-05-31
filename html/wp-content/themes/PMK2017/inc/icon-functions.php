@@ -10,12 +10,18 @@
 
 function pmk_include_svg_icons() {
 	// Define SVG sprite file.
-	$svg_icons = get_parent_theme_file_path( '/src/app-icons.svg' );
+	$app_sfx = get_parent_theme_file_path( '/src/app-sfx.svg' );
+	$app_icons = get_parent_theme_file_path( '/src/app-icons.svg' );
 
 	// If it exists, include it.
-	if ( file_exists( $svg_icons ) ) {
-		require_once( $svg_icons );
+	if ( file_exists( $app_sfx ) ) {
+		require_once( $app_sfx );
 	}
+
+	if ( file_exists( $app_icons ) ) {
+		require_once( $app_icons );
+	}
+
 }
 
 add_action( 'wp_footer', 'pmk_include_svg_icons', 9999 );

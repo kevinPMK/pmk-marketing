@@ -1,0 +1,257 @@
+/*---------------------------------------------------------------------------
+
+
+Team List
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+
+.team-list{
+    background: linear-gradient(#4569ce, #5ca7f9);
+    >.inner{
+        max-width: 1680px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        display: flex;
+        padding-left: $grid*14;
+        padding-right: $grid*14;
+        flex-wrap: wrap;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+
+@include media('<lg') {
+    .team-list{
+        >.inner{
+            padding-left: 6vw;
+            padding-right: 6vw;
+        }
+    }
+}
+
+
+@include media('<xxs') {
+    .team-list{
+        >.inner{
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------------
+  Team List Card
+------------------------------------------------------------------------*/
+
+.team-card{
+    width: 25%;
+    padding: $grid*2;
+    box-sizing: border-box;
+    >.inner{
+        position: relative;
+        box-shadow: 0px 10px 64px rgba(13, 53, 94, 0.99);
+        overflow: hidden;
+        &:after{
+            background: rgba(30, 40, 70, 0.95);
+            position: absolute;
+            display: block;
+            top: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: '';
+            opacity: 0;
+            transition: all 0.2s $curved-transition 0.2s;
+        }
+        &:hover{
+            img{
+                filter: blur(4px);
+                transition: all 0.2s $curved-transition;
+            }
+            .team-card__description{
+                margin-bottom: 10px;
+                opacity: 1;
+                transition: all 0.2s $curved-transition 0.2s;
+            }
+            &:after{
+                top: 0;
+                opacity: 0.9;
+                transition: all 0.2s $curved-transition;
+            }
+        }
+    }
+    &__thumb{
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: auto;
+            transition: all 0.2s $curved-transition 0.2s;
+            filter: blur(0px);
+        }
+    }
+    &__content{
+        background: rgba(30, 40, 70, 0.2);
+        color: #fff;
+        height: $grid*12;
+        position: relative;
+        padding-left: $grid*3;
+        padding-right: $grid*3;
+        z-index: 20;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s $curved-transition 0.2s;
+        //background: rgba(60,60,80, 0.4);
+    }
+        &__name{
+            font-family: $header-font;
+            font-weight: 700;
+            font-size: $font-size-24;
+            margin-bottom: $grid/2;
+        }
+        &__title{
+            opacity: 0.6;
+            font-size: $font-size-13;
+            text-transform: uppercase;
+            font-weight: 200;
+            letter-spacing: 0.04rem;
+            margin-top: 0;
+        }
+    &__description{
+        color: #fff;
+        margin-bottom: 0px;
+        @extend p;
+        line-height: 1.818em;
+        font-size: $font-size-14;
+        position: absolute;
+        bottom: $grid*12;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        padding: $grid*3 $grid*3 $grid*2 $grid*3;
+        z-index: 20;
+        filter: blur(0px);
+        transition: all 0.2s $curved-transition;
+    }
+}
+
+
+/*-- IN VIEW TRANSITIONS AND QUERIES --*/
+
+
+.team-card{
+    opacity: 0;
+    transform: translateY(45px);
+    transition: transform 0.45s $curved-transition 0.15s, opacity 0.45s $curved-transition 0.15s;
+    &.animated{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@include media('>=xl') {
+    .team-card{
+        &:nth-child(4n + 1){
+            transition-delay: 0.25s;
+        }
+        &:nth-child(4n + 2){
+            transition-delay: 0.35s;
+        }
+        &:nth-child(4n + 3){
+            transition-delay: 0.45s;
+        }
+        &:nth-child(4n + 4){
+            transition-delay: 0.45s;
+        }
+    }
+}
+
+@include media('>=lg','<xl') {
+    .team-card{
+        &:nth-child(3n + 1){
+            transition-delay: 0.25s;
+        }
+        &:nth-child(3n + 2){
+            transition-delay: 0.35s;
+        }
+        &:nth-child(3n + 3){
+            transition-delay: 0.45s;
+        }
+    }
+}
+
+@include media('>=xs', '<lg') {
+    .team-card{
+        &:nth-child(2n + 1){
+            transition-delay: 0.25s;
+        }
+        &:nth-child(2n + 2){
+            transition-delay: 0.35s;
+        }
+    }
+}
+
+@include media('<xs') {
+    .team-card{
+        &:nth-child(1n + 1){
+            transition-delay: 0.25s;
+        }
+    }
+}
+
+
+/*-- RESPONSIVE QUERIES --*/
+
+@include media('<xl') {
+    .team-card{
+        width: 33.3333%;
+        width: calc(100% / 3);
+    }
+}
+
+@include media('<lg') {
+    .team-card{
+        width: 50%;
+        &__name{
+            font-size: $font-size-20;
+        }
+        &__title{
+            font-size: $font-size-13;
+        }
+    }
+}
+
+@include media('<sm') {
+    .team-card{
+        padding: $grid;
+        >.inner{
+            &:hover{
+                img{
+                    filter: blur(0);
+                }
+                .team-card__description{
+                    display: none;
+                }
+                &:after{
+                    display: none;
+                    top: 0;
+                    opacity: 0.9;
+                    transition: all 0.2s $curved-transition;
+                }
+            }
+        }
+    }
+}
+
+@include media('<xs') {
+    .team-card{
+        width: 100%;
+    }
+}
