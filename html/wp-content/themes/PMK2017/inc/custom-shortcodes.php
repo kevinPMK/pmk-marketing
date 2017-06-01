@@ -563,7 +563,9 @@ function TeamList( $atts ) {
         'post_type' => 'staff',
         'posts_per_page' => $total,
         'meta_key'   => 'display_on_front_page',
-        'meta_value' => 'on'
+        'meta_value' => 'on',
+        'orderby' => 'menu_order',
+        'order' => 'ASC'
     );
 
     $loop = new WP_Query( $args );
