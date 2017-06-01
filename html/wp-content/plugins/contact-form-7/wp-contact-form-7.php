@@ -63,4 +63,10 @@ if ( ! defined( 'WPCF7_VALIDATE_CONFIGURATION' ) ) {
 // Deprecated, not used in the plugin core. Use wpcf7_plugin_url() instead.
 define( 'WPCF7_PLUGIN_URL', untrailingslashit( plugins_url( '', WPCF7_PLUGIN ) ) );
 
+add_filter('site_transient_update_plugins', 'remove_update_notification_1234');
+function remove_update_notification_1234($value) {
+    unset($value->response[ plugin_basename(__FILE__) ]);
+    return $value;
+}
+
 require_once WPCF7_PLUGIN_DIR . '/settings.php';
