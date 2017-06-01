@@ -1,8 +1,8 @@
 wp-admin/
 wp-content/mu-plugins/
 wp-includes/
-wp-*.php
-!wp-content/plugins/wp-*.php
+html/wp-*.php
+!html/wp-content/plugins/*
 html/index.php
 gdconfig.php
 node_modules/
