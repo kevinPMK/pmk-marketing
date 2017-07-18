@@ -13,7 +13,10 @@
 	<div class="home-hero__gradient"></div>
 	<div class="home-hero__lightstreak"></div>
 	<div class="home-hero__content" data-parallax="true" data-speed="0.2" data-direction="up">
-		<h1 class="home-hero__heading"><span class="home-hero__sub-heading">The Comprehensive</span>School Safety Platform</h1>
+		<h1 class="home-hero__heading">
+			<span class="home-hero__sub-heading">The Comprehensive</span>
+			<span class="home-hero__main-heading">School Safety Platform</span>
+		</h1>
 		<div class="cta-buttons">
 			<a id="watch-video-button" href="https://www.youtube.com/watch?v=0h1cmiiP6VM" class="cta-button cta-button--secondary" href="#">
 				Watch Video
