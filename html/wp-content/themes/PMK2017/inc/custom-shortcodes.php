@@ -9,7 +9,7 @@
 function section( $atts, $content = null ) {
     extract(shortcode_atts(array(
         "type" => 'default',
-        "theme" => 'grad'
+        "theme" => ''
     ), $atts));
 
     $output = '';
@@ -17,7 +17,9 @@ function section( $atts, $content = null ) {
     if($type == 'default'){
 
         if($theme == 'grad'){
-            $output .= '<section class="slide slide-center slide-center--grad">';
+            $output .= '<section class="slide slide-center slide--grad">';
+        }else if($theme == 'negative'){
+            $output .= '<section class="slide slide-center slide--negative">';
         }else{
             $output .= '<section class="slide slide-center">';
         }
@@ -28,7 +30,13 @@ function section( $atts, $content = null ) {
 
     }else if($type == 'half') {
 
-        $output .= '<section class="slide slide-half">';
+        if($theme == 'grad'){
+            $output .= '<section class="slide slide-half slide--grad">';
+        }else if($theme == 'negative'){
+            $output .= '<section class="slide slide-half slide--negative">';
+        }else{
+            $output .= '<section class="slide slide-half">';
+        }
         $output .= '<div class="slide__content">';
         $output .= do_shortcode($content);
         $output .= '</div>';
@@ -36,7 +44,7 @@ function section( $atts, $content = null ) {
 
     }else if($type == 'mini') {
 
-        $output .= '<section class="slide slide--dark slide-mini type-mini">';
+        $output .= '<section class="slide slide-mini type-mini">';
         $output .= '<div class="slide-mini__sfx-squiggle" aria-hidden="true"></div>';
         $output .= '<div class="slide-mini__sfx-circle-grad" aria-hidden="true"></div>';
         $output .= '<div class="slide-mini__grid">';
@@ -132,7 +140,6 @@ function SectionMiniHalf( $atts, $content = null ) {
 add_shortcode("SectionMiniHalf", "SectionMiniHalf");
 
 
-
 /*-- SECTION Quote --*/
 
 function SectionQuote( $atts, $content = null ) {
@@ -171,6 +178,28 @@ function SectionQuote( $atts, $content = null ) {
 }
 
 add_shortcode("SectionQuote", "SectionQuote");
+
+
+
+/*-- Template Intro --*/
+
+function TemplateIntro( $atts, $content = 'null' ) {
+
+    extract(shortcode_atts(array(
+        "title" => 'Please Select a Title'
+    ), $atts));
+
+    $output = '<div class="slide__copy">';
+    $output .= '<h2>' . $title . '</h2>';
+    $output .= '<hr class="hr-gradient" />';
+    $output .= '<p>' . do_shortcode($content) . '</p>';
+    $output .= '</div>';
+
+    return $output;
+
+}
+
+add_shortcode("TemplateIntro", "TemplateIntro");
 
 
 
@@ -570,7 +599,6 @@ function TeamList( $atts ) {
 
     $loop = new WP_Query( $args );
 
-
     $output = '<section class="slide team-list">';
     $output .= '<div class="inner">';
 
@@ -634,6 +662,67 @@ function Video( $atts ) {
 }
 
 add_shortcode("Video", "Video");
+
+
+/*---------------------------------------------------------------
+	Parent Navigation Shortcode
+---------------------------------------------------------------*/
+
+
+function FeatureNavigation() {
+
+    global $post;
+
+	if ( $post->post_parent ) :
+
+    $currentID = get_the_ID();
+
+    $output = '<section class="slide slide-next-features">';
+    $output .= '<div class="slide__content">';
+
+    $args = array(
+        'post_parent' => $post->post_parent,
+        'post_type' => 'page',
+        'orderby' => 'menu_order'
+    );
+    $child_query = new WP_Query( $args );
+
+    while ( $child_query->have_posts() ) : $child_query->the_post();
+
+        global $post;
+
+        if($currentID == get_the_ID()){
+            $output .= '<div class="slide-next-features__block slide-next-features__block--current">';
+            $output .= '<div class="inner">';
+        }else{
+            $output .= '<div class="slide-next-features__block">';
+            $output .= '<a class="inner" href="' . get_the_permalink() . '">';
+        }
+
+        $output .= '<div class="slide-next-features__icon svg-icon-'. $post_slug=$post->post_name .'">';
+        $output .= '</div>';
+        $output .= '<h4>' . get_the_title() . '</h4>';
+
+        if($currentID == get_the_ID()){
+            $output .= '</div>';
+            $output .= '</div>';
+        }else{
+            $output .= '</div>';
+            $output .= '</a>';
+        }
+
+        endwhile;
+
+        return $output;
+
+    endif;
+
+}
+
+add_shortcode("FeatureNavigation", "FeatureNavigation");
+
+
+
 
 
 ?>

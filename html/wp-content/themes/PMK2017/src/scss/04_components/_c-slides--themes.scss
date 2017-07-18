@@ -1,0 +1,36 @@
+/*---------------------------------------------------------------------------
+
+
+Slides - Themes
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------
+  Negative Theme
+------------------------------------------------------------------------*/
+
+
+.slide--negative{
+    background: linear-gradient(120deg, #3FA9F5, #3A65C7 );
+
+    h2{
+        color: #fff;
+        text-shadow: 0px 4px 24px rgba(61,88,177,1);
+    }
+    .hr-gradient{
+        background: #88b4ee;
+        opacity: 0.1;
+    }
+    p{
+        color: $copy-content-color--on-dark;
+        text-shadow: 0px 4px 12px rgba(61,88,177,0.6);
+    }
+
+    &:before{
+        background: rgba(0,0,0,0.08);
+    }
+}

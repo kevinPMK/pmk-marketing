@@ -171,7 +171,7 @@ Version: 1.0.0
         text-align: center;
         width: 100%;
         max-width: $grid*88;
-        margin-top: $grid*8;
+        margin-top: $grid*6;
         padding: 0 $grid*14;
         h1{
             margin: 0;
@@ -222,8 +222,6 @@ Version: 1.0.0
             text-transform: uppercase;
             font-size: $font-size-14;
             letter-spacing: 0.04rem;
-            margin-bottom: $grid*2;
-            margin-top: $grid*2;
             position: relative;
             .icon{
                 position: absolute;

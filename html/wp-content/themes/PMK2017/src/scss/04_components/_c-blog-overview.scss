@@ -260,7 +260,7 @@ Version: 1.0.0
     padding: 0 $grid*2 $grid*4 $grid*2;
     @extend .typography;
     >.inner{
-        box-shadow: 0px 0px 32px $box-shadow-color;
+        box-shadow: 0px 12px 64px $box-shadow-color;
         background: #fff;
         height: 100%;
         box-sizing: border-box;
@@ -269,9 +269,8 @@ Version: 1.0.0
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        border-radius: $border-radius;
         &:hover{
-            box-shadow: 0px 0px 32px rgba(13, 53, 94, 0.35);
+            box-shadow: 0px 12px 64px rgba(13, 53, 94, 0.35);
             .blog-card__thumb{
                 img{
                     transform: scale(1.3);

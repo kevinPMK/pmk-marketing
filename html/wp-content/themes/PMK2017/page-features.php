@@ -6,29 +6,32 @@
 
 get_header();
 
-
-$args = array(
-	'post_parent' => $post->ID,
-	'post_type' => 'page',
-	'orderby' => 'menu_order'
-);
-
-$child_query = new WP_Query( $args );
-
 ?>
 
 	<main id="main" class="site-main" role="main">
 
 		<section class="slide slide-center">
 			<div class="slide__content">
-				<div class="slide__copy">
-					<h2>Tools of the Trade</h2>
-					<hr class="hr-gradient" />
-					<p>Etiam condimentum leo urna, a laoreet odio sodales ut. Morbi vel tellus at velit mattis ultricies et at dui. Morbi ex ligula, aliquam eu velit id, dictum gravida ipsum. Duis diam dolor, pellentesque vel fermentum sed, posuere eget lectus.</p>
-				</div>
+
+				<?php
+				while ( have_posts() ) : the_post();
+
+					the_content();
+
+				endwhile; // End of the loop.
+				?>
+
 				<div class="feature-grid">
 
 					<?php
+
+						$args = array(
+							'post_parent' => $post->ID,
+							'post_type' => 'page',
+							'orderby' => 'menu_order'
+						);
+
+						$child_query = new WP_Query( $args );
 
 						while ( $child_query->have_posts() ) : $child_query->the_post();
 
@@ -68,12 +71,14 @@ $child_query = new WP_Query( $args );
 					<?php
 
 						endwhile;
+						wp_reset_query();
 
 					?>
 
 				</div>
 			</div>
 		</section>
+
 	</main><!-- #main -->
 
 <?php

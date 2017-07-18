@@ -1,0 +1,50 @@
+/*---------------------------------------------------------------------------
+
+
+Slide Up Next
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------
+  Up Next
+------------------------------------------------------------------------*/
+
+.slide-next-features{
+    padding: 120px 0;
+    &__block{
+        width: 25%;
+        padding: $grid*2;
+        box-sizing: border-box;
+        >.inner{
+            display: block;
+            box-shadow: 0px 12px 64px rgba(37, 48, 60, 0.2);
+            padding: $grid*8 $grid*4;
+            text-align: center;
+        }
+        h4{
+            margin-bottom: 0;
+            margin-top: $grid*3;
+        }
+        &--current{
+            >.inner{
+                color: $content-copy-color--dark;
+                box-shadow: none;
+            }
+            .slide-next-features__icon{
+                background: $content-copy-color--dark;
+            }
+        }
+    }
+    &__icon{
+        width: $grid*16;
+        height: $grid*16;
+        border-radius: $grid*16;
+        margin: 0 auto;
+        background: $brand-primary;
+    }
+}
