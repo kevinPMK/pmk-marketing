@@ -121,11 +121,13 @@ add_shortcode("SectionHero", "SectionHero");
 function SectionMiniHalf( $atts, $content = null ) {
 
     extract(shortcode_atts(array(
-        "title" => 'Please Select a Title'
+        "title" => 'Please Select a Title',
+        "icon" => 'student-safety'
     ), $atts));
 
     $output = '<div class="slide-mini__card">';
     $output .= '<div class="slide-mini__thumb">';
+    $output .= '<img src="' . get_bloginfo('template_directory') . '/src/images/' . $icon . '.svg">';
     $output .= '</div>';
     $output .= '<div class="slide-mini__content typography">';
     $output .= '<h4>' . $title . '</h4>';

@@ -285,12 +285,13 @@ Version: 1.0.0
             }
             .slide-mini__thumb{
                 margin-top: $grid;
-                margin-right: $grid*6;
-                width: $grid*16;
-                height: $grid*16;
-                border-radius: $grid*16;
+                max-width: 192px;
+                width: 100%;
                 box-sizing: border-box;
-                border: 4px solid $brand-primary;
+                margin-right: $grid*3;
+                img{
+                    width: 100%;
+                }
             }
         //.slide-mini__card
     //.slide-mini__grid
