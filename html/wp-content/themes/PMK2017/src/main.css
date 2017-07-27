@@ -522,7 +522,7 @@ Version: 1.0.0
   Buttons
 ------------------------------------------------------------------------*/
 .cta-buttons {
-  margin-top: 32px; }
+  margin-top: 48px; }
 
 .cta-button {
   font-size: 0.875rem;
@@ -531,7 +531,7 @@ Version: 1.0.0
   font-weight: 300;
   box-sizing: border-box;
   margin: 0px 8px;
-  width: 224px;
+  width: 208px;
   height: 52px;
   color: #fff;
   text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
@@ -1276,7 +1276,7 @@ Version: 1.0.0
     -webkit-transform: translate(-50%, -50%) rotate(30deg);
             transform: translate(-50%, -50%) rotate(30deg); }
   .home-hero__content {
-    margin-top: 14vh;
+    margin-top: 16vh;
     z-index: 1000;
     text-align: center;
     width: 100%;
@@ -1288,8 +1288,7 @@ Version: 1.0.0
     padding: 0 48px;
     font-size: 5rem;
     letter-spacing: -0.03em;
-    margin: 0;
-    margin-bottom: 8px; }
+    margin: 0; }
   .home-hero__sub-heading {
     font-family: "Quasimoda W01", sans-serif;
     display: block;

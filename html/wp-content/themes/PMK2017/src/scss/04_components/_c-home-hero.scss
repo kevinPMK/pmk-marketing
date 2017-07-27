@@ -62,7 +62,7 @@ Version: 1.0.0
         transform: translate(-50%, -50%) rotate(30deg);
     }
     &__content{
-        margin-top: 14vh;
+        margin-top: 16vh;
         z-index: 1000;
         text-align: center;
         width: 100%;
@@ -76,7 +76,6 @@ Version: 1.0.0
             font-size: $font-size-80;
             letter-spacing: -0.03em;
             margin: 0;
-            margin-bottom: $grid;
         }
         &__sub-heading{
             font-family: $primary-font;
