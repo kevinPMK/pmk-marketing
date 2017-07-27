@@ -76,7 +76,7 @@ Version: 1.0.0
     }
     .hr-gradient{
         opacity: 0;
-        transition: all 0.7s $curved-transition 0.4s;
+        transition: all 0.7s ease-out 0.4s;
         width: 0px;
         transform: translate(-20px, 30px);
     }

@@ -8,10 +8,9 @@
 
 
 <section class="home-hero" data-parallax="true" data-speed="0.1" data-direction="up">
-	<?php the_post_thumbnail( 'pmk-featured-image' ); ?>
+	<img src="<?php echo get_bloginfo('template_directory'); ?>/src/images/school-home-hero.svg">
 	<div class="home-hero__haze"></div>
 	<div class="home-hero__gradient"></div>
-	<div class="home-hero__lightstreak"></div>
 	<div class="home-hero__content" data-parallax="true" data-speed="0.2" data-direction="up">
 		<h1 class="home-hero__heading">
 			<span class="home-hero__sub-heading">The Comprehensive</span>

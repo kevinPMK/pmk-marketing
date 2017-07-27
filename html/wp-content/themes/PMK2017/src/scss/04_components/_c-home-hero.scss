@@ -21,23 +21,18 @@ Version: 1.0.0
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000;
+    background: linear-gradient( -235deg, #3fa9f5 0%, #3d20a9 100%);
     color: #fff;
     overflow: hidden;
     display: flex;
-    align-items: center;
     justify-content: center;
     img{
-        vertical-align: top;
-        object-fit: cover;
+        vertical-align: bottom;
+        width: 100%;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: auto;
-        height: auto;
-        min-width: 100%;
-        min-height: 100%;
+        bottom: -60px;
+        opacity: 0;
+        transition: all 1.5s $curved-transition 0.25s;
     }
     &__haze{
         position: absolute;
@@ -45,8 +40,8 @@ Version: 1.0.0
         right: 0;
         top: 0;
         bottom: 0;
-        background: #034afd;
-        opacity: 0.45;
+        background: #223f96;
+        opacity: 0.35;
     }
     &__gradient{
         position: absolute;
@@ -54,9 +49,10 @@ Version: 1.0.0
         right: 0;
         top: 0;
         bottom: 0;
-        background: linear-gradient(rgba(40,48,79,0) 0%, rgba(40,48,79,0.9) 100%);
+        background: linear-gradient(rgba(40,48,79,1) 0%, rgba(40,48,79,0) 60%);
     }
     &__lightstreak{
+        display: none;
         width: 800px;
         height: 200%;
         position: absolute;
@@ -66,16 +62,21 @@ Version: 1.0.0
         transform: translate(-50%, -50%) rotate(30deg);
     }
     &__content{
+        margin-top: 14vh;
         z-index: 1000;
         text-align: center;
         width: 100%;
-        max-width: $grid*128;
+        max-width: $grid*148;
+        padding: $grid*6;
+        box-sizing: border-box;
+        border-radius: $grid*6;
     }
         &__heading{
             padding: 0 $grid*6;
-            font-size: $font-size-96;
-            letter-spacing: -0.02em;
+            font-size: $font-size-80;
+            letter-spacing: -0.03em;
             margin: 0;
+            margin-bottom: $grid;
         }
         &__sub-heading{
             font-family: $primary-font;
@@ -161,28 +162,6 @@ Version: 1.0.0
 
 
 
-/*------------------------------------------------------------------------
-  Animated
-------------------------------------------------------------------------*/
-
-.home-hero.animated{
-    .home-hero__main-heading{
-        transform: translateY(0px);
-        opacity: 1;
-    }
-    .home-hero__sub-heading{
-        transform: translateY(0px);
-        opacity: 0.7;
-    }
-    .cta-buttons{
-        transform: translateY(0px);
-        opacity: 1;
-    }
-
-}
-
-
-
 
 
 
@@ -203,8 +182,11 @@ Version: 1.0.0
     font-size: 12px;
     text-transform: uppercase;
     padding: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 1.5s $curved-transition 2s;
     &__text{
-        opacity: 0.6;
+        opacity: 1;
         letter-spacing: 0.1em;
         font-weight: 300;
         margin-bottom: $grid*3;
@@ -233,4 +215,33 @@ Version: 1.0.0
     .scroll-more{
         display: none;
     }
+}
+
+
+/*------------------------------------------------------------------------
+  Animated
+------------------------------------------------------------------------*/
+
+.home-hero.animated{
+    img{
+        bottom: 0;
+        opacity: 1;
+    }
+    .home-hero__main-heading{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    .home-hero__sub-heading{
+        transform: translateY(0px);
+        opacity: 0.7;
+    }
+    .cta-buttons{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    .scroll-more{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
 }
