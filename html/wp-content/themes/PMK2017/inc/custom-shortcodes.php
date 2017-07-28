@@ -725,6 +725,41 @@ add_shortcode("FeatureNavigation", "FeatureNavigation");
 
 
 
+/*---------------------------------------------------------------
+    Intro SVG Section
+---------------------------------------------------------------*/
+
+
+
+function InsertSvgScene( $atts ) {
+
+    extract(shortcode_atts(array(
+        "scene" => "Please Enter a URL"
+    ), $atts));
+
+    $url = get_bloginfo('template_directory') . '/src/images/';
+
+    if($scene == 'triple-threat') {
+        $output = '';
+        $output .= '<div class="triple-scene">';
+            $output .= '<object class="triple-scene--1" type="image/svg+xml" data="' . $url . 'scene-home-intro-1.svg">';
+            $output .= '</object>';
+            $output .= '<object class="triple-scene--2" type="image/svg+xml" data="' . $url . 'scene-home-intro-2.svg">';
+            $output .= '</object>';
+            $output .= '<object class="triple-scene--3" type="image/svg+xml" data="' . $url . 'scene-home-intro-3.svg">';
+            $output .= '</object>';
+        $output .= '</div>';
+    }else{
+        return;
+    }
+
+    return $output;
+
+}
+
+add_shortcode("InsertSvgScene", "InsertSvgScene");
+
+
 
 
 ?>

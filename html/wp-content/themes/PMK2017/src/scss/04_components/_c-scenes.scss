@@ -1,0 +1,60 @@
+/*---------------------------------------------------------------------------
+
+
+Scenes
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+
+
+
+.triple-scene{
+    position: relative;
+    width: 100%;
+    padding-bottom: 147.0558%;
+    height: 0;
+    object{
+        width: 100%;
+    }
+    .triple-scene--1{
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.7s $curved-transition 0.6s
+    }
+    .triple-scene--2{
+        position: absolute;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.7s $curved-transition 0.75s
+    }
+    .triple-scene--3{
+        position: absolute;
+        bottom: 0;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.7s $curved-transition 0.9s
+    }
+}
+
+
+.slide.animated{
+    .triple-scene{
+        .triple-scene--1{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        .triple-scene--2{
+            opacity: 2;
+            transform: translateY(0px);
+        }
+        .triple-scene--3{
+            opacity: 3;
+            transform: translateY(0px);
+        }
+    }
+}

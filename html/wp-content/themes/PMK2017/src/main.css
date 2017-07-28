@@ -1276,7 +1276,7 @@ Version: 1.0.0
     -webkit-transform: translate(-50%, -50%) rotate(30deg);
             transform: translate(-50%, -50%) rotate(30deg); }
   .home-hero__content {
-    margin-top: 16vh;
+    margin-top: 14vh;
     z-index: 1000;
     text-align: center;
     width: 100%;
@@ -1288,7 +1288,8 @@ Version: 1.0.0
     padding: 0 48px;
     font-size: 5rem;
     letter-spacing: -0.03em;
-    margin: 0; }
+    margin: 0;
+    margin-bottom: 24px; }
   .home-hero__sub-heading {
     font-family: "Quasimoda W01", sans-serif;
     display: block;
@@ -2131,6 +2132,59 @@ Version: 1.0.0
     width: 96px; }
   .paged-links__previous-page:after, .paged-links__next-page:after {
     content: ''; } }
+
+/*---------------------------------------------------------------------------
+
+
+Scenes
+By: Kevin Mercier
+Version: 1.0.0
+
+
+---------------------------------------------------------------------------*/
+.triple-scene {
+  position: relative;
+  width: 100%;
+  padding-bottom: 147.0558%;
+  height: 0; }
+  .triple-scene object {
+    width: 100%; }
+  .triple-scene .triple-scene--1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    transition: all 0.7s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.6s; }
+  .triple-scene .triple-scene--2 {
+    position: absolute;
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    transition: all 0.7s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.75s; }
+  .triple-scene .triple-scene--3 {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    transition: all 0.7s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.9s; }
+
+.slide.animated .triple-scene .triple-scene--1 {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px); }
+
+.slide.animated .triple-scene .triple-scene--2 {
+  opacity: 2;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px); }
+
+.slide.animated .triple-scene .triple-scene--3 {
+  opacity: 3;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px); }
 
 /*---------------------------------------------------------------------------
 
