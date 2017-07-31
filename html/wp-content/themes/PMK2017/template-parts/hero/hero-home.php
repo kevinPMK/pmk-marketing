@@ -8,7 +8,9 @@
 
 
 <section class="home-hero" data-parallax="true" data-speed="0.6" data-direction="down">
+	<!--
 	<img src="<?php echo get_bloginfo('template_directory'); ?>/src/images/school-home-hero.svg">
+-->
 	<div class="home-hero__haze"></div>
 	<div class="home-hero__gradient"></div>
 	<div class="home-hero__content" data-parallax="true" data-speed="0.1" data-direction="down">

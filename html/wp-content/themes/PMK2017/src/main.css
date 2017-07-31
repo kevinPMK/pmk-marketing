@@ -2643,6 +2643,9 @@ Version: 1.0.0
 /*------------------------------------------------------------------------
   Slide Image Grid
 ------------------------------------------------------------------------*/
+.triple-scene {
+  display: none !important; }
+
 .slide__image-grid {
   display: -webkit-box;
   display: -ms-flexbox;

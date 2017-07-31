@@ -14,6 +14,12 @@ Version: 1.0.0
   Slide Image Grid
 ------------------------------------------------------------------------*/
 
+
+.triple-scene{
+	display: none !important;
+}
+
+
 .slide__image-grid{
     display: flex;
     margin: $grid*12 auto 0;
