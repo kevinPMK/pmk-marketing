@@ -742,12 +742,9 @@ function InsertSvgScene( $atts ) {
     if($scene == 'triple-threat') {
         $output = '';
         $output .= '<div class="triple-scene">';
-            $output .= '<object class="triple-scene--1" type="image/svg+xml" data="' . $url . 'scene-home-intro-1.svg">';
-            $output .= '</object>';
-            $output .= '<object class="triple-scene--2" type="image/svg+xml" data="' . $url . 'scene-home-intro-2.svg">';
-            $output .= '</object>';
-            $output .= '<object class="triple-scene--3" type="image/svg+xml" data="' . $url . 'scene-home-intro-3.svg">';
-            $output .= '</object>';
+            $output .= '<img class="triple-scene--1" src="' . $url . 'scene-home-intro-1.svg">';
+            $output .= '<img class="triple-scene--2" src="' . $url . 'scene-home-intro-2.svg">';
+            $output .= '<img class="triple-scene--3" src="' . $url . 'scene-home-intro-3.svg">';
         $output .= '</div>';
     }else{
         return;
