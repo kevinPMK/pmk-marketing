@@ -27,6 +27,10 @@
 
     /*-- Toggle Mobile Menu --*/
 
+    /*----------------------------------------------------------------
+    Mobile Menu Toggle
+    ----------------------------------------------------------------*/
+
     var $button = $('.mobile-menu-toggle');
     var $menu = $('.mobile-menu');
     var isMenuOpen = false;
@@ -39,29 +43,34 @@
     });
 
 
-    function draw() {
-        requestAnimationFrame(draw);
-        // Drawing code goes here
-        scrollEvent();
-    }
-    draw();
+    /*----------------------------------------------------------------
+    Parallax Scrolling
+    ----------------------------------------------------------------*/
 
+    function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    if (!isMobile()) {
+        function draw() {
+            requestAnimationFrame(draw);
+            // Drawing code goes here
+            scrollEvent();
+        }
+        draw();
+    }
 
 	function scrollEvent(){
-
 	    if(!is_touch_device()){
 	        viewportTop = $(window).scrollTop();
 	        windowHeight = $(window).height();
 	        viewportBottom = windowHeight+viewportTop;
-
-
 
 	        $('[data-parallax="true"]').each(function(){
 	            distance = viewportTop * $(this).attr('data-speed');
 	            if($(this).attr('data-direction') === 'up'){ sym = '-'; } else { sym = ''; }
 	            $(this).css('transform','translate3d(0, ' + sym + distance +'px,0)');
 	        });
-
 	    }
 	}
 
