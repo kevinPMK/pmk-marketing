@@ -31,7 +31,6 @@ html{
   margin: 0px;
   min-width: 320px;
   height: 100%;
-  -webkit-overflow-scrolling: touch;
 }
 
 iframe{
@@ -182,6 +181,7 @@ svg{
 .site{
     width: 100%;
     height: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
 .site__content{
