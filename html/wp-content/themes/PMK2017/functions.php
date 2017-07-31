@@ -242,6 +242,9 @@ function pmk_scripts() {
 	//Load jQuery scoll to.
 	wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/src/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
 
+	//Load jQuery parallax.
+	wp_enqueue_script( 'jquery-parallax', get_theme_file_uri( '/src/js/parallax.min.js' ), array( 'jquery' ), '2.1.2', true );
+
 	//Load default twentyseventeen scripts.
 	wp_enqueue_script( 'pmk-global', get_theme_file_uri( '/src/js/global.js' ), array( 'jquery' ), '1.0', true );
 

@@ -288,10 +288,7 @@
 		}
 	}
 
-    /*--
-
 	$( document ).ready( function() {
-
 
         $('.scroll-to-link').click( function( e ) {
             e.preventDefault();
@@ -308,27 +305,6 @@
 			adjustScrollClass();
 		}
 
-		// If 'Scroll Down' arrow in present on page, calculate scroll offset and bind an event handler to the click event.
-		if ( $menuScrollDown.length ) {
-
-			if ( $( 'body' ).hasClass( 'admin-bar' ) ) {
-				menuTop -= 32;
-			}
-			if ( $( 'body' ).hasClass( 'blog' ) ) {
-				menuTop -= 30; // The div for latest posts has no space above content, add some to account for this.
-			}
-			if ( ! $navigation.length ) {
-				navigationOuterHeight = 0;
-			}
-
-			$menuScrollDown.click( function( e ) {
-				e.preventDefault();
-				$( window ).scrollTo( '.site__content', {
-					duration: 600,
-					offset: { top: menuTop - navigationOuterHeight }
-				});
-			});
-		}
 
 		adjustHeaderHeight();
 		setQuotesIcon();
@@ -369,7 +345,6 @@
 	$( document ).on( 'wp-custom-header-video-loaded', function() {
 		$body.addClass( 'has-header-video' );
 	});
-    --*/
 
 
     /*-- YouTube Pop Up Player --*/

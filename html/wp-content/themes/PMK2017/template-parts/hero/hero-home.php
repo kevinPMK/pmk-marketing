@@ -7,11 +7,13 @@
 ?>
 
 
-<section class="home-hero" data-parallax="true" data-speed="-0.6" data-direction="up">
+<section class="home-hero" data-parallax="scroll" data-image-src="<?php echo get_bloginfo('template_directory'); ?>/src/images/school-home-hero.svg">
+	<!--
 	<img src="<?php echo get_bloginfo('template_directory'); ?>/src/images/school-home-hero.svg">
+	-->
 	<div class="home-hero__haze"></div>
 	<div class="home-hero__gradient"></div>
-	<div class="home-hero__content" data-parallax="true" data-speed="0.2" data-direction="up">
+	<div class="home-hero__content">
 		<h1 class="home-hero__heading">
 			<span class="home-hero__sub-heading">The Comprehensive</span>
 			<span class="home-hero__main-heading">School Safety Platform</span>
@@ -32,7 +34,6 @@
 		<div class="scroll-more__line"></div>
 	</button>
 </section>
-
 
 
 
