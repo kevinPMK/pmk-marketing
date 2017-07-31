@@ -47,11 +47,13 @@
     Parallax Scrolling
     ----------------------------------------------------------------*/
 
+
+
+    /*--
     function isMobile() {
         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
 
-    /*--
 
     if (!isMobile()) {
         function draw() {
@@ -62,7 +64,6 @@
         draw();
     }
 
-    --*/
 
 	function scrollEvent(){
 	    if(!is_touch_device()){
@@ -77,6 +78,7 @@
 	        });
 	    }
 	}
+    --*/
 
 	function is_touch_device() {
 	  return 'ontouchstart' in window // works on most browsers

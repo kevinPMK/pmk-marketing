@@ -16,16 +16,13 @@ Version: 1.0.0
 
 
 .home-hero{
-    /*--
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    --*/
+    width: 100%;
+    min-height: 100%;
     background: linear-gradient( -235deg, #3fa9f5 0%, #3d20a9 100%);
     color: #fff;
     overflow: hidden;
     display: flex;
+    position: fixed;
     justify-content: center;
     img{
         vertical-align: bottom;
