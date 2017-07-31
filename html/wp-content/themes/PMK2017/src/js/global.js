@@ -286,10 +286,10 @@
 		}
 	}
 
-	// Fire on document ready.
+    /*--
+
 	$( document ).ready( function() {
 
-        /*-- Global Scroll To Link --*/
 
         $('.scroll-to-link').click( function( e ) {
             e.preventDefault();
@@ -367,6 +367,7 @@
 	$( document ).on( 'wp-custom-header-video-loaded', function() {
 		$body.addClass( 'has-header-video' );
 	});
+    --*/
 
 
     /*-- YouTube Pop Up Player --*/
