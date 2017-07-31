@@ -587,9 +587,7 @@ Version: 1.0.0
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 8px auto 0 auto; }
-    .cta-button--secondary {
-      border-color: transparent; } }
+    margin: 8px auto 0 auto; } }
 
 /* Build Components */
 /*---------------------------------------------------------------------------
@@ -1003,13 +1001,13 @@ Version: 1.0.0
     display: -ms-flexbox;
     display: flex;
     height: 100%;
+    box-sizing: border-box;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding-top: 56px;
     padding-bottom: 56px; }
   .mobile-menu__main {
     margin: 0;
@@ -1022,6 +1020,7 @@ Version: 1.0.0
       .mobile-menu__main > li a {
         box-sizing: border-box;
         font-size: 2rem;
+        font-size: 5vh;
         font-family: "Slate W01", sans-serif;
         font-weight: 700;
         display: block;
@@ -1284,7 +1283,7 @@ Version: 1.0.0
     border-radius: 48px; }
   .home-hero__heading {
     padding: 0 48px;
-    font-size: 5rem;
+    font-size: 4.5rem;
     letter-spacing: -0.03em;
     margin: 0;
     margin-bottom: 24px; }
@@ -1314,28 +1313,27 @@ Version: 1.0.0
 
 @media (max-width: 1023px) {
   .home-hero__heading {
-    font-size: 9.1vw; }
+    font-size: 6.1vw; }
   .home-hero__sub-heading {
-    font-size: 1.8vw; }
+    font-size: 1.3vw; }
   .cta-buttons {
-    margin-top: 2.4vw; } }
+    margin-top: 3.4vw; } }
 
 @media (max-width: 799px) {
   .home-hero__content {
     padding-top: 32px; }
   .home-hero__heading {
-    padding: 0 16px; }
-  .home-hero__sub-heading {
-    font-size: 16px; }
-  .cta-buttons {
-    margin-top: 24px; } }
-
-@media (max-width: 599px) {
-  .home-hero__heading {
-    font-size: 54px; }
+    font-size: 54px;
+    padding: 0 16px;
+    margin-bottom: 30px; }
   .home-hero__sub-heading {
     font-size: 14px;
-    margin-bottom: 4px; } }
+    margin-bottom: 4px; }
+  .cta-buttons {
+    margin-top: 0;
+    height: auto; }
+    .cta-buttons a {
+      margin-top: 16px; } }
 
 @media (max-width: 479px) {
   .home-hero__heading {

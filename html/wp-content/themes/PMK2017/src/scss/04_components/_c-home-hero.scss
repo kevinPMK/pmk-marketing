@@ -69,7 +69,7 @@ Version: 1.0.0
     }
         &__heading{
             padding: 0 $grid*6;
-            font-size: $font-size-80;
+            font-size: $font-size-72;
             letter-spacing: -0.03em;
             margin: 0;
             margin-bottom: $grid*3;
@@ -105,15 +105,15 @@ Version: 1.0.0
 @include media('<md') {
     .home-hero{
         &__heading{
-            font-size: 9.1vw;
+            font-size: 6.1vw;
         }
             &__sub-heading{
-                font-size: 1.8vw;
+                font-size: 1.3vw;
             }
         //&__heading
     }
     .cta-buttons{
-        margin-top: 2.4vw;
+        margin-top: 3.4vw;
     }
 }
 
@@ -123,22 +123,9 @@ Version: 1.0.0
             padding-top: $grid*4;
         }
         &__heading{
-            padding: 0 $grid*2;
-        }
-            &__sub-heading{
-                font-size: 16px;
-            }
-        //&__heading
-    }
-    .cta-buttons{
-        margin-top: $grid*3;
-    }
-}
-
-@include media('<xs') {
-    .home-hero{
-        &__heading{
             font-size: 54px;
+            padding: 0 $grid*2;
+            margin-bottom: 30px;
         }
             &__sub-heading{
                 font-size: 14px;
@@ -146,7 +133,15 @@ Version: 1.0.0
             }
         //&__heading
     }
+    .cta-buttons{
+        margin-top: 0;
+        height: auto;
+        a{
+            margin-top: $grid*2;
+        }
+    }
 }
+
 
 @include media('<xxs') {
     .home-hero{

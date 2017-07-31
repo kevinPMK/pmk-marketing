@@ -141,8 +141,5 @@ Version: 1.0.0
     .cta-button{
         display: flex;
         margin: $grid auto 0 auto;
-        &--secondary{
-            border-color: transparent;
-        }
     }
 }
