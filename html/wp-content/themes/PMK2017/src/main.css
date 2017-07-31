@@ -1230,7 +1230,7 @@ Version: 1.0.0
   Home Hero
 ------------------------------------------------------------------------*/
 .home-hero {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
