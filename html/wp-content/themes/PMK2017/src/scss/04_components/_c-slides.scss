@@ -43,6 +43,9 @@ Version: 1.0.0
             @extend .typography;
         }
     //__content
+    figure{
+        max-width: 100%;
+    }
 }
 
 
@@ -50,7 +53,6 @@ Version: 1.0.0
 
 @include media('<lg') {
     .slide{
-        padding: $grid*20 0;
         &__hero{
             padding-left: 6vw;
             padding-right: 6vw;
@@ -87,18 +89,18 @@ Version: 1.0.0
 ------------------------------------------------------------------------*/
 
 .slide{
-    padding: $grid*30 0;
+    padding: $grid*22 0;
 }
 
 @include media('<lg') {
     .slide{
-        padding: $grid*26 0;
+        padding: $grid*20 0;
     }
 }
 
 @include media('<sm') {
     .slide{
-        padding: $grid*20 0;
+        padding: $grid*16 0;
     }
 }
 

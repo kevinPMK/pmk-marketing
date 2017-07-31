@@ -421,6 +421,28 @@ add_shortcode("SlideImageGrid", "SlideImageGrid");
 
 
 /*---------------------------------------------------------------
+	Slide Image Grid
+---------------------------------------------------------------*/
+
+
+function SlideFullImage( $atts, $content = null ) {
+
+    extract(shortcode_atts(array(
+    ), $atts));
+
+    $output = '';
+
+    $output = '<div class="slide__full-image">';
+    $output .= do_shortcode($content);
+    $output .= '</div>';
+
+    return $output;
+
+}
+
+add_shortcode("SlideFullImage", "SlideFullImage");
+
+/*---------------------------------------------------------------
 	Half Mini Section
 ---------------------------------------------------------------*/
 

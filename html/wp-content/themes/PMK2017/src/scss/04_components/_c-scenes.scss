@@ -15,8 +15,15 @@ Version: 1.0.0
     width: 100%;
     padding-bottom: 147.0558%;
     height: 0;
+    img{
+        max-width: 100%;
+        width: 100%;
+    }
     object{
         width: 100%;
+    }
+    img{
+        box-shadow: none !important;
     }
     .triple-scene--1{
         position: absolute;

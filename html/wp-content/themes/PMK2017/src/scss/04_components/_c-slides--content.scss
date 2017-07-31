@@ -17,7 +17,7 @@ Version: 1.0.0
 
 .slide-half{
     position: relative;
-    min-height: 90vh;
+    //min-height: 60vh;
     box-sizing: border-box;
     &:before{
         content: '';
@@ -30,6 +30,13 @@ Version: 1.0.0
     }
     &--no-min{
         min-height: 0;
+    }
+    .hr-gradient{
+        margin-right: auto;
+    }
+    img{
+        max-width: 100%;
+        box-shadow: 0px 12px 64px $box-shadow-color;
     }
 }
 
@@ -54,6 +61,18 @@ Version: 1.0.0
     }
     &--grad{
         background: linear-gradient(120deg, #FFFFFF, #F4F7FA);
+    }
+    figure{
+        display: flex;
+        margin: 96px auto 0;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 0 112px;
+        box-sizing: border-box;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        max-width: 1440px;
     }
 }
 
