@@ -14,14 +14,10 @@ Version: 1.0.0
   Home Hero
 ------------------------------------------------------------------------*/
 
-
-.parallax-mirror{
-    background: linear-gradient( -235deg, #3fa9f5 0%, #3d20a9 100%);
-}
-
 .home-hero{
     width: 100%;
     min-height: 100%;
+    background: linear-gradient( -235deg, #3fa9f5 0%, #3d20a9 100%);
     color: #fff;
     overflow: hidden;
     display: flex;

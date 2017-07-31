@@ -49,7 +49,6 @@
 
 
 
-    /*--
     function isMobile() {
         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
@@ -78,7 +77,6 @@
 	        });
 	    }
 	}
-    --*/
 
 	function is_touch_device() {
 	  return 'ontouchstart' in window // works on most browsers
