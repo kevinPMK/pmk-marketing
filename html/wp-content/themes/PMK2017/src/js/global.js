@@ -51,6 +51,8 @@
         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
 
+    /*--
+
     if (!isMobile()) {
         function draw() {
             requestAnimationFrame(draw);
@@ -59,6 +61,8 @@
         }
         draw();
     }
+
+    --*/
 
 	function scrollEvent(){
 	    if(!is_touch_device()){
