@@ -32,9 +32,9 @@ get_header();
 			<div class="blog-overview__deck">
 
 			<?php
-					while ( have_posts() ) : the_post();
-						get_template_part( 'template-parts/blog/blog-card', get_post_format() );
-					endwhile;
+				while ( have_posts() ) : the_post();
+					get_template_part( 'template-parts/blog/blog-card', get_post_format() );
+				endwhile;
 			?>
 
 			</div> <!-- blog-overview__deck -->

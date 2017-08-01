@@ -266,7 +266,7 @@ h2 {
   font-weight: 700;
   line-height: 1.2em;
   letter-spacing: -0.01em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
   margin-top: 0; }
 
 h3 {
@@ -452,7 +452,7 @@ Version: 1.0.0
   .typography h4, .blog-card h4, .slide__copy h4, .slide-faq__content h4, .typography .faq-nav__text, .blog-card .faq-nav__text, .slide__copy .faq-nav__text, .slide-faq__content .faq-nav__text {
     color: #333E48; }
   .typography h6, .blog-card h6, .slide__copy h6, .slide-faq__content h6, .typography .blog-overview__page-count, .blog-card .blog-overview__page-count, .slide__copy .blog-overview__page-count, .slide-faq__content .blog-overview__page-count, .typography .blog-card__meta, .blog-card .blog-card__meta, .slide__copy .blog-card__meta, .slide-faq__content .blog-card__meta, .typography .blog-heading-bar__words-by, .blog-card .blog-heading-bar__words-by, .slide__copy .blog-heading-bar__words-by, .slide-faq__content .blog-heading-bar__words-by {
-    color: #ccc; }
+    color: #3FA9F5; }
 
 /* Build Elements: headings, lists, tables, etc */
 /*---------------------------------------------------------------------------
@@ -2941,7 +2941,7 @@ Version: 1.0.0
   position: absolute;
   bottom: 0;
   left: 0;
-  opacity: 0.4;
+  opacity: 0.2;
   min-width: 100%;
   min-height: 100%;
   background: url("app-sfx/test-grad-swoosh.svg") center center;

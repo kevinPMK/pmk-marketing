@@ -65,7 +65,7 @@ function faq_edit_title( $input ) {
 
     global $post_type;
 
-    if( is_admin() && 'Enter title here' == $input && 'customers' == $post_type )
+    if( is_admin() && 'Enter title here' == $input && 'faq' == $post_type )
         return 'Enter the Frequently Asked Question';
 
     return $input;

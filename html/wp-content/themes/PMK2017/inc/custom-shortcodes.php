@@ -548,7 +548,7 @@ function Customers( $atts ) {
 
     $output .= '</div>';
     if(!empty($viewfullurl)){
-        $output .= '<a href="' . $viewfullurl . '" class="button centered-view-more">View More Press Articles</a>';
+        $output .= '<a href="' . $viewfullurl . '" class="button centered-view-more">View Our Partners</a>';
     }
 
     return $output;
