@@ -2851,12 +2851,17 @@ Version: 1.0.0
     width: 15%; }
     .logo-grid__cell img {
       width: auto;
-      height: auto; }
+      height: auto;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%); }
     .logo-grid__cell > .inner {
       display: block;
       opacity: 0.6; }
       .logo-grid__cell > .inner:hover {
         opacity: 1; }
+        .logo-grid__cell > .inner:hover img {
+          -webkit-filter: grayscale(0%);
+                  filter: grayscale(0%); }
 
 /*-- In View Transitions --*/
 .slide .logo-grid__cell {

@@ -183,12 +183,16 @@ Version: 1.0.0
         img{
             width: auto;
             height: auto;
+            filter: grayscale(100%);
         }
         >.inner{
             display: block;
             opacity: 0.6;
             &:hover{
                 opacity: 1;
+                img{
+                    filter: grayscale(0%);
+                }
             }
         }
     }
