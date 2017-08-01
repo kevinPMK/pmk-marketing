@@ -427,7 +427,7 @@ add_shortcode("SlideImageGrid", "SlideImageGrid");
 ---------------------------------------------------------------*/
 
 
-function SlideGroup( $atts, $content = null ) {
+function SectionGroup( $atts, $content = null ) {
 
     $output = '<div class="slide__group">';
     $output .= do_shortcode($content);
@@ -437,7 +437,7 @@ function SlideGroup( $atts, $content = null ) {
 
 }
 
-add_shortcode("SlideGroup", "SlideGroup");
+add_shortcode("SectionGroup", "SectionGroup");
 
 
 
