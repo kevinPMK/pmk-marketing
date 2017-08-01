@@ -25,6 +25,7 @@
 
 			<?php if( $displayCTA ) : ?>
 				<section class="slide slide-cta">
+					<div class="slide-cta__gradient"></div>
 					<div class="slide-cta__content">
 						<h2>Join us Today!</h2>
 						<p>PikMyKid gives you the tools to ensure your kids are safe and your parents are happy. Let us show you how we can make your school more safe and efficient.</p>
@@ -38,6 +39,7 @@
 								<?php echo pmk_get_svg( array( 'icon' => '32-rarrow', 'size' => '32' ) );?>
 							</a>
 						</div>
+
 					</div>
 				</section>
 			<?php endif; ?>

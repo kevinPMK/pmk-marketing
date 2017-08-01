@@ -25,6 +25,7 @@
         offset: '90%'
     });
 
+
     /*-- Toggle Mobile Menu --*/
 
     /*----------------------------------------------------------------
@@ -69,12 +70,15 @@
 	        viewportTop = $(window).scrollTop();
 	        windowHeight = $(window).height();
 	        viewportBottom = windowHeight+viewportTop;
-
-	        $('[data-parallax="true"]').each(function(){
-	            distance = viewportTop * $(this).attr('data-speed');
-	            if($(this).attr('data-direction') === 'up'){ sym = '-'; } else { sym = ''; }
-	            $(this).css('transform','translate3d(0, ' + sym + distance +'px,0)');
-	        });
+            if(viewportTop > windowHeight){
+                return;
+            }else{
+    	        $('[data-parallax="true"]').each(function(){
+    	            distance = viewportTop * $(this).attr('data-speed');
+    	            if($(this).attr('data-direction') === 'up'){ sym = '-'; } else { sym = ''; }
+    	            $(this).css('transform','translate3d(0, ' + sym + distance +'px,0)');
+    	        });
+            }
 	    }
 	}
 

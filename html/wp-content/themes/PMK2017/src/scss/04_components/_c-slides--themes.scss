@@ -34,3 +34,11 @@ Version: 1.0.0
         background: rgba(0,0,0,0.08);
     }
 }
+
+
+.slide--vanilla{
+    background: #fff;
+    &:before{
+        display: none;
+    }
+}

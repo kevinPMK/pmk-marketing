@@ -15,27 +15,38 @@ Version: 1.0.0
 ------------------------------------------------------------------------*/
 
 .slide-cta{
-    background: url('images/test-cta-photo.jpg') center center no-repeat #28304F;
-    background-size: cover;
+    background-image:  url('images/school-cta-section.png'), linear-gradient(90deg, #3A65C7, #3FA9F5);
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
     text-align: center;
     display: flex;
     align-items: center;
-    //min-height: 90vh;
     box-sizing: border-box;
+    position: relative;
     h2{
         color: #fff;
         font-size: $font-size-64;
         margin-bottom: $grid*4;
     }
     p{
-        color: #b6c0e4;
+        color: #e9ebf2;
         margin-bottom: $grid*5.5;
+    }
+    &__gradient{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(40, 48, 79, 0.4) 0%, rgba(40, 48, 79, 0) 60%, rgba(40, 48, 79, 0.3) 100%)
     }
 }
     .slide-cta__content{
         margin: 0 auto;
         max-width: $grid*88;
         padding: $grid*4;
+        position: relative;
+        z-index: 10;
     }
 //.slide-cta
 

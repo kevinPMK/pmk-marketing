@@ -23,8 +23,9 @@ Version: 1.0.0
 	background-position: 0px, center;
     animation: movingBg 40s linear 2s infinite;
     --*/
-    background-size: cover;
-    background: linear-gradient(90deg, #3A65C7, #3FA9F5);
+
+    background-image: url('images/testimonial-texture.png'), linear-gradient(120deg, #3FA9F5, #3A65C7 );
+    background-size: cover, cover;
     figure{
         padding-left: $grid*8;
         padding-right: $grid*8;

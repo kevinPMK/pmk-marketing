@@ -16,7 +16,7 @@ Version: 1.0.0
 
 .slide__full-image{
     display: flex;
-    margin: $grid*12 auto 0;
+    margin: $grid*8 auto 0;
     flex-wrap: wrap;
     width: 100%;
     padding: 0 $grid*14;
@@ -169,7 +169,7 @@ Version: 1.0.0
 
 .logo-grid{
     display: flex;
-    margin: $grid*12 auto 0;
+    margin: $grid*8 auto 0;
     flex-wrap: wrap;
     width: 100%;
     padding: 0 $grid*14;
@@ -179,7 +179,7 @@ Version: 1.0.0
     &__cell{
         padding: $grid*2;
         box-sizing: border-box;
-        width: 25%;
+        width: 15%;
         img{
             width: auto;
             height: auto;

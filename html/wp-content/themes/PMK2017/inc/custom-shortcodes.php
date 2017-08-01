@@ -34,6 +34,8 @@ function section( $atts, $content = null ) {
             $output .= '<section class="slide slide-half slide--grad">';
         }else if($theme == 'negative'){
             $output .= '<section class="slide slide-half slide--negative">';
+        }else if($theme == 'vanilla'){
+            $output .= '<section class="slide slide-half slide--vanilla">';
         }else{
             $output .= '<section class="slide slide-half">';
         }
@@ -418,6 +420,25 @@ function SlideImageGrid( $atts ) {
 }
 
 add_shortcode("SlideImageGrid", "SlideImageGrid");
+
+
+/*---------------------------------------------------------------
+	Slide Image Grid
+---------------------------------------------------------------*/
+
+
+function SlideGroup( $atts, $content = null ) {
+
+    $output = '<div class="slide__group">';
+    $output .= do_shortcode($content);
+    $output .= '</div>';
+
+    return $output;
+
+}
+
+add_shortcode("SlideGroup", "SlideGroup");
+
 
 
 /*---------------------------------------------------------------
