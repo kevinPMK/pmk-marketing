@@ -1567,15 +1567,6 @@ Version: 1.0.0
     top: 0;
     bottom: 0;
     background: linear-gradient(rgba(22, 26, 39, 0.7) 0%, rgba(10, 10, 10, 0.3) 100%); }
-  .sub-page-hero__lightstreak {
-    width: 800px;
-    height: 200%;
-    position: absolute;
-    top: 50%;
-    left: 60%;
-    background: rgba(255, 255, 255, 0.03);
-    -webkit-transform: translate(-50%, -50%) rotate(30deg);
-            transform: translate(-50%, -50%) rotate(30deg); }
   .sub-page-hero__content {
     z-index: 1000;
     text-align: center;
@@ -1750,7 +1741,38 @@ Version: 1.0.0
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: url("images/grid-texture.png") center center repeat #222c59; }
+  background-image: linear-gradient(90deg, #3A65C7, #3FA9F5);
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .blog-overview-hero img {
+    vertical-align: top;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: none; }
+  .blog-overview-hero__haze {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #034afd;
+    opacity: 0.45; }
+  .blog-overview-hero__gradient {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(22, 26, 39, 0.9) 0%, rgba(10, 10, 10, 0.7) 100%); }
   .blog-overview-hero__content {
     box-sizing: border-box;
     z-index: 1000;
@@ -2281,10 +2303,12 @@ Version: 1.0.0
 /*------------------------------------------------------------------------
   Slide Group
 ------------------------------------------------------------------------*/
-.slide__group {
+.slide__group .slide {
   padding: 80px 0; }
-  .slide__group .slide {
-    padding: 80px 0; }
+  .slide__group .slide:first-child {
+    padding-top: 160px; }
+  .slide__group .slide:last-child {
+    padding-bottom: 160px; }
 
 @media (max-width: 1279px) {
   .slide__group {
@@ -2344,7 +2368,8 @@ Version: 1.0.0
 ------------------------------------------------------------------------*/
 .slide-center, .blog-overview {
   background: #fff;
-  text-align: center; }
+  text-align: center;
+  background: linear-gradient(120deg, #FFFFFF, #F4F7FA); }
   .slide-center .slide__content, .blog-overview .slide__content {
     display: block; }
   .slide-center hr, .blog-overview hr {
@@ -3031,8 +3056,7 @@ Version: 1.0.0
 .slide-mini {
   padding: 96px 0;
   position: relative;
-  background: #3FA9F5;
-  background: linear-gradient(90deg, #72c54f, #aced67);
+  background: #f3f3f3;
   overflow: hidden; }
 
 .slide-mini__sfx-squiggle {
@@ -3091,8 +3115,7 @@ Version: 1.0.0
           flex: 1; }
 
 .slide-mini__thumb {
-  margin-top: 8px;
-  max-width: 192px;
+  max-width: 160px;
   width: 100%;
   box-sizing: border-box;
   margin-right: 24px; }
@@ -4904,15 +4927,15 @@ body {
   display: none; }
 
 .centered-view-more {
-  margin-top: 96px; }
+  margin-top: 80px; }
 
 @media (max-width: 1023px) {
   .centered-view-more {
-    margin-top: 80px; } }
+    margin-top: 144px; } }
 
 @media (max-width: 799px) {
   .centered-view-more {
-    margin-top: 64px; } }
+    margin-top: 48px; } }
 
 @media (max-width: 599px) {
   .centered-view-more {

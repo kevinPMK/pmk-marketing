@@ -36,18 +36,18 @@ body{
 }
 
 .centered-view-more{
-    margin-top: $grid*12;
+    margin-top: $grid*10;
 }
 
 @include media('<md') {
     .centered-view-more{
-        margin-top: $grid*10;
+        margin-top: $grid*18;
     }
 }
 
 @include media('<sm') {
     .centered-view-more{
-        margin-top: $grid*8;
+        margin-top: $grid*6;
     }
 }
 

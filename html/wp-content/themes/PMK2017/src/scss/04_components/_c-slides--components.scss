@@ -266,8 +266,9 @@ Version: 1.0.0
 .slide-mini{
     padding: $grid*12 0;
     position: relative;
-    background: $brand-primary;
-    background: linear-gradient(90deg, #72c54f, #aced67);
+    background: #f3f3f3;
+    //background: $brand-primary;
+    //background: linear-gradient(90deg, #72c54f, #aced67);
     overflow: hidden;
     //box-shadow: inset 0px 0px 600px -100px rgba(0,0,0,0.5);
 }
@@ -319,8 +320,7 @@ Version: 1.0.0
                 flex: 1;
             }
             .slide-mini__thumb{
-                margin-top: $grid;
-                max-width: 192px;
+                max-width: 160px;
                 width: 100%;
                 box-sizing: border-box;
                 margin-right: $grid*3;

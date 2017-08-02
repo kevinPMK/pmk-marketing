@@ -124,12 +124,12 @@ function SectionMiniHalf( $atts, $content = null ) {
 
     extract(shortcode_atts(array(
         "title" => 'Please Select a Title',
-        "icon" => 'student-safety'
+        "icon" => 'heart'
     ), $atts));
 
     $output = '<div class="slide-mini__card">';
     $output .= '<div class="slide-mini__thumb">';
-    $output .= '<img src="' . get_bloginfo('template_directory') . '/src/images/' . $icon . '.svg">';
+    $output .= '<img src="' . get_bloginfo('template_directory') . '/src/images/split-section-' . $icon . '.svg">';
     $output .= '</div>';
     $output .= '<div class="slide-mini__content typography">';
     $output .= '<h4>' . $title . '</h4>';

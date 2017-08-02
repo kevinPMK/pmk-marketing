@@ -8,9 +8,19 @@
 
 
 <div class="blog-overview-hero" data-parallax="true" data-speed="0.1" data-direction="up">
-	<div class="blog-overview-hero__content" data-parallax="true" data-speed="0.2" data-direction="up">
 
 	<?php
+		$default_source = get_bloginfo('template_directory') . '/src/images/';
+		$output = '';
+		$output .= '<img class="wp-post-image" src="' . $default_source . '/default-sub-page-image.png"';
+		$output .= 'srcset="';
+		$output .= $default_source . '/default-sub-page-image--full.png 2000w, ';
+		$output .= $default_source . '/default-sub-page-image--1024x614.png 1024w, ';
+		$output .= $default_source . '/default-sub-page-image--768x461.png 768w, ';
+		$output .= $default_source . '/default-sub-page-image--320x192.png 320w"';
+		$output .= 'sizes="(max-width: 2000px) 100vw, 2000px"';
+		$output .= '>';
+		echo($output);
 
 		$latest = new WP_Query( array( 'posts_per_page' => 1 ) );
 		while( $latest->have_posts() ) : $latest->the_post();
@@ -24,6 +34,16 @@
 		}
 
 	?>
+	<div class="blog-overview-hero__haze"></div>
+	<div class="blog-overview-hero__gradient"></div>
+
+
+	<div class="blog-overview-hero__content" data-parallax="true" data-speed="0.2" data-direction="up">
+
+
+
+
+
 
 	<?php if(!empty($author_name)) : ?>
 		<span class="blog-overview-hero__author">Words by: <span><?php echo $author_name; ?></span></span>

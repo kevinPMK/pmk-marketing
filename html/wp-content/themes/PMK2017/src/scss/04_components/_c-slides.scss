@@ -116,9 +116,14 @@ Version: 1.0.0
 
 
 .slide__group{
-    padding: $grid*10 0;
     .slide{
         padding: $grid*10 0;
+        &:first-child{
+            padding-top: $grid*20;
+        }
+        &:last-child{
+            padding-bottom: $grid*20;
+        }
     }
 }
 

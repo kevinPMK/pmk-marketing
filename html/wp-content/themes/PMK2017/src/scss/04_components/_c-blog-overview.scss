@@ -24,7 +24,39 @@ Version: 1.0.0
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('images/grid-texture.png') center center repeat #222c59;
+    background-image: linear-gradient(90deg, #3A65C7, #3FA9F5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    img{
+        vertical-align: top;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: none;
+    }
+    &__haze{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: #034afd;
+        opacity: 0.45;
+    }
+    &__gradient{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: linear-gradient( rgba(22,26,39,0.9) 0%, rgba(10,10,10,0.7) 100%);
+    }
     &__content{
         box-sizing: border-box;
         z-index: 1000;

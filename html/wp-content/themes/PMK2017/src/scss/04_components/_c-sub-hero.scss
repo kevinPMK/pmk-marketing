@@ -159,15 +159,6 @@ Version: 1.0.0
         bottom: 0;
         background: linear-gradient( rgba(22,26,39,0.7) 0%, rgba(10,10,10,0.3) 100%);
     }
-    &__lightstreak{
-        width: 800px;
-        height: 200%;
-        position: absolute;
-        top: 50%;
-        left: 60%;
-        background: rgba(255,255,255,0.03);
-        transform: translate(-50%, -50%) rotate(30deg);
-    }
     &__content{
         z-index: 1000;
         text-align: center;
