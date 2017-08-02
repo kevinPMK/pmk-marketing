@@ -853,6 +853,7 @@ Version: 1.0.0
         left: 0;
         bottom: 0;
         right: 0;
+        border-radius: 999px;
         border: 2px solid #7AC943;
         transition: opacity 0.15s cubic-bezier(0.34, 0.61, 0.59, 1.11), color 0.15s cubic-bezier(0.34, 0.61, 0.59, 1.11), -webkit-transform 0.15s cubic-bezier(0.34, 0.61, 0.59, 1.11);
         transition: opacity 0.15s cubic-bezier(0.34, 0.61, 0.59, 1.11), transform 0.15s cubic-bezier(0.34, 0.61, 0.59, 1.11), color 0.15s cubic-bezier(0.34, 0.61, 0.59, 1.11);
@@ -2715,7 +2716,7 @@ Version: 1.0.0
             transform: translateY(20px);
     opacity: 0; }
 
-.slide.animated .slide__full-image img {
+.slide__full-image.animated img {
   opacity: 1;
   -webkit-transform: translateY(0px);
           transform: translateY(0px); }

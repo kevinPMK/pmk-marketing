@@ -34,14 +34,10 @@ Version: 1.0.0
     }
 }
 
-.slide{
-    &.animated{
-        .slide__full-image{
-            img{
-                opacity: 1;
-                transform: translateY(0px);
-            }
-        }
+.slide__full-image.animated{
+    img{
+        opacity: 1;
+        transform: translateY(0px);
     }
 }
 

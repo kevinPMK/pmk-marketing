@@ -18,7 +18,7 @@
         $('.sub-menu__search-field').val('');
     });
 
-    $('.home-hero, .slide, .feature-grid, .slide-faq__group, .slide-faq__conclusion, .search-results__conclusion, .blog-card, .blog-overview-hero, .team-list, .team-card').waypoint (function(){
+    $('.slide__full-image, .home-hero, .slide, .feature-grid, .slide-faq__group, .slide-faq__conclusion, .search-results__conclusion, .blog-card, .blog-overview-hero, .team-list, .team-card').waypoint (function(){
         $(this.element).addClass('animated');
     }, {
         triggerOnce: true,
