@@ -1525,7 +1525,9 @@ Version: 1.0.0
   left: 0;
   width: 100%;
   height: 672px;
-  background: #000;
+  background-image: linear-gradient(90deg, #3A65C7, #3FA9F5);
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #fff;
   overflow: hidden;
   display: -webkit-box;
@@ -1564,7 +1566,7 @@ Version: 1.0.0
     right: 0;
     top: 0;
     bottom: 0;
-    background: linear-gradient(rgba(22, 26, 39, 0.9) 0%, rgba(10, 10, 10, 0.5) 100%); }
+    background: linear-gradient(rgba(22, 26, 39, 0.7) 0%, rgba(10, 10, 10, 0.3) 100%); }
   .sub-page-hero__lightstreak {
     width: 800px;
     height: 200%;
@@ -4126,7 +4128,7 @@ Version: 1.0.0
     left: 0;
     bottom: 0;
     right: 0;
-    opacity: 0.7;
+    opacity: 0.9;
     transition: opacity 0.15s cubic-bezier(0.34, 0.61, 0.59, 1.11);
     background: linear-gradient(0deg, #3A65C7, #3FA9F5); }
   .feature-grid__content {
