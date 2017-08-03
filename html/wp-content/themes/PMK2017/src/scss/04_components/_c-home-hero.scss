@@ -165,6 +165,7 @@ Version: 1.0.0
     width: $grid*8;
     height: $grid*12;
     padding-right: 1px;
+    z-index: 1100;
     position: absolute;
     left: 50%;
     margin-left: -$grid*4;
@@ -176,6 +177,7 @@ Version: 1.0.0
     opacity: 0;
     transform: translateY(-10px);
     transition: all 1.5s $curved-transition 2s;
+    cursor: pointer;
     &__text{
         opacity: 1;
         letter-spacing: 0.1em;

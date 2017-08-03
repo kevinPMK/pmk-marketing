@@ -2,11 +2,10 @@
 
 (function( $ ) {
 
-	//KDM STUFF
 
-
-    //Animate from top
-
+    /*----------------------------------------------------------------
+    Search Toggle
+    ----------------------------------------------------------------*/
 
     $('.sub-menu__search-toggle').on('click', function () {
         $('.sub-menu__search-wrap').addClass('sub-menu__search-wrap--open');
@@ -18,15 +17,13 @@
         $('.sub-menu__search-field').val('');
     });
 
-    $('.slide__full-image, .home-hero, .slide, .feature-grid, .slide-faq__group, .slide-faq__conclusion, .search-results__conclusion, .blog-card, .blog-overview-hero, .team-list, .team-card').waypoint (function(){
+    $('.animated-element, .slide__full-image, .home-hero, .slide, .feature-grid, .slide-faq__group, .slide-faq__conclusion, .search-results__conclusion, .blog-card, .blog-overview-hero, .team-list, .team-card').waypoint (function(){
         $(this.element).addClass('animated');
     }, {
         triggerOnce: true,
         offset: '90%'
     });
 
-
-    /*-- Toggle Mobile Menu --*/
 
     /*----------------------------------------------------------------
     Mobile Menu Toggle
@@ -44,10 +41,51 @@
     });
 
 
+
+    /*----------------------------------------------------------------
+    Sticky Header
+    ----------------------------------------------------------------*/
+
+
+    var rafTimer;
+    window.onscroll = function (event) {
+        cancelAnimationFrame(rafTimer);
+        rafTimer = requestAnimationFrame(toggleHeaderFloating);
+    };
+
+    function toggleHeaderFloating() {
+        // does cause layout/reflow: https://git.io/vQCMn
+        if (window.scrollY > 200) {
+            document.body.classList.add('nav-hide');
+        } else {
+            document.body.classList.remove('nav-hide');
+        }
+
+        if (window.scrollY > 250) {
+            document.body.classList.add('nav-prep-transition');
+        } else {
+            document.body.classList.remove('nav-prep-transition');
+        }
+
+        if (window.scrollY > 600) {
+            document.body.classList.add('nav-stuck');
+        } else {
+            document.body.classList.remove('nav-stuck');
+        }
+
+        if (window.scrollY > 1200) {
+            document.body.classList.add('nav-focus-cta');
+        } else {
+            document.body.classList.remove('nav-focus-cta');
+        }
+
+    }
+
+
+
     /*----------------------------------------------------------------
     Parallax Scrolling
     ----------------------------------------------------------------*/
-
 
 
     function isMobile() {
@@ -63,7 +101,6 @@
         }
         draw();
     }
-
 
 	function scrollEvent(){
 	    if(!is_touch_device()){
@@ -86,6 +123,25 @@
 	  return 'ontouchstart' in window // works on most browsers
 	      || 'onmsgesturechange' in window; // works on ie10
 	}
+
+
+    /*----------------------------------------------------------------
+    Scroll More
+    ----------------------------------------------------------------*/
+
+
+    $(".scroll-more").click(function() {
+        $('html, body').animate({
+            scrollTop: window.outerHeight - 72
+        }, 800);
+    });
+
+
+    /*----------------------------------------------------------------
+    Other
+    ----------------------------------------------------------------*/
+
+
 
 
 	// Variables and DOM Caching.
@@ -126,25 +182,7 @@
 		headerOffset,
 		resizeTimer;
 
-	/*
-	$( 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex], [contenteditable]', '.site-content-contain' ).filter( ':visible' ).focus( function() {
-		if ( $navigation.hasClass( 'site-navigation-fixed' ) ) {
-			var windowScrollTop = $( window ).scrollTop(),
-				fixedNavHeight = $navigation.height(),
-				itemScrollTop = $( this ).offset().top,
-				offsetDiff = itemScrollTop - windowScrollTop;
 
-			// Account for Admin bar.
-			if ( $( '#wpadminbar' ).length ) {
-				offsetDiff -= $( '#wpadminbar' ).height();
-			}
-
-			if ( offsetDiff < fixedNavHeight ) {
-				$( window ).scrollTo( itemScrollTop - ( fixedNavHeight + 50 ), 0 );
-			}
-		}
-	});
-    */
 
 	// Set properties of navigation.
 	function setNavProps() {
@@ -157,6 +195,8 @@
 	}
 
 	// Make navigation 'stick'.
+
+    /*--
 
 	function adjustScrollClass() {
 
@@ -200,27 +240,8 @@
 
 	}
 
-	// Set margins of branding in header.
-	function adjustHeaderHeight() {
-		if ( 'none' === $menuToggle.css( 'display' ) ) {
+    --*/
 
-			// The margin should be applied to different elements on front-page or home vs interior pages.
-			if ( isFrontPage ) {
-				$branding.css( 'margin-bottom', navigationOuterHeight );
-			} else {
-				$customHeader.css( 'margin-bottom', navigationOuterHeight );
-			}
-
-		} else {
-			$customHeader.css( 'margin-bottom', '0' );
-			$branding.css( 'margin-bottom', '0' );
-		}
-	}
-
-	// Set icon for quotes.
-	function setQuotesIcon() {
-		//$( twentyseventeenScreenReaderText.quote ).prependTo( $formatQuote );
-	}
 
 	// Add 'below-entry-meta' class to elements.
 	function belowEntryMetaClass( param ) {
@@ -290,6 +311,8 @@
 		}
 	}
 
+    /*
+
 	$( document ).ready( function() {
 
         $('.scroll-to-link').click( function( e ) {
@@ -319,6 +342,7 @@
 		}
 	});
 
+
 	// If navigation menu is present on page, adjust it on scroll and screen resize.
 	if ( $navigation.length ) {
 
@@ -347,6 +371,9 @@
 	$( document ).on( 'wp-custom-header-video-loaded', function() {
 		$body.addClass( 'has-header-video' );
 	});
+
+
+        */
 
 
     /*-- YouTube Pop Up Player --*/

@@ -70,11 +70,16 @@ function SectionContent( $atts, $content = null ) {
         "title" => 'Please Select a Title',
         "subtitle" => '',
         "divider" => 'true',
-        "learnmoreurl" => ''
+        "learnmoreurl" => '',
+        "alignment" => ''
     ), $atts));
 
     $output = '';
-    $output .= '<div class="slide__copy typography">';
+    if( $alignment = "left" ){
+        $output .= '<div class="slide__copy--left typography">';
+    }else{
+        $output .= '<div class="slide__copy typography">';
+    }
 
     if( !empty($subtitle) ){
         $output .= '<h6>' . $subtitle . '</h6>';

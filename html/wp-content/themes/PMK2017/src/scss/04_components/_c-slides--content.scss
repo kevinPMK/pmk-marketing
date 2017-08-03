@@ -59,6 +59,15 @@ Version: 1.0.0
     .slide__copy{
         max-width: 920px;
         margin: 0 auto;
+        &--left{
+            text-align: left;
+            h2{
+                text-align: left;
+            }
+            hr{
+                margin-right: auto;
+            }
+        }
     }
     &--grad{
         background: linear-gradient(120deg, #FFFFFF, #F4F7FA);

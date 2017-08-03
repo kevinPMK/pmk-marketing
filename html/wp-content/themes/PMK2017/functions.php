@@ -223,23 +223,11 @@ function posts_link_attributes_2() {
 
 function pmk_scripts() {
 
-	//Add custom fonts, used in the main stylesheet.
-	wp_enqueue_script('pmk-fonts', '//fast.fonts.net/jsapi/4364cd06-c6c0-44e7-94f3-290ffa52ab9a.js', array(), '1.0', true );
-
 	//Theme stylesheet.
 	wp_enqueue_style( 'pmk-style', get_theme_file_uri( '/src/main.css' ) );
 
-	/*-- IE9 SUPPORT:
-	if ( is_customize_preview() ) {
-		wp_enqueue_style( 'twentyseventeen-ie9', get_theme_file_uri( '/assets/css/ie9.css' ), array( 'twentyseventeen-style' ), '1.0' );
-		wp_style_add_data( 'twentyseventeen-ie9', 'conditional', 'IE 9' );
-	}
-
-	// Load the html5 shiv.
-	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
-	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
-
-	--*/
+	//Add custom fonts, used in the main stylesheet.
+	wp_enqueue_script('pmk-fonts', '//fast.fonts.net/jsapi/4364cd06-c6c0-44e7-94f3-290ffa52ab9a.js', array(), '1.0', true );
 
 	//Make skip to content accessable.
 	wp_enqueue_script( 'pmk-skip-link-focus-fix', get_theme_file_uri( '/src/js/skip-link-focus-fix.js' ), array(), '1.0', true );

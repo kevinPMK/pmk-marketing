@@ -191,14 +191,12 @@ Version: 1.0.0
 ------------------------------------------------------------------------*/
 
     .main-menu{
-        padding-right: $grid*3;
-        margin-left: $grid*5;
-        margin-right: $grid*5;
+        padding-right: $grid*8;
+        padding-left: $grid*5;
         height: $grid*9;
         display: flex;
         align-items: center;
         background: rgba(255,255,255,0);
-        transition: margin 0.15s $curved-transition, box-shadow 0.15s $curved-transition 0.02s, background 0.15s $curved-transition;
         ul{
             margin-left: auto;
             height: $grid*9;
@@ -223,12 +221,10 @@ Version: 1.0.0
                     font-weight: 200;
                     letter-spacing: 0.01rem;
                     position: relative;
-                    @extend %ripple;
                     &:before{
                         content: '';
                         height: 4px;
                         width: 100%;
-                        //background: #3FA9F5;
                         background: rgba(255,255,255,0.6);
                         position: absolute;
                         transform: scaleX(0.5);
@@ -255,6 +251,7 @@ Version: 1.0.0
                 }
                 &.main-menu--cta{
                     a{
+                        position: relative;
                         &:after{
                             transform: scaleX(0.5);
                             opacity: 0;
@@ -288,7 +285,33 @@ Version: 1.0.0
         }
     }
 
-    .main-menu--fixed{
+
+.nav-hide{
+    .main-menu{
+        opacity: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
+    }
+}
+
+.nav-prep-transition{
+    .main-menu{
+        opacity: 0;
+        transform: translateY(-$grid*9);
+        background: rgba(255,255,255,1);
+        transition: transform 0.15s ease-out,
+                    opacity 0.15s ease-out,
+                    box-shadow 0.15s ease-out 0.02s,
+    }
+}
+
+
+.nav-stuck{
+    .main-menu{
+        transform: translateY(0);
+        opacity: 1;
         position: fixed;
         top: 0;
         left: 0;
@@ -311,13 +334,11 @@ Version: 1.0.0
             }
         }
     }
+}
 
 
-/*------------------------------------------------------------------------
-  Main Menu CTA
-------------------------------------------------------------------------*/
-
-    .main-menu--cta-focus{
+.nav-focus-cta{
+    .main-menu{
         ul{
             li.main-menu--cta{
                 a{
@@ -340,6 +361,34 @@ Version: 1.0.0
             }
         }
     }
+}
+
+
+
+
+/*------------------------------------------------------------------------
+  Main Menu CTA
+------------------------------------------------------------------------*/
+
+
+.main-menu--cta-focus{
+    ul{
+        li.main-menu--cta{
+            a{
+                color: $brand-secondary;
+                &:before{
+                    display: none;
+                }
+                &:hover{
+                    color: $brand-primary;
+                    &:after{
+                        border-color: $brand-primary;
+                    }
+                }
+            }
+        }
+    }
+}
 
 //.main-header
 
