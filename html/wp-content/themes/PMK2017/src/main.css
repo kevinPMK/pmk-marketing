@@ -2423,7 +2423,8 @@ Version: 1.0.0
       .slide-center .slide__copy--left h2, .blog-overview .slide__copy--left h2 {
         text-align: left; }
       .slide-center .slide__copy--left hr, .blog-overview .slide__copy--left hr {
-        margin-right: auto; }
+        margin-right: auto;
+        margin-left: 0px; }
   .slide-center--grad {
     background: linear-gradient(120deg, #FFFFFF, #F4F7FA); }
   .slide-center figure, .blog-overview figure {

@@ -76,7 +76,7 @@ function SectionContent( $atts, $content = null ) {
 
     $output = '';
     if( $alignment = "left" ){
-        $output .= '<div class="slide__copy--left typography">';
+        $output .= '<div class="slide__copy slide__copy--left typography">';
     }else{
         $output .= '<div class="slide__copy typography">';
     }
