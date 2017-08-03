@@ -159,6 +159,8 @@ Version: 1.0.0
     }
         .footer__logo{
             width: 100%;
+            display: block;
+            flex: auto;
             .icon{
                 width: 120px;
                 height: 73px;

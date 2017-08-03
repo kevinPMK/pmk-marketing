@@ -129,27 +129,42 @@ Version: 1.0.0
 
 @include media('<lg') {
     .slide__group{
-        padding: $grid*7 0;
         .slide{
             padding: $grid*7 0;
+            &:first-child{
+                padding-top: $grid*14;
+            }
+            &:last-child{
+                padding-bottom: $grid*14;
+            }
         }
     }
 }
 
 @include media('<sm') {
     .slide__group{
-        padding: $grid*6 0;
         .slide{
             padding: $grid*6 0;
+            &:first-child{
+                padding-top: $grid*12;
+            }
+            &:last-child{
+                padding-bottom: $grid*12;
+            }
         }
     }
 }
 
 @include media('<xxs') {
     .slide__group{
-        padding: $grid*5 0;
         .slide{
             padding: $grid*5 0;
+            &:first-child{
+                padding-top: $grid*10;
+            }
+            &:last-child{
+                padding-bottom: $grid*10;
+            }
         }
     }
 }
