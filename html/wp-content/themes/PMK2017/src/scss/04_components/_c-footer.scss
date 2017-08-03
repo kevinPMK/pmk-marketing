@@ -145,6 +145,9 @@ Version: 1.0.0
         //.footer-menu
         .footer__logo{
             margin-bottom: $grid*2;
+            width: 100%;
+            display: block;
+            flex: auto;
         }
     //.footer__primary
     .footer__copyright{
