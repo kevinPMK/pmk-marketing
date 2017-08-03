@@ -62,7 +62,7 @@
 				<div class="footer__copyright">
 					<div class="footer__copyright-text">
 						Copyright &copy; PikMyKid. 2015-2017. 5115 West Memorial Highway, Tampa Florida 33232. <br>
-						Message us at <a href="mailto:hello@pikmykid.com">hello@pikmykid.com</a> or give us a call at <a href="tel:+18136998028">+1 (813) 699-8028</a>.<br>
+						Message us at <a href="mailto:hello@pikmykid.com">hello@pikmykid.com</a>.<br>
 						View our <a href="<?php echo get_permalink( get_page_by_path( 'terms-of-service' ) ); ?>">Terms of Service</a> or <a href="<?php echo get_permalink( get_page_by_path( 'privacy-policy' ) ); ?>">Privacy Policy</a>.
 					</div>
 					<div class="footer-social-menu">

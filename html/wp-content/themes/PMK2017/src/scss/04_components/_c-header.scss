@@ -223,6 +223,7 @@ Version: 1.0.0
                     font-weight: 200;
                     letter-spacing: 0.01rem;
                     position: relative;
+                    @extend %ripple;
                     &:before{
                         content: '';
                         height: 4px;
@@ -281,10 +282,9 @@ Version: 1.0.0
             display: flex;
             align-items: center;
             box-sizing: border-box;
-            .icon{
-                width: 160px;
-                height: 72px;
-            }
+            background: url("images/logo.svg") center no-repeat;
+            background-size: 100px 50px;
+            text-indent: -9999px;
         }
     }
 
@@ -344,11 +344,20 @@ Version: 1.0.0
 //.main-header
 
 
+
+
+
+
+
 /*------------------------------------------------------------------------
   Mobile Menu Toggle
 ------------------------------------------------------------------------*/
 
+
+
+
 .mobile-menu-toggle{
+    @extend %ripple;
     z-index: 2100;
     display: none;
     width: $grid*8;
@@ -358,40 +367,16 @@ Version: 1.0.0
     top: 0;
     right: 0;
     padding: 0;
-    overflow: hidden;
-    &:after{
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.1);
-        transform: translate(-50%, -50%);
-        transition: all 0.4s $curved-transition;
-        opacity: 0;
-        width: 90px;
-        height: 90px;
-    }
-    &:active{
-        &:after{
-            width: 0px;
-            height: 0px;
-            transition: 0s;
-            width: 0px;
-            height: 0px;
-            opacity: 1;
-        }
-    }
     .bar{
         width: $grid*3;
         height: 3px;
         background: #fff;
         position: absolute;
         top: 50%;
-        margin-top: -1.5px;
+        margin-top: -2px;
         transition: all 0.35s $curved-transition;
         &-1{
-            margin-top: -8px;
+            margin-top: -9px;
             margin-left: -$grid*1.5;
             left: 50%;
         }
@@ -400,7 +385,7 @@ Version: 1.0.0
             left: 50%;
         }
         &-3{
-            margin-top: 6px;
+            margin-top: 5px;
             margin-right: -$grid*1.5;
             right: 50%;
         }
@@ -441,6 +426,7 @@ Version: 1.0.0
         }
     }
 }
+
 
 
 /*------------------------------------------------------------------------
@@ -505,34 +491,11 @@ Version: 1.0.0
                     opacity: 0;
                     transition: transform 0.15s $curved-transition, opacity 0.15s $curved-transition;
                 }
-                &:after{
-                    content: '';
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    border-radius: 50%;
-                    background: rgba(255,255,255,0.1);
-                    transform: translate(-50%, -50%);
-                    transition: all 0.4s $curved-transition;
-                    opacity: 0;
-                    width: 200px;
-                    height: 200px;
-                }
                 &:hover{
                     color: #fff;
                     &:before{
                         transform: scaleX(1);
                         opacity: 0.2;
-                    }
-                }
-                &:active{
-                    &:after{
-                        width: 0px;
-                        height: 0px;
-                        transition: 0s;
-                        width: 0px;
-                        height: 0px;
-                        opacity: 1;
                     }
                 }
             }
@@ -685,6 +648,7 @@ Version: 1.0.0
             display: flex;
             align-items: center;
             box-sizing: border-box;
+            background-size: 80px 40px;
             .icon{
                 width: 112px;
                 height: 64px;
