@@ -15,16 +15,7 @@ Version: 1.0.0
 ------------------------------------------------------------------------*/
 
 .slide-quote{
-    /*--
-    background-image: url('images/food.png'), linear-gradient(120deg, #3FA9F5, #3A65C7 );
-    background-size:  300px 250px 250px, cover;
-	background-attachment: fixed;
-	background-repeat: repeat, no-repeat;
-	background-position: 0px, center;
-    animation: movingBg 40s linear 2s infinite;
-    --*/
-
-    background-image: url('images/testimonial-texture.png'), linear-gradient(120deg, #3FA9F5, #3A65C7 );
+    background-image: url('images/default-blog-landing-bg.png'), linear-gradient(120deg, #3FA9F5, #3A65C7 );
     background-size: cover, cover;
     figure{
         padding-left: $grid*8;

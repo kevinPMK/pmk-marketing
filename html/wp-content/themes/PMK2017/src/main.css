@@ -2589,15 +2589,7 @@ Version: 1.0.0
   Quote Section
 ------------------------------------------------------------------------*/
 .slide-quote {
-  /*--
-    background-image: url('images/food.png'), linear-gradient(120deg, #3FA9F5, #3A65C7 );
-    background-size:  300px 250px 250px, cover;
-	background-attachment: fixed;
-	background-repeat: repeat, no-repeat;
-	background-position: 0px, center;
-    animation: movingBg 40s linear 2s infinite;
-    --*/
-  background-image: url("images/testimonial-texture.png"), linear-gradient(120deg, #3FA9F5, #3A65C7);
+  background-image: url("images/default-blog-landing-bg.png"), linear-gradient(120deg, #3FA9F5, #3A65C7);
   background-size: cover, cover; }
   .slide-quote figure {
     padding-left: 64px;
@@ -3110,7 +3102,6 @@ Version: 1.0.0
   position: absolute;
   bottom: 0;
   left: 0;
-  opacity: 0.2;
   min-width: 100%;
   min-height: 100%;
   background: url("app-sfx/test-grad-swoosh.svg") center center;
@@ -4887,9 +4878,11 @@ Version: 1.0.0
 @media (max-width: 799px) {
   .footer__primary {
     padding-top: 48px; }
-  .footer__logo .icon {
-    width: 120px;
-    height: 73px; }
+  .footer__logo {
+    width: 100%; }
+    .footer__logo .icon {
+      width: 120px;
+      height: 73px; }
   .footer-menu {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
