@@ -71,11 +71,12 @@ function SectionContent( $atts, $content = null ) {
         "subtitle" => '',
         "divider" => 'true',
         "learnmoreurl" => '',
-        "alignment" => ''
+        "alignment" => 'center'
     ), $atts));
 
     $output = '';
-    if( $alignment = "left" ){
+
+    if( $alignment == "left" ){
         $output .= '<div class="slide__copy slide__copy--left typography">';
     }else{
         $output .= '<div class="slide__copy typography">';

@@ -4967,8 +4967,8 @@ Version: 1.0.0
 body {
   background: #fff; }
 
-.admin-bar .main-menu--fixed {
-  top: 32px; }
+.admin-bar.nav-prep-transition .main-menu {
+  top: 32px !important; }
 
 .skip-link {
   display: none; }
