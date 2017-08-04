@@ -750,9 +750,11 @@ function FeatureNavigation() {
             $output .= '<a class="inner" href="' . get_the_permalink() . '">';
         }
 
+        $output .= '<div>';
         $output .= '<div class="slide-next-features__icon svg-icon-'. $post_slug=$post->post_name .'">';
         $output .= '</div>';
         $output .= '<h4>' . get_the_title() . '</h4>';
+        $output .= '</div>';
 
         if($currentID == get_the_ID()){
             $output .= '</div>';

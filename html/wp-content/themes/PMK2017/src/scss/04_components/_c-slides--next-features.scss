@@ -15,16 +15,32 @@ Version: 1.0.0
 ------------------------------------------------------------------------*/
 
 .slide-next-features{
-    padding: 120px 0;
+    .slide__content{
+        align-items: stretch;
+        padding: 0 $grid*12;
+        box-sizing: border-box;
+        width: 100%;
+    }
     &__block{
         width: 25%;
         padding: $grid*2;
+        display: flex;
+        flex-direction: column;
         box-sizing: border-box;
         >.inner{
-            display: block;
+            border: 2px solid transparent;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             box-shadow: 0px 12px 64px rgba(37, 48, 60, 0.2);
             padding: $grid*8 $grid*4;
             text-align: center;
+            transition: all 0.15s $curved-transition;
+            &:hover{
+                transform: translateY(-10px);
+                box-shadow: 0px 12px 64px $brand-primary;
+            }
         }
         h4{
             margin-bottom: 0;
@@ -32,19 +48,104 @@ Version: 1.0.0
         }
         &--current{
             >.inner{
+                border: 2px solid $app-divider-color;
                 color: $content-copy-color--dark;
                 box-shadow: none;
-            }
-            .slide-next-features__icon{
-                background: $content-copy-color--dark;
+                &:hover{
+                    box-shadow: none;
+                }
             }
         }
     }
     &__icon{
-        width: $grid*16;
-        height: $grid*16;
-        border-radius: $grid*16;
+        width: $grid*20;
+        height: $grid*20;
+        background-size: $grid*20 $grid*20;
+        background-position: center center;
         margin: 0 auto;
-        background: $brand-primary;
+        &.svg-icon-for-parents{
+            background-image: url('images/feature-footer-parent.svg');
+        }
+        &.svg-icon-for-teachers{
+            background-image: url('images/feature-footer-teacher.svg');
+        }
+        &.svg-icon-for-administrators{
+            background-image: url('images/feature-footer-admin.svg');
+        }
+        &.svg-icon-for-districts{
+            background-image: url('images/feature-footer-district.svg');
+        }
+    }
+}
+
+
+.slide-next-features{
+    &__block{
+        opacity: 0;
+        transform: translateY(45px);
+        transition: transform 0.45s $curved-transition 0.15s, opacity 0.45s $curved-transition 0.15s;
+        &:nth-child(4n + 1){
+            transition-delay: 0.25s;
+        }
+        &:nth-child(4n + 2){
+            transition-delay: 0.35s;
+        }
+        &:nth-child(4n + 3){
+            transition-delay: 0.45s;
+        }
+        &:nth-child(4n + 4){
+            transition-delay: 0.45s;
+        }
+    }
+    &.animated{
+        .slide-next-features__block{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}
+
+
+@include media('<lg') {
+    .slide-next-features{
+        flex-wrap: wrap;
+        .slide__content{
+            align-items: stretch;
+            padding: 0 4vw;
+            flex-wrap: wrap;
+        }
+        &__block{
+            width: 50%;
+        }
+    }
+}
+
+@include media('<sm') {
+    .slide-next-features{
+        flex-wrap: wrap;
+        .slide__content{
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+        &__block{
+            width: 100%;
+            >.inner{
+                padding: $grid*6 $grid*3;
+            }
+        }
+    }
+}
+
+@include media('<xs') {
+    .slide-next-features{
+        flex-wrap: wrap;
+        .slide__content{
+            padding: 0 10px;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+        &__block{
+            width: 100%;
+        }
     }
 }
