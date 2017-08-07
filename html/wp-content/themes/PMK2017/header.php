@@ -13,14 +13,6 @@
 			<link rel="profile" href="http://gmpg.org/xfn/11">
 			<?php wp_head(); ?>
 
-			<?php include('json-ld.php'); ?>
-
-			<script type="application/ld+json">
-				<?php echo json_encode($staticPayload); ?>
-			</script>
-			<script type="application/ld+json">
-				<?php echo json_encode($dynamicPayload); ?>
-			</script>
 		</head>
 
 		<body <?php body_class(); ?>>
