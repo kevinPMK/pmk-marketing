@@ -237,7 +237,7 @@ function pmk_scripts() {
 
 
 	//Add custom fonts, used in the main stylesheet.
-	wp_enqueue_script('pmk-fonts', '//fast.fonts.net/jsapi/4364cd06-c6c0-44e7-94f3-290ffa52ab9a.js', array(), '1.0', true );
+	//wp_enqueue_script('pmk-fonts', '//fast.fonts.net/jsapi/4364cd06-c6c0-44e7-94f3-290ffa52ab9a.js', array(), '1.0', true );
 
 	//Make skip to content accessable.
 	wp_enqueue_script( 'pmk-skip-link-focus-fix', get_theme_file_uri( '/src/js/skip-link-focus-fix.js' ), array(), '1.0', true );

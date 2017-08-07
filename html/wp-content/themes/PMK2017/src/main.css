@@ -245,7 +245,7 @@ Version: 1.0.0
   Globals
 ------------------------------------------------------------------------*/
 html {
-  font-family: "Quasimoda W01", sans-serif;
+  font-family: "quasimoda", sans-serif;
   font-size: 16px;
   font-weight: 300; }
 
@@ -254,7 +254,7 @@ html {
 ------------------------------------------------------------------------*/
 h1 {
   font-size: 4rem;
-  font-family: "Slate W01", sans-serif;
+  font-family: "effra", sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 3em;
@@ -262,7 +262,7 @@ h1 {
 
 h2 {
   font-size: 3.5rem;
-  font-family: "Slate W01", sans-serif;
+  font-family: "effra", sans-serif;
   font-weight: 700;
   line-height: 1.2em;
   letter-spacing: -0.01em;
@@ -271,7 +271,7 @@ h2 {
 
 h3 {
   font-size: 2rem;
-  font-family: "Quasimoda W01", sans-serif;
+  font-family: "quasimoda", sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 0.7em;
@@ -286,7 +286,7 @@ h4, .faq-nav__text {
 
 h6, .blog-overview__page-count, .blog-card__meta, .blog-heading-bar__words-by {
   font-size: 0.875rem;
-  font-family: "Quasimoda W01", sans-serif;
+  font-family: "quasimoda", sans-serif;
   text-transform: uppercase;
   font-weight: 200;
   letter-spacing: 0.04rem;
@@ -785,7 +785,7 @@ Version: 1.0.0
     padding-right: 50px;
     background: none;
     font-size: 0.8125rem;
-    font-family: "Quasimoda W01", sans-serif;
+    font-family: "quasimoda", sans-serif;
     font-weight: 200; }
     .sub-menu__search-field:focus {
       outline: none;
@@ -1083,7 +1083,7 @@ Version: 1.0.0
         box-sizing: border-box;
         font-size: 2rem;
         font-size: 5vh;
-        font-family: "Slate W01", sans-serif;
+        font-family: "effra", sans-serif;
         font-weight: 700;
         display: block;
         color: #fff;
@@ -1333,7 +1333,7 @@ Version: 1.0.0
     margin: 0;
     margin-bottom: 24px; }
   .home-hero__sub-heading {
-    font-family: "Quasimoda W01", sans-serif;
+    font-family: "quasimoda", sans-serif;
     display: block;
     text-transform: uppercase;
     letter-spacing: 0.5em;
@@ -1635,7 +1635,7 @@ Version: 1.0.0
         background: linear-gradient(90deg, #3A65C7, #3FA9F5);
         position: absolute; }
       .sub-page-hero__content h1 span {
-        font-family: "Quasimoda W01", sans-serif;
+        font-family: "quasimoda", sans-serif;
         display: block;
         margin-bottom: -16px;
         text-transform: uppercase;
@@ -2652,7 +2652,7 @@ Version: 1.0.0
     .slide-quote footer cite {
       font-size: 1.0625rem;
       font-weight: 200;
-      font-family: "Quasimoda W01", sans-serif; }
+      font-family: "quasimoda", sans-serif; }
 
 @-webkit-keyframes movingBg {
   0% {
@@ -4522,7 +4522,7 @@ Version: 1.0.0
     color: #434e54;
     vertical-align: top;
     margin-bottom: -1px;
-    font-family: "Quasimoda W01", sans-serif;
+    font-family: "quasimoda", sans-serif;
     font-weight: 200; }
     .contact-form__field-wrap input:focus,
     .contact-form__field-wrap textarea:focus {
@@ -4769,7 +4769,7 @@ Version: 1.0.0
             align-items: center;
     transition: all 0.2s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.2s; }
   .team-card__name {
-    font-family: "Slate W01", sans-serif;
+    font-family: "effra", sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
     margin-bottom: 4px; }
@@ -4931,7 +4931,7 @@ Version: 1.0.0
   font-size: 0.875rem;
   margin: 0px 0px 16px 0px;
   font-weight: 700;
-  font-family: "Quasimoda W01", sans-serif;
+  font-family: "quasimoda", sans-serif;
   letter-spacing: 0.05rem;
   color: #787c7f;
   text-transform: uppercase; }

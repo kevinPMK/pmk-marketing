@@ -13,6 +13,8 @@
 			<link rel="profile" href="http://gmpg.org/xfn/11">
 			<?php wp_head(); ?>
 
+			<script src="https://use.typekit.net/teg2qqe.js"></script>
+			<script>try{Typekit.load({ async: true });}catch(e){}</script>
 		</head>
 
 		<body <?php body_class(); ?>>
