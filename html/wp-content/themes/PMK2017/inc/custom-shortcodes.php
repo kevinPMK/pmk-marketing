@@ -9,6 +9,7 @@
 function section( $atts, $content = null ) {
     extract(shortcode_atts(array(
         "type" => 'default',
+        "direction" => '',
         "theme" => ''
     ), $atts));
 
@@ -30,18 +31,25 @@ function section( $atts, $content = null ) {
 
     }else if($type == 'half') {
 
+        $classes="slide slide-half";
+
+
         if($theme == 'grad'){
-            $output .= '<section class="slide slide-half slide--grad">';
+            $classes .= ' slide--grad';
         }else if($theme == 'negative'){
-            $output .= '<section class="slide slide-half slide--negative">';
+            $classes .= ' slide--negative';
         }else if($theme == 'vanilla'){
-            $output .= '<section class="slide slide-half slide--vanilla">';
-        }else{
-            $output .= '<section class="slide slide-half">';
+            $classes .= ' slide--vanilla';
         }
-        $output .= '<div class="slide__content">';
-        $output .= do_shortcode($content);
-        $output .= '</div>';
+
+        if($direction == 'reverse'){
+            $classes .= ' slide--reverse';
+        }
+
+        $output .= '<section class="' . $classes . '">';
+            $output .= '<div class="slide__content">';
+            $output .= do_shortcode($content);
+            $output .= '</div>';
         $output .= '</section>';
 
     }else if($type == 'mini') {

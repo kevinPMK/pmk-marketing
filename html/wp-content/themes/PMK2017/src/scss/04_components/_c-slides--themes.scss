@@ -42,3 +42,15 @@ Version: 1.0.0
         display: none;
     }
 }
+
+.slide--reverse{
+}
+
+@include media('<md') {
+    .slide--reverse{
+        .slide__content{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+}

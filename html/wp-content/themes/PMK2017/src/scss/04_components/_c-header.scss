@@ -668,10 +668,12 @@ Version: 1.0.0
 
 @include media('<md') {
     .sub-menu{
-        padding-left: $grid*4;
-        padding-right: $grid*4;
+        padding-left: $grid*3;
+        padding-right: $grid*3;
 }
     .main-menu{
+        padding-right: $grid*3;
+        padding-left: $grid*2;
         display: flex;
         margin-left: 0px !important; //overwrite js
         margin-right: 0px !important; //overwrite js
