@@ -246,7 +246,7 @@ Version: 1.0.0
   Globals
 ------------------------------------------------------------------------*/
 html {
-  font-family: "Quasimoda W01", sans-serif;
+  font-family: "Avenir Next W01", sans-serif;
   font-size: 16px;
   font-weight: 300; }
 
@@ -272,7 +272,7 @@ h2 {
 
 h3 {
   font-size: 2rem;
-  font-family: "Quasimoda W01", sans-serif;
+  font-family: "Avenir Next W01", sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 0.7em;
@@ -287,7 +287,7 @@ h4, .faq-nav__text {
 
 h6, .blog-overview__page-count, .blog-card__meta, .blog-heading-bar__words-by {
   font-size: 0.875rem;
-  font-family: "Quasimoda W01", sans-serif;
+  font-family: "Avenir Next W01", sans-serif;
   text-transform: uppercase;
   font-weight: 200;
   letter-spacing: 0.04rem;
@@ -784,7 +784,7 @@ Version: 1.0.0
     padding-right: 50px;
     background: none;
     font-size: 0.8125rem;
-    font-family: "Quasimoda W01", sans-serif;
+    font-family: "Avenir Next W01", sans-serif;
     font-weight: 200; }
     .sub-menu__search-field:focus {
       outline: none;
@@ -1332,7 +1332,7 @@ Version: 1.0.0
     margin: 0;
     margin-bottom: 24px; }
   .home-hero__sub-heading {
-    font-family: "Quasimoda W01", sans-serif;
+    font-family: "Avenir Next W01", sans-serif;
     display: block;
     text-transform: uppercase;
     letter-spacing: 0.5em;
@@ -1634,7 +1634,7 @@ Version: 1.0.0
         background: linear-gradient(90deg, #3A65C7, #3FA9F5);
         position: absolute; }
       .sub-page-hero__content h1 span {
-        font-family: "Quasimoda W01", sans-serif;
+        font-family: "Avenir Next W01", sans-serif;
         display: block;
         margin-bottom: -16px;
         text-transform: uppercase;
@@ -2649,7 +2649,7 @@ Version: 1.0.0
     .slide-quote footer cite {
       font-size: 1.0625rem;
       font-weight: 200;
-      font-family: "Quasimoda W01", sans-serif; }
+      font-family: "Avenir Next W01", sans-serif; }
 
 @-webkit-keyframes movingBg {
   0% {
@@ -4521,7 +4521,7 @@ Version: 1.0.0
     color: #434e54;
     vertical-align: top;
     margin-bottom: -1px;
-    font-family: "Quasimoda W01", sans-serif;
+    font-family: "Avenir Next W01", sans-serif;
     font-weight: 200; }
     .contact-form__field-wrap input:focus,
     .contact-form__field-wrap textarea:focus {
@@ -4930,7 +4930,7 @@ Version: 1.0.0
   font-size: 0.875rem;
   margin: 0px 0px 16px 0px;
   font-weight: 600;
-  font-family: "Quasimoda W01", sans-serif;
+  font-family: "Avenir Next W01", sans-serif;
   letter-spacing: 0.05rem;
   color: #787c7f;
   text-transform: uppercase; }
