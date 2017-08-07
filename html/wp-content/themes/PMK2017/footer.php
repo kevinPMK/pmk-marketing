@@ -89,19 +89,23 @@
 	</div><!-- .site-content-contain -->
 </div><!-- #page -->
 
+<div class="app-icons-wrap" style="width: 1px; height: 1px; opacity: 0;">
+	<?php require_once( get_parent_theme_file_path( '/src/app-sfx.svg' ) ); ?>
+	<?php require_once( get_parent_theme_file_path( '/src/app-icons.svg' ) ); ?>
+</div>
 
 <?php wp_footer(); ?>
 
 <?php if(is_single()) : ?>
-<script>
-document.getElementById('shareBtn').onclick = function() {
-  FB.ui({
-    method: 'share',
-    display: 'popup',
-    href: '<?php echo the_permalink(); ?>'
-  }, function(response){});
-}
-</script>
+	<script>
+	document.getElementById('shareBtn').onclick = function() {
+	  FB.ui({
+	    method: 'share',
+	    display: 'popup',
+	    href: '<?php echo the_permalink(); ?>'
+	  }, function(response){});
+	}
+	</script>
 <?php endif; ?>
 
 </body>

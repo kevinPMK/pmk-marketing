@@ -218,6 +218,15 @@ function posts_link_attributes_2() {
 
 
 /*---------------------------------------------------------------
+   LOAD SVG ICONS
+---------------------------------------------------------------*/
+
+
+/*-- SVG ICONS AND FILTERS --*/
+require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+
+/*---------------------------------------------------------------
    ENQUEUE SCRIPTS AND STYLES
 ---------------------------------------------------------------*/
 
@@ -256,8 +265,6 @@ add_action( 'wp_enqueue_scripts', 'pmk_scripts' );
    ADDITIONAL FUNCTIONS
 ---------------------------------------------------------------*/
 
-/*-- SVG ICONS AND FILTERS --*/
-require get_parent_theme_file_path( '/inc/icon-functions.php' );
 
 /*-- CUSTOM MENU WALKERS --*/
 require get_parent_theme_file_path( '/inc/custom-walkers.php' );

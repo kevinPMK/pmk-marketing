@@ -302,7 +302,8 @@ Version: 1.0.0
         padding: 0 $grid*14;
     }
         .slide-mini__card{
-            flex: 1;
+            width: 50%;
+            box-sizing: border-box;
             display: flex;
             align-items: flex-start;
             background: #fff;
@@ -319,12 +320,11 @@ Version: 1.0.0
                 flex: 1;
             }
             .slide-mini__thumb{
-                max-width: 160px;
-                width: 100%;
                 box-sizing: border-box;
                 margin-right: $grid*3;
                 img{
-                    width: 100%;
+                    width: 160px;
+                    height: 160px;
                 }
             }
         //.slide-mini__card

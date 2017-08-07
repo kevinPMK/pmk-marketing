@@ -97,7 +97,6 @@ Version: 1.0.0
 ------------------------------------------------------------------------*/
 body,
 html {
-  -ms-font-feature-settings: "liga" 1;
   padding: 0px;
   margin: 0px;
   min-width: 320px;
@@ -426,6 +425,8 @@ Version: 1.0.0
   font-weight: 200;
   color: #999;
   margin-bottom: 1.4em; }
+  .typography blockquote p, .blog-card blockquote p, .slide__copy blockquote p, .slide-faq__content blockquote p, .typography blockquote .team-card__description, .blog-card blockquote .team-card__description, .slide__copy blockquote .team-card__description, .slide-faq__content blockquote .team-card__description {
+    width: 100%; }
 
 .typography ul, .blog-card ul, .slide__copy ul, .slide-faq__content ul, .typography ol, .blog-card ol, .slide__copy ol, .slide-faq__content ol {
   letter-spacing: 0.01em;
@@ -2606,7 +2607,9 @@ Version: 1.0.0
     margin: 0 auto;
     text-align: center;
     color: #fff;
-    position: relative; }
+    position: relative;
+    width: 100%;
+    box-sizing: border-box; }
   .slide-quote hr {
     background: #fff;
     opacity: 0.25;
@@ -2615,9 +2618,9 @@ Version: 1.0.0
     width: 120px;
     border: none; }
   .slide-quote blockquote {
-    margin: 0 0 40px 0; }
+    margin-bottom: 40px; }
     .slide-quote blockquote p, .slide-quote blockquote .team-card__description {
-      margin: 0;
+      margin: 0 auto;
       font-size: 1.5rem;
       line-height: 1.6em;
       position: relative;
@@ -3138,9 +3141,8 @@ Version: 1.0.0
   padding: 0 112px; }
 
 .slide-mini__card {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  width: 50%;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3162,12 +3164,11 @@ Version: 1.0.0
           flex: 1; }
 
 .slide-mini__thumb {
-  max-width: 160px;
-  width: 100%;
   box-sizing: border-box;
   margin-right: 24px; }
   .slide-mini__thumb img {
-    width: 100%; }
+    width: 160px;
+    height: 160px; }
 
 /*-- Queries --*/
 @media (max-width: 1279px) {
@@ -3733,8 +3734,8 @@ Version: 1.0.0
     .search-result__content h4 strong, .search-result__content .faq-nav__text strong {
       font-weight: 700;
       color: #000; }
-  .search-result__content strong {
-    font-weight: 500;
+  .search-result__content l strong {
+    font-weight: 700;
     color: #222; }
   .search-result__meta {
     font-size: 0.875rem;
@@ -4131,7 +4132,7 @@ Version: 1.0.0
     font-size: 1.25rem;
     color: #333E48; }
   .author-bio__name {
-    font-weight: 500; }
+    font-weight: 700; }
   .author-bio__word-divide {
     color: #acb6bb; }
   .author-bio__title {
@@ -4929,7 +4930,7 @@ Version: 1.0.0
 .footer-menu__heading {
   font-size: 0.875rem;
   margin: 0px 0px 16px 0px;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Avenir Next W01", sans-serif;
   letter-spacing: 0.05rem;
   color: #787c7f;
