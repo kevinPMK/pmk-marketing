@@ -132,7 +132,7 @@ Version: 1.0.0
 
 @include media('<sm') {
     .cta-button{
-        width: $grid*24;
+        width: $grid*28;
         height: $grid*6;
         margin: 0 $grid/2;
     }

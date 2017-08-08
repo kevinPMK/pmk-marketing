@@ -30,7 +30,7 @@ Version: 1.0.0
         box-shadow: 0px 12px 64px $box-shadow-color;
         transition: all 0.7s $curved-transition 0.5s;
         transform: translateY(20px);
-        opacity: 0;
+        opacity: 0.01;
     }
 }
 
@@ -96,7 +96,7 @@ Version: 1.0.0
     .slide__image-grid-cell{
         transition: all 0.7s $curved-transition 0.5s;
         transform: translateY(20px);
-        opacity: 0;
+        opacity: 0.01;
         @for $i from 1 through 15 {
             &:nth-child(#{$i}) {
                 transition-delay: (0.5s + (0.2s * $i));
@@ -127,9 +127,6 @@ Version: 1.0.0
                 width: 25%;
             }
         }
-}
-
-@include media('<md') {
 }
 
 @include media('<sm') {
@@ -201,7 +198,7 @@ Version: 1.0.0
     .logo-grid__cell{
         transition: all 0.7s $curved-transition 0.5s;
         transform: translateY(20px);
-        opacity: 0;
+        opacity: 0.01;
         @for $i from 1 through 60 {
             &:nth-child(#{$i}) {
                 transition-delay: (0.5s + (0.2s * $i));
@@ -231,7 +228,6 @@ Version: 1.0.0
         }
     }
 }
-
 
 @include media('<sm') {
     .logo-grid{
@@ -267,12 +263,8 @@ Version: 1.0.0
     padding: $grid*12 0;
     position: relative;
     background: #f3f3f3;
-    //background: $brand-primary;
-    //background: linear-gradient(90deg, #72c54f, #aced67);
     overflow: hidden;
-    //box-shadow: inset 0px 0px 600px -100px rgba(0,0,0,0.5);
-}
-        .slide-mini__sfx-squiggle{
+        &__sfx-squiggle{
             position: absolute;
             bottom: 0;
             left: 0;
@@ -280,28 +272,28 @@ Version: 1.0.0
             min-height: 100%;
             background: url('app-sfx/test-grad-swoosh.svg') center center;
             background-size: cover;
+            opacity: 0.4;
         }
-
-            .slide-mini__sfx-circle-grad{
-                position: absolute;
-                top: -20%;
-                left: 50%;
-                margin-left: -600px;
-                filter: blur(20px);
-                width: 1200px;
-                height: 400px;
-                border-radius: 100%;
-                background: radial-gradient(at center center, rgba(255,255,255,0.2), rgba(255,255,255,0));
-            }
-
-    .slide-mini__grid{
+        &__sfx-circle-grad{
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            margin-left: -600px;
+            filter: blur(20px);
+            width: 1200px;
+            height: 400px;
+            border-radius: 100%;
+            background: radial-gradient(at center center, rgba(255,255,255,0.2), rgba(255,255,255,0));
+        }
+    &__grid{
         max-width: $page-max-width;
         box-sizing: border-box;
         margin: 0 auto;
         display: flex;
         padding: 0 $grid*14;
+        width: 100%;
     }
-        .slide-mini__card{
+        &__card{
             width: 50%;
             box-sizing: border-box;
             display: flex;
@@ -316,10 +308,10 @@ Version: 1.0.0
                 margin-left: $grid*4;
             }
         }
-            .slide-mini__content{
+            &__content{
                 flex: 1;
             }
-            .slide-mini__thumb{
+            &__thumb{
                 box-sizing: border-box;
                 margin-right: $grid*3;
                 img{
@@ -329,77 +321,84 @@ Version: 1.0.0
             }
         //.slide-mini__card
     //.slide-mini__grid
-//.slide--mini
+}
 
 
-/*-- Queries --*/
+/*-- Responsive Queries --*/
 
 @include media('<lg') {
-    .slide-mini__grid{
-        padding-left: 6vw;
-        padding-right: 6vw;
-    }
-        .slide-mini__card{
-            padding: $grid*5 $grid*5;
-            margin-right: 2vw;
-            &:last-child{
-                margin-right: 0px;
-                margin-left: 2vw;
-            }
+    .slide-mini{
+        &__grid{
+            padding-left: 6vw;
+            padding-right: 6vw;
         }
-            .slide-mini__thumb{
+            &__card{
+                padding: $grid*5 $grid*5;
+                margin-right: 2vw;
+                &:last-child{
+                    margin-right: 0px;
+                    margin-left: 2vw;
+                }
+            }
+            &__thumb{
                 margin-right: $grid*5;
                 width: $grid*14;
                 height: $grid*14;
                 border-radius: $grid*14;
             }
-    //.slide-mini__grid
+        //&__grid
+    }
 }
 
 @include media('<md') {
-    .slide-mini__grid{
-        flex-wrap: wrap;
-    }
-        .slide-mini__card{
-            padding: $grid*4 $grid*4;
-            width: 100%;
-            box-sizing: border-box;
-            flex: auto;
-            display: flex;
-            margin: 0;
-            &:first-child{
-                margin-bottom: 6vw;
-            }
-            &:last-child{
-                margin-left: 0;
-            }
+    .slide-mini{
+        &__grid{
+            flex-wrap: wrap;
         }
-            .slide-mini__thumb{
+            &__card{
+                padding: $grid*4 $grid*4;
+                width: 100%;
+                box-sizing: border-box;
+                flex: auto;
+                display: flex;
+                margin: 0;
+                &:first-child{
+                    margin-bottom: 6vw;
+                }
+                &:last-child{
+                    margin-left: 0;
+                }
+            }
+            &__thumb{
                 margin-right: $grid*4;
             }
-    //.slide-mini__grid
+        //&__grid
+    }
 }
 
 @include media('<xxs') {
-    .slide-mini__card{
-        text-align: center;
-        display: block;
+    .slide-mini{
+        &__card{
+            text-align: center;
+            display: block;
+        }
+            &__thumb{
+                margin: 0 auto;
+            }
+            &__content{
+                margin-top: $grid*4;
+                flex: auto;
+                width: 100%;
+            }
+        //&__card
     }
-        .slide-mini__thumb{
-            margin: 0 auto;
-        }
-        .slide-mini__content{
-            margin-top: $grid*4;
-            flex: auto;
-            width: 100%;
-        }
 }
 
 
 /*-- In View Transitions --*/
 
 .slide-mini{
-    .slide-mini__card{
+    &__card{
         transition: all 0.7s $curved-transition 0.3s;
         opacity: 0;
         &:first-child{

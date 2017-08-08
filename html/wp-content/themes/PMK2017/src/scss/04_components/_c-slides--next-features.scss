@@ -81,7 +81,7 @@ Version: 1.0.0
 
 .slide-next-features{
     &__block{
-        opacity: 0;
+        opacity: 0.01;
         transform: translateY(45px);
         transition: transform 0.45s $curved-transition 0.15s, opacity 0.45s $curved-transition 0.15s;
         &:nth-child(4n + 1){

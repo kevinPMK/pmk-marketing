@@ -9,6 +9,32 @@ Version: 1.0.0
 ---------------------------------------------------------------------------*/
 
 
+.mobile-video-section{
+    display: none;
+    &__button{
+        width: 100%;
+        height: $grid*8;
+        background: linear-gradient(-90deg, #72c54f, #99d25c);
+        line-height: $grid*8;
+        text-align: center;
+        display: block;
+        font-size: 0.875rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 300;
+        color: #fff;
+        &:hover{
+            background: linear-gradient(-90deg, #3A65C7, #3FA9F5);
+        }
+    }
+}
+
+@include media('<sm') {
+    .mobile-video-section{
+        display: block;
+    }
+}
+
 /*--
 .mobile-menu{
     display: none !important;

@@ -269,7 +269,7 @@ function FaqSection( $atts, $content = null ) {
             /*-- Render FAQ Navigation --*/
 
             $faq_nav .= '<a class="faq-nav__link scroll-to-link" href="#' . $custom_term->slug . '">';
-            $faq_nav .= '<span class="faq-nav__icon"></span>';
+            $faq_nav .= '<img class="faq-nav__icon" src="' . get_bloginfo('template_directory') . '/src/images/faq--' . $custom_term->slug . '.svg">';
             $faq_nav .= '<span class="faq-nav__content">';
             $faq_nav .= '<span class="faq-nav__text">' . $custom_term->name . '</span>';
             if($custom_term->description){

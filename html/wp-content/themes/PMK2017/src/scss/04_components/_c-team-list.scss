@@ -67,7 +67,7 @@ Version: 1.0.0
             left: 0;
             right: 0;
             content: '';
-            opacity: 0;
+            opacity: 0.01;
             transition: all 0.2s $curved-transition 0.2s;
         }
         &:hover{
@@ -134,7 +134,7 @@ Version: 1.0.0
         bottom: $grid*12;
         left: 0;
         right: 0;
-        opacity: 0;
+        opacity: 0.01;
         padding: $grid*3 $grid*3 $grid*2 $grid*3;
         z-index: 20;
         filter: blur(0px);

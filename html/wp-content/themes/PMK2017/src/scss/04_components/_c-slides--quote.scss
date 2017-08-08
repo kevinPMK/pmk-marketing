@@ -37,6 +37,8 @@ Version: 1.0.0
         }
         blockquote{
             margin-bottom: $grid*5;
+            margin-left: 0;
+            margin-right: 0;
             p{
                 margin: 0 auto;
                 font-size: $font-size-24;
@@ -48,9 +50,6 @@ Version: 1.0.0
                 align-items: center;
                 max-width: 1024px;
                 padding: 0 $grid*12;
-            }
-            span{
-                flex: 1;
             }
             .icon{
                 width: 120px;
@@ -94,19 +93,17 @@ Version: 1.0.0
 .slide-quote{
     blockquote{
         position: relative;
-        padding-left: $grid*8;
-        padding-right: $grid*8;
         display: block;
         p{
             margin: 0 auto;
         }
         span{
-            opacity: 0;
+            opacity: 0.01;
             transition: all 0.7s $curved-transition 0.3s;
             transform: translateY(20px);
         }
         .icon{
-            opacity: 0;
+            opacity: 0.01;
             transition: all 0.7s $curved-transition 0.6s;
             position: absolute;
             &:first-child{
@@ -119,13 +116,13 @@ Version: 1.0.0
     }
     hr{
         transition: all 0.7s $curved-transition 0.4s;
-        opacity: 0;
+        opacity: 0.01;
         width: 0;
     }
     footer{
         transition: all 0.7s $curved-transition 0.5s;
         transform: translateY(20px);
-        opacity: 0;
+        opacity: 0.01;
     }
     &.animated{
         blockquote{
@@ -165,6 +162,16 @@ Version: 1.0.0
         figure{
             padding: 0 6vw;
         }
+        blockquote{
+            p{
+                padding-left: $grid*12;
+                padding-right: $grid*12;
+            }
+            .icon{
+                width: $grid*12;
+                height: $grid*12;
+            }
+        }
     }
 }
 
@@ -174,11 +181,17 @@ Version: 1.0.0
         blockquote{
             p{
                 font-size: 3vw;
+
+                padding-left: 12vw;
+                padding-right: 12vw;
             }
             .icon{
                 width: 12vw;
                 height: 12vw;
             }
+        }
+        footer{
+            font-size: $font-size-16;
         }
     }
 }
@@ -188,11 +201,17 @@ Version: 1.0.0
         blockquote{
             p{
                 font-size: 17px;
+                padding-left: 0;
+                padding-right: 0;
             }
             .icon{
+                top: 0;
                 width: 72px;
                 height: 72px;
             }
+        }
+        footer{
+            font-size: $font-size-15;
         }
     }
 }

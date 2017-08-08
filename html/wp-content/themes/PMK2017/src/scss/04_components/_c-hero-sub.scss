@@ -9,112 +9,10 @@ Version: 1.0.0
 ---------------------------------------------------------------------------*/
 
 
-.hero-search{
-    margin: 0 $grid*4;
-    position: relative;
-    label{
-        text-transform: uppercase;
-        margin-bottom: 2em;
-        font-weight: 200;
-        color: #516ca9;
-        text-transform: uppercase;
-        letter-spacing: 0.08rem;
-        margin-bottom: 16px;
-        display: inline-block;
-        font-size: 1.125rem;
-    }
-    &__field{
-        font-size: $font-size-32;
-        font-weight: 200;
-        width: 100%;
-        background: none;
-        color: #fff;
-        border: none;
-        padding-bottom: $grid;
-        padding-top: $grid;
-        padding-right: $grid*8;
-        height: 64px;
-        box-sizing: border-box;
-        border-bottom: 4px solid $brand-primary;
-        &:focus{
-            outline: none;
-        }
-        &::-webkit-input-placeholder {
-          color: rgba(255,255,255,0.3);
-        }
-        &::-moz-placeholder {
-          color: rgba(255,255,255,0.3);
-        }
-        &:-ms-input-placeholder {
-          color: rgba(255,255,255,0.3);
-        }
-        &:-moz-placeholder {
-          color: rgba(255,255,255,0.3);
-        }
-        &::-ms-clear {  display: none; width : 0; height: 0; }
-        &::-ms-reveal {  display: none; width : 0; height: 0; }
-        &::-webkit-search-decoration,
-        &::-webkit-search-cancel-button,
-        &::-webkit-search-results-button,
-        &::-webkit-search-results-decoration { display: none; }
-    }
-    &__submit{
-        position: absolute;
-        right: 0;
-        bottom: 4px;
-        color: #fff;
-        width: 64px;
-        height: 64px;
-        margin-right: -8px;
-        &:hover{
-            color: $brand-primary;
-        }
-        .icon{
-            width: 64px;
-            height: 64px;
-        }
-    }
-}
-
-@include media('<sm') {
-    .hero-search{
-        margin: 0;
-        label{
-            font-size: $font-size-18;
-        }
-        &__field{
-            font-size: $font-size-24;
-        }
-    }
-}
-
-@include media('<xs') {
-    .hero-search{
-        margin: 0;
-        label{
-            font-size: $font-size-16;
-        }
-        &__field{
-            font-size: $font-size-20;
-            height: 48px;
-            padding-right: 60px;
-        }
-        &__submit{
-            width: 48px;
-            height: 48px;
-            .icon{
-                width: 48px;
-                height: 48px;
-            }
-        }
-    }
-}
-
 
 /*------------------------------------------------------------------------
   Sub Page Hero
 ------------------------------------------------------------------------*/
-
 
 .sub-page-hero{
     position: fixed;
@@ -177,7 +75,7 @@ Version: 1.0.0
                 bottom: 0px;
                 z-index: -1;
                 width: $grid*16;
-                margin-left: -$grid*8;
+                transform: translateX(-50%);
                 left: 50%;
                 height: 8px;
                 background: linear-gradient(90deg, #3A65C7, #3FA9F5);
@@ -232,14 +130,12 @@ Version: 1.0.0
                 }
             }
         }
+    //&__content
 }
 
 
 
-/*------------------------------------------------------------------------
-  Queries
-------------------------------------------------------------------------*/
-
+/*-- Responsive Queries --*/
 
 @include media('<md') {
     .sub-page-hero__content{
@@ -297,6 +193,33 @@ Version: 1.0.0
 }
 
 
+/*-- In View Transitions --*/
+
+.sub-page-hero{
+    h1{
+        opacity: 0.01;
+        transition: all 1.15s ease-in-out;
+        transform: translateY(10px);
+        &:before{
+            opacity: 0.01;
+            transition: all 0.7s ease-out 0.1s;
+            width: 0px;
+        }
+    }
+    &.animated{
+        h1{
+            opacity: 1;
+            transform: translateY(0px);
+            &:before{
+                opacity: 1;
+                width: 128px;
+            }
+        }
+    }
+}
+
+
+
 /*------------------------------------------------------------------------
   Sub Page Hero -- Large
 ------------------------------------------------------------------------*/
@@ -332,9 +255,6 @@ Version: 1.0.0
         }
     }
 }
-
-
-/*-- Queries --*/
 
 @include media('<md') {
     .sub-page-hero--large{

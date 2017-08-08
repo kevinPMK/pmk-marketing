@@ -118,17 +118,17 @@ Version: 1.0.0
 
 .blog-overview-hero{
     &__author{
-        opacity: 0;
+        opacity: 0.01;
         transform: translateY(45px);
         transition: transform 0.45s $curved-transition 0.15s, opacity 0.45s $curved-transition 0.15s;
     }
     &__heading{
-        opacity: 0;
+        opacity: 0.01;
         transform: translateY(45px);
         transition: transform 0.45s $curved-transition 0.25s, opacity 0.45s $curved-transition 0.25s;
     }
     &__excerpt{
-        opacity: 0;
+        opacity: 0.01;
         transform: translateY(45px);
         transition: transform 0.45s $curved-transition 0.35s, opacity 0.45s $curved-transition 0.35s;
     }
@@ -377,7 +377,7 @@ Version: 1.0.0
 /*-- In View Transitions --*/
 
 .blog-card{
-    opacity: 0;
+    opacity: 0.01;
     transform: translateY(45px);
     transition: all 0.45s $curved-transition 0.2s;
     &__thumb{

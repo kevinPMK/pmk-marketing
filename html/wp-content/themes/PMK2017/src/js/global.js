@@ -17,7 +17,7 @@
         $('.sub-menu__search-field').val('');
     });
 
-    $('.animated-element, .slide__full-image, .home-hero, .slide, .feature-grid, .slide-faq__group, .slide-faq__conclusion, .search-results__conclusion, .blog-card, .blog-overview-hero, .team-list, .team-card').waypoint (function(){
+    $('.sub-page-hero, .animated-element, .slide__full-image, .home-hero, .slide, .feature-grid, .slide-faq__group, .slide-faq__conclusion, .search-results__conclusion, .blog-card, .blog-overview-hero, .team-list, .team-card').waypoint (function(){
         $(this.element).addClass('animated');
     }, {
         triggerOnce: true,
@@ -34,7 +34,6 @@
     var isMenuOpen = false;
 
     var openMenu = function(){
-        console.log('wut');
         isMenuOpen = true;
         $button.attr('aria-expanded', isMenuOpen).addClass('active');
         $button.unbind('click', openMenu);
@@ -44,7 +43,7 @@
             setTimeout(function(){
                 $menu.removeClass('opening');
                 $button.bind('click', closeMenu);
-            }, 150);
+            }, 200);
         }, 5);
     };
 
@@ -57,7 +56,7 @@
             $menu.removeClass('closing');
             $menu.removeClass('opened');
             $button.bind('click', openMenu);
-        }, 150);
+        }, 200);
     };
 
 
@@ -468,8 +467,9 @@
 
     };
 
-    if($('#watch-video-button').length > 0){
-    	$("#watch-video-button").YouTubePopUp();
+    if($('.watch-video-button').length > 0){
+    	$(".watch-video-button").YouTubePopUp();
     }
+
 
 })( jQuery );

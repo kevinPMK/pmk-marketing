@@ -94,33 +94,33 @@ Version: 1.0.0
 .slide-center,
 .slide-half{
     h6{
-        opacity: 0;
+        opacity: 0.01;
         transition: all 0.7s $curved-transition 0.2s;
         transform: translateY(40px);
     }
     h2{
-        opacity: 0;
+        opacity: 0.01;
         transition: all 0.7s $curved-transition 0.3s;
         transform: translateY(40px);
     }
     .hr-gradient{
-        opacity: 0;
+        opacity: 0.01;
         transition: all 0.7s ease-out 0.4s;
         width: 0px;
         transform: translate(-20px, 30px);
     }
     p{
-        opacity: 0;
+        opacity: 0.01;
         transition: all 0.7s $curved-transition 0.5s;
         transform: translateY(40px);
     }
     .button--primary{
-        opacity: 0;
+        opacity: 0.01;
         transform: translateY(40px);
         transition: opacity 0.7s $curved-transition 0.7s, transform 0.7s $curved-transition 0.7s,;
     }
     .slide__hero{
-        opacity: 0;
+        opacity: 0.01;
         transition: all 0.7s $curved-transition 0.6s;
         transform: translateY(40px);
     }
