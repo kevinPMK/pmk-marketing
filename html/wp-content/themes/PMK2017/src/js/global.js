@@ -33,12 +33,35 @@
     var $menu = $('.mobile-menu');
     var isMenuOpen = false;
 
-    $button.on('click', function () {
-        isMenuOpen = !isMenuOpen;
-        $menu.toggleClass('active');
-        $('body').toggleClass('scroll-locked');
-        $button.attr('aria-expanded', isMenuOpen).toggleClass('active');
-    });
+    var openMenu = function(){
+        console.log('wut');
+        isMenuOpen = true;
+        $button.attr('aria-expanded', isMenuOpen).addClass('active');
+        $button.unbind('click', openMenu);
+        $menu.addClass('opening');
+        setTimeout(function(){
+            $menu.addClass('opened');
+            setTimeout(function(){
+                $menu.removeClass('opening');
+                $button.bind('click', closeMenu);
+            }, 150);
+        }, 5);
+    };
+
+    var closeMenu = function(){
+        isMenuOpen = false;
+        $button.attr('aria-expanded', isMenuOpen).removeClass('active');
+        $button.unbind('click', closeMenu);
+        $menu.addClass('closing');
+        setTimeout(function(){
+            $menu.removeClass('closing');
+            $menu.removeClass('opened');
+            $button.bind('click', openMenu);
+        }, 150);
+    };
+
+
+    $button.on('click', openMenu);
 
 
 
