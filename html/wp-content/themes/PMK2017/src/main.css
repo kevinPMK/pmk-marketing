@@ -1052,6 +1052,7 @@ Version: 1.0.0
   Mobile Menu
 ------------------------------------------------------------------------*/
 .mobile-menu {
+  display: none;
   z-index: 2000;
   position: fixed;
   top: 0;
@@ -1061,8 +1062,7 @@ Version: 1.0.0
   background: linear-gradient(0deg, rgba(22, 35, 66, 0.98), rgba(13, 24, 49, 0.98));
   transition: opacity 0.15s cubic-bezier(0.34, 0.61, 0.59, 1.11);
   overflow: hidden;
-  opacity: 0;
-  display: none; }
+  opacity: 0; }
   .mobile-menu > .inner {
     width: 100%;
     display: -webkit-box;
@@ -2652,8 +2652,7 @@ Version: 1.0.0
           -ms-flex-align: center;
               align-items: center;
       max-width: 1024px;
-      padding: 0;
-      position: relative; }
+      padding: 0 96px; }
     .slide-quote blockquote span {
       -webkit-box-flex: 1;
           -ms-flex: 1;
@@ -2662,7 +2661,13 @@ Version: 1.0.0
       width: 120px;
       height: 120px;
       opacity: 0.5;
-      margin-top: -45px; }
+      margin-top: -45px;
+      position: absolute;
+      top: -16px; }
+      .slide-quote blockquote .icon:first-child {
+        left: 0; }
+      .slide-quote blockquote .icon:last-child {
+        right: 0; }
   .slide-quote footer {
     margin-top: 36px;
     font-size: 1.0625rem;
@@ -2688,21 +2693,28 @@ Version: 1.0.0
 /*------------------------------------------------------------------------
   In View Transitions
 ------------------------------------------------------------------------*/
-.slide-quote blockquote span {
-  opacity: 0;
-  transition: all 0.7s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.3s;
-  -webkit-transform: translateY(20px);
-          transform: translateY(20px); }
-
-.slide-quote blockquote .icon {
-  opacity: 0;
-  transition: all 0.7s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.6s; }
-  .slide-quote blockquote .icon:first-child {
-    -webkit-transform: translate(-20px, 0px);
-            transform: translate(-20px, 0px); }
-  .slide-quote blockquote .icon:last-child {
-    -webkit-transform: translate(20px, 0px);
-            transform: translate(20px, 0px); }
+.slide-quote blockquote {
+  position: relative;
+  padding-left: 64px;
+  padding-right: 64px;
+  display: block; }
+  .slide-quote blockquote p, .slide-quote blockquote .team-card__description {
+    margin: 0 auto; }
+  .slide-quote blockquote span {
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.3s;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px); }
+  .slide-quote blockquote .icon {
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.6s;
+    position: absolute; }
+    .slide-quote blockquote .icon:first-child {
+      -webkit-transform: translate(-20px, 0px);
+              transform: translate(-20px, 0px); }
+    .slide-quote blockquote .icon:last-child {
+      -webkit-transform: translate(20px, 0px);
+              transform: translate(20px, 0px); }
 
 .slide-quote hr {
   transition: all 0.7s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.4s;

@@ -476,6 +476,7 @@ Version: 1.0.0
 ------------------------------------------------------------------------*/
 
 .mobile-menu{
+    display: none;
     z-index: 2000;
     position: fixed;
     top: 0;
@@ -486,7 +487,6 @@ Version: 1.0.0
     transition: opacity 0.15s $curved-transition;
     overflow: hidden;
     opacity: 0;
-    display: none;
     >.inner{
         width: 100%;
         display: flex;

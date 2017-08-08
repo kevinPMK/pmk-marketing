@@ -47,8 +47,7 @@ Version: 1.0.0
                 font-weight: 200;
                 align-items: center;
                 max-width: 1024px;
-                padding: 0;
-                position: relative;
+                padding: 0 $grid*12;
             }
             span{
                 flex: 1;
@@ -58,6 +57,14 @@ Version: 1.0.0
                 height: 120px;
                 opacity: 0.5;
                 margin-top: -45px;
+                position: absolute;
+                top: -$grid*2;
+                &:first-child{
+                    left: 0;
+                }
+                &:last-child{
+                    right: 0;
+                }
             }
         }
         footer{
@@ -86,6 +93,13 @@ Version: 1.0.0
 
 .slide-quote{
     blockquote{
+        position: relative;
+        padding-left: $grid*8;
+        padding-right: $grid*8;
+        display: block;
+        p{
+            margin: 0 auto;
+        }
         span{
             opacity: 0;
             transition: all 0.7s $curved-transition 0.3s;
@@ -94,6 +108,7 @@ Version: 1.0.0
         .icon{
             opacity: 0;
             transition: all 0.7s $curved-transition 0.6s;
+            position: absolute;
             &:first-child{
                 transform: translate(-20px, 0px);
             }
