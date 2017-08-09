@@ -19,7 +19,7 @@
 			<span class="home-hero__main-heading">School Safety Platform</span>
 		</h1>
 		<div class="cta-buttons">
-			<a href="https://www.youtube.com/watch?v=0h1cmiiP6VM" class="watch-video-button cta-button cta-button--secondary" href="#">
+			<a href="https://www.youtube.com/watch?v=0h1cmiiP6VM?rel=0" class="watch-video-button cta-button cta-button--secondary" href="#">
 				Watch Video
 				<?php echo pmk_get_svg( array( 'icon' => '32-play', 'size' => '32' ) );?>
 			</a>

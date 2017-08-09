@@ -13,7 +13,7 @@ get_header();
 	<?php if(is_front_page()): ?>
 
 		<section class="mobile-video-section">
-			<a href="https://www.youtube.com/watch?v=0h1cmiiP6VM" class="watch-video-button mobile-video-section__button" href="#">
+			<a href="https://www.youtube.com/watch?v=0h1cmiiP6VM?rel=0" class="watch-video-button mobile-video-section__button" href="#">
 				Watch Video
 			</a>
 		</section>

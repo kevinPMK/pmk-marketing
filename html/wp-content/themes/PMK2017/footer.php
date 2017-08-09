@@ -49,7 +49,7 @@
 				<div class="footer__primary">
 					<div class="inner">
 						<a class="footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<?php echo pmk_get_svg( array( 'icon' => 'logo' ) );?>
+							PikMyKid
 						</a>
 						<?php wp_nav_menu( array(
 							'menu_id' => 'footer-menu',

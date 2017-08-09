@@ -4991,18 +4991,26 @@ Version: 1.0.0
       color: #3FA9F5; }
 
 .footer__logo {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1; }
-  .footer__logo .icon {
-    width: 144px;
-    height: 86.63px; }
+  box-sizing: border-box;
+  width: 140px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  box-sizing: border-box;
+  background: url("images/logo.svg") center no-repeat;
+  background-size: 140px 60px;
+  text-indent: -9999px; }
 
 .footer-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 760px; }
+  width: 760px;
+  margin-left: auto; }
 
 .footer-menu__block {
   -webkit-box-flex: 1;
