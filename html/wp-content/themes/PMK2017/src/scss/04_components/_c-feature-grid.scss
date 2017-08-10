@@ -177,3 +177,47 @@ Version: 1.0.0
         }
     }
 }
+
+
+
+/*------------------------------------------------------------------------
+  Feature Grid Button
+------------------------------------------------------------------------*/
+
+
+.centered-view-more{
+    margin-top: $grid*10;
+}
+
+@include media('<md') {
+    .centered-view-more{
+        margin-top: $grid*18;
+    }
+}
+
+@include media('<sm') {
+    .centered-view-more{
+        margin-top: $grid*6;
+    }
+}
+
+@include media('<xs') {
+    .centered-view-more{
+        margin-top: 48px;
+    }
+}
+
+
+.slide{
+    .centered-view-more{
+        opacity: 0;
+        transition: opacity 0.7s $curved-transition 1s, transform 0.7s $curved-transition 1s;
+        transform: translateY(40px);
+    }
+    &.animated{
+        .centered-view-more{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}

@@ -37,6 +37,16 @@ Version: 1.0.0
         max-width: 100%;
         box-shadow: 0px 12px 64px $box-shadow-color;
     }
+    .slide__copy{
+        width: 50%;
+        box-sizing: border-box;
+        flex: auto;
+    }
+    .slide__hero{
+        width: 50%;
+        box-sizing: border-box;
+        flex: auto;
+    }
 }
 
 

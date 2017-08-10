@@ -16,7 +16,7 @@
 
 ?>
 
-<div class="<?php echo $heroClass; ?>" data-parallax="true" data-speed="0.1" data-direction="up">
+<div class="hero <?php echo $heroClass; ?>" data-parallax="true" data-speed="0.1" data-direction="up">
 	<?php
 		if(has_post_thumbnail()){
 			the_post_thumbnail( 'pmk-featured-image' );

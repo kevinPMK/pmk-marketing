@@ -6,7 +6,7 @@
 
 ?>
 
-<div class="sub-page-hero" data-parallax="true" data-speed="0.1" data-direction="up">
+<div class="sub-page-hero hero" data-parallax="true" data-speed="0.1" data-direction="up">
 	<!-- TODO add search images -->
 	<?php
 			$default_source = get_bloginfo('template_directory') . '/src/images/';

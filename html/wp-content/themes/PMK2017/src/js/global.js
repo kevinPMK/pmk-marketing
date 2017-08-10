@@ -68,7 +68,7 @@
     Sticky Header
     ----------------------------------------------------------------*/
 
-
+    /*
     var rafTimer;
     window.onscroll = function (event) {
         cancelAnimationFrame(rafTimer);
@@ -77,31 +77,10 @@
 
     function toggleHeaderFloating() {
         // does cause layout/reflow: https://git.io/vQCMn
-        if (window.scrollY > 200) {
-            document.body.classList.add('nav-hide');
-        } else {
-            document.body.classList.remove('nav-hide');
-        }
 
-        if (window.scrollY > 250) {
-            document.body.classList.add('nav-prep-transition');
-        } else {
-            document.body.classList.remove('nav-prep-transition');
-        }
-
-        if (window.scrollY > 600) {
-            document.body.classList.add('nav-stuck');
-        } else {
-            document.body.classList.remove('nav-stuck');
-        }
-
-        if (window.scrollY > 1200) {
-            document.body.classList.add('nav-focus-cta');
-        } else {
-            document.body.classList.remove('nav-focus-cta');
-        }
 
     }
+    */
 
 
 
@@ -110,33 +89,56 @@
     ----------------------------------------------------------------*/
 
 
-    function isMobile() {
-        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
 
-
-    if (!isMobile()) {
-        function draw() {
-            requestAnimationFrame(draw);
-            // Drawing code goes here
-            scrollEvent();
-        }
-        draw();
+    function draw() {
+        requestAnimationFrame(draw);
+        // Drawing code goes here
+        scrollEvent();
     }
+    draw();
 
 	function scrollEvent(){
 	    if(!is_touch_device()){
 	        viewportTop = $(window).scrollTop();
 	        windowHeight = $(window).height();
+            heroHeight = $('.hero').height();
 	        viewportBottom = windowHeight+viewportTop;
-            if(viewportTop > windowHeight){
-                return;
-            }else{
+            if(viewportTop <= windowHeight){
     	        $('[data-parallax="true"]').each(function(){
     	            distance = viewportTop * $(this).attr('data-speed');
     	            if($(this).attr('data-direction') === 'up'){ sym = '-'; } else { sym = ''; }
     	            $(this).css('transform','translate3d(0, ' + sym + distance +'px,0)');
     	        });
+            }
+
+            if (viewportTop > '300') {
+                document.body.classList.add('mobile-flip');
+            } else {
+                document.body.classList.remove('mobile-flip');
+            }
+
+            if (viewportTop > heroHeight - 250) {
+                document.body.classList.add('nav-hide');
+            } else {
+                document.body.classList.remove('nav-hide');
+            }
+
+            if (viewportTop > (heroHeight - 100)) {
+                document.body.classList.add('nav-prep-transition');
+            } else {
+                document.body.classList.remove('nav-prep-transition');
+            }
+
+            if (viewportTop > (heroHeight + 50)) {
+                document.body.classList.add('nav-stuck');
+            } else {
+                document.body.classList.remove('nav-stuck');
+            }
+
+            if (viewportTop > (heroHeight*2) ) {
+                document.body.classList.add('nav-focus-cta');
+            } else {
+                document.body.classList.remove('nav-focus-cta');
             }
 	    }
 	}
@@ -151,7 +153,6 @@
     Scroll More
     ----------------------------------------------------------------*/
 
-
     $(".scroll-more").click(function() {
         $('html, body').animate({
             scrollTop: window.outerHeight - 72
@@ -160,11 +161,22 @@
 
 
     /*----------------------------------------------------------------
-    Other
+    Defer Image Loading
     ----------------------------------------------------------------*/
 
+    window.addEventListener('load', function(){
+        var allimages= document.getElementsByTagName('img');
+        for (var i=0; i<allimages.length; i++) {
+            if (allimages[i].getAttribute('data-src')) {
+                allimages[i].setAttribute('src', allimages[i].getAttribute('data-src'));
+            }
+        }
+    }, false);
 
 
+    /*----------------------------------------------------------------
+    Other
+    ----------------------------------------------------------------*/
 
 	// Variables and DOM Caching.
 	var $body = $( 'body' ),

@@ -49,8 +49,6 @@ Version: 1.0.0
 }
 
 
-
-
 @include media('<lg') {
     .slide{
         &__hero{
@@ -171,5 +169,38 @@ Version: 1.0.0
 
 
 /*------------------------------------------------------------------------
-  Queries
+  Custom Modifyers
 ------------------------------------------------------------------------*/
+
+
+/*-- Hero Self Padding (of 24px) --*/
+
+.slide{
+    &__hero.self-padding{
+        padding: 0 $grid*11;
+    }
+}
+
+
+@include media('<lg') {
+    .slide{
+        &__hero.self-padding{
+            margin-top: $grid*4 !important;
+            padding-left: 2.8vw;
+            padding-right: 2.8vw;
+        }
+    }
+}
+
+
+@include media('<xs') {
+    .slide{
+        &__hero.self-padding{
+            margin-top: $grid*2 !important;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+}
+
+/*-- Hero Self Padding --*/

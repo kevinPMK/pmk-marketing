@@ -32,6 +32,11 @@ Version: 1.0.0
         transform: translateY(20px);
         opacity: 0.01;
     }
+    &--no-shadow{
+        img{
+            box-shadow: none;
+        }
+    }
 }
 
 .slide__full-image.animated{
@@ -40,6 +45,24 @@ Version: 1.0.0
         transform: translateY(0px);
     }
 }
+
+
+/*-- Responsive Queries --*/
+
+@include media('<lg') {
+    .slide__full-image{
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+}
+
+@include media('<xs') {
+    .slide__full-image{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
 
 /*------------------------------------------------------------------------
   Slide Image Grid

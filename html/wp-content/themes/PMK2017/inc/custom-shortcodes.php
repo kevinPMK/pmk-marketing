@@ -119,9 +119,17 @@ add_shortcode("SectionContent", "SectionContent");
 
 function SectionHero( $atts, $content = null ) {
 
-    $output = '';
+    extract(shortcode_atts(array(
+        "class" => '',
+    ), $atts));
 
-    $output .= '<div class="slide__hero">';
+    $classOutput = 'slide__hero';
+    if($class){
+        $classOutput .= ' ' . $class;
+    }
+
+    $output = '';
+    $output .= '<div class="' . $classOutput . '">';
     $output .= do_shortcode($content);
     $output .= '</div>';
 
@@ -544,15 +552,15 @@ function Customers( $atts ) {
     while ( $loop->have_posts() ) : $loop->the_post();
 
         $customerUrl = get_post_meta(get_the_ID(), 'customer_url')[0];
-
+        $thumb = '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src=" ' . get_the_post_thumbnail_url() . '" />';
         $output .= '<div class="logo-grid__cell">';
         if(!empty($customerUrl)){
             $output .= '<a class="inner" alt="' . get_the_title() . '" href="' . $customerUrl . '" target="_blank">';
-            $output .= get_the_post_thumbnail();
+            $output .= $thumb;
             $output .= '</a>';
         }else{
             $output .= '<div class="inner">';
-            $output .= get_the_post_thumbnail();
+            $output .= $thumb;
             $output .= '</div>';
         }
         $output .= '</div>';
@@ -612,13 +620,14 @@ function Press( $atts ) {
         $pressSyndicate = get_post_meta(get_the_ID(), 'press_syndicate')[0];
 
         $output .= '<div class="logo-grid__cell">';
+        $thumb = '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src=" ' . get_the_post_thumbnail_url() . '" />';
         if(!empty($pressUrl)){
             $output .= '<a class="inner" title="'. $pressSyndicate . ' - ' . get_the_title() . '" href="' . $pressUrl . '" target="_blank">';
-            $output .= get_the_post_thumbnail();
+            $output .= $thumb;
             $output .= '</a>';
         }else{
             $output .= '<div class="inner">';
-            $output .= get_the_post_thumbnail();
+            $output .= $thumb;
             $output .= '</div>';
         }
         $output .= '</div>';
@@ -797,13 +806,17 @@ function InsertSvgScene( $atts ) {
     ), $atts));
 
     $url = get_bloginfo('template_directory') . '/src/images/';
+    $output = '';
 
     if($scene == 'triple-threat') {
-        $output = '';
         $output .= '<div class="triple-scene">';
             $output .= '<img class="triple-scene--1" src="' . $url . 'scene-home-intro-1.svg">';
             $output .= '<img class="triple-scene--2" src="' . $url . 'scene-home-intro-2.svg">';
             $output .= '<img class="triple-scene--3" src="' . $url . 'scene-home-intro-3.svg">';
+        $output .= '</div>';
+    }else if($scene = 'intro-devices'){
+        $output .= '<div class="slide__full-image slide__full-image--no-shadow">';
+            $output .= '<img alt="Elements of the PikMyKid Safety Platform" class="triple-scene--1" src="' . $url . 'pmk-safety-platform.svg">';
         $output .= '</div>';
     }else{
         return;

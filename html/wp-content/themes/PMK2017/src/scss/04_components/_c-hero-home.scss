@@ -19,8 +19,8 @@ Version: 1.0.0
     max-width: 100%;
     box-sizing: border-box;
     min-height: 100%;
-    background-image: url('images/school-home-hero-old.svg'), linear-gradient( -235deg, #3fa9f5 0%, #3d20a9 100%);
-    background-position: center center, center center;
+    background-image: linear-gradient( -235deg, #3fa9f5 0%, #3d20a9 100%);
+    background-position: center center;
     background-size: cover, cover;
     color: #fff;
     overflow: hidden;
@@ -41,7 +41,6 @@ Version: 1.0.0
         bottom: -60px;
         object-fit: cover;
         opacity: 0;
-        transition: all 1.5s $curved-transition 0.25s;
     }
     &__haze{
         position: absolute;
