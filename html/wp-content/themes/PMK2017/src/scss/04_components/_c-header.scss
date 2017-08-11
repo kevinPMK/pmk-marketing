@@ -696,6 +696,8 @@ Version: 1.0.0
 .search-menu{
     z-index: 2000;
     position: fixed;
+    height: 40px;
+    overflow: hidden;
     top: 0;
     left: 0;
     right: 0;
