@@ -98,10 +98,12 @@
     draw();
 
 	function scrollEvent(){
+
+        viewportTop = $(window).scrollTop();
+        heroHeight = $('.hero').height();
+
 	    if(!is_touch_device()){
-	        viewportTop = $(window).scrollTop();
 	        windowHeight = $(window).height();
-            heroHeight = $('.hero').height();
 	        viewportBottom = windowHeight+viewportTop;
             if(viewportTop <= windowHeight){
     	        $('[data-parallax="true"]').each(function(){
@@ -110,37 +112,38 @@
     	            $(this).css('transform','translate3d(0, ' + sym + distance +'px,0)');
     	        });
             }
+        }
 
-            if (viewportTop > '300') {
-                document.body.classList.add('mobile-flip');
-            } else {
-                document.body.classList.remove('mobile-flip');
-            }
+        if (viewportTop > '300') {
+            document.body.classList.add('mobile-flip');
+        } else {
+            document.body.classList.remove('mobile-flip');
+        }
 
-            if (viewportTop > heroHeight - 250) {
-                document.body.classList.add('nav-hide');
-            } else {
-                document.body.classList.remove('nav-hide');
-            }
+        if (viewportTop > heroHeight - 250) {
+            document.body.classList.add('nav-hide');
+        } else {
+            document.body.classList.remove('nav-hide');
+        }
 
-            if (viewportTop > (heroHeight - 100)) {
-                document.body.classList.add('nav-prep-transition');
-            } else {
-                document.body.classList.remove('nav-prep-transition');
-            }
+        if (viewportTop > (heroHeight - 100)) {
+            document.body.classList.add('nav-prep-transition');
+        } else {
+            document.body.classList.remove('nav-prep-transition');
+        }
 
-            if (viewportTop > (heroHeight + 50)) {
-                document.body.classList.add('nav-stuck');
-            } else {
-                document.body.classList.remove('nav-stuck');
-            }
+        if (viewportTop > (heroHeight + 50)) {
+            document.body.classList.add('nav-stuck');
+        } else {
+            document.body.classList.remove('nav-stuck');
+        }
 
-            if (viewportTop > (heroHeight*2) ) {
-                document.body.classList.add('nav-focus-cta');
-            } else {
-                document.body.classList.remove('nav-focus-cta');
-            }
-	    }
+        if (viewportTop > (heroHeight*2) ) {
+            document.body.classList.add('nav-focus-cta');
+        } else {
+            document.body.classList.remove('nav-focus-cta');
+        }
+
 	}
 
 	function is_touch_device() {

@@ -816,7 +816,7 @@ function InsertSvgScene( $atts ) {
         $output .= '</div>';
     }else if($scene = 'intro-devices'){
         $output .= '<div class="slide__full-image slide__full-image--no-shadow">';
-            $output .= '<img alt="Elements of the PikMyKid Safety Platform" class="triple-scene--1" src="' . $url . 'pmk-safety-platform.svg">';
+            $output .= '<img alt="Elements of the PikMyKid Safety Platform" src="' . $url . 'pmk-safety-platform.svg">';
         $output .= '</div>';
     }else{
         return;
