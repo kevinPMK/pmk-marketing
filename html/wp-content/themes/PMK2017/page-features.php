@@ -41,13 +41,13 @@ get_header();
 
 						if($currentPost == 'for-parents'){
 							$thumbUrl = '/src/images/feature-grid-ph-parents.jpg';
-							$titleMeta = 'Ease of Mind';
+							$titleMeta = 'Peace of Mind';
 						}else if($currentPost == 'for-teachers'){
 							$thumbUrl = '/src/images/feature-grid-ph-teachers.jpg';
-							$titleMeta = 'Utmost Efficiencies';
+							$titleMeta = 'Top-notch Efficiencies';
 						}else if($currentPost == 'for-administrators'){
 							$thumbUrl = '/src/images/feature-grid-ph-admins.jpg';
-							$titleMeta = 'Seemless Control';
+							$titleMeta = 'Seamless Control';
 						}else if($currentPost == 'for-districts'){
 							$thumbUrl = '/src/images/feature-grid-ph-districts.jpg';
 							$titleMeta = 'Transparency';
