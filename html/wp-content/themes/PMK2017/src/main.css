@@ -229,14 +229,16 @@ a img {
     top: 640px; } }
 
 @media (max-width: 799px) {
-  .site__content--sub {
-    top: 512px; }
-  .site__content--blog {
-    top: 512px; }
-  .site__content--blog-paged {
-    top: 73px; }
-  .site__content--sub--large {
-    top: 640px; } }
+  .site__content {
+    top: 600px; }
+    .site__content--sub {
+      top: 512px; }
+    .site__content--blog {
+      top: 512px; }
+    .site__content--blog-paged {
+      top: 73px; }
+    .site__content--sub--large {
+      top: 640px; } }
 
 /*---------------------------------------------------------------------------
 

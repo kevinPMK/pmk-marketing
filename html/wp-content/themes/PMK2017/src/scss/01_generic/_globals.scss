@@ -223,6 +223,7 @@ a img{
 
 @include media('<sm') {
     .site__content{
+        top: 600px;
         &--sub{
             top: $grid*64;
         }
