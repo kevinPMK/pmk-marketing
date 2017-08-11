@@ -1342,22 +1342,15 @@ Version: 1.0.0
       -ms-flex-pack: center;
           justify-content: center;
   position: relative; }
-  .home-hero img {
+  .home-hero__full-img {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
+    left: 0;
     bottom: 0;
-    vertical-align: bottom;
-    max-width: 100%;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    bottom: -60px;
-    -o-object-fit: cover;
-       object-fit: cover;
-    opacity: 0;
-    transition: opacity 1.5s ease-out 0.2s; }
+    background: url("images/school-home-hero.svg") center no-repeat;
+    background-size: cover;
+    background-position: center center; }
   .home-hero__content {
     margin-top: 14vh;
     z-index: 1000;
