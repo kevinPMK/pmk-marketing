@@ -103,7 +103,7 @@ Version: 1.0.0
         transition: transform 0.7s $curved-transition 0.2s, opacity 0.7s $curved-transition 0.2s;
         @for $i from 1 through 15 {
             &:nth-child(#{$i}) {
-                transition-delay: (0.2s + (0.2s * $i));
+                transition-delay: (0.2s + (0.1s * $i));
             }
         }
     }
