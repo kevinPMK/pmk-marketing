@@ -169,3 +169,29 @@ div.wpcf7 .ajax-loader{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
+@include media('<sm') {
+    .contact-form{
+        &__field-wrap{
+            display: block;
+            border: none;
+            textarea,
+            input{
+                border: 1px solid #ddd;
+            }
+        }
+        &__label{
+            margin-top: $grid*3;
+            margin-bottom: $grid;
+            display: block;
+            width: 100%;
+            border: none;
+        }
+    }
+    .wpcf7-form {
+        &:after{
+            transform: translate( 0px, 16px );
+        }
+    }
+}

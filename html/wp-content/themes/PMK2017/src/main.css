@@ -4815,6 +4815,23 @@ div.wpcf7 .ajax-loader {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
 
+@media (max-width: 799px) {
+  .contact-form__field-wrap {
+    display: block;
+    border: none; }
+    .contact-form__field-wrap textarea,
+    .contact-form__field-wrap input {
+      border: 1px solid #ddd; }
+  .contact-form__label {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    display: block;
+    width: 100%;
+    border: none; }
+  .wpcf7-form:after {
+    -webkit-transform: translate(0px, 16px);
+            transform: translate(0px, 16px); } }
+
 /*---------------------------------------------------------------------------
 
 

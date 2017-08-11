@@ -346,7 +346,7 @@ function FaqSection( $atts, $content = null ) {
     $output .= '<div class="slide-faq__conclusion">';
     $output .= '<div class="inner">';
     $output .= 'Didn\'t see your question?';
-    $output .= '<a class="button">Contact Us</a>';
+    $output .= '<a class="button" href="' . get_permalink( get_page_by_path( 'contact' ) ) . '">Contact Us</a>';
     $output .= '</div>';
     $output .= '</div>';
     $output .= '</div>';
