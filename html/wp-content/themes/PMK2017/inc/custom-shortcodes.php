@@ -151,7 +151,7 @@ function SectionMiniHalf( $atts, $content = null ) {
 
     $output = '<div class="slide-mini__card">';
     $output .= '<div class="slide-mini__thumb">';
-    $output .= '<img src="' . get_bloginfo('template_directory') . '/src/images/split-section-' . $icon . '.svg">';
+    $output .= '<amp-img class="slide-mini__thumb-img" width="160" height="160" layout="responsive" src="' . get_bloginfo('template_directory') . '/src/images/split-section-' . $icon . '.svg"></amp-img>';
     $output .= '</div>';
     $output .= '<div class="slide-mini__content typography">';
     $output .= '<h4>' . $title . '</h4>';
@@ -277,7 +277,7 @@ function FaqSection( $atts, $content = null ) {
             /*-- Render FAQ Navigation --*/
 
             $faq_nav .= '<a class="faq-nav__link scroll-to-link" href="#' . $custom_term->slug . '">';
-            $faq_nav .= '<img class="faq-nav__icon" src="' . get_bloginfo('template_directory') . '/src/images/faq--' . $custom_term->slug . '.svg">';
+            $faq_nav .= '<amp-img width="192" height="192" layout="responsive" class="faq-nav__icon" src="' . get_bloginfo('template_directory') . '/src/images/faq--' . $custom_term->slug . '.svg"></amp-img>';
             $faq_nav .= '<span class="faq-nav__content">';
             $faq_nav .= '<span class="faq-nav__text">' . $custom_term->name . '</span>';
             if($custom_term->description){
@@ -552,7 +552,7 @@ function Customers( $atts ) {
     while ( $loop->have_posts() ) : $loop->the_post();
 
         $customerUrl = get_post_meta(get_the_ID(), 'customer_url')[0];
-        $thumb = '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src=" ' . get_the_post_thumbnail_url() . '" />';
+        $thumb = '<amp-img class="logo-grid__logo-img" width="150" height="150" layout="responsive" src=" ' . get_the_post_thumbnail_url() . '"></amp-img>';
         $output .= '<div class="logo-grid__cell">';
         if(!empty($customerUrl)){
             $output .= '<a class="inner" alt="' . get_the_title() . '" href="' . $customerUrl . '" target="_blank">';
@@ -620,7 +620,7 @@ function Press( $atts ) {
         $pressSyndicate = get_post_meta(get_the_ID(), 'press_syndicate')[0];
 
         $output .= '<div class="logo-grid__cell">';
-        $thumb = '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src=" ' . get_the_post_thumbnail_url() . '" />';
+        $thumb = '<amp-img class="logo-grid__logo-img" width="150" height="150" layout="responsive" src=" ' . get_the_post_thumbnail_url() . '"></amp-img>';
         if(!empty($pressUrl)){
             $output .= '<a class="inner" title="'. $pressSyndicate . ' - ' . get_the_title() . '" href="' . $pressUrl . '" target="_blank">';
             $output .= $thumb;
@@ -810,13 +810,13 @@ function InsertSvgScene( $atts ) {
 
     if($scene == 'triple-threat') {
         $output .= '<div class="triple-scene">';
-            $output .= '<img class="triple-scene--1" src="' . $url . 'scene-home-intro-1.svg">';
-            $output .= '<img class="triple-scene--2" src="' . $url . 'scene-home-intro-2.svg">';
-            $output .= '<img class="triple-scene--3" src="' . $url . 'scene-home-intro-3.svg">';
+            $output .= '<amp-img width="616" height="905.88" layout="responsive" class="triple-scene--1" src="' . $url . 'scene-home-intro-1.svg"></amp-img>';
+            $output .= '<amp-img width="616" height="905.88" layout="responsive" class="triple-scene--2" src="' . $url . 'scene-home-intro-2.svg"></amp-img>';
+            $output .= '<amp-img width="616" height="905.88" layout="responsive" class="triple-scene--3" src="' . $url . 'scene-home-intro-3.svg"></amp-img>';
         $output .= '</div>';
     }else if($scene = 'intro-devices'){
         $output .= '<div class="slide__full-image slide__full-image--no-shadow">';
-            $output .= '<img alt="Elements of the PikMyKid Safety Platform" src="' . $url . 'pmk-safety-platform.svg">';
+            $output .= '<amp-img width="1216" height="811" layout="responsive" class="slide__fill-image-img" alt="Elements of the PikMyKid Safety Platform" src="' . $url . 'pmk-safety-platform.svg"></amp-img>';
         $output .= '</div>';
     }else{
         return;

@@ -26,20 +26,27 @@ Version: 1.0.0
         box-shadow: none !important;
     }
     .triple-scene--1{
-        position: absolute;
+        width: 100%;
         top: 0;
         left: 0;
+        position: absolute;
         opacity: 0.01;
         transform: translateY(40px);
         transition: all 0.7s $curved-transition 0.6s
     }
     .triple-scene--2{
+        width: 100%;
+        top: 0;
+        left: 0;
         position: absolute;
         opacity: 0.01;
         transform: translateY(40px);
         transition: all 0.7s $curved-transition 0.75s
     }
     .triple-scene--3{
+        width: 100%;
+        top: 0;
+        left: 0;
         position: absolute;
         bottom: 0;
         opacity: 0.01;

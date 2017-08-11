@@ -41,23 +41,7 @@ Version: 1.0.0
         bottom: -60px;
         object-fit: cover;
         opacity: 0;
-    }
-    &__haze{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: #223f96;
-        opacity: 0.35;
-    }
-    &__gradient{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: linear-gradient(rgba(40,48,79,1) 0%, rgba(40,48,79,0) 60%);
+        transition: opacity 1.5s ease-out 0.2s;
     }
     &__content{
         margin-top: 14vh;
@@ -187,8 +171,7 @@ Version: 1.0.0
     text-transform: uppercase;
     padding: 0;
     opacity: 0;
-    transform: translateY(-10px);
-    transition: all 1.5s $curved-transition 2s;
+    transition: opacity 1.5s $curved-transition 2s;
     cursor: pointer;
     &__text{
         opacity: 1;

@@ -59,7 +59,7 @@ get_header();
 
 					<div class="feature-grid__block">
 						<a href="<?php the_permalink(); ?>" class="inner" title="<?php the_title(); ?>">
-							<img src="<?php echo get_template_directory_uri() . $thumbUrl; ?>"/>
+							<amp-img class="feature-grid__img" layout="responsive" width="432" height="559" src="<?php echo get_template_directory_uri() . $thumbUrl; ?>"></amp-img>
 							<div class="feature-grid__haze"></div>
 							<div class="feature-grid__content">
 								<span><?php echo $titleMeta; ?></span>

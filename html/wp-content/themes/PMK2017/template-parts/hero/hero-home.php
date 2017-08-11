@@ -25,7 +25,7 @@
 			</a>
 		</div>
 	</div>
-	<button type="button" class="scroll-more">
+	<button type="button" class="scroll-more" data-parallax="true" data-speed="0.2" data-direction="down">
 		<div class="scroll-more__text">Scroll</div>
 		<div class="scroll-more__line"></div>
 	</button>

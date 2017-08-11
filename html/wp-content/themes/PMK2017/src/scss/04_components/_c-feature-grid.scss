@@ -44,6 +44,10 @@ Version: 1.0.0
             margin-top: $grid*10;
         }
     }
+    &__img{
+        width: 100%;
+        max-width: 100%;
+    }
     &__haze{
         position: absolute;
         top: 0;

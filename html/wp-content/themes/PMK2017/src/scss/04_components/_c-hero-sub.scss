@@ -206,6 +206,13 @@ Version: 1.0.0
             width: 0px;
         }
     }
+    &__content{
+        p{
+            opacity: 0.01;
+            transition: all 0.7s ease-out 0.3s;
+            transform: translateY(10px);
+        }
+    }
     &.animated{
         h1{
             opacity: 1;
@@ -213,6 +220,12 @@ Version: 1.0.0
             &:before{
                 opacity: 1;
                 width: 128px;
+            }
+        }
+        .sub-page-hero__content{
+            p{
+                opacity: 1;
+                transform: translateY(0px);
             }
         }
     }

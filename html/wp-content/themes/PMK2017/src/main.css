@@ -229,17 +229,14 @@ a img {
     top: 640px; } }
 
 @media (max-width: 799px) {
-  .site__content {
-    top: auto;
-    position: relative; }
-    .site__content--sub {
-      top: 512px; }
-    .site__content--blog {
-      top: 512px; }
-    .site__content--blog-paged {
-      top: 73px; }
-    .site__content--sub--large {
-      top: 640px; } }
+  .site__content--sub {
+    top: 512px; }
+  .site__content--blog {
+    top: 512px; }
+  .site__content--blog-paged {
+    top: 73px; }
+  .site__content--sub--large {
+    top: 640px; } }
 
 /*---------------------------------------------------------------------------
 
@@ -1293,7 +1290,7 @@ Version: 1.0.0
     display: none; }
   .main-menu {
     height: 64px;
-    padding-right: 0;
+    padding: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
     .main-menu ul {
       display: none; }
@@ -1359,22 +1356,8 @@ Version: 1.0.0
     bottom: -60px;
     -o-object-fit: cover;
        object-fit: cover;
-    opacity: 0; }
-  .home-hero__haze {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: #223f96;
-    opacity: 0.35; }
-  .home-hero__gradient {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: linear-gradient(#28304f 0%, rgba(40, 48, 79, 0) 60%); }
+    opacity: 0;
+    transition: opacity 1.5s ease-out 0.2s; }
   .home-hero__content {
     margin-top: 14vh;
     z-index: 1000;
@@ -1468,9 +1451,7 @@ Version: 1.0.0
   text-transform: uppercase;
   padding: 0;
   opacity: 0;
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
-  transition: all 1.5s cubic-bezier(0.34, 0.61, 0.59, 1.11) 2s;
+  transition: opacity 1.5s cubic-bezier(0.34, 0.61, 0.59, 1.11) 2s;
   cursor: pointer; }
   .scroll-more__text {
     opacity: 1;
@@ -1706,6 +1687,12 @@ Version: 1.0.0
     transition: all 0.7s ease-out 0.1s;
     width: 0px; }
 
+.sub-page-hero__content p, .sub-page-hero__content .team-card__description {
+  opacity: 0.01;
+  transition: all 0.7s ease-out 0.3s;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px); }
+
 .sub-page-hero.animated h1 {
   opacity: 1;
   -webkit-transform: translateY(0px);
@@ -1713,6 +1700,11 @@ Version: 1.0.0
   .sub-page-hero.animated h1:before {
     opacity: 1;
     width: 128px; }
+
+.sub-page-hero.animated .sub-page-hero__content p, .sub-page-hero.animated .sub-page-hero__content .team-card__description {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px); }
 
 /*------------------------------------------------------------------------
   Sub Page Hero -- Large
@@ -2315,20 +2307,27 @@ Version: 1.0.0
   .triple-scene img {
     box-shadow: none !important; }
   .triple-scene .triple-scene--1 {
-    position: absolute;
+    width: 100%;
     top: 0;
     left: 0;
+    position: absolute;
     opacity: 0.01;
     -webkit-transform: translateY(40px);
             transform: translateY(40px);
     transition: all 0.7s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.6s; }
   .triple-scene .triple-scene--2 {
+    width: 100%;
+    top: 0;
+    left: 0;
     position: absolute;
     opacity: 0.01;
     -webkit-transform: translateY(40px);
             transform: translateY(40px);
     transition: all 0.7s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.75s; }
   .triple-scene .triple-scene--3 {
+    width: 100%;
+    top: 0;
+    left: 0;
     position: absolute;
     bottom: 0;
     opacity: 0.01;
@@ -2929,19 +2928,20 @@ Version: 1.0.0
       -ms-flex-pack: center;
           justify-content: center;
   max-width: 1440px; }
-  .slide__full-image img {
+  .slide__full-image img,
+  .slide__full-image .slide__fill-image-img {
     width: 100%;
     max-width: 100%;
     height: 100%;
-    box-shadow: 0px 12px 64px rgba(37, 48, 60, 0.2);
     transition: all 0.7s cubic-bezier(0.34, 0.61, 0.59, 1.11) 0.5s;
     -webkit-transform: translateY(20px);
             transform: translateY(20px);
     opacity: 0.01; }
-  .slide__full-image--no-shadow img {
-    box-shadow: none; }
+  .slide__full-image--no-shadow .slide__fill-image-img {
+    box-shadow: none !important; }
 
-.slide__full-image.animated img {
+.slide__full-image.animated img,
+.slide__full-image.animated .slide__fill-image-img {
   opacity: 1;
   -webkit-transform: translateY(0px);
           transform: translateY(0px); }
@@ -3099,6 +3099,9 @@ Version: 1.0.0
         .logo-grid__cell > .inner:hover img {
           -webkit-filter: grayscale(0%);
                   filter: grayscale(0%); }
+  .logo-grid__logo-img {
+    width: 100%;
+    max-width: 100%; }
 
 /*-- In View Transitions --*/
 .slide .logo-grid__cell {
@@ -3319,10 +3322,12 @@ Version: 1.0.0
             flex: 1; }
   .slide-mini__thumb {
     box-sizing: border-box;
-    margin-right: 24px; }
-    .slide-mini__thumb img {
-      width: 160px;
-      height: 160px; }
+    margin-right: 24px;
+    width: 144px;
+    height: 144px; }
+    .slide-mini__thumb .slide-mini__thumb-img {
+      width: 100%;
+      max-width: 100%; }
 
 /*-- Responsive Queries --*/
 @media (max-width: 1279px) {
@@ -4498,6 +4503,9 @@ Version: 1.0.0
         opacity: 0.6; }
     .feature-grid__block:nth-child(2n) {
       margin-top: 80px; }
+  .feature-grid__img {
+    width: 100%;
+    max-width: 100%; }
   .feature-grid__haze {
     position: absolute;
     top: 0;
@@ -5226,7 +5234,7 @@ Version: 1.0.0
   .footer__logo {
     margin-bottom: 16px;
     width: 100%;
-    display: block;
+    display: none;
     -webkit-box-flex: 1;
         -ms-flex: auto;
             flex: auto; }
@@ -5239,7 +5247,7 @@ Version: 1.0.0
     padding-top: 48px; }
   .footer__logo {
     width: 100%;
-    display: block;
+    display: none;
     -webkit-box-flex: 1;
         -ms-flex: auto;
             flex: auto; }
@@ -5310,6 +5318,12 @@ Version: 1.0.0
 
 
 ---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------
+    Overwrite AMP
+---------------------------------------------------------------*/
+html, body {
+  height: 100% !important; }
+
 /*---------------------------------------------------------------
     Skip to Content Link
 ---------------------------------------------------------------*/

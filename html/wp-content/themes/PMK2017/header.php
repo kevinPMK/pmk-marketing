@@ -5,16 +5,21 @@
 ---------------------------------------------------------------*/
 
 ?>
-<!DOCTYPE html>
-	<html <?php language_attributes(); ?> class="no-js no-svg">
+<!doctype html>
+	<html amp lang="en" class="no-js no-svg">
 		<head>
-			<meta charset="<?php bloginfo( 'charset' ); ?>">
-			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+
+			<script async src="https://cdn.ampproject.org/v0.js"></script>
+
 			<link rel="profile" href="http://gmpg.org/xfn/11">
 			<?php wp_head(); ?>
 
 			<script src="https://use.typekit.net/teg2qqe.js"></script>
 			<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    		<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 		</head>
 
 		<body <?php body_class(); ?>>
