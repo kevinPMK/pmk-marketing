@@ -114,7 +114,7 @@
             }
         }
 
-        if (viewportTop > '100') {
+        if (viewportTop > 100) {
             document.body.classList.add('mobile-flip');
         } else {
             document.body.classList.remove('mobile-flip');
@@ -169,7 +169,7 @@
 
 
     /*
-    
+
     window.addEventListener('load', function(){
         var allimages= document.getElementsByTagName('img');
         for (var i=0; i<allimages.length; i++) {

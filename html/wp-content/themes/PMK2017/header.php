@@ -47,9 +47,6 @@
 
 
 			<div id="page" class="site">
-				<a class="skip-link screen-reader-text" href="#content">
-					<?php _e( 'Skip to content', 'pmk' ); ?>
-				</a>
 
 				<div class="intro-gradient">
 				</div>
