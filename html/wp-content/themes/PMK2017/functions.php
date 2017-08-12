@@ -226,6 +226,10 @@ function posts_link_attributes_2() {
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
 
 
+// REMOVE EMOJI ICONS
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+
 /*---------------------------------------------------------------
    ENQUEUE SCRIPTS AND STYLES
 ---------------------------------------------------------------*/
