@@ -11,7 +11,9 @@
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
 
-
+			<style amp-custom>
+				<?php require get_parent_theme_file_path( '/src/main.css' ); ?>
+			</style>
 
 			<?php wp_head(); ?>
 

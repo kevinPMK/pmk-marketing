@@ -64,16 +64,16 @@ Version: 1.0.0
         background-position: center center;
         margin: 0 auto;
         &.svg-icon-for-parents{
-            background-image: url('images/feature-footer-parent.svg');
+            background-image: url('#{$img_path}/feature-footer-parent.svg');
         }
         &.svg-icon-for-teachers{
-            background-image: url('images/feature-footer-teacher.svg');
+            background-image: url('#{$img_path}/feature-footer-teacher.svg');
         }
         &.svg-icon-for-administrators{
-            background-image: url('images/feature-footer-admin.svg');
+            background-image: url('#{$img_path}/feature-footer-admin.svg');
         }
         &.svg-icon-for-districts{
-            background-image: url('images/feature-footer-district.svg');
+            background-image: url('#{$img_path}/feature-footer-district.svg');
         }
     }
 }

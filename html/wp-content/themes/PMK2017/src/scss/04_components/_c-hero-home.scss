@@ -33,7 +33,7 @@ Version: 1.0.0
         right: 0;
         left: 0;
         bottom: 0;
-        background: url("images/school-home-hero.svg") center no-repeat;
+        background: url('#{$img_path}/school-home-hero.svg') center no-repeat;
         background-size: cover;
         background-position: center center;
     }

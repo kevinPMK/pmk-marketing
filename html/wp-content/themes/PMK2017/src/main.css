@@ -939,7 +939,7 @@ Version: 1.0.0
         -ms-flex-align: center;
             align-items: center;
     box-sizing: border-box;
-    background: url("images/logo.svg") center no-repeat;
+    background: url("wp-content/themes/PMK2017/src/images/logo.svg") center no-repeat;
     background-size: 100px 50px;
     text-indent: -9999px; }
 
@@ -1352,7 +1352,7 @@ Version: 1.0.0
     right: 0;
     left: 0;
     bottom: 0;
-    background: url("images/school-home-hero.svg") center no-repeat;
+    background: url("wp-content/themes/PMK2017/src/images/school-home-hero.svg") center no-repeat;
     background-size: cover;
     background-position: center center; }
   .home-hero__content {
@@ -2032,7 +2032,7 @@ Version: 1.0.0
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: url("images/grid-texture.png") center center repeat #222c59; }
+  background: url("wp-content/themes/PMK2017/src/images/grid-texture.png") center center repeat #222c59; }
 
 /*-- Queries --*/
 @media (max-width: 799px) {
@@ -2717,7 +2717,7 @@ Version: 1.0.0
   Quote Section
 ------------------------------------------------------------------------*/
 .slide-quote {
-  background-image: url("images/default-blog-landing-bg.png"), linear-gradient(120deg, #3FA9F5, #3A65C7);
+  background-image: url("wp-content/themes/PMK2017/src/images/default-blog-landing-bg.png"), linear-gradient(120deg, #3FA9F5, #3A65C7);
   background-size: cover, cover; }
   .slide-quote figure {
     padding-left: 64px;
@@ -3411,7 +3411,7 @@ Version: 1.0.0
   CTA Section
 ------------------------------------------------------------------------*/
 .slide-cta {
-  background-image: url("images/school-cta-section.png"), linear-gradient(90deg, #3A65C7, #3FA9F5);
+  background-image: url("wp-content/themes/PMK2017/src/images/school-cta-section.png"), linear-gradient(90deg, #3A65C7, #3FA9F5);
   background-size: cover, cover;
   background-repeat: no-repeat, no-repeat;
   text-align: center;
@@ -4024,13 +4024,13 @@ Version: 1.0.0
   background-position: center center;
   margin: 0 auto; }
   .slide-next-features__icon.svg-icon-for-parents {
-    background-image: url("images/feature-footer-parent.svg"); }
+    background-image: url("wp-content/themes/PMK2017/src/images/feature-footer-parent.svg"); }
   .slide-next-features__icon.svg-icon-for-teachers {
-    background-image: url("images/feature-footer-teacher.svg"); }
+    background-image: url("wp-content/themes/PMK2017/src/images/feature-footer-teacher.svg"); }
   .slide-next-features__icon.svg-icon-for-administrators {
-    background-image: url("images/feature-footer-admin.svg"); }
+    background-image: url("wp-content/themes/PMK2017/src/images/feature-footer-admin.svg"); }
   .slide-next-features__icon.svg-icon-for-districts {
-    background-image: url("images/feature-footer-district.svg"); }
+    background-image: url("wp-content/themes/PMK2017/src/images/feature-footer-district.svg"); }
 
 .slide-next-features__block {
   opacity: 0.01;
@@ -5161,7 +5161,7 @@ Version: 1.0.0
       -ms-flex-align: center;
           align-items: center;
   box-sizing: border-box;
-  background: url("images/logo.svg") center no-repeat;
+  background: url("wp-content/themes/PMK2017/src/images/logo.svg") center no-repeat;
   background-size: 140px 60px;
   text-indent: -9999px; }
 
