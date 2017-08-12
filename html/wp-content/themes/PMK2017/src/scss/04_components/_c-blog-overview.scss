@@ -291,10 +291,13 @@ Version: 1.0.0
     box-sizing: border-box;
     padding: 0 $grid*2 $grid*4 $grid*2;
     @extend .typography;
+    display: flex;
+    flex-direction: column;
     >.inner{
         box-shadow: 0px 12px 64px $box-shadow-color;
         background: #fff;
         height: 100%;
+        flex: 1;
         box-sizing: border-box;
         display: block;
         position: relative;

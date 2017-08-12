@@ -7,7 +7,7 @@
 ?>
 
 
-<div class="blog-overview-hero" data-parallax="true" data-speed="0.1" data-direction="up">
+<div class="blog-overview-hero hero" data-parallax="true" data-speed="0.1" data-direction="up">
 
 	<?php
 		$default_source = get_bloginfo('template_directory') . '/src/images/';
