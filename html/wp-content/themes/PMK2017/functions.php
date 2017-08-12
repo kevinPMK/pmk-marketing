@@ -107,16 +107,6 @@ add_filter( 'excerpt_more', 'pmk_excerpt_more' );
 
 
 /*---------------------------------------------------------------
-   DETECT JAVASCRIPT
----------------------------------------------------------------*/
-
-function pmk_javascript_detection() {
-	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
-}
-add_action( 'wp_head', 'pmk_javascript_detection', 0 );
-
-
-/*---------------------------------------------------------------
    CREATE PINGBACK LINK
 ---------------------------------------------------------------*/
 
@@ -236,9 +226,6 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 
 function pmk_scripts() {
 
-
-	//Make skip to content accessable.
-	wp_enqueue_script( 'pmk-skip-link-focus-fix', get_theme_file_uri( '/src/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 
 	//Load Waypoints.
 	wp_enqueue_script( 'pmk-waypoints', get_theme_file_uri( '/src/js/jquery.waypoints.min.js' ), array( 'jquery' ), '1.0', true );

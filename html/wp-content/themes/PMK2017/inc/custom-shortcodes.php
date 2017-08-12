@@ -555,7 +555,7 @@ function Customers( $atts ) {
         $thumb = '<amp-img class="logo-grid__logo-img" width="150" height="150" layout="responsive" src=" ' . get_the_post_thumbnail_url() . '"></amp-img>';
         $output .= '<div class="logo-grid__cell">';
         if(!empty($customerUrl)){
-            $output .= '<a class="inner" alt="' . get_the_title() . '" href="' . $customerUrl . '" target="_blank">';
+            $output .= '<a class="inner" title="' . get_the_title() . '" href="' . $customerUrl . '" target="_blank">';
             $output .= $thumb;
             $output .= '</a>';
         }else{

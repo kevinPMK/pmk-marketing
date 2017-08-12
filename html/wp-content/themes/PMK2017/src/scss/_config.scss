@@ -13,7 +13,8 @@ Version: 1.0.0
   NOTES
 ---------------------------------------------------------------------*/
 
-$img_path: 'wp-content/themes/PMK2017/src/images';
+$img_path: "<?php echo get_theme_file_uri( 'src/images' )?>";
+$sfx_path: "<?php echo get_theme_file_uri( 'src/app-sfx' )?>";
 $site-primary: #131a2d;
 
 

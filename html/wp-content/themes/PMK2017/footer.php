@@ -35,7 +35,7 @@
 								Contact Us
 								<?php echo pmk_get_svg( array( 'icon' => '32-contact', 'size' => '32' ) );?>
 							</a>
-							<a class="cta-button cta-button--primary" type="button" href="<?php echo get_permalink( get_page_by_path( 'request-a-demo' ) ); ?>">
+							<a class="cta-button cta-button--primary" href="<?php echo get_permalink( get_page_by_path( 'request-a-demo' ) ); ?>">
 								Request Demo
 								<?php echo pmk_get_svg( array( 'icon' => '32-rarrow', 'size' => '32' ) );?>
 							</a>
