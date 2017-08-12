@@ -11,9 +11,10 @@
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
 
-			<script async src="https://cdn.ampproject.org/v0.js"></script>
 
 			<?php wp_head(); ?>
+
+			<script async src="https://cdn.ampproject.org/v0.js"></script>
 
 			<script src="https://use.typekit.net/teg2qqe.js"></script>
 			<script>try{Typekit.load({ async: true });}catch(e){}</script>
