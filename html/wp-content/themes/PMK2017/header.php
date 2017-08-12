@@ -13,7 +13,6 @@
 
 			<script async src="https://cdn.ampproject.org/v0.js"></script>
 
-			<link rel="profile" href="http://gmpg.org/xfn/11">
 			<?php wp_head(); ?>
 
 			<script src="https://use.typekit.net/teg2qqe.js"></script>
