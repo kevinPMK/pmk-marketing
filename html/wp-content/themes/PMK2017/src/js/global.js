@@ -156,10 +156,19 @@
     Scroll More
     ----------------------------------------------------------------*/
 
+
+
     $(".scroll-more").click(function() {
         $('html, body').animate({
             scrollTop: window.outerHeight - 72
         }, 800);
+    });
+
+    $(document).on('click', '.scroll-to-link', function(event){
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 500);
     });
 
 
@@ -285,35 +294,6 @@
     --*/
 
 
-	// Add 'below-entry-meta' class to elements.
-	function belowEntryMetaClass( param ) {
-		var sidebarPos, sidebarPosBottom;
-
-		if ( ! $body.hasClass( 'has-sidebar' ) || (
-			$body.hasClass( 'search' ) ||
-			$body.hasClass( 'single-attachment' ) ||
-			$body.hasClass( 'error404' ) ||
-			$body.hasClass( 'twentyseventeen-front-page' )
-		) ) {
-			return;
-		}
-
-		sidebarPos       = $sidebar.offset();
-		sidebarPosBottom = sidebarPos.top + ( $sidebar.height() + 28 );
-
-		$entryContent.find( param ).each( function() {
-			var $element = $( this ),
-				elementPos = $element.offset(),
-				elementPosTop = elementPos.top;
-
-			// Add 'below-entry-meta' to elements below the entry meta.
-			if ( elementPosTop > sidebarPosBottom ) {
-				$element.addClass( 'below-entry-meta' );
-			} else {
-				$element.removeClass( 'below-entry-meta' );
-			}
-		});
-	}
 
 	/*
 	 * Test if inline SVGs are supported.
@@ -331,91 +311,6 @@
 	function checkiOS() {
 		return /iPad|iPhone|iPod/.test(navigator.userAgent) && ! window.MSStream;
 	}
-
-	/*
-	 * Test if background-attachment: fixed is supported.
-	 * @link http://stackoverflow.com/questions/14115080/detect-support-for-background-attachment-fixed
-	 */
-	function supportsFixedBackground() {
-		var el = document.createElement('div'),
-			isSupported;
-
-		try {
-			if ( ! ( 'backgroundAttachment' in el.style ) || checkiOS() ) {
-				return false;
-			}
-			el.style.backgroundAttachment = 'fixed';
-			isSupported = ( 'fixed' === el.style.backgroundAttachment );
-			return isSupported;
-		}
-		catch (e) {
-			return false;
-		}
-	}
-
-    /*
-
-	$( document ).ready( function() {
-
-        $('.scroll-to-link').click( function( e ) {
-            e.preventDefault();
-            console.log(navigationOuterHeight);
-            $( window ).scrollTo( $(this).attr('href'), {
-                duration: 600,
-                offset: { top: -navigationOuterHeight - 100 }
-            });
-        });
-
-		// If navigation menu is present on page, setNavProps and adjustScrollClass.
-		if ( $navigation.length ) {
-			setNavProps();
-			adjustScrollClass();
-		}
-
-
-		adjustHeaderHeight();
-		setQuotesIcon();
-		if ( true === supportsInlineSVG() ) {
-			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
-		}
-
-		if ( true === supportsFixedBackground() ) {
-			document.documentElement.className += ' background-fixed';
-		}
-	});
-
-
-	// If navigation menu is present on page, adjust it on scroll and screen resize.
-	if ( $navigation.length ) {
-
-		// On scroll, we want to stick/unstick the navigation.
-		$( window ).on( 'scroll', function() {
-			adjustScrollClass();
-			adjustHeaderHeight();
-		});
-
-		// Also want to make sure the navigation is where it should be on resize.
-		$( window ).resize( function() {
-			setNavProps();
-			setTimeout( adjustScrollClass, 500 );
-		});
-	}
-
-	$( window ).resize( function() {
-		clearTimeout( resizeTimer );
-		resizeTimer = setTimeout( function() {
-			belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
-		}, 300 );
-		setTimeout( adjustHeaderHeight, 1000 );
-	});
-
-	// Add header video class after the video is loaded.
-	$( document ).on( 'wp-custom-header-video-loaded', function() {
-		$body.addClass( 'has-header-video' );
-	});
-
-
-        */
 
 
     /*-- YouTube Pop Up Player --*/
