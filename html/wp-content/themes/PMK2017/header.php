@@ -14,7 +14,9 @@
 
 			<?php wp_head(); ?>
 
+<!--
 			<script async src="https://cdn.ampproject.org/v0.js"></script>
+		-->
 
 			<script src="https://use.typekit.net/teg2qqe.js"></script>
 			<script>try{Typekit.load({ async: true });}catch(e){}</script>
