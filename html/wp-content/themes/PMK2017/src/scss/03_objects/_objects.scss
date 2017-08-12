@@ -21,7 +21,7 @@ Version: 1.0.0
     background: transparent;
     display: inline-block;
     margin-top: $grid*2.5;
-    font-weight: 200;
+    font-weight: $font-weight-light;;
     padding: 13px $grid*3.5;
     font-size: $font-size-16;
     color: $brand-secondary;

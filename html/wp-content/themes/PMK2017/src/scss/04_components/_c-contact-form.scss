@@ -99,7 +99,7 @@ Version: 1.0.0
             vertical-align: top;
             margin-bottom: -1px;
             font-family: $primary-font;
-            font-weight: 200;
+            font-weight: $font-weight-light;;
             &:focus {
                 outline: 0;
                 padding: 14px;

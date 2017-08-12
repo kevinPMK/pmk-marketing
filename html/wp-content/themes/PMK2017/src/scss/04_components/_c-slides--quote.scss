@@ -46,7 +46,7 @@ Version: 1.0.0
                 position: relative;
                 display: flex;
                 letter-spacing: 0.05rem;
-                font-weight: 200;
+                font-weight: $font-weight-light;;
                 align-items: center;
                 max-width: 1024px;
                 padding: 0 $grid*12;
@@ -69,11 +69,11 @@ Version: 1.0.0
         footer{
             margin-top: $grid*4.5;
             font-size: $font-size-17;
-            font-weight: 200;
+            font-weight: $font-weight-light;;
             opacity: 0.8;
             cite{
                 font-size: $font-size-17;
-                font-weight: 200;
+                font-weight: $font-weight-light;;
                 font-family: $primary-font;
             }
         }

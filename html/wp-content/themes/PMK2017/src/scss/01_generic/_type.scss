@@ -70,7 +70,7 @@ h6{
     font-size: $font-size-14;
     font-family: $primary-font;
     text-transform: uppercase;
-    font-weight: 200;
+    font-weight: $font-weight-light;;
     letter-spacing: 0.04rem;
     margin-bottom: 2em;
     margin-top: 0;
@@ -82,7 +82,7 @@ p{
     letter-spacing: 0.01em;
     margin-top: 0;
     margin-bottom: 1.4em;
-    font-weight: 200;
+    font-weight: $font-weight-light;;
     &:last-child{
         margin-bottom: 0px;
     }
@@ -90,7 +90,7 @@ p{
 
 em{
     font-style: italic;
-    font-weight: 200;
+    font-weight: $font-weight-light;;
 }
 
 /*------------------------------------------------------------------------

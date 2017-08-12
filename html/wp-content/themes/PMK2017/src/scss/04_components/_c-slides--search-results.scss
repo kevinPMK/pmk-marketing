@@ -62,7 +62,7 @@ Version: 1.0.0
                 &__meta{
                     font-size: $font-size-14;
                     text-transform: uppercase;
-                    font-weight: 200;
+                    font-weight: $font-weight-light;;
                     letter-spacing: 0.04rem;
                     margin-top: 0;
                     margin-bottom: $grid*2;

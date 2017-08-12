@@ -90,7 +90,7 @@ Version: 1.0.0
             }
         }
             &__author{
-                font-weight: 200;
+                font-weight: $font-weight-light;;
                 color: #516ca9;
                 text-transform: uppercase;
                 letter-spacing: 0.08rem;
@@ -102,7 +102,7 @@ Version: 1.0.0
                 }
             }
             &__excerpt{
-                font-weight: 200;
+                font-weight: $font-weight-light;;
                 color: #647fbc;
                 font-size: $font-size-20;
                 max-width: 800px;
