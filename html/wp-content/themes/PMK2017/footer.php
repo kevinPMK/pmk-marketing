@@ -87,7 +87,6 @@
 			</footer>
 		</div><!-- .site__content -->
 	</div><!-- .site-content-contain -->
-</div><!-- #page -->
 
 <div class="app-icons-wrap" style="width: 1px; height: 1px; opacity: 0;">
 	<?php require_once( get_parent_theme_file_path( '/src/app-sfx.svg' ) ); ?>
