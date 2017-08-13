@@ -28,14 +28,13 @@ Version: 1.0.0
     justify-content: center;
     position: relative;
     &__full-img{
-        position: absolute;
         top: 0;
         right: 0;
         left: 0;
         bottom: 0;
         background: url('#{$img_path}/school-home-hero.svg') center no-repeat;
         background-size: cover;
-        background-position: center center;
+        position: absolute;
     }
     &__content{
         margin-top: 14vh;
@@ -46,7 +45,6 @@ Version: 1.0.0
         padding: $grid*6;
         box-sizing: border-box;
         border-radius: $grid*6;
-        position: relative;
     }
         &__heading{
             padding: 0 $grid*6;

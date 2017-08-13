@@ -17,6 +17,7 @@ Version: 1.0.0
 .slide-quote{
     background-image: url('#{$img_path}/default-blog-landing-bg.png'), linear-gradient(120deg, #3FA9F5, #3A65C7 );
     background-size: cover, cover;
+    background-attachment: fixed;
     figure{
         padding-left: $grid*8;
         padding-right: $grid*8;

@@ -391,28 +391,6 @@ Version: 1.0.0
 }
 
 
-
-/*------------------------------------------------------------------------
-  Flip Menu Color on Scroll
-------------------------------------------------------------------------*/
-
-
-@include media('<sm') {
-    .main-menu{
-        border-bottom: 4px solid (0,0,0,0);
-        transition: background-color ease-out 0.15s, border-color ease-out 0.15s;
-    }
-    .mobile-flip{
-        .main-menu{
-            background: #fff;
-            border-bottom: 4px solid rgba(0,0,0,0.05);
-        }
-    }
-}
-
-
-
-
 /*------------------------------------------------------------------------
   Main Menu CTA
 ------------------------------------------------------------------------*/
@@ -458,7 +436,8 @@ Version: 1.0.0
     .bar{
         width: $grid*3;
         height: 3px;
-        background: #fff;
+        //background: #fff;
+        background: $app-divider-color;
         position: absolute;
         top: 50%;
         margin-top: -2px;
@@ -516,13 +495,6 @@ Version: 1.0.0
 }
 
 
-.mobile-flip{
-    .mobile-menu-toggle{
-        .bar{
-            background: $app-divider-color;
-        }
-    }
-}
 
 
 
@@ -750,7 +722,8 @@ Version: 1.0.0
     .main-menu{
         height: $grid*8;
         padding: 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 4px solid rgba(0,0,0,0.05);
+        background: #fff;
         ul{
             display: none;
         }

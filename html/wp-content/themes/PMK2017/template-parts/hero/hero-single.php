@@ -12,8 +12,6 @@
 
 	$alternativeTitle = get_post_meta( get_the_ID(), 'alternative_title' )[0];
 
-	var_dump($pageMeta);
-
 ?>
 
 <div class="hero <?php echo $heroClass; ?>" data-parallax="true" data-speed="0.1" data-direction="up">

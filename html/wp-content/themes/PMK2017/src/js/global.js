@@ -89,6 +89,11 @@
     ----------------------------------------------------------------*/
 
 
+    /*-- Test if IOS --*/
+
+	function checkiOS() {
+		return /iPad|iPhone|iPod/.test(navigator.userAgent) && ! window.MSStream;
+	};
 
     function draw() {
         requestAnimationFrame(draw);
@@ -114,14 +119,8 @@
             }
         }
 
-        if (viewportTop > 100) {
-            document.body.classList.add('mobile-flip');
-        } else {
-            document.body.classList.remove('mobile-flip');
-        }
 
         if(heroHeight < 400){
-
 
             if (viewportTop > 100 ) {
                 document.body.classList.add('nav-hide');
@@ -148,6 +147,7 @@
             }
 
         }else{
+
             if (viewportTop > heroHeight - 250) {
                 document.body.classList.add('nav-hide');
             } else {
@@ -171,9 +171,8 @@
             } else {
                 document.body.classList.remove('nav-focus-cta');
             }
+
         }
-
-
 
 	}
 
@@ -276,53 +275,7 @@
 
 	}
 
-	// Make navigation 'stick'.
 
-    /*--
-
-	function adjustScrollClass() {
-
-		// Make sure we're not on a mobile screen.
-		//if ( 'none' === $menuToggle.css( 'display' ) ) {
-
-            if( $( window ).scrollTop() < navigationOffset ){
-                $navigation.css({
-                    marginLeft : navigationMarginWidth,
-                    marginRight : navigationMarginWidth
-                });
-            }else if( $( window ).scrollTop() >= navigationOffset && $( window ).scrollTop() < navigationScrollCap ){
-                navigationCurrentMargin = navigationMarginWidth - ($(window).scrollTop() - navigationOffset);
-                $navigation.css({
-                    marginLeft : navigationCurrentMargin,
-                    marginRight : navigationCurrentMargin
-                });
-            }else if( $( window ).scrollTop() > navigationScrollCap ){
-                $navigation.css({
-                    marginLeft : 0,
-                    marginRight : 0
-                });
-            }
-
-
-			if ( $( window ).scrollTop() >= navigationOffset ) {
-				$navigation.addClass( navigationFixedClass );
-                $mobileToggle.addClass( mobileToggleFixedClass );
-			} else {
-				$navigation.removeClass( navigationFixedClass );
-                $mobileToggle.removeClass( mobileToggleFixedClass );
-			}
-
-			if ( $( window ).scrollTop() >= currentWindowHeight ) {
-				$navigation.addClass( navigationCtaClass );
-			} else {
-				$navigation.removeClass( navigationCtaClass );
-			}
-
-		//}
-
-	}
-
-    --*/
 
 
 
@@ -334,13 +287,6 @@
 		var div = document.createElement( 'div' );
 		div.innerHTML = '<svg/>';
 		return 'http://www.w3.org/2000/svg' === ( 'undefined' !== typeof SVGRect && div.firstChild && div.firstChild.namespaceURI );
-	}
-
-	/**
-	 * Test if an iOS device.
-	*/
-	function checkiOS() {
-		return /iPad|iPhone|iPod/.test(navigator.userAgent) && ! window.MSStream;
 	}
 
 

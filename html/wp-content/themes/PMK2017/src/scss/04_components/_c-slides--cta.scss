@@ -17,6 +17,8 @@ Version: 1.0.0
 .slide-cta{
     background-image:  url('#{$img_path}/school-cta-section.png'), linear-gradient(90deg, #3A65C7, #3FA9F5);
     background-size: cover, cover;
+
+    background-attachment: fixed;
     background-repeat: no-repeat, no-repeat;
     text-align: center;
     display: flex;

@@ -11,11 +11,13 @@
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
 
+
+			<?php wp_head(); ?>
+
+
 			<style amp-custom>
 				<?php require get_parent_theme_file_path( '/src/main.css' ); ?>
 			</style>
-
-			<?php wp_head(); ?>
 
 			<script async src="https://cdn.ampproject.org/v0.js"></script>
 			<script src="https://use.typekit.net/teg2qqe.js"></script>
