@@ -783,7 +783,7 @@ function FeatureNavigation() {
 
         endwhile;
 
-        $output = '</section>';
+        $output .= '</section>';
         $output .= '</div>';
 
         return $output;
