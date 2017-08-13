@@ -95,13 +95,10 @@
 
 <?php wp_footer(); ?>
 
-<!--
 <script type="text/javascript">
 var $zoho= $zoho || {salesiq:{values:{},ready:function(){}}};var d=document;s=d.createElement("script");s.type="text/javascript";s.defer=true;s.src="https://salesiq.zoho.com/sydneyy/float.ls?embedname=canihelpyou";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);
 </script>
--->
 
-<!--
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -111,7 +108,6 @@ var $zoho= $zoho || {salesiq:{values:{},ready:function(){}}};var d=document;s=d.
   ga('create', 'UA-51150622-1', 'auto');
   ga('send', 'pageview');
 </script>
--->
 
 <?php if(is_single()) : ?>
 	<script>
