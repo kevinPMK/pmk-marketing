@@ -45,12 +45,12 @@ Version: 1.0.0
     .footer__logo{
         box-sizing: border-box;
         width: 140px;
-        height: 60px;
+        height: 70px;
         display: flex;
         align-items: center;
         box-sizing: border-box;
         background: url("#{$img_path}/logo.svg") center no-repeat;
-        background-size: 140px 60px;
+        background-size: 140px 70px;
         text-indent: -9999px;
     }
     .footer-menu{
