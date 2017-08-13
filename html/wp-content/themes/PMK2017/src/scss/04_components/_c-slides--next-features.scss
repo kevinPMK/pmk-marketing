@@ -24,9 +24,11 @@ Version: 1.0.0
     &__block{
         width: 25%;
         padding: $grid*2;
+        box-sizing: border-box;
+        /*--
         display: flex;
         flex-direction: column;
-        box-sizing: border-box;
+        --*/
         >.inner{
             border: 2px solid transparent;
             flex: 1;
