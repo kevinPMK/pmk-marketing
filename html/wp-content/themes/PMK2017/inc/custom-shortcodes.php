@@ -813,13 +813,13 @@ function InsertSvgScene( $atts ) {
 
     if($scene == 'triple-threat') {
         $output .= '<div class="triple-scene">';
-            $output .= '<amp-img width="616" height="905.88" layout="responsive" class="triple-scene--1" src="' . $url . 'scene-home-intro-1.svg"></amp-img>';
-            $output .= '<amp-img width="616" height="905.88" layout="responsive" class="triple-scene--2" src="' . $url . 'scene-home-intro-2.svg"></amp-img>';
-            $output .= '<amp-img width="616" height="905.88" layout="responsive" class="triple-scene--3" src="' . $url . 'scene-home-intro-3.svg"></amp-img>';
+            $output .= '<amp-img alt="A school administrator using the PikMyKid web application" width="616" height="905.88" layout="responsive" class="triple-scene--1" src="' . $url . 'scene-home-intro-1.svg"></amp-img>';
+            $output .= '<amp-img alt="A teacher using the PikMyKid application on a tablet to dismiss students" width="616" height="905.88" layout="responsive" class="triple-scene--2" src="' . $url . 'scene-home-intro-2.svg"></amp-img>';
+            $output .= '<amp-img alt="A happy parent that just picked up his child via the PikMyKid parent application" width="616" height="905.88" layout="responsive" class="triple-scene--3" src="' . $url . 'scene-home-intro-3.svg"></amp-img>';
         $output .= '</div>';
     }else if($scene = 'intro-devices'){
         $output .= '<div class="slide__full-image slide__full-image--no-shadow">';
-            $output .= '<amp-img width="1216" height="811" layout="responsive" class="slide__fill-image-img" alt="Elements of the PikMyKid Safety Platform" src="' . $url . 'pmk-safety-platform.svg"></amp-img>';
+            $output .= '<amp-img width="1216" height="811" layout="responsive" class="slide__fill-image-img" alt="The PikMyKid devices in front of a school campus" src="' . $url . 'pmk-safety-platform.svg"></amp-img>';
         $output .= '</div>';
     }else{
         return;
