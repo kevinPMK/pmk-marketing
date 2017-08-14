@@ -130,11 +130,7 @@ Version: 1.0.0
         transform: translateY(40px);
     }
     &.animated{
-        h6{
-            opacity: 1;
-            transform: translateY(0px);
-        }
-        h2{
+        h1, h2, h3, h4, h5, h6{
             opacity: 1;
             transform: translateY(0px);
         }
@@ -143,7 +139,7 @@ Version: 1.0.0
             width: 128px;
             transform: translate(0px, 0px);
         }
-        p{
+        p, ul, ol, dl, a, blockquote{
             opacity: 1;
             transform: translateY(0px);
         }
