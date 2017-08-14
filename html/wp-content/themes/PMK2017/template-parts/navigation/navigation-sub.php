@@ -12,6 +12,12 @@
 		Blog
 	</a>
 
+	<?php if ( get_page_by_path( 'free-car-line' ) != NULL ): ?>
+		<a class="sub-menu__text-link" target="_blank" href="<?php echo get_permalink( get_page_by_path( 'free-car-line' ) ); ?>">
+			Free Car Line
+		</a>
+	<?php endif; ?>
+
 	<a href="https://schools.pikmykid.com/pikmykid/" target="_blank" class="sub-menu__text-link">
 		Sign In
 	</a>
