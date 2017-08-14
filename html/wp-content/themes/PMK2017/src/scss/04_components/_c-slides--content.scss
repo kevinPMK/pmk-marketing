@@ -103,14 +103,9 @@ Version: 1.0.0
 
 .slide-center,
 .slide-half{
-    h6{
+    h1, h2, h3, h4, h5, h6{
         opacity: 0.01;
         transition: all 0.7s $curved-transition 0.2s;
-        transform: translateY(40px);
-    }
-    h2{
-        opacity: 0.01;
-        transition: all 0.7s $curved-transition 0.3s;
         transform: translateY(40px);
     }
     .hr-gradient{
@@ -119,7 +114,7 @@ Version: 1.0.0
         width: 0px;
         transform: translate(-20px, 30px);
     }
-    p{
+    p, ul, ol, dl, a, blockquote{
         opacity: 0.01;
         transition: all 0.7s $curved-transition 0.5s;
         transform: translateY(40px);
